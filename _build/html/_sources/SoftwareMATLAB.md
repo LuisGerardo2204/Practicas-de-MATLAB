@@ -41,9 +41,10 @@ Es posible copiar el código directamente de este cuadernillo y pegarlo en el co
 </div>
 ```
 
-<div align='center'>
+
 Las sub-ventanas principales son las mostradas en las Figuras: {numref}`figura2`, {numref}`fig3`, {numref}`figura4` y {numref}`figura5`.
-</div>
+
+
 ```{figure} /images/figura2a.jpg
 :height: 150px
 :name: figura2
