@@ -78,13 +78,6 @@ x(0)=0.12~~\frac{dx}{dt}(0)=0
 \end{eqnarray}
 ```
 
-```{figure} /images/Imagen2.png   
-:height: 350px
-:name: figura3
-
-
-```
-
 ```{math}
 :label: RLCeq2
 \begin{equation}
