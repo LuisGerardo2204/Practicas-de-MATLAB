@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Práctica 1 &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <title>Práctica 1: Primeros pasos &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
   
@@ -35,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/myfile-checkpoint.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -68,8 +70,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica1';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Práctica 2" href="Practica2.html" />
-    <link rel="prev" title="Software MATLAB" href="SoftwareMATLAB.html" />
+    <link rel="next" title="Práctica 2: Archivos de programa y funciones" href="Practica2.html" />
+    <link rel="prev" title="Breve introducción a MATLAB" href="SoftwareMATLAB.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -161,9 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="SoftwareMATLAB.html">Software MATLAB</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SoftwareMATLAB.html">Breve introducción a MATLAB</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 1: Primeros pasos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Archivos de programa y funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Sentencias de control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -301,7 +304,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Práctica 1</h1>
+    <h1>Práctica 1: Primeros pasos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -326,17 +329,32 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-1">
-<h1>Práctica 1<a class="headerlink" href="#practica-1" title="Permalink to this heading">#</a></h1>
-<p>En esta práctica se utilizan comandos básicos de MATLAB y un ejemplo sencillo de solución de un sistema de ecuaciones, utilizando matrices.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-1-primeros-pasos">
+<h1>Práctica 1: Primeros pasos<a class="headerlink" href="#practica-1-primeros-pasos" title="Permalink to this heading">#</a></h1>
+<p>En esta práctica se utilizan comandos básicos de MATLAB y un ejemplo sencillo de solución de un sistema de ecuaciones, utilizando matrices. Las instrucciones que se tratan en esta sección se introducen en el command window (ver <a class="reference internal" href="#figura11"><span class="std std-numref">Figura 6</span></a>) de la interfaz principal de MATLAB.</p>
+<figure class="align-center" id="figura11">
+<a class="reference internal image-reference" href="_images/figura2a.jpg"><img alt="_images/figura2a.jpg" src="_images/figura2a.jpg" style="height: 250px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 6 </span><span class="caption-text">Ventana de comandos (Command window)</span><a class="headerlink" href="#figura11" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <section id="operaciones-y-comandos-basicos">
 <h2>Operaciones y comandos básicos<a class="headerlink" href="#operaciones-y-comandos-basicos" title="Permalink to this heading">#</a></h2>
 <p>A continuacion se enlistan los comandos básicos que se usan comunmente en la ventana de comandos (command window) de MATLAB.</p>
-<p>1.-Limpiar pantalla de comandos: &gt;&gt;clc</p>
-<p>2.-Limpiar las variables almacenadas en memoria: &gt;&gt;clear</p>
-<p>3.-Despliegue de información de las variables: &gt;&gt;whos</p>
-<p>4.-Cerrar todas las gráficas de datos: &gt;&gt;close all
-En MATLAB, tanto en la ventana de comandos como en el editor de textos, el símbolo de porcentaje «%» se utiliza para escribir comentarios.</p>
+<p>1.-Limpiar pantalla de comandos: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;clc</span></code></p>
+<p>2.-Limpiar las variables almacenadas en memoria: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;clear</span></code></p>
+<p>3.-Despliegue de información de las variables: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;whos</span></code></p>
+<p>4.-Cerrar todas las gráficas de datos: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;close</span> <span class="pre">all</span></code></p>
+<p>En MATLAB, tanto en la ventana de comandos como en el editor de textos, el símbolo de porcentaje «%» se utiliza para escribir comentarios.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Es posible copiar el código directamente de este cuadernillo y pegarlo en el command window de MATLAB, en el editor de MATLAB o cualquier otro editor de texto, utilizando la opción de copiar al portapapeles, disponible en cada recuadro con código escrito.</p>
+</div>
+ <div align='center'>
+<video controls autoplay muted="true" loop="true" width="400">
+    <source src="./_static/videos/copia_codigo.mp4 " type="video/mp4">
+</video>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">=</span><span class="mi">3</span><span class="w"> </span><span class="c">%Asignación del valor 3 a la variable a</span>
@@ -347,15 +365,15 @@ En MATLAB, tanto en la ventana de comandos como en el editor de textos, el símb
 <div class="output text_html"><html><body><pre>a = 3</pre></body></html></div></div>
 </div>
 <p>Como se puede observar en la salida, el comentario al lado de la instrucción a=3 no se despliega
-en la ventana de comandos. Para desplegar texto en el command window se usa la función interna de MATLAB disp(«mensaje»). A continuación se presentan ejemplos de los resultados del uso de comandos
+en la ventana de comandos. Para desplegar texto en el command window se usa la función interna de MATLAB <code class="docutils literal notranslate"><span class="pre">disp(&quot;mensaje&quot;)</span></code>. A continuación se presentan ejemplos de los resultados del uso de comandos
 y operaciones comunes en MATLAB:</p>
-<p>1.- Creación de variables y asignación de valores numéricos: a=3;b=45;</p>
-<p>2.- Multiplicación: a*b</p>
-<p>3.- Suma: a+b</p>
-<p>4.- Resta: a-b</p>
-<p>5.-División: a/b</p>
-<p>6.-Potencia: a^b (a elevado a la potencia b)</p>
-<p>7.- Raiz cuadrada: sqrt(b)</p>
+<p>1.- Creación de variables y asignación de valores numéricos: <code class="docutils literal notranslate"><span class="pre">a=3;b=45;</span></code></p>
+<p>2.- Multiplicación: <code class="docutils literal notranslate"><span class="pre">a*b</span></code></p>
+<p>3.- Suma: <code class="docutils literal notranslate"><span class="pre">a+b</span></code></p>
+<p>4.- Resta: <code class="docutils literal notranslate"><span class="pre">a-b</span></code></p>
+<p>5.-División:<code class="docutils literal notranslate"><span class="pre">a/b</span></code></p>
+<p>6.-Potencia: <code class="docutils literal notranslate"><span class="pre">a^b</span></code> (a elevado a la potencia b)</p>
+<p>7.- Raiz cuadrada: <code class="docutils literal notranslate"><span class="pre">sqrt(b)</span></code></p>
 <p>Para reprodicir estas operaciones, se puede copiar y pegar el conjunto de instrucciones siguiente en el command wondow de MATLAB.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -453,7 +471,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 </div>
 <p>La fórmula para la conversión de grados Centígrados a Farenheit es:</p>
 <div class="math notranslate nohighlight" id="equation-conv-grados">
-<span class="eqno">(3)<a class="headerlink" href="#equation-conv-grados" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(1)<a class="headerlink" href="#equation-conv-grados" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    °F=\frac{9}{5}°C+32
  \end{equation}\]</div>
 <p>En MATLAB, la operación se realiza en el vector completo.</p>
@@ -518,7 +536,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 </div>
 </div>
 </div>
-<p>Se hace la conversión a grados Farenheit como en el caso anterior, usando la Ecuación <a class="reference internal" href="#equation-conv-grados">(3)</a></p>
+<p>Se hace la conversión a grados Farenheit como en el caso anterior, usando la Ecuación <a class="reference internal" href="#equation-conv-grados">(1)</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="p">=(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span>
@@ -536,7 +554,7 @@ y la variable dependiente separadas por una coma</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6c7673e9fffbc3e4236e8cfa44370284542f3c051d1c7e47d91c17bdd3f6e56d.png" src="_images/6c7673e9fffbc3e4236e8cfa44370284542f3c051d1c7e47d91c17bdd3f6e56d.png" />
+<img alt="_images/0668a564bcec35fb783e34ca896eca7db8116ed150365b002935e04611c6ff8e.png" src="_images/0668a564bcec35fb783e34ca896eca7db8116ed150365b002935e04611c6ff8e.png" />
 </div>
 </div>
 </section>
@@ -545,8 +563,8 @@ y la variable dependiente separadas por una coma</p>
 <p>Para generar la gráfica de una función en MATLAB, se crean dos vectores; uno con la variable independiente y
 un segundo con la variable independiente, por ejemplo, para gráficar la función del tiempo,
 expresada en la ecuación siguiente:</p>
-<div class="math notranslate nohighlight" id="equation-conv-grados">
-<span class="eqno">(3)<a class="headerlink" href="#equation-conv-grados" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<div class="math notranslate nohighlight" id="equation-func-exp">
+<span class="eqno">(2)<a class="headerlink" href="#equation-func-exp" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
 \nonumber
    y(t)=e^{-1.5t}cos(11.35t)
  \end{equation}\]</div>
@@ -576,15 +594,15 @@ constante o escalares</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/338e99547f86e07565a59295f2bcf95ab05ecf70d00f3c1db5f00cb655ceac7d.png" src="_images/338e99547f86e07565a59295f2bcf95ab05ecf70d00f3c1db5f00cb655ceac7d.png" />
+<img alt="_images/52d669c17067b2cfbcaf16c45bfdff9985bbcb58b0edd25f7f3b1cf400b7e413.png" src="_images/52d669c17067b2cfbcaf16c45bfdff9985bbcb58b0edd25f7f3b1cf400b7e413.png" />
 </div>
 </div>
 </section>
 <section id="resolver-un-sistema-de-ecuaciones-usando-matlab">
 <h2>Resolver un sistema de ecuaciones usando MATLAB<a class="headerlink" href="#resolver-un-sistema-de-ecuaciones-usando-matlab" title="Permalink to this heading">#</a></h2>
-<p>El siguiente ejemplo muestra como utilizar MATLAB para resolver un sistema de ecuaciones de tres incógnitas. Considere el sistema de tres ecuaciones con tres incógnitas de la Ecuación <a class="reference internal" href="#equation-uno">(4)</a></p>
+<p>El siguiente ejemplo muestra como utilizar MATLAB para resolver un sistema de ecuaciones de tres incógnitas. Considere el sistema de tres ecuaciones con tres incógnitas de la Ecuación <a class="reference internal" href="#equation-uno">(3)</a></p>
 <div class="math notranslate nohighlight" id="equation-uno">
-<span class="eqno">(4)<a class="headerlink" href="#equation-uno" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(3)<a class="headerlink" href="#equation-uno" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
 	3x+2y-5z=10\\
     x+0.5y+3z=5\\
     -2x+7y-3z=-2
@@ -674,7 +692,7 @@ B=\begin{bmatrix}
 </div>
 <p>De manera que el valor numérico de las variables es:</p>
 <div class="math notranslate nohighlight" id="equation-dos">
-<span class="eqno">(5)<a class="headerlink" href="#equation-dos" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(4)<a class="headerlink" href="#equation-dos" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
 	x= 3.4097 \\
     y= 0.8546\\
     z=0.3877
@@ -751,7 +769,7 @@ B=\begin{bmatrix}
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Software MATLAB</p>
+        <p class="prev-next-title">Breve introducción a MATLAB</p>
       </div>
     </a>
     <a class="right-next"
@@ -759,7 +777,7 @@ B=\begin{bmatrix}
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Práctica 2</p>
+        <p class="prev-next-title">Práctica 2: Archivos de programa y funciones</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

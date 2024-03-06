@@ -13,7 +13,7 @@ kernelspec:
   name: Octave
 ---
 
-# Software MATLAB
+# Breve introducción a MATLAB
 
 Para empezar con este cuadernillo de prácticas, empezaremos por definir el software MATLAB usando la definición dada por Moore {cite:t}`Moore2007`: ``MATLAB es una de las muchas sofisticadas herramientas de computación disponibles
 en el comercio para resolver problemas de matemáticas, tales como Maple, Mathematica y MathCad... El nombre mismo de MATLAB es una abreviatura de Matrix Laboratory, laboratorio matricial``
@@ -31,16 +31,7 @@ Las funciones y operaciones básicas, así como los cálculos con fórmulas comp
 ```{code-cell} Octave
 :tags: [remove-stderr]
 2^3
-area_circulo(2)
-area_circulo(8)
 ```
-
-```{note}
-<div align='justify'>
-Es posible copiar el código directamente de este cuadernillo y pegarlo en el command window de MATLAB.
-</div>
-```
-
 
 Las sub-ventanas principales son las mostradas en las Figuras: {numref}`figura2`, {numref}`fig3`, {numref}`figura4` y {numref}`figura5`.
 
@@ -75,32 +66,48 @@ Area de inicio general de MATLAB (Home)
 
 ```
 
-## Las ecuaciones se introducen de la siguiente manera
+## Operaciones matemáticas comunes
 
-```{math}
-:label: eq1
-\begin{eqnarray}
-\dot{x}_1&=-\frac{R}{L}x_1-\frac{1}{L}x_2+\frac{1}{L}V_s\\
-\dot{x}_2&=\frac{1}{C}x_1-\frac{1}{C}I_{R_L}(x_2)
-\end{eqnarray}
-```
-## Y las tablas así:
-
-```{list-table} Tabla de parámetros
+```{list-table} Operaciones matemáticas 
 :header-rows: 1
-:name: Tabla 1
-* - Parameter
-  - Value
-* - $$I_s$$
-  - $$0.0015sin(100\pi t)~[A]$$
-* - $$R$$
-  - $$220~[\Omega]$$
-* - $$L$$  
-  - $$11.5~[H]$$ 
-* - $$C$$ 
-  - $$1~\mu [F]$$
-* - $$R_L$$
-  - $$1000~[\Omega]$$
+:name: Tabla 01
+* - Sintaxis
+  - Resultado
+* - `sqrt(x)`
+  -  calcula la raiz cuadrada de x
+* - `abs(x)`
+  - calcula el valor absoluto de x
+* - `nthroot(x)`
+  -  calcula la n-ésima raiz de x
+* - `sign(x)`
+  -  regresa el signo de x, -1 si x es negativo, 0 si x es igual a 0 y 1 si x es positivo
+* - `exp(x)`
+  - calcula la exponencial de x, $e^{x}$
+* - `log(x)`
+  - calcula el logaritmo natural de x
+* - `log10(x)`
+  - calcula el coseno inverso de x, devuelve un ángulo en radianes, x debe estar entre -1 y 1
+* - `round(x)`
+  - calcula el logaritmo base 10 de x  
+```
+
+
+
+```{list-table} Operaciones matemáticas con funciones trigonométricas
+:header-rows: 1
+:name: Tabla 02
+* - Sintaxis
+  - Resultado
+* - `sin(x)`
+  - calcula el seno de x, con x en radianes
+* - `cos(x)`
+  - calcula el coseno de x, con x en radianes
+* - `tan(x)`
+  - calcula la tangente de x, con x en radianes 
+* - `asin(x)`
+  - calcula el seno inverso de x, devuelve un ángulo en radianes, x debe estar entre -1 y 1
+* - `acos(x)`
+  - calcula el coseno inverso de x, devuelve un ángulo en radianes, x debe estar entre -1 y 1
 ```
 
 

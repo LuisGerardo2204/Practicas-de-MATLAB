@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Práctica 2 &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <title>Práctica 2: Archivos de programa y funciones &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
   
@@ -35,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/myfile-checkpoint.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -68,8 +70,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica2';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
-    <link rel="prev" title="Práctica 1" href="Practica1.html" />
+    <link rel="next" title="Práctica 3: Sentencias de control" href="Practica3.html" />
+    <link rel="prev" title="Práctica 1: Primeros pasos" href="Practica1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -161,9 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="SoftwareMATLAB.html">Software MATLAB</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SoftwareMATLAB.html">Breve introducción a MATLAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Primeros pasos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 2: Archivos de programa y funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Sentencias de control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -301,7 +304,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Práctica 2</h1>
+    <h1>Práctica 2: Archivos de programa y funciones</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -325,9 +328,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-2">
-<h1>Práctica 2<a class="headerlink" href="#practica-2" title="Permalink to this heading">#</a></h1>
-<p>En esta práctica se presenta el procedimiento para generar funciones personalizadas y programas. MATLAB cuenta con un basto repertorio de funciones y operaciones nativas como las que se utilizaron en la práctica pasada. Cuando re requiere ejecutar un conjunto de instrucciones en particular de manera repetida, que no se encuentre entre las que ofrece MATLAB, se debe crear una función o programa. Las diferencias entre programas y funciones son las siguientes:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-2-archivos-de-programa-y-funciones">
+<h1>Práctica 2: Archivos de programa y funciones<a class="headerlink" href="#practica-2-archivos-de-programa-y-funciones" title="Permalink to this heading">#</a></h1>
+<p>En esta práctica se presenta el procedimiento para generar funciones personalizadas y programas. MATLAB cuenta con un basto repertorio de funciones y operaciones nativas como las que se utilizaron en la práctica pasada. Cuando re requiere ejecutar un conjunto de instrucciones en particular de manera repetida, que no se encuentre entre las que ofrece MATLAB, se debe crear una función o programa.</p>
+<div class="admonition-caracteristicas-de-las-funciones-y-los-programas admonition">
+<p class="admonition-title">Características de las funciones y los programas</p>
+<p>Las diferencias entre programas y funciones son las siguientes:</p>
+<ul class="simple">
+<li><p><strong>Los programas</strong> son secuencias de istrucciones, algunas de ellas pueden ser repetidas varias veces dentro de la secuencia. Se invocan escribiendo el nombre del archivo en el que se encuentran en la ventana de comandos.</p></li>
+<li><p><strong>Las funciones</strong> son secuencias de instrucciones que entregan alguna o varias salidas y requieren parámetros de entrada con los cuales trabajar o procesar. Se invocan usando el nombre con el que se guardaron, el resultado o resultados que entregan se almacena en alguna o algunas variables, por ejemplo: <code class="docutils literal notranslate"><span class="pre">a=area_circulo(2);</span></code>, esta instrucción calculará el radio de un circulo de radio 2.</p></li>
+</ul>
+</div>
 <section id="seleccion-de-la-carpeta-de-trabajo">
 <h2>Selección de la carpeta de trabajo<a class="headerlink" href="#seleccion-de-la-carpeta-de-trabajo" title="Permalink to this heading">#</a></h2>
 <p>Con el fin de tener orden en las programas y funciones que se crean con fines específicos, es recpmendable crear una carpeta
@@ -417,10 +428,10 @@ Tanto las funciones como los programas almacenados en archivos con extensión .m
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 12.566
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =  12.566
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 201.06
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =  201.06
 </pre></div>
 </div>
 </div>
@@ -465,15 +476,15 @@ Tanto las funciones como los programas almacenados en archivos con extensión .m
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Práctica 1</p>
+        <p class="prev-next-title">Práctica 1: Primeros pasos</p>
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="Practica3.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Práctica 3: Sentencias de control</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

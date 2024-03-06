@@ -12,9 +12,16 @@ kernelspec:
   language: Octave
   name: Octave
 ---
- # Práctica 2
+ # Práctica 2: Archivos de programa y funciones
 
- En esta práctica se presenta el procedimiento para generar funciones personalizadas y programas. MATLAB cuenta con un basto repertorio de funciones y operaciones nativas como las que se utilizaron en la práctica pasada. Cuando re requiere ejecutar un conjunto de instrucciones en particular de manera repetida, que no se encuentre entre las que ofrece MATLAB, se debe crear una función o programa. Las diferencias entre programas y funciones son las siguientes:
+ En esta práctica se presenta el procedimiento para generar funciones personalizadas y programas. MATLAB cuenta con un basto repertorio de funciones y operaciones nativas como las que se utilizaron en la práctica pasada. Cuando re requiere ejecutar un conjunto de instrucciones en particular de manera repetida, que no se encuentre entre las que ofrece MATLAB, se debe crear una función o programa. 
+
+```{admonition} Características de las funciones y los programas
+Las diferencias entre programas y funciones son las siguientes:
+* **Los programas** son secuencias de istrucciones, algunas de ellas pueden ser repetidas varias veces dentro de la secuencia. Se invocan escribiendo el nombre del archivo en el que se encuentran en la ventana de comandos.
+
+* **Las funciones** son secuencias de instrucciones que entregan alguna o varias salidas y requieren parámetros de entrada con los cuales trabajar o procesar. Se invocan usando el nombre con el que se guardaron, el resultado o resultados que entregan se almacena en alguna o algunas variables, por ejemplo: `a=area_circulo(2);`, esta instrucción calculará el radio de un circulo de radio 2.
+```
 
 ## Selección de la carpeta de trabajo
 
