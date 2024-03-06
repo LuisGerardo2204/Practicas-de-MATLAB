@@ -71,6 +71,8 @@ Area de la carpeta activa
     <source src="./_static/videos/cambio_dir.mp4 " type="video/mp4">
 </video>
 </div>
+
+
 ```{math}
 :label: eq2
 \begin{eqnarray}
