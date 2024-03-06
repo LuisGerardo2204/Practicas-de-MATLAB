@@ -46,25 +46,29 @@ Las sub-ventanas principales son las mostradas en las Figuras: {numref}`figura2`
 
 
 ```{figure} /images/figura2a.jpg
+:align: left
 :height: 150px
 :name: figura2
-Area de la carpeta activa
+Ventana de comandos (Command window)
 ```
 ```{figure} /images/figura2b.jpg
+:align: right
 :height: 150px
 :name: fig3
-Area de la carpeta activa
+Area del espacio de trabajo (Workspace)
 ```
 
 ```{figure} /images/figura3b.jpg
-:height: 100px
+:align: left
+:height: 150px
 :name: figura4
-Area de la carpeta activa
+Area de la carpeta activa (Current folder)
 ```
 ```{figure} /images/figura3c.jpg
+:align: right
 :height: 150px
 :name: figura5
-Area de la carpeta activa
+Area de la inicio (Home)
 ```
 <div align='center'>
 <video controls autoplay muted="true" loop="true" width="800">
