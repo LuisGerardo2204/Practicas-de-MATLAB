@@ -63,6 +63,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica2';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
@@ -387,7 +389,9 @@ de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpet
 <video controls autoplay muted="true" loop="true" width="800">
     <source src="./_static/videos/crea_func.mp4 " type="video/mp4">
 </video>
-</div><div class="cell tag_remove-output docutils container">
+</div>
+<p>Una función se diferencia de un programa por que tiene la característica de solicitar variables de entrada, en el caso de este ejemplo, el parámetro de entrada o argumento es el radio y la salida es la multiplicación de este valor al cuadrado por la constante <span class="math notranslate nohighlight">\(\pi\)</span>, que en MATLAB está almacenada en una variable propia llamada pi.</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span>a<span class="p">=</span><span class="nf">area_circulo</span><span class="p">(</span>radio<span class="p">)</span>
 <span class="n">a</span><span class="p">=</span><span class="nb">pi</span><span class="o">*</span><span class="p">(</span><span class="n">radio</span>^<span class="mi">2</span><span class="p">);</span>
@@ -396,18 +400,29 @@ de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpet
 </div>
 </div>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Información importante</p>
+<div align='justify'>
+Tanto las funciones como los programas almacenados en archivos con extensión .m se pueden invocar o mandar llamar desde otras funciones o programas.
+</div>
+</div>
 <div class="cell tag_remove-stderr docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">radio</span><span class="p">=</span><span class="mi">2</span><span class="p">;</span>
-<span class="n">a</span><span class="p">=</span><span class="nb">area</span><span class="p">(</span><span class="n">radio</span><span class="p">)</span>
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">%Programa de prueba</span>
+<span class="n">radio1</span><span class="p">=</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">radio2</span><span class="p">=</span><span class="mi">8</span><span class="p">;</span>
+<span class="n">area_circulo</span><span class="p">(</span><span class="n">radio1</span><span class="p">)</span>
+<span class="n">area_circulo</span><span class="p">(</span><span class="n">radio2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = -40.490
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 12.566
 </pre></div>
 </div>
-<img alt="_images/a0b19362b262c9c5be7da6026a94f7edf9bce13ab20d5882c7966c287e51ffec.png" src="_images/a0b19362b262c9c5be7da6026a94f7edf9bce13ab20d5882c7966c287e51ffec.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 201.06
+</pre></div>
+</div>
 </div>
 </div>
 </section>

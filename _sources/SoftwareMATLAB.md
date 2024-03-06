@@ -69,25 +69,10 @@ Area de la carpeta activa (Current folder)
 :height: 150px
 :name: figura5
 Area de la inicio (Home)
+
 ```
 
 
-```{math}
-:label: eq2
-\begin{eqnarray}
-2\frac{d^2x}{dt^2}+3.5\frac{dx}{dt}+500x&=1+3sen(100\pi x)\\
-x(0)=0.12~~\frac{dx}{dt}(0)=0
-\end{eqnarray}
-```
-
-```{math}
-:label: RLCeq2
-\begin{equation}
-    L\frac{di}{dt}+Ri+\frac{1}{C}\int_{}^{} i dt= V_{s} 
-\end{equation}
-```
-
-Circuito RLC
 
 ## Las ecuaciones se introducen de la siguiente manera
 
