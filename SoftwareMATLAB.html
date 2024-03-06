@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Software MATLAB &#8212; Métodos de Runge-Kutta para la solución de ecuaciones diferenciales</title>
+    <title>Software MATLAB &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
   
@@ -344,13 +344,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =  8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 8
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =  12.566
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 12.566
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =  201.06
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 201.06
 </pre></div>
 </div>
 </div>
@@ -391,22 +391,20 @@ Es posible copiar el código directamente de este cuadernillo y pegarlo en el co
     <source src="./_static/videos/cambio_dir.mp4 " type="video/mp4">
 </video>
 </div>
-```{math}
-:label: eq2
-\begin{eqnarray}
-2\frac{d^2x}{dt^2}+3.5\frac{dx}{dt}+500x&=1+3sen(100\pi x)\\
+<div class="math notranslate nohighlight" id="equation-eq2">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eq2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+2\frac{d^2x}{dt^2}+3.5\frac{dx}{dt}+500x&amp;=1+3sen(100\pi x)\\
 x(0)=0.12~~\frac{dx}{dt}(0)=0
-\end{eqnarray}
-```
+\end{eqnarray}\end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-rlceq2">
-<span class="eqno">(1)<a class="headerlink" href="#equation-rlceq2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+<span class="eqno">(2)<a class="headerlink" href="#equation-rlceq2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
     L\frac{di}{dt}+Ri+\frac{1}{C}\int_{}^{} i dt= V_{s} 
 \end{equation}\]</div>
 <p>Circuito RLC</p>
 <section id="las-ecuaciones-se-introducen-de-la-siguiente-manera">
 <h2>Las ecuaciones se introducen de la siguiente manera<a class="headerlink" href="#las-ecuaciones-se-introducen-de-la-siguiente-manera" title="Permalink to this heading">#</a></h2>
 <div class="math notranslate nohighlight" id="equation-eq1">
-<span class="eqno">(2)<a class="headerlink" href="#equation-eq1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+<span class="eqno">(3)<a class="headerlink" href="#equation-eq1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
 \dot{x}_1&amp;=-\frac{R}{L}x_1-\frac{1}{L}x_2+\frac{1}{L}V_s\\
 \dot{x}_2&amp;=\frac{1}{C}x_1-\frac{1}{C}I_{R_L}(x_2)
 \end{eqnarray}\end{split}\]</div>
