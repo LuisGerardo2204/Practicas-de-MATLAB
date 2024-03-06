@@ -70,11 +70,6 @@ Area de la carpeta activa (Current folder)
 :name: figura5
 Area de la inicio (Home)
 ```
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="800">
-    <source src="./_static/videos/cambio_dir.mp4 " type="video/mp4">
-</video>
-</div>
 
 
 ```{math}
