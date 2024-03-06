@@ -309,6 +309,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-la-carpeta-de-trabajo">Selección de la carpeta de trabajo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-programas">Creación de programas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-funciones">Creación de funciones</a></li>
 </ul>
@@ -325,13 +326,26 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="practica-2">
 <h1>Práctica 2<a class="headerlink" href="#practica-2" title="Permalink to this heading">#</a></h1>
 <p>En esta práctica se presenta el procedimiento para generar funciones personalizadas y programas. MATLAB cuenta con un basto repertorio de funciones y operaciones nativas como las que se utilizaron en la práctica pasada. Cuando re requiere ejecutar un conjunto de instrucciones en particular de manera repetida, que no se encuentre entre las que ofrece MATLAB, se debe crear una función o programa. Las diferencias entre programas y funciones son las siguientes:</p>
+<section id="seleccion-de-la-carpeta-de-trabajo">
+<h2>Selección de la carpeta de trabajo<a class="headerlink" href="#seleccion-de-la-carpeta-de-trabajo" title="Permalink to this heading">#</a></h2>
+<p>Con el fin de tener orden en las programas y funciones que se crean con fines específicos, es recpmendable crear una carpeta
+de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpeta en especiífico, se debe seguir el procedimiento que se muestra en el video siguiente:</p>
+<div align='center'>
+<video controls autoplay muted="true" loop="true" width="800">
+    <source src="./_static/videos/cambio_dir.mp4 " type="video/mp4">
+</video>
+</div>
+</section>
 <section id="creacion-de-programas">
 <h2>Creación de programas<a class="headerlink" href="#creacion-de-programas" title="Permalink to this heading">#</a></h2>
+<p>Un programa en MATLAB es un conjunto de instrucciones que se escriben como una secuencia de pasos para lograr un determinado objetivo. Dichas instrucciones se almacenan en un archivo de texto. El archivo generado tendrá la extensión .m, lo que le permite a MATLAB identificar que se trata de un conjunto de instrucciones o sentencias ejecutables en el command window de manera automática. El programa o conjunto de intrucciones se genera usando la pestaña nombrada editor, en el siguiente video se muestra el procedimiento para escribir un programa:</p>
  <div align='center'>
 <video controls autoplay muted="true" loop="true" width="800">
     <source src="./_static/videos/crea_script.mp4 " type="video/mp4">
 </video>
-</div><div class="cell tag_remove-output docutils container">
+</div>
+<p>El código utilizado en el programa del video es el que se muestra a continuación:</p>
+<div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span> <span class="c">%Limpia todas la variables</span>
 <span class="nb">clc</span> <span class="c">%Limpia la ventana de comandos</span>
@@ -364,6 +378,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Este programa en particular no realiza ninguna tarea en específico, simplemente fue creado como ejemplo, recopilando las instrucciones básicas vistas en la Práctica 1.</p>
 </section>
 <section id="creacion-de-funciones">
 <h2>Creación de funciones<a class="headerlink" href="#creacion-de-funciones" title="Permalink to this heading">#</a></h2>
@@ -389,7 +404,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = -40.894
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = -40.490
 </pre></div>
 </div>
 <img alt="_images/a0b19362b262c9c5be7da6026a94f7edf9bce13ab20d5882c7966c287e51ffec.png" src="_images/a0b19362b262c9c5be7da6026a94f7edf9bce13ab20d5882c7966c287e51ffec.png" />
@@ -465,6 +480,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-la-carpeta-de-trabajo">Selección de la carpeta de trabajo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-programas">Creación de programas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-funciones">Creación de funciones</a></li>
 </ul>
