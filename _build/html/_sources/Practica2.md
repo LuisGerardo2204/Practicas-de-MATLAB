@@ -70,7 +70,6 @@ X=inv(A)*B'%B' Significa transpuesta
 
 A(1,3)%Acceder a la localidad Fila=1 Columna=3
 A(2,3)%Acceder a la localidad Fila=2 Columna=3
-
 ```
 Este programa en particular no realiza ninguna tarea en específico, simplemente fue creado como ejemplo, recopilando las instrucciones básicas vistas en la Práctica 1.
 
@@ -84,20 +83,33 @@ El procedimiento para generar funciones se presenta en el siguiente video:
 </video>
 </div>
 
+Una función se diferencia de un programa por que tiene la característica de solicitar variables de entrada, en el caso de este ejemplo, el parámetro de entrada o argumento es el radio y la salida es la multiplicación de este valor al cuadrado por la constante $\pi$, que en MATLAB está almacenada en una variable propia llamada pi.
+
+
 
 ```{code-cell} Octave
 :tags: [remove-output]
-
 function a=area_circulo(radio)
 a=pi*(radio^2);
 end
-
 ```
+
+`````{admonition} Información importante
+:class: tip
+<div align='justify'>
+Tanto las funciones como los programas almacenados en archivos con extensión .m se pueden invocar o mandar llamar desde otras funciones o programas.
+</div>
+`````
 
 ```{code-cell} Octave
 :tags: [remove-stderr]
-
-radio=2;
-a=area(radio)
-
+%Programa de prueba
+radio1=2;
+radio2=8;
+area_circulo(radio1)
+area_circulo(radio2)
 ```
+
+
+
+

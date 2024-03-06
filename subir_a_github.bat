@@ -1,4 +1,4 @@
-cp -r milibro/* Practicas-de-MATLAB   
+ cp -r milibro/* Practicas-de-MATLAB 
 cd Practicas-de-MATLAB
 git add ./*
 git commit -m "Subiendo a GitHub"
