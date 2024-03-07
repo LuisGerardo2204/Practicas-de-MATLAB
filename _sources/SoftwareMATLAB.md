@@ -37,14 +37,12 @@ Las sub-ventanas principales son las mostradas en las Figuras: {numref}`figura2`
 
 
 ```{figure} /images/figura2a.jpg
-:align: left
 :height: 150px
 :name: figura2
 Ventana de comandos (Command window)
 
 ```
 ```{figure} /images/figura2b.jpg
-:align: right
 :height: 150px
 :name: fig3
 Area del espacio de trabajo (Workspace)
@@ -52,14 +50,12 @@ Area del espacio de trabajo (Workspace)
 ```
 
 ```{figure} /images/figura3b.jpg
-:align: left
 :height: 150px
 :name: figura4
 Area de la carpeta activa (Current folder)
 
 ```
 ```{figure} /images/figura3c.jpg
-:align: right
 :height: 150px
 :name: figura5
 Area de inicio general de MATLAB (Home)
