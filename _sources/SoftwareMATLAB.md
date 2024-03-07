@@ -50,7 +50,7 @@ Area del espacio de trabajo (Workspace)
 ```
 
 ```{figure} /images/figura3b.jpg
-:height: 150px
+:height: 120px
 :name: figura4
 Area de la carpeta activa (Current folder)
 
