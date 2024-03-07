@@ -291,7 +291,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -307,6 +309,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-de-elementos-en-un-conjunto-de-datos-que-cumplen-con-cierto-criterio">Búsqueda de elementos en un conjunto de datos que cumplen con cierto criterio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficacion-de-funciones-continuas-a-pedazos">Graficación de funciones continuas a pedazos</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -320,6 +331,87 @@ document.write(`
 <h1>Práctica 3: Sentencias de control<a class="headerlink" href="#practica-3-sentencias-de-control" title="Permalink to this heading">#</a></h1>
 <p>En las secciones pasadas se trató el tema de la elaboración de secuencias de istrucciones en forma de un archivo de extensión .m para su ejecución repetida sin necesidad de duplicar el trabajo de volverlas a escribir. Por otra parte se desarrollaron funciones para poder invocarlas o reutilizarlas como fórmulas matemáticas destinadas a obtener resultados de manera recurrente, una vez más sin a necesidad de duplicar código.</p>
 <p>En esta práctica, analizaremos las secuencias de control. Las secuencias de control permiten al usuario tener un criterio de desición sobre que conjunto de instrucciones realizar, en base a necesidades o condiciones específicas, en vez de ejecutar todas las instrucciones de manera secuencial.</p>
+<p>Las estructuras de repetición se utilizan en ingeniería para realizar procesos que se conocen como iterativos, para poderlas aplicar de una manera eficiente a la solución de problemas, se depende de opradores que relacionan variables para tomar decisiones en base a su comparación, estas deciciones a menudo sirven para controlar el programa e incluso terminarlo.</p>
+<p>Las operaciones de comparación son básicas para lograr el objetivo antes mencionado. La mayoría de los lenguajes de programación usan el variables booleanas, «1» lógico para verdadero (TRUE) y  «0» lógico para falso (FALSE). En MATLAB, cualquier número diferente de sero indica una condición booleana de verdadero.</p>
+<p>Por ejemplo, sean dos variables a=5 y b=10, la comparacion entre sus valores numéricos se hace en MATLAB como sigue:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Primero se declaran las variables</span>
+<span class="n">a</span><span class="p">=</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">b</span><span class="p">=</span><span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Después se hace la comparación usando los operadores de comparación nativos de MATLAB. La respuesta a la pregunta:
+¿Es a menor que b? se responde con la instrucción:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">&lt;</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = logical
+   1
+</pre></body></html></div></div>
+</div>
+<p>Mientras que la respuesta a la pregunta: ¿Es a mayor que b? se responde con la instrucción:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = logical
+   0
+</pre></body></html></div></div>
+</div>
+<p>En los resultados anteriores se comprueba que las condiciones de salida son verdadero y falso como respuesta a cada una de las dos preguntas. Las condiciones de comparación se pueden extender fácilmente a variables del tipo arreglo o vector, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">x</span><span class="p">=[</span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="p">];</span>
+<span class="n">y</span><span class="p">=[</span><span class="mi">3</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">4</span><span class="p">];</span>
+<span class="n">y</span><span class="o">&gt;</span><span class="n">x</span><span class="w"> </span>
+<span class="n">w</span><span class="o">&lt;</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 1x5 logical array
+   1   1   0   0   0
+</pre></body></html></div><div class="output text_html"><html><body><pre>ans = 1x5 logical array
+   1   1   1   0   1
+</pre></body></html></div></div>
+</div>
+<p>Como se observa en los resultados anteriores, el operador de comparación entrega un arreglo con la misma cantidad de localidades que los dos arreglos que estan bajo comparación. Por ejemplo, cuando se compara al arreglo y con el arreglo x, se observa que 3&gt;2, por lo tanto, la primera comparación es verdadera, resultando en un «1» lógico en la primera localidad de la respuesta, minetras que 1&lt;5, resultando un cero en la localidad 4 del arreglo de respuesta.</p>
+<p>Es posible combinar las comparaciones con otros operadores lógicos como AND y OR:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">w</span><span class="o">&lt;</span><span class="n">x</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">y</span><span class="o">&gt;</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 1x5 logical array
+   1   0   0   0   0
+</pre></body></html></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">w</span><span class="o">&lt;</span><span class="n">y</span><span class="p">)</span><span class="o">|</span><span class="p">(</span><span class="n">x</span><span class="o">&gt;</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 1x5 logical array
+   1   1   1   1   1
+</pre></body></html></div></div>
+</div>
+<p>El resultado de la combinación de comparaciones es un arreglo que obedece al criterio establecido por el operador
+comparación y el relacional lógico, por ejemplo para la instrucción <code class="docutils literal notranslate"><span class="pre">(w&lt;x)&amp;(y&gt;x)</span></code> sucede de que 1&lt;3 y  a la vez 3&gt;2, esto es la localidad uno del arreglo «w» es menor que la localidad uno del arreglo «x» y a la vez se cumple que la localidad uno del arreglo «y» es mayor que la localidad uno del arreglo «x».</p>
 <p>Los operadores relacionales son los siguientes:</p>
 <table class="table" id="tabla-2">
 <caption><span class="caption-number">Tabla 3 </span><span class="caption-text">Operadores que relacionan variables</span><a class="headerlink" href="#tabla-2" title="Enlace permanente a esta tabla">#</a></caption>
@@ -349,6 +441,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
+<p>Mientras que los operadores lógicos son:</p>
 <table class="table" id="tabla-3">
 <caption><span class="caption-number">Tabla 4 </span><span class="caption-text">Operadores lógicos</span><a class="headerlink" href="#tabla-3" title="Enlace permanente a esta tabla">#</a></caption>
 <thead>
@@ -371,10 +464,136 @@ document.write(`
 </tr>
 </tbody>
 </table>
+<section id="busqueda-de-elementos-en-un-conjunto-de-datos-que-cumplen-con-cierto-criterio">
+<h2>Búsqueda de elementos en un conjunto de datos que cumplen con cierto criterio<a class="headerlink" href="#busqueda-de-elementos-en-un-conjunto-de-datos-que-cumplen-con-cierto-criterio" title="Permalink to this heading">#</a></h2>
+<p>En MATLAB existe una instrucción especial denominada <code class="docutils literal notranslate"><span class="pre">find()</span></code>, esta instrucción especial busca entre los elementos de un arreglo los elementos que cumplen con un criterio especificado en entre paréntesis. Por ejemplo, consiere las mediciones de temperatura almacenadas en un arreglo llamado T. una forma de encontrar las temperaturas superiores a 30 grados es la siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="p">=[</span><span class="mi">22</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">33</span><span class="p">];</span>
+<span class="nb">find</span><span class="p">(</span><span class="n">T</span><span class="o">&gt;</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 1x4 double
+     3     4     9    11
+</pre></body></html></div></div>
+</div>
+<p>Como se puede observar, la instrucción <code class="docutils literal notranslate"><span class="pre">find(T)</span></code> devuelve las localidades en las cuales el valor almacenado es superior a 30. Así, se puede construir un vector que contenga únicamnente los datos que cumplen el criterio. El procedimiento las instrucciones de MATLAB son las siguientes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">T_30</span><span class="p">=</span><span class="n">T</span><span class="p">(</span><span class="nb">find</span><span class="p">(</span><span class="n">T</span><span class="o">&gt;</span><span class="mi">30</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>T_30 = 1x4 double
+    33    31    32    33
+</pre></body></html></div></div>
+</div>
+<p>Cuando se trata con arreglos multidimencionales como las matrices, se puede usar la instrucción <code class="docutils literal notranslate"><span class="pre">find()</span></code> para localizar los valores que cumplan con los criterios, adicionalmente, se pueden almacenar en dos variables la localización de los elementos buscados en forma de filas y columnas. Por ejemplo, supongase que se desea encontrar los elementos mayores a 5 en la matriz <span class="math notranslate nohighlight">\(A\)</span> definida como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{equation}
+A=\begin{bmatrix}
+4 &amp; 12 &amp; 15 &amp; 10\\
+1 &amp; 2 &amp; 3.3 &amp; 4.5\\
+2 &amp; 10 &amp; 2 &amp; 5.5\\
+12 &amp; 7 &amp; 3 &amp; 8
+\end{bmatrix}
+\end{equation}
+\end{split}\]</div>
+<p>Primero se crea la matriz A:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">4</span><span class="w">  </span><span class="mi">12</span><span class="w">  </span><span class="mi">15</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="n">1</span><span class="w"> </span><span class="s">2</span><span class="w"> </span><span class="s">3.3</span><span class="w"> </span><span class="s">4.5</span><span class="p">;</span><span class="n">2</span><span class="w"> </span><span class="s">10</span><span class="w"> </span><span class="s">2</span><span class="w"> </span><span class="s">5.5</span><span class="p">;</span><span class="n">12</span><span class="w"> </span><span class="s">7</span><span class="w"> </span><span class="s">3</span><span class="w"> </span><span class="s">8]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>A = 4x4 double
+    4.0000   12.0000   15.0000   10.0000
+    1.0000    2.0000    3.3000    4.5000
+    2.0000   10.0000    2.0000    5.5000
+   12.0000    7.0000    3.0000    8.0000
+</pre></body></html></div></div>
+</div>
+<p>Para encontrar la localización de los elementos mayores a 5 se usa la instrucción o comando <code class="docutils literal notranslate"><span class="pre">find()</span></code> como sigue:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 8x1 double
+     4
+     5
+     7
+     8
+     9
+    13
+    15
+    16
+</pre></body></html></div></div>
+</div>
+<p>Las localizaciones de las entradas de la matriz que cumplen con el criterio se almacenan en orden simple, no hay información de la fila y columna, en este caso, las localidades se ubican en orden ascendente, observe que el primer elemento que cumple con el criterio de búsqueda (x&gt;5) se encuentra en la pimera columna, en la fila cuatro, minetras que el segundo elemento que cumple con el criterio se encuentra en la fila uno y la segunda columna, es decir, el quinto elemento contando desde el elemento de la fila uno columna uno y continuando en orden aescendente. Para localizar la localización de los datos en formato de filas y columnas se usa la instrucción <code class="docutils literal notranslate"><span class="pre">find()</span></code> antecedida por un par de variables entre corchetes para almacenar los índices:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">i</span><span class="w"> </span><span class="nb">j</span><span class="p">]=</span><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>i = 8x1 double
+     4
+     1
+     3
+     4
+     1
+     1
+     3
+     4
+</pre></body></html></div><div class="output text_html"><html><body><pre>j = 8x1 double
+     1
+     2
+     2
+     2
+     3
+     4
+     4
+     4
+</pre></body></html></div></div>
+</div>
+<p>En el arreglo <code class="docutils literal notranslate"><span class="pre">i</span></code> se almacena la información del renglón y en el arreglo <code class="docutils literal notranslate"><span class="pre">j</span></code> se almacena la información de la columna, de manera que se verifica que el elemento o entrada de la matriz <span class="math notranslate nohighlight">\(a_{ij}\)</span> cumple con el criterio de busqueda, por ejemplo, en el caso que aterior, el elemento <code class="docutils literal notranslate"><span class="pre">A(4,1)</span></code> es mayor que 5:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
+</div>
+<p>O equivalentemente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span><span class="nb">j</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 12</pre></body></html></div></div>
+</div>
+</section>
+<section id="graficacion-de-funciones-continuas-a-pedazos">
+<h2>Graficación de funciones continuas a pedazos<a class="headerlink" href="#graficacion-de-funciones-continuas-a-pedazos" title="Permalink to this heading">#</a></h2>
+<p>Se dice que una función es definida a pedazos si es continua en un intervalo dado si está definida en un intervalo cualquiera y además, las expresiones matemáticas que describen o modelan a dicha función son continuas en ese intervalo. Adicionalemente, tambien se cumple que no hay discontinuidad en ningún punto extremo de los subintervalos. Una función contínua a pedazos se define por medio de un conjunto de expresiones, utilizando una llave, funciones locales e intervalos. Por ejemplo, considere la función contínua a pedazos definida en la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-pedazos">
 <span class="eqno">(5)<a class="headerlink" href="#equation-func-pedazos" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; 0 \leq t \leq 2 \\ \\ t^2-t+10 &amp; si &amp; 2 &lt; t \leq 5 \\ \\ -4t-15 &amp; si &amp; 5 &lt; t &lt; 7 \\ \\ 0 &amp; si &amp; 7 \leq t  \end{array} \right.
 		 \end{equation}\end{split}\]</div>
+<p>Como puede observarse, los subintervalos se pueden definir en MATLAB, usando los comandos de la <a class="reference internal" href="#tabla-2"><span class="std std-numref">Tabla 3</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">9</span><span class="p">];</span>
@@ -388,22 +607,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/465ba95be8b36ba85f6572ff7f6d43f59cdcf8642a3d9bfbb534d402af7af15f.png" src="_images/465ba95be8b36ba85f6572ff7f6d43f59cdcf8642a3d9bfbb534d402af7af15f.png" />
+<img alt="_images/24abaeb33b2254a2d6ebcaf939fc3cb90306570f084d57456f8a6f0cb521ed18.png" src="_images/24abaeb33b2254a2d6ebcaf939fc3cb90306570f084d57456f8a6f0cb521ed18.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Vc</span><span class="p">=</span><span class="nb">load</span><span class="p">(</span><span class="s">&quot;RLC_lineal.txt&quot;</span><span class="p">);</span>
-<span class="n">t</span><span class="p">=</span><span class="n">Vc</span><span class="p">(:,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">vc</span><span class="p">=</span><span class="n">Vc</span><span class="p">(:,</span><span class="mi">2</span><span class="p">);</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">vc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/75dc85a85af17cdc481e5e47ba32b1e2da8ac3d0f2ed8f0c842ea13230d0ebf4.png" src="_images/75dc85a85af17cdc481e5e47ba32b1e2da8ac3d0f2ed8f0c842ea13230d0ebf4.png" />
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -464,6 +671,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#busqueda-de-elementos-en-un-conjunto-de-datos-que-cumplen-con-cierto-criterio">Búsqueda de elementos en un conjunto de datos que cumplen con cierto criterio</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficacion-de-funciones-continuas-a-pedazos">Graficación de funciones continuas a pedazos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
