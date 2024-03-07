@@ -1,6 +1,0 @@
-# Bibliografía
-
-
-```{bibliography}
-
-```
