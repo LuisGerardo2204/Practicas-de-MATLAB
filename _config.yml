@@ -14,6 +14,7 @@ execute:
   exclude_patterns: 
                 - Practica1.ipynb
                 - Practica3.ipynb
+                - Practica4.ipynb
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -47,7 +48,8 @@ sphinx:
       execute_excludepatterns: 
          -'Practica1.ipynb'
          -'Practica3.ipynb'
-
+         -'Practica4.ipynb'
+         
 html_extra_path: ['./_static/videos']
 
             
