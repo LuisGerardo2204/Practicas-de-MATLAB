@@ -319,7 +319,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-if-else">Estructura if/else</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-elseif">Estructura elseif</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-switch-case">Estructura Switch/case</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructuras-de-repeticion-o-tipo-bucle">Estructuras de repetición o tipo bucle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructuras-tipo-bucle">Estructuras tipo bucle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-serie-trigonometrica-de-fourier">La serie trigonométrica de Fourier</a></li>
 </ul>
             </nav>
         </div>
@@ -526,8 +527,8 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="estructuras-de-repeticion-o-tipo-bucle">
-<h2>Estructuras de repetición o tipo bucle<a class="headerlink" href="#estructuras-de-repeticion-o-tipo-bucle" title="Permalink to this heading">#</a></h2>
+<section id="estructuras-tipo-bucle">
+<h2>Estructuras tipo bucle<a class="headerlink" href="#estructuras-tipo-bucle" title="Permalink to this heading">#</a></h2>
 <p>Las estructuras bucle permiten realizar operaciones repetitivas, o dicho de otra manera, permiten realizar el mismo
 conjunto de instrucciones muchas veces sin la necesidad de escribirlo muchas veces. Las dos estructuras de repetición básicas en MATLAB son el ciclo <code class="docutils literal notranslate"><span class="pre">For</span></code> y la sentencia <code class="docutils literal notranslate"><span class="pre">While</span></code>. El ciclo <code class="docutils literal notranslate"><span class="pre">For</span></code> tiene la siguiente etructura:</p>
 <p><strong>For</strong>(indice)</p>
@@ -551,13 +552,13 @@ conjunto de instrucciones muchas veces sin la necesidad de escribirlo muchas vec
 <span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">100</span>
 <span class="w">    </span><span class="n">suma</span><span class="p">=</span><span class="n">suma</span><span class="o">+</span><span class="n">k</span><span class="p">;</span>
 <span class="k">end</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;La suma de los primeros 100 numeros enteros es:&quot;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;La suma de los primeros 100 números enteros es:&quot;</span><span class="p">)</span>
 <span class="n">suma</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La suma de los primeros 100 numeros enteros es:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La suma de los primeros 100 números enteros es:
 </pre></div>
 </div>
 <div class="output text_html"><html><body><pre>suma = 5050</pre></body></html></div></div>
@@ -671,6 +672,131 @@ a!=a(a-1)!
 <div class="output text_html"><html><body><pre>ans = 3628800</pre></body></html></div></div>
 </div>
 </section>
+<section id="la-serie-trigonometrica-de-fourier">
+<h2>La serie trigonométrica de Fourier<a class="headerlink" href="#la-serie-trigonometrica-de-fourier" title="Permalink to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(x(t)\)</span> una señal periódica, es decir que se puede expresar como <span class="math notranslate nohighlight">\(x(t)=x(t+T)\)</span>, donde <span class="math notranslate nohighlight">\(T\)</span> es el periódo de dicha señal en segundos. Según lo descubierto por Joseph Fourier, una señal periódica se puede representar como la sumatoria de una infinidad de términos seno y coseno, usando la siguiente expresión:</p>
+<div class="math notranslate nohighlight" id="equation-serie-fourier">
+<span class="eqno">(6)<a class="headerlink" href="#equation-serie-fourier" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+   x(t)=a_0+\sum^{\infty}_{k=1}\left[a_kcos(k\omega_0t)+b_ksen(k\omega_0t)\right],~~-\infty&lt;t&lt;\infty
+ \end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\omega_0=\frac{2\pi}{T}\)</span> y los términos <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> se calculan como</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+a_0=\frac{1}{T}\int^{T}_{0}x(t)dt
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+a_k=\frac{2}{T}\int^{T}_{0}x(t)cos(k\omega_0t)dt
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}
+b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
+\end{equation}\]</div>
+<p>Es posible obtener la aproximación de una función del tiempo en términos de una serie trigonmétrica de Fourier en MATLAB usando instrucciones de ciclo <code class="docutils literal notranslate"><span class="pre">For</span></code>. Por ejemplo, considere la señal tipo diente de sierra, definida por la expresión:</p>
+<div class="math notranslate nohighlight" id="equation-func-sierra">
+<span class="eqno">(7)<a class="headerlink" href="#equation-func-sierra" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
+         g(t)= \left\{ \begin{array}{lcc} 150(t+0.02) &amp; si &amp; -0.02 \leq t \leq -0.01 \\ \\ 150t &amp; si &amp; -0.01 \leq t \leq 0.01 \\ \\ 150(t-0.02) &amp; si &amp; 0.01 &lt; t \leq 0.03 \end{array} \right.
+		 \end{equation}\end{split}\]</div>
+<p>y graficada en MATLAB mediante las líneas de código siguientes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">=[</span><span class="o">-</span><span class="mf">0.03</span><span class="p">:</span><span class="mf">0.0001</span><span class="p">:</span><span class="mf">0.03</span><span class="p">];</span>
+<span class="n">g</span><span class="p">=(</span><span class="mi">150</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">+</span><span class="mf">0.02</span><span class="p">))</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;=-</span><span class="mf">0.03</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;-</span><span class="mf">0.01</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">150</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;-</span><span class="mf">0.01</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.01</span><span class="p">))</span><span class="o">+</span><span class="p">(</span><span class="mi">150</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mf">0.02</span><span class="p">))</span><span class="o">.*</span><span class="p">((</span><span class="n">t</span><span class="o">&gt;</span><span class="mf">0.01</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">t</span><span class="o">&lt;=</span><span class="mf">0.03</span><span class="p">));</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;g(t)&quot;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.03</span><span class="w"> </span><span class="mf">0.03</span><span class="w"> </span><span class="o">-</span><span class="mf">1.8</span><span class="w"> </span><span class="mf">1.8</span><span class="p">])</span><span class="w"> </span><span class="c">%La istrucción axis ajusta los ejes de la gráfica</span>
+<span class="nb">grid</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/15d2cd7658df746b4939b0886ca93c473e03145257ee7810282c6a98c2dfaed9.png" src="_images/15d2cd7658df746b4939b0886ca93c473e03145257ee7810282c6a98c2dfaed9.png" />
+</div>
+</div>
+<p>Los coeficientes <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> para calcular la serie trigonométrica de Fourier de la señal diente de sierra, definida por la ecuacion <a class="reference internal" href="#equation-func-sierra">(7)</a> se calculan como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+a_0=\frac{1}{T}\int^{T}_{0}x(t)dt=\frac{1}{T}\int^{\frac{T}{2}}_{-\frac{T}{2}}x(t)dt=\frac{1}{0.02}\int^{-0.01}_{0.01}150tdt=7500\left[{\frac{t^2}{2}}_{t=-0.01}^{t=0.01}\right]=0
+\label{a0sierra}
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+a_k=\frac{1}{T}\int^{T}_{0}x(t)cos(k\omega_0t)dt=\frac{2}{0.02}\int^{0.01}_{-0.01}150tcos(k\omega_0t)dt
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+a_k=15000\left[{\frac{tsen(100k\pi t)}{100k\pi}}_{t=-0.01}^{t=0.01}-\int^{0.01}_{-0.01}\frac{sen(100k\pi t)}{100k\pi}dt\right]
+\end{equation}\]</div>
+<p>dado que se cumple que <span class="math notranslate nohighlight">\(sen(-x)=-sen(x)\)</span> y <span class="math notranslate nohighlight">\(cos(-x)=cos(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+a_k=15000\left[\frac{cos(100k\pi(0.01))}{\left(100k\pi\right)^2}-\frac{cos(100k\pi(-0.01))}{\left(100k\pi\right)^2}\right]=0
+\end{equation}\]</div>
+<p>Para los coeficientes <span class="math notranslate nohighlight">\(b_k\)</span> se expresa:</p>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt=\frac{2}{0.02}\int^{0.01}_{-0.01}150tsen(k\omega_0t)dt
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+b_k=15000\left[{\frac{-tcos(100k\pi t)}{100k\pi}}_{t=-0.01}^{t=0.01}+\int^{0.01}_{-0.01}\frac{cos(100k\pi t)}{100k\pi}dt\right]
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+b_k=15000\left[{\frac{-tcos(100k\pi t)}{100k\pi}}_{t=-0.01}^{t=0.01}-{\frac{sen(100k\pi t)}{(100k\pi)^2}}_{t=-0.01}^{t=0.01}\right]
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+b_k=15000\left[\left[\frac{(-0.01)cos(k\pi)}{100k\pi}-\frac{(0.01)cos(k\pi)}{100k\pi}\right]-\left[\frac{sen(k\pi)}{(100k\pi)^2}-\frac{sen(-k\pi t)}{(100k\pi)^2}\right]\right]
+\end{equation}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{equation}\nonumber
+b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
+\end{equation}\]</div>
+<p>El código de MATLAB que permite calcular la serie trigonométrica de Fourier de la función diente de sierra es el siguiente</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">15</span><span class="p">;</span><span class="w">   </span>
+<span class="n">figure</span>
+<span class="s">hold</span><span class="w"> </span><span class="s">on</span><span class="w"> </span>
+
+<span class="n">x_t</span><span class="w"> </span><span class="p">=</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="p">;</span>
+
+<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
+<span class="w">     </span><span class="n">bn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">cos</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="p">));</span>
+<span class="w">     </span><span class="n">x_t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bn</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="k">end</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x_t</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">),</span><span class="nb">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a52f56939a9672d6902fdeadacf83d9ae1463eaa039f9eab263b5d4230b5dfef.png" src="_images/a52f56939a9672d6902fdeadacf83d9ae1463eaa039f9eab263b5d4230b5dfef.png" />
+</div>
+</div>
+<p>Para comparar <span class="math notranslate nohighlight">\(g(t)\)</span> con su aproximación usando la serie trigonométrica de Fourier se unas las instrucciones siguientes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">g</span><span class="p">);</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t&quot;</span><span class="p">);</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;g(t)&quot;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.03</span><span class="w"> </span><span class="mf">0.03</span><span class="w"> </span><span class="o">-</span><span class="mf">1.8</span><span class="w"> </span><span class="mf">1.8</span><span class="p">])</span><span class="w"> </span><span class="c">%La istrucción axis ajusta los ejes de la gráfica</span>
+<span class="nb">grid</span><span class="p">;</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x_t</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;Señal diente de sierra&quot;</span><span class="p">,</span><span class="s">&quot;Aproximación&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4c1f588b21d24b58311b55002c3d94e9260f9af0a967538038262154dc4a80f9.png" src="_images/4c1f588b21d24b58311b55002c3d94e9260f9af0a967538038262154dc4a80f9.png" />
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -744,7 +870,8 @@ a!=a(a-1)!
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-if-else">Estructura if/else</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-elseif">Estructura elseif</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-switch-case">Estructura Switch/case</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructuras-de-repeticion-o-tipo-bucle">Estructuras de repetición o tipo bucle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructuras-tipo-bucle">Estructuras tipo bucle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-serie-trigonometrica-de-fourier">La serie trigonométrica de Fourier</a></li>
 </ul>
   </nav></div>
 
