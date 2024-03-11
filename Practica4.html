@@ -743,7 +743,7 @@ a!=a(a-1)!
 </section>
 <section id="la-serie-trigonometrica-de-fourier">
 <h2>La serie trigonométrica de Fourier<a class="headerlink" href="#la-serie-trigonometrica-de-fourier" title="Permalink to this heading">#</a></h2>
-<p>Sea <span class="math notranslate nohighlight">\(x(t)\)</span> una señal periódica, es decir que se puede expresar como <span class="math notranslate nohighlight">\(x(t)=x(t+T)\)</span>, donde <span class="math notranslate nohighlight">\(T\)</span> es el periódo de dicha señal en segundos. Según lo descubierto por Joseph Fourier, una señal periódica se puede representar como la sumatoria de una infinidad de términos seno y coseno, usando la siguiente expresión:</p>
+<p>Sea <span class="math notranslate nohighlight">\(x(t)\)</span> una señal periódica, es decir que se puede expresar como <span class="math notranslate nohighlight">\(x(t)=x(t+T)\)</span>, donde <span class="math notranslate nohighlight">\(T\)</span> es el periódo de dicha señal en segundos. Según lo descubierto por Joseph Fourier <span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id8" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>, una señal periódica se puede representar como la sumatoria de una infinidad de términos seno y coseno, usando la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-serie-fourier">
 <span class="eqno">(6)<a class="headerlink" href="#equation-serie-fourier" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
    x(t)=a_0+\sum^{\infty}_{k=1}\left[a_kcos(k\omega_0t)+b_ksen(k\omega_0t)\right],~~-\infty&lt;t&lt;\infty
@@ -781,7 +781,7 @@ b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4fe97866b79ebc0404cd6895e0bd98fbb7455932dd656fce1f07ad36222fe4a4.png" src="_images/4fe97866b79ebc0404cd6895e0bd98fbb7455932dd656fce1f07ad36222fe4a4.png" />
+<img alt="_images/98d0e9206f516f4ac278fe86aaaa598b9a124bfadb6e9b16265eb066234d4ac5.png" src="_images/98d0e9206f516f4ac278fe86aaaa598b9a124bfadb6e9b16265eb066234d4ac5.png" />
 </div>
 </div>
 <p>Los coeficientes <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> para la serie trigonométrica de Fourier de la señal diente de sierra, definida por la ecuacion <a class="reference internal" href="#equation-func-sierra">(10)</a> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(7)</a>, <a class="reference internal" href="#equation-ak">(8)</a> y <a class="reference internal" href="#equation-bk">(9)</a>. Dado que <span class="math notranslate nohighlight">\(T=0.02\)</span> y <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>:</p>
@@ -827,7 +827,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/acc3e8c6b9d488e690e1738944c9cb82979d7c4e2468ce1e36553ab9d0417899.png" src="_images/acc3e8c6b9d488e690e1738944c9cb82979d7c4e2468ce1e36553ab9d0417899.png" />
+<img alt="_images/4b7def53d69e7a8456455b59e033340ad4b3692f6173e91666427f584ca1ef4f.png" src="_images/4b7def53d69e7a8456455b59e033340ad4b3692f6173e91666427f584ca1ef4f.png" />
 </div>
 </div>
 <p>Para comparar <span class="math notranslate nohighlight">\(g(t)\)</span> con su aproximación usando la serie trigonométrica de Fourier se unas las instrucciones siguientes:</p>
@@ -846,7 +846,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fb40228be06db333204428c1294a99f28df814c3a5ab9f5f940f9c35574faf2e.png" src="_images/fb40228be06db333204428c1294a99f28df814c3a5ab9f5f940f9c35574faf2e.png" />
+<img alt="_images/a1bb9ee5d80717d0866172067b932a50f2a10771f4ac48c3c941258f70ce3486.png" src="_images/a1bb9ee5d80717d0866172067b932a50f2a10771f4ac48c3c941258f70ce3486.png" />
 </div>
 </div>
 <p>Entre más términos se consideren de la aproximación, es decir, entre mayor sea n en el programa, más parecida será la aproximación, por ejemplo, con <span class="math notranslate nohighlight">\(n=100\)</span>:</p>
@@ -868,7 +868,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/294dd95843591d9a372cd7f7329076442678c293bf4fe97e4fb9e8b026422868.png" src="_images/294dd95843591d9a372cd7f7329076442678c293bf4fe97e4fb9e8b026422868.png" />
+<img alt="_images/33a55a5b3b8040578d642a6e3d3f939e87eb471d120dea08f729546d1596548c.png" src="_images/33a55a5b3b8040578d642a6e3d3f939e87eb471d120dea08f729546d1596548c.png" />
 </div>
 </div>
 <p>A la distorción en las siscontinuidades o cambios en la señal se le conoce como fenómeno de Gibbs.</p>

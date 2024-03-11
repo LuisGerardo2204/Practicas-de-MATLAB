@@ -608,35 +608,21 @@ A=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9289f1e180cd3f2cdd7ef6f04ae679e88bf8aba20234156e4c4bfaee837ee562.png" src="_images/9289f1e180cd3f2cdd7ef6f04ae679e88bf8aba20234156e4c4bfaee837ee562.png" />
+<img alt="_images/0d07ab2198d90184530d061ca623f46f3b6eabca35f23973dd35cdfcb0096fa8.png" src="_images/0d07ab2198d90184530d061ca623f46f3b6eabca35f23973dd35cdfcb0096fa8.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">length</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>ans = 4</pre></body></html></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="p">=</span><span class="n">A</span><span class="p">(</span><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>B = 8x1 double
-   12.0000
-   12.0000
-   10.0000
-    7.0000
-   15.0000
-   10.0000
-    5.5000
-    8.0000
-</pre></body></html></div></div>
+<div class="admonition attention">
+<p class="admonition-title">Atención</p>
+<p>Los intervalos se describen como cerrados o abiertos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\([a,b]\)</span> implica un intervalo cerrado y se lee como: «el conjunto de los valores de <span class="math notranslate nohighlight">\(x\)</span> en los números reales tales que <span class="math notranslate nohighlight">\(x\)</span> es mayor o igual que <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(x\)</span> es menor o igual que <span class="math notranslate nohighlight">\(b\)</span>. En notación matemática se escribe: <span class="math notranslate nohighlight">\(\left\{x\in R| a \leq x \leq b\right\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((a,b)\)</span> implica un intervalo abierto y se lee como: «el conjunto de los valores de <span class="math notranslate nohighlight">\(x\)</span> en los números reales tales que <span class="math notranslate nohighlight">\(x\)</span> es mayor que <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(x\)</span> es menor que <span class="math notranslate nohighlight">\(b\)</span>. En notación matemática se escribe: <span class="math notranslate nohighlight">\(\left\{x\in R| a &lt; x &lt; b\right\}\)</span></p></li>
+</ul>
+<p>También son posibles las combinaciones:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\([a,b)\)</span> implica un intervalo cerrado y se lee como: «el conjunto de los valores de <span class="math notranslate nohighlight">\(x\)</span> en los números reales tales que <span class="math notranslate nohighlight">\(x\)</span> es mayor o igual que <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(x\)</span> es menor que <span class="math notranslate nohighlight">\(b\)</span>. En notación matemática se escribe: <span class="math notranslate nohighlight">\(\left\{x\in R| a \leq x &lt; b\right\}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((a,b]\)</span> implica un intervalo abierto y se lee como: «el conjunto de los valores de <span class="math notranslate nohighlight">\(x\)</span> en los números reales tales que <span class="math notranslate nohighlight">\(x\)</span> es mayor que <span class="math notranslate nohighlight">\(a\)</span> y <span class="math notranslate nohighlight">\(x\)</span> es menor o igual que <span class="math notranslate nohighlight">\(b\)</span>. En notación matemática se escribe: <span class="math notranslate nohighlight">\(\left\{x\in R| a &lt; x \leq b\right\}\)</span></p></li>
+</ul>
 </div>
 </section>
 </section>
