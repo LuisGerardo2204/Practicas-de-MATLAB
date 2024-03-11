@@ -92,31 +92,56 @@ El procedimiento para generar funciones se presenta en el siguiente video:
 
 Una función se diferencia de un programa por que tiene la característica de solicitar variables de entrada, en el caso de este ejemplo, el parámetro de entrada o argumento es el radio y la salida es la multiplicación de este valor al cuadrado por la constante $\pi$, que en MATLAB está almacenada en una variable propia llamada pi.
 
-
-
 ```{code-cell} Octave
 :tags: [remove-output]
 function a=area_circulo(radio)
 a=pi*(radio^2);
 end
 ```
+Las funciones pueden recibir varios parámetros de entrada y proporcionar varios datos de salida, por ejemplo:
+
+```{code-cell} Octave
+:tags: [remove-output]
+function [a v]=area_volumen_cilindro(radio,altura)
+a=pi*(radio^2);
+v=a*altura;
+end
+```
 
 `````{admonition} Información importante
 :class: tip
-<div align='justify'>
 Tanto las funciones como los programas almacenados en archivos con extensión .m se pueden invocar o mandar llamar desde otras funciones o programas.
-</div>
 `````
 
 ```{code-cell} Octave
-:tags: [remove-stderr]
+:tags: []
 %Programa de prueba
 radio1=2;
 radio2=8;
+altura=12;
 area_circulo(radio1)
-area_circulo(radio2)
+[a v]=area_volumen_cilindro(radio2,altura)
 ```
 
 
+## Entrada de datos a traves del teclado
 
+A menudo se requiere de la interacción con el usuario de un programa, en el sentido de que resulta más cómodo proporcionar un valor numérico a travez del teclado, en vez de editar el código si se requiere hacer cálculos de formulas incluidas en el cuerpo de los programas con diferentes valores o parámetros. La instrucción para proporcionar datos a travez del teclado en  
+MATLAB es `a=input("mensaje")`, donde `a` es la variable en donde se almacena el dato proporcionado por el usuario. Por ejemplo, la estructura de un programa que calcula el volumen de un tanque cilindrico es la siguiente:
+
+
+```{code-cell} Octave
+:tags: [remove-output]
+%Programa para calcular el volumen de un cilindro
+clear
+close all
+clc
+disp("Proporcione el radio de la base")
+r=input("r=")
+disp("Proporcione la altura del cilindro")
+h=input("h=")
+volumen=(pi*r^2)*h;
+disp("El volumen del cilindro es:")
+volumen
+```
 
