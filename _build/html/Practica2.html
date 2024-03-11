@@ -318,6 +318,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-la-carpeta-de-trabajo">Selección de la carpeta de trabajo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-programas">Creación de programas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-funciones">Creación de funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrada-de-datos-a-traves-del-teclado">Entrada de datos a traves del teclado</a></li>
 </ul>
             </nav>
         </div>
@@ -412,27 +413,60 @@ de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpet
 </div>
 </div>
 </div>
+<p>Las funciones pueden recibir varios parámetros de entrada y proporcionar varios datos de salida, por ejemplo:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="k">function</span><span class="w"> </span><span class="nf">[a v]=area_volumen_cilindro</span><span class="p">(</span>radio,altura<span class="p">)</span>
+<span class="n">a</span><span class="p">=</span><span class="nb">pi</span><span class="o">*</span><span class="p">(</span><span class="n">radio</span>^<span class="mi">2</span><span class="p">);</span>
+<span class="n">v</span><span class="p">=</span><span class="n">a</span><span class="o">*</span><span class="n">altura</span><span class="p">;</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="tip admonition">
 <p class="admonition-title">Información importante</p>
-<div align='justify'>
-Tanto las funciones como los programas almacenados en archivos con extensión .m se pueden invocar o mandar llamar desde otras funciones o programas.
+<p>Tanto las funciones como los programas almacenados en archivos con extensión .m se pueden invocar o mandar llamar desde otras funciones o programas.</p>
 </div>
-</div>
-<div class="cell tag_remove-stderr docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">%Programa de prueba</span>
 <span class="n">radio1</span><span class="p">=</span><span class="mi">2</span><span class="p">;</span>
 <span class="n">radio2</span><span class="p">=</span><span class="mi">8</span><span class="p">;</span>
+<span class="n">altura</span><span class="p">=</span><span class="mi">12</span><span class="p">;</span>
 <span class="n">area_circulo</span><span class="p">(</span><span class="n">radio1</span><span class="p">)</span>
-<span class="n">area_circulo</span><span class="p">(</span><span class="n">radio2</span><span class="p">)</span>
+<span class="p">[</span><span class="n">a</span> <span class="n">v</span><span class="p">]=</span><span class="n">area_volumen_cilindro</span><span class="p">(</span><span class="n">radio2</span><span class="p">,</span><span class="n">altura</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =  12.566
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 12.566
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =  201.06
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 201.06
+v = 2412.7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="entrada-de-datos-a-traves-del-teclado">
+<h2>Entrada de datos a traves del teclado<a class="headerlink" href="#entrada-de-datos-a-traves-del-teclado" title="Permalink to this heading">#</a></h2>
+<p>A menudo se requiere de la interacción con el usuario de un programa, en el sentido de que resulta más cómodo proporcionar un valor numérico a travez del teclado, en vez de editar el código si se requiere hacer cálculos de formulas incluidas en el cuerpo de los programas con diferentes valores o parámetros. La instrucción para proporcionar datos a travez del teclado en<br />
+MATLAB es <code class="docutils literal notranslate"><span class="pre">a=input(&quot;mensaje&quot;)</span></code>, donde <code class="docutils literal notranslate"><span class="pre">a</span></code> es la variable en donde se almacena el dato proporcionado por el usuario. Por ejemplo, la estructura de un programa que calcula el volumen de un tanque cilindrico es la siguiente:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-octave notranslate"><div class="highlight"><pre><span></span><span class="c">%Programa para calcular el volumen de un cilindro</span>
+<span class="n">clear</span>
+<span class="nb">close</span> <span class="nb">all</span>
+<span class="nb">clc</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Proporcione el radio de la base&quot;</span><span class="p">)</span>
+<span class="n">r</span><span class="p">=</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;r=&quot;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Proporcione la altura del cilindro&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="p">=</span><span class="nb">input</span><span class="p">(</span><span class="s">&quot;h=&quot;</span><span class="p">)</span>
+<span class="n">volumen</span><span class="p">=(</span><span class="nb">pi</span><span class="o">*</span><span class="n">r</span>^<span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="p">;</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;El volumen del cilindro es:&quot;</span><span class="p">)</span>
+<span class="n">volumen</span>
 </pre></div>
 </div>
 </div>
@@ -510,6 +544,7 @@ Tanto las funciones como los programas almacenados en archivos con extensión .m
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#seleccion-de-la-carpeta-de-trabajo">Selección de la carpeta de trabajo</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-programas">Creación de programas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creacion-de-funciones">Creación de funciones</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#entrada-de-datos-a-traves-del-teclado">Entrada de datos a traves del teclado</a></li>
 </ul>
   </nav></div>
 

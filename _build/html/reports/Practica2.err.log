@@ -1,0 +1,86 @@
+Traceback (most recent call last):
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\jupyter_cache\executors\utils.py", line 58, in single_nb_execution
+    executenb(
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\nbclient\client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\jupyter_core\utils\__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\asyncio\base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\nbclient\client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\nbclient\client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "C:\Users\fores\AppData\Local\Programs\Python\Python38\lib\site-packages\nbclient\client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%Programa para calcular el volumen de un cilindro
+clear
+close all
+clc
+disp("Proporcione el radio de la base")
+r=input("r=")
+disp("Proporcione la altura del cilindro")
+h=input("h=")
+volumen=(pi*r^2)*h;
+disp("El volumen del cilindro es:")
+volumen
+------------------
+
+----- stdout -----
+Proporcione el radio de la base
+----- stderr -----
+[1;31mraw_input was called, but this frontend does not support input requests.
+[0m
+----- stderr -----
+[1;31mInline plot failed, consider trying another graphics toolkit
+error: _make_figures: function called with too many outputs
+error: called from
+    _make_figures
+    input at line 43 column 9
+
+[0m
+------------------
+
+<
+t
+r
+a
+c
+e
+b
+a
+c
+k
+ 
+o
+b
+j
+e
+c
+t
+ 
+a
+t
+ 
+0
+x
+0
+0
+0
+0
+0
+2
+2
+7
+3
+2
+A
+A
+A
+7
+8
+0
+>
+
