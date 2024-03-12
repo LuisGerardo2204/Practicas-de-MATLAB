@@ -92,16 +92,14 @@ El procedimiento para generar funciones se presenta en el siguiente video:
 
 Una función se diferencia de un programa por que tiene la característica de solicitar variables de entrada, en el caso de este ejemplo, el parámetro de entrada o argumento es el radio y la salida es la multiplicación de este valor al cuadrado por la constante $\pi$, que en MATLAB está almacenada en una variable propia llamada pi.
 
-```{code-cell} Octave
-:tags: [remove-output]
+```Octave
 function a=area_circulo(radio)
 a=pi*(radio^2);
 end
 ```
 Las funciones pueden recibir varios parámetros de entrada y proporcionar varios datos de salida, por ejemplo:
 
-```{code-cell} Octave
-:tags: [remove-output]
+```Octave
 function [a v]=area_volumen_cilindro(radio,altura)
 a=pi*(radio^2);
 v=a*altura;
@@ -130,8 +128,7 @@ A menudo se requiere de la interacción con el usuario de un programa, en el sen
 MATLAB es `a=input("mensaje")`, donde `a` es la variable en donde se almacena el dato proporcionado por el usuario. Por ejemplo, la estructura de un programa que calcula el volumen de un tanque cilindrico es la siguiente:
 
 
-```{code-cell} Octave
-:tags: [remove-output]
+```Octave
 %Programa para calcular el volumen de un cilindro
 clear
 close all
