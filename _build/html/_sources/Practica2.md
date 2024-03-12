@@ -47,9 +47,7 @@ Un programa en MATLAB es un conjunto de instrucciones que se escriben como una s
 
 El código utilizado en el programa del video es el que se muestra a continuación:
 
-```{code-cell} Octave
-:tags: [remove-output]
-
+```Octave
 clear %Limpia todas la variables
 clc %Limpia la ventana de comandos
 close all %Cierra todas las graficas
