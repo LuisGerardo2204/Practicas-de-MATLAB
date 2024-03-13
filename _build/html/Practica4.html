@@ -781,7 +781,7 @@ b_k=\frac{2}{T}\int^{T}_{0}x(t)sen(k\omega_0t)dt
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/eb972e6ba9cd64bc481d41e07fc7ff450ba67a16fd33a4afa46751bccc57eb94.png" src="_images/eb972e6ba9cd64bc481d41e07fc7ff450ba67a16fd33a4afa46751bccc57eb94.png" />
+<img alt="_images/1f9f8412e5a09fc2ae2c986848c187cc70fadd5f82bb2c59ab1e2aef26493b09.png" src="_images/1f9f8412e5a09fc2ae2c986848c187cc70fadd5f82bb2c59ab1e2aef26493b09.png" />
 </div>
 </div>
 <p>Los coeficientes <span class="math notranslate nohighlight">\(a_0\)</span>, <span class="math notranslate nohighlight">\(a_k\)</span> y <span class="math notranslate nohighlight">\(b_k\)</span> para la serie trigonométrica de Fourier de la señal diente de sierra, definida por la ecuacion <a class="reference internal" href="#equation-func-sierra">(10)</a> se calculan usando las ecuaciones <a class="reference internal" href="#equation-a0">(7)</a>, <a class="reference internal" href="#equation-ak">(8)</a> y <a class="reference internal" href="#equation-bk">(9)</a>. Dado que <span class="math notranslate nohighlight">\(T=0.02\)</span> y <span class="math notranslate nohighlight">\(\omega_0=100\pi\)</span>:</p>
@@ -818,8 +818,8 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
 <span class="n">x_t</span><span class="w"> </span><span class="p">=</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="p">;</span>
 
 <span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">n</span>
-<span class="w">     </span><span class="n">bn</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">cos</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="p">));</span>
-<span class="w">     </span><span class="n">x_t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bn</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="w">     </span><span class="n">bk</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nb">cos</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="p">));</span>
+<span class="w">     </span><span class="n">x_t</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">x_t</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">bk</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 <span class="k">end</span>
 
 <span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x_t</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">),</span><span class="nb">grid</span>
@@ -827,7 +827,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c417f12b8abf030c25e084a089e76d49a06718baa4217e8a422ac4238361f88e.png" src="_images/c417f12b8abf030c25e084a089e76d49a06718baa4217e8a422ac4238361f88e.png" />
+<img alt="_images/9a1bf56ce2c0ccd57b5778eb7bef09b9c86edf9f5243262f9be33ce548efcfbf.png" src="_images/9a1bf56ce2c0ccd57b5778eb7bef09b9c86edf9f5243262f9be33ce548efcfbf.png" />
 </div>
 </div>
 <p>Para comparar <span class="math notranslate nohighlight">\(g(t)\)</span> con su aproximación usando la serie trigonométrica de Fourier se unas las instrucciones siguientes:</p>
@@ -846,7 +846,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fdcd1b4f2dd803263db2782e5271688fc172f410e04daae548601d012f28cd72.png" src="_images/fdcd1b4f2dd803263db2782e5271688fc172f410e04daae548601d012f28cd72.png" />
+<img alt="_images/8091fb75be1b0c6a034fb22f6d9e9b251bd64a1e66b5763509dca56530ee1376.png" src="_images/8091fb75be1b0c6a034fb22f6d9e9b251bd64a1e66b5763509dca56530ee1376.png" />
 </div>
 </div>
 <p>Entre más términos se consideren de la aproximación, es decir, entre mayor sea n en el programa, más parecida será la aproximación, por ejemplo, con <span class="math notranslate nohighlight">\(n=100\)</span>:</p>
@@ -868,7 +868,7 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f8f06186d024e5dfa225d89358881c7495827b81c6b8fdd10dcea4ea304ab8cb.png" src="_images/f8f06186d024e5dfa225d89358881c7495827b81c6b8fdd10dcea4ea304ab8cb.png" />
+<img alt="_images/26a909f8130dd3936e60fcaa79848e22bc27549641a0f65f99230aac9d0e5b9f.png" src="_images/26a909f8130dd3936e60fcaa79848e22bc27549641a0f65f99230aac9d0e5b9f.png" />
 </div>
 </div>
 <p>A la distorción en las siscontinuidades o cambios en la señal se le conoce como fenómeno de Gibbs <span id="id2">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id8" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>.</p>
