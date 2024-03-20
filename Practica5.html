@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Práctica 5: Entrada y salida de datos controladas por el usuario &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <title>Práctica 5: Entrada-salida de datos y formatos de dspliegue &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
   
@@ -165,7 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Primeros pasos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Archivos de programa y funciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Sentencias de control</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 5: Entrada y salida de datos controladas por el usuario</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 5: Entrada-salida de datos y formatos de dspliegue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -301,7 +301,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Práctica 5: Entrada y salida de datos controladas por el usuario</h1>
+    <h1>Práctica 5: Entrada-salida de datos y formatos de dspliegue</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -315,33 +315,52 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-5-entrada-y-salida-de-datos-controladas-por-el-usuario">
-<h1>Práctica 5: Entrada y salida de datos controladas por el usuario<a class="headerlink" href="#practica-5-entrada-y-salida-de-datos-controladas-por-el-usuario" title="Permalink to this heading">#</a></h1>
-<p>En esta prácitca se presenta un preámbulo hacia los programas
-más complicados, escritos en la ventana de edición, suponiendo que el programador
-y el usuario pueden ser personas diferentes. Esto hará necesario comunicarse
-con el usuario a través de comandos de entrada y salida, en lugar de reescribir el código
-real para resolver problemas similares. MATLAB ofrece funciones internas para
-permitir al usuario comunicarse con un programa conforme se ejecuta. El comando
-input detiene el programa y conmina al usuario a ingresar una entrada; los comandos
-disp y fprintf proporcionan salida a la ventana de comandos</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-5-entrada-salida-de-datos-y-formatos-de-dspliegue">
+<h1>Práctica 5: Entrada-salida de datos y formatos de dspliegue<a class="headerlink" href="#practica-5-entrada-salida-de-datos-y-formatos-de-dspliegue" title="Permalink to this heading">#</a></h1>
+<p>En esta prácitca se abordan situaciones que se presentan cuando se trabaja con programas, cuyo objetivo o aplicación final implican que el programador y el usuario final del código pudieran ser personas diferentes. Esto hará necesaria una comunicación sencilla y efectiva con el usuario a través de instrucciones y funciones de entrada y salid. Como se vio en la Práctica 2, en  MATLAB existen funciones nativas que permiten al usuario comunicarse con un programa conforme se ejecuta. El comando <code class="docutils literal notranslate"><span class="pre">input()</span></code> permite solicitar al usuario el valor de un dato de entrada y almacenarlo para su posterior uso. Las funciones nativas <code class="docutils literal notranslate"><span class="pre">disp()</span></code> y <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> porporcionan una salida visual en la ventana de comandos.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">input()</span></code> permite ingresar incluso arreglos completos, por ejemplom si se usa la instrucción:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;v=input(&quot;ingese</span> <span class="pre">un</span> <span class="pre">vector</span> <span class="pre">con</span> <span class="pre">el</span> <span class="pre">formato</span> <span class="pre">de</span> <span class="pre">corchetes&quot;)</span></code></p>
+<p>El usuario introduce el vector en formato de corchetes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;[1,-3,5];</span></code></p>
+<p>Tambien se puede introducir una matriz completa:</p>
+<p><code class="docutils literal notranslate"><span class="pre">A=input(&quot;ingese</span> <span class="pre">una</span> <span class="pre">matriz</span> <span class="pre">cuadrada</span> <span class="pre">con</span> <span class="pre">el</span> <span class="pre">formato</span> <span class="pre">de</span> <span class="pre">corchetes&quot;)</span></code></p>
+<p>El usuario introdude la Matriz A en formato de corchetes:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;[1</span> <span class="pre">3</span> <span class="pre">4;5</span> <span class="pre">6</span> <span class="pre">-1;9</span> <span class="pre">2</span> <span class="pre">5]</span></code></p>
+<p>Una consideración importante es el hecho de que los datos de entrada tambien puenden ser cadenas de caracteres o texto:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;nombre=input(&quot;ingese</span> <span class="pre">su</span> <span class="pre">nombre</span> <span class="pre">completo</span> <span class="pre">entre</span> <span class="pre">comillas&quot;)</span></code></p>
+<p>El usuario entonces puede introducir su nombre usando el formato de las comillas:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&quot;Luis</span> <span class="pre">Gerardo</span> <span class="pre">Trujillo</span> <span class="pre">Franco&quot;</span></code></p>
+<p>Una opción más para solicitar datos de entrada al usuario, es por medio de la coleción de datos directamente de una curva en una gráfica. Esta forma de solicitar datos al usuario se lleva a cabo usado la función <code class="docutils literal notranslate"><span class="pre">ginput()</span></code>. Esta función se utiliza para colectar puntos en forma de pares ordenados, el número entre paréntesis es el total de puntos o pares ordenados que se colectarán de la gráfica. Lo anterior se muestra en el siguiente video:</p>
+ <div align='center'>
+<video controls autoplay muted="true" loop="true" width="600">
+    <source src="./_static/videos/ginput.mp4 " type="video/mp4">
+</video>
+</div>
+<p>Las siguientes instrucciones permiten reproducir lo mostrado en el video:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
-<span class="n">y</span><span class="p">=</span><span class="n">t</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span>
-<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">y</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">3.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">45</span><span class="o">.*</span><span class="n">t</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usando el comado ginput se otienen, por ejemplo, las coordenadas de dos crestas de la gráfica:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]=</span><span class="nb">ginput</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2e0b71290aa61a10c399b77e0d16b494e2bfb1dee330d35dc2b9e9e3759f3147.png" src="_images/2e0b71290aa61a10c399b77e0d16b494e2bfb1dee330d35dc2b9e9e3759f3147.png" />
+<img alt="_images/deae9fa14dc28743193773e515369a591522f07003357d824758bdd9e6895035.png" src="_images/deae9fa14dc28743193773e515369a591522f07003357d824758bdd9e6895035.png" />
 <div class="output text_html"><html><body><pre>x = 2x1 double
-    0.7166
-    1.3249
+    0.1359
+    0.2788
 </pre></body></html></div><div class="output text_html"><html><body><pre>y = 2x1 double
-    0.5073
-    1.7551
+    0.6090
+    0.3571
 </pre></body></html></div></div>
 </div>
 <table class="table" id="tabla-05">
