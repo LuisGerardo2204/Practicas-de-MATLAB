@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
-    <link rel="prev" title="Práctica 3: Sentencias de control" href="Practica3.html" />
+    <link rel="prev" title="Práctica 4: Estructuras de control de flujo del programa" href="Practica4.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
   </head>
@@ -165,6 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Primeros pasos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Archivos de programa y funciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Sentencias de control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica4.html">Práctica 4: Estructuras de control de flujo del programa</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 5: Entrada-salida de datos y formatos de dspliegue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
@@ -290,7 +291,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -306,6 +309,16 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recoleccion-de-puntos-de-una-grafica">Recolección de puntos de una gráfica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-menu-como-entrada-de-datos">La función menú como entrada de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatos-de-salida-de-datos">Formatos de salida de datos</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -330,6 +343,8 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;nombre=input(&quot;ingese</span> <span class="pre">su</span> <span class="pre">nombre</span> <span class="pre">completo</span> <span class="pre">entre</span> <span class="pre">comillas&quot;)</span></code></p>
 <p>El usuario entonces puede introducir su nombre usando el formato de las comillas:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&quot;Luis</span> <span class="pre">Gerardo</span> <span class="pre">Trujillo</span> <span class="pre">Franco&quot;</span></code></p>
+<section id="recoleccion-de-puntos-de-una-grafica">
+<h2>Recolección de puntos de una gráfica<a class="headerlink" href="#recoleccion-de-puntos-de-una-grafica" title="Permalink to this heading">#</a></h2>
 <p>Una opción más para solicitar datos de entrada al usuario, es por medio de la coleción de datos directamente de una curva en una gráfica. Esta forma de solicitar datos al usuario se lleva a cabo usado la función <code class="docutils literal notranslate"><span class="pre">ginput()</span></code>. Esta función se utiliza para colectar puntos en forma de pares ordenados, el número entre paréntesis es el total de puntos o pares ordenados que se colectarán de la gráfica. Lo anterior se muestra en el siguiente video:</p>
  <div align='center'>
 <video controls autoplay muted="true" loop="true" width="600">
@@ -354,40 +369,196 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/deae9fa14dc28743193773e515369a591522f07003357d824758bdd9e6895035.png" src="_images/deae9fa14dc28743193773e515369a591522f07003357d824758bdd9e6895035.png" />
+<img alt="_images/3f30fc17491a6f3a75f3479b8fcd23f4ae836572a4355b2fddf50c4720b65e9b.png" src="_images/3f30fc17491a6f3a75f3479b8fcd23f4ae836572a4355b2fddf50c4720b65e9b.png" />
 <div class="output text_html"><html><body><pre>x = 2x1 double
-    0.1359
-    0.2788
+    0.1336
+    0.2811
 </pre></body></html></div><div class="output text_html"><html><body><pre>y = 2x1 double
-    0.6090
-    0.3571
+    0.6095
+    0.3644
 </pre></body></html></div></div>
 </div>
-<table class="table" id="tabla-05">
-<caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Formatos para presentación de datos</span><a class="headerlink" href="#tabla-05" title="Enlace permanente a esta tabla">#</a></caption>
+</section>
+<section id="la-funcion-menu-como-entrada-de-datos">
+<h2>La función menú como entrada de datos<a class="headerlink" href="#la-funcion-menu-como-entrada-de-datos" title="Permalink to this heading">#</a></h2>
+<p>Una opción interactiva es la que ofrece la función interna <code class="docutils literal notranslate"><span class="pre">menu</span></code>, cuya sintaxis se muestra a continuación:
+``entrada=menu(«Mensaje al usuario»,»Texto para el botón 1»,»Texto para el botón 2»,…,»Texto para el botón n»). La salida, que se almacena en la variable entrada, es un número entero que depende del botón sobre el cual se hizo click, por ejemplo si se presiona el botón rotulado con el mensaje opción 1 la salida enttrada será igual a uno como se muestra en el siguiente clip y en el código de salida de abajo.</p>
+<div align='center'>
+<video controls autoplay muted="true" loop="true" width="200">
+    <source src="./_static/videos/menu.mp4 " type="video/mp4">
+</video>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">entrada</span><span class="p">=</span><span class="n">menu</span><span class="p">(</span><span class="s">&quot;Seleccione una opción&quot;</span><span class="p">,</span><span class="s">&quot;Opción 1&quot;</span><span class="p">,</span><span class="s">&quot;Opción2&quot;</span><span class="p">,</span><span class="s">&quot;Opción 3&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>entrada = 1</pre></body></html></div></div>
+</div>
+<p>Un ejemplo simple de aplicación de la función menu es el siguiente programa, el cual proporciona el peso específico del material que se muestra en el menu:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Programa de ejemplo de aplicación de la función menú</span>
+<span class="c">% Fuente: https://concepto.de/peso-especifico/#ixzz8V4bEJMuH</span>
+
+<span class="nb">material</span><span class="p">=</span><span class="n">menu</span><span class="p">(</span><span class="s">&quot;Selecione el material&quot;</span><span class="p">,</span><span class="s">&quot;Acero&quot;</span><span class="p">,</span><span class="s">&quot;Aluminio&quot;</span><span class="p">,</span><span class="s">&quot;Bronce&quot;</span><span class="p">,</span><span class="s">&quot;Plomo&quot;</span><span class="p">,</span><span class="s">&quot;Zinc&quot;</span><span class="p">)</span>
+
+<span class="k">switch</span><span class="w"> </span><span class="nb">material</span>
+
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">          </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;7850 N/m3&quot;</span><span class="p">)</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">          </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;2700 N/m3&quot;</span><span class="p">)</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">          </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;8600 N/m3&quot;</span><span class="p">)</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">          </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;11400 N/m3&quot;</span><span class="p">)</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">          </span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;7200 N/m3&quot;</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>material = 4</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11400 N/m3
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="formatos-de-salida-de-datos">
+<h2>Formatos de salida de datos<a class="headerlink" href="#formatos-de-salida-de-datos" title="Permalink to this heading">#</a></h2>
+<p>En MATLAB, la función <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> (función impresión formateada) proporciona un mayor control sobre la salida
+de la que tiene con la función <code class="docutils literal notranslate"><span class="pre">disp()</span></code>. Además de desplegar valores tanto texto como arreglos, puede especificar el formato requerido para desplegar los valores, y puede especificar también un cambio de línea. La forma general de la función nativa <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> contiene dos argumentos, uno tipo texto o cadena de caracteres y otro una lista de variables en forma de constantes o matrices, según se requiera: <code class="docutils literal notranslate"><span class="pre">fprintf(&quot;Texto</span> <span class="pre">de</span> <span class="pre">formato&quot;,variable</span> <span class="pre">1,</span> <span class="pre">variable</span> <span class="pre">2,...,variable</span> <span class="pre">n)</span></code>. Un ejemplo se muestra abajo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">metales</span><span class="p">=</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">polimeros</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">ceramicos</span><span class="p">=</span><span class="mi">14</span><span class="p">;</span>
+
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&quot;Hay %f metales, %f polímeros y %f cerámicos&quot;</span><span class="p">,</span><span class="n">metales</span><span class="p">,</span><span class="n">polimeros</span><span class="p">,</span><span class="n">ceramicos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hay 5.000000 metales, 3.000000 polímeros y 14.000000 cerámicos
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nótese como es necesario incluir un especificador <strong>%f</strong>, por cada número que se desea desplegar. En el caso anterior, resulta más conveniente mostrar las cantidades de materiales como enteros, para ello se utiliza la especificación de formato <code class="docutils literal notranslate"><span class="pre">%d</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">metales</span><span class="p">=</span><span class="mi">5</span><span class="p">;</span>
+<span class="n">polimeros</span><span class="p">=</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">ceramicos</span><span class="p">=</span><span class="mi">14</span><span class="p">;</span>
+
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&quot;Hay %d metales, %d polímeros y %d cerámicos&quot;</span><span class="p">,</span><span class="n">metales</span><span class="p">,</span><span class="n">polimeros</span><span class="p">,</span><span class="n">ceramicos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hay 5 metales, 3 polímeros y 14 cerámicos
+</pre></div>
+</div>
+</div>
+</div>
+<p>La siguiente tabla resume algunos de los formatos de datos más utilizados para representar información en MATLAB:</p>
+<table class="table" id="tabla6">
+<caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Tabla de formatos para despliegue de información.</span><a class="headerlink" href="#tabla6" title="Enlace permanente a esta tabla">#</a></caption>
 <thead>
-<tr class="row-odd"><th class="head"><p>Tipo de dato</p></th>
-<th class="head"><p>Resultado</p></th>
+<tr class="row-odd"><th class="head"><p>Tipo de formato</p></th>
+<th class="head"><p>Dato o notación resultante</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>%f</strong></p></td>
-<td><p>Notación de punto decimal.</p></td>
+<td><p>Notación de numeros decimales</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>%e</strong></p></td>
-<td><p>Notación exponencial</p></td>
+<td><p>Notación exponencial (7.8e3=7800)</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>%g</strong></p></td>
-<td><p>La más corta <strong>%f</strong> o <strong>%e</strong></p></td>
+<td><p>Usará la notación que resulte más corta <strong>%f</strong> o <strong>%e</strong></p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>%c</strong></p></td>
-<td><p>Información de caracter</p></td>
+<td><p>Notación para caracteres</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>%s</strong></p></td>
-<td><p>Cadena de caracteres.</p></td>
+<tr class="row-even"><td><p><strong>%d</strong></p></td>
+<td><p>Notación para enteros</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>%s</strong></p></td>
+<td><p>Notación para texto o cadena de caracteres</p></td>
 </tr>
 </tbody>
 </table>
+<p>También es posible usar comandos de formato especial, por ejemplo, el tabulador <strong>\t</strong> es muy útil para crear tablas en las cuales las línesa se ajusten de manera ordenada. Es posible ontrolar aún más cómo se despliegan las variables al usar especificaciones como <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">field</span></code> y <code class="docutils literal notranslate"><span class="pre">precision</span> <span class="pre">field</span></code> con el comando format, <code class="docutils literal notranslate"><span class="pre">width</span> <span class="pre">field</span></code> controla el número mínimo de caracteres a imprimir. Debe ser un entero positivo. El <code class="docutils literal notranslate"><span class="pre">precision</span> <span class="pre">field</span></code> está precedido por un punto (.) y especifica el número de decimales después del punto decimal para tipos exponencial y punto fijo. Por ejemplo, <strong>%5.3f</strong> especifica que el ancho total mínimo disponible para desplegar su resultado es cinco dígitos, de los cuales, tres están después del punto decimal. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">presion</span><span class="p">=</span><span class="mf">4.5</span><span class="p">;</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&quot;La presión es %5.3f kilo Pascales \n&quot;</span><span class="p">,</span><span class="n">presion</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La presión es 4.500 kilo Pascales 
+</pre></div>
+</div>
+</div>
+</div>
+<p>El espacio vacío entre el texto y el número 4.500 se debe a que se reservan, por la indicación de formato <strong>%5.3f</strong>
+se reservaron 2 espacios para la parte entera del número a desplegar. El comando o función <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> tambíen se exptiende a cada uno de los elementos de los arreglos. Por ejemplo para una tabla de centímetros y pulgadas se puede usar el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Tabla de conversión de centímetros a pulgadas</span>
+<span class="n">cm</span><span class="p">=[</span><span class="mi">1</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">pulgadas</span><span class="p">=</span><span class="n">cm</span><span class="o">./</span><span class="mf">2.54</span><span class="p">;</span>
+<span class="n">tabla</span><span class="p">=[</span><span class="n">cm</span><span class="p">;</span><span class="n">pulgadas</span><span class="p">];</span><span class="w"> </span><span class="c">% Se agrupan los datos convertidos en una matriz que será la tabla de datos</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;  Cm   Pulg&quot;</span><span class="p">)</span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="s">&quot;%6.3f %6.3f \n&quot;</span><span class="p">,</span><span class="n">tabla</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Cm   Pulg
+ 1.000  0.394 
+ 1.500  0.591 
+ 2.000  0.787 
+ 2.500  0.984 
+ 3.000  1.181 
+ 3.500  1.378 
+ 4.000  1.575 
+ 4.500  1.772 
+ 5.000  1.969 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una tabla con comandos de formato especial es la siguiente:</p>
+<table class="table" id="id1">
+<caption><span class="caption-number">Tabla 6 </span><span class="caption-text">Tabla de formatos especiales.</span><a class="headerlink" href="#id1" title="Enlace permanente a esta tabla">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Tipo de formato</p></th>
+<th class="head"><p>Acción de formato resultante</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>\n</strong></p></td>
+<td><p>Salto de línea</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>\r</strong></p></td>
+<td><p>Regreso de carro</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>\t</strong></p></td>
+<td><p>Tabulador</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>\b</strong></p></td>
+<td><p>Retroceder un espacio</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -422,12 +593,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Practica3.html"
+       href="Practica4.html"
        title="página anterior">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">anterior</p>
-        <p class="prev-next-title">Práctica 3: Sentencias de control</p>
+        <p class="prev-next-title">Práctica 4: Estructuras de control de flujo del programa</p>
       </div>
     </a>
     <a class="right-next"
@@ -448,6 +619,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recoleccion-de-puntos-de-una-grafica">Recolección de puntos de una gráfica</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-funcion-menu-como-entrada-de-datos">La función menú como entrada de datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formatos-de-salida-de-datos">Formatos de salida de datos</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
