@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 5: Entrada-salida de datos y formatos de despliegue &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -170,6 +169,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica4.html">Práctica 4: Estructuras de control de flujo del programa</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 5: Entrada-salida de datos y formatos de despliegue</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Matrices y su manejo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica7.html">Práctica 7: Matrices para aplicaciones especiales</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -332,7 +332,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-5-entrada-salida-de-datos-y-formatos-de-despliegue">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-5-entrada-salida-de-datos-y-formatos-de-despliegue">
 <h1>Práctica 5: Entrada-salida de datos y formatos de despliegue<a class="headerlink" href="#practica-5-entrada-salida-de-datos-y-formatos-de-despliegue" title="Permalink to this heading">#</a></h1>
 <p>En esta prácitca se abordan situaciones que se presentan cuando se trabaja con programas, cuyo objetivo o aplicación final implican que el programador y el usuario final del código pudieran ser personas diferentes. Esto hará necesaria una comunicación sencilla y efectiva con el usuario a través de instrucciones y funciones de entrada y salid. Como se vio en la Práctica 2, en  MATLAB existen funciones nativas que permiten al usuario comunicarse con un programa conforme se ejecuta. El comando <code class="docutils literal notranslate"><span class="pre">input()</span></code> permite solicitar al usuario el valor de un dato de entrada y almacenarlo para su posterior uso. Las funciones nativas <code class="docutils literal notranslate"><span class="pre">disp()</span></code> y <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> porporcionan una salida visual en la ventana de comandos.</p>
 <p>La función <code class="docutils literal notranslate"><span class="pre">input()</span></code> permite ingresar incluso arreglos completos, por ejemplom si se usa la instrucción:</p>
@@ -347,7 +347,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;nombre=input(&quot;ingese</span> <span class="pre">su</span> <span class="pre">nombre</span> <span class="pre">completo</span> <span class="pre">entre</span> <span class="pre">comillas&quot;)</span></code></p>
 <p>El usuario entonces puede introducir su nombre usando el formato de las comillas:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&quot;Luis</span> <span class="pre">Gerardo</span> <span class="pre">Trujillo</span> <span class="pre">Franco&quot;</span></code></p>
-<section id="recoleccion-de-puntos-de-una-grafica">
+<div class="section" id="recoleccion-de-puntos-de-una-grafica">
 <h2>Recolección de puntos de una gráfica<a class="headerlink" href="#recoleccion-de-puntos-de-una-grafica" title="Permalink to this heading">#</a></h2>
 <p>Una opción más para solicitar datos de entrada al usuario, es por medio de la coleción de datos directamente de una curva en una gráfica. Esta forma de solicitar datos al usuario se lleva a cabo usado la función <code class="docutils literal notranslate"><span class="pre">ginput()</span></code>. Esta función se utiliza para colectar puntos en forma de pares ordenados, el número entre paréntesis es el total de puntos o pares ordenados que se colectarán de la gráfica. Lo anterior se muestra en el siguiente video:</p>
  <div align='center'>
@@ -382,8 +382,8 @@ document.write(`
     0.3574
 </pre></body></html></div></div>
 </div>
-</section>
-<section id="la-funcion-menu-como-entrada-de-datos">
+</div>
+<div class="section" id="la-funcion-menu-como-entrada-de-datos">
 <h2>La función menú como entrada de datos<a class="headerlink" href="#la-funcion-menu-como-entrada-de-datos" title="Permalink to this heading">#</a></h2>
 <p>Una opción interactiva es la que ofrece la función interna <code class="docutils literal notranslate"><span class="pre">menu</span></code>, cuya sintaxis se muestra a continuación:
 ``entrada=menu(«Mensaje al usuario»,»Texto para el botón 1»,»Texto para el botón 2»,…,»Texto para el botón n»). La salida, que se almacena en la variable entrada, es un número entero que depende del botón sobre el cual se hizo click, por ejemplo si se presiona el botón rotulado con el mensaje opción 1 la salida enttrada será igual a uno como se muestra en el siguiente clip y en el código de salida de abajo.</p>
@@ -430,8 +430,8 @@ document.write(`
 </div>
 </div>
 </div>
-</section>
-<section id="formatos-de-salida-de-datos">
+</div>
+<div class="section" id="formatos-de-salida-de-datos">
 <h2>Formatos de salida de datos<a class="headerlink" href="#formatos-de-salida-de-datos" title="Permalink to this heading">#</a></h2>
 <p>En MATLAB, la función <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> (función impresión formateada) proporciona un mayor control sobre la salida
 de la que tiene con la función <code class="docutils literal notranslate"><span class="pre">disp()</span></code>. Además de desplegar valores tanto texto como arreglos, puede especificar el formato requerido para desplegar los valores, y puede especificar también un cambio de línea. La forma general de la función nativa <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> contiene dos argumentos, uno tipo texto o cadena de caracteres y otro una lista de variables en forma de constantes o matrices, según se requiera: <code class="docutils literal notranslate"><span class="pre">fprintf(&quot;Texto</span> <span class="pre">de</span> <span class="pre">formato&quot;,variable</span> <span class="pre">1,</span> <span class="pre">variable</span> <span class="pre">2,...,variable</span> <span class="pre">n)</span></code>. Un ejemplo se muestra abajo:</p>
@@ -471,6 +471,10 @@ de la que tiene con la función <code class="docutils literal notranslate"><span
 <p>La siguiente tabla resume algunos de los formatos de datos más utilizados para representar información en MATLAB:</p>
 <table class="table" id="tabla6">
 <caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Tabla de formatos para despliegue de información.</span><a class="headerlink" href="#tabla6" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tipo de formato</p></th>
 <th class="head"><p>Dato o notación resultante</p></th>
@@ -542,6 +546,10 @@ se reservaron 2 espacios para la parte entera del número a desplegar. El comand
 <p>Una tabla con comandos de formato especial es la siguiente:</p>
 <table class="table" id="tabla7">
 <caption><span class="caption-number">Tabla 6 </span><span class="caption-text">Tabla de formatos especiales.</span><a class="headerlink" href="#tabla7" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tipo de formato</p></th>
 <th class="head"><p>Acción de formato resultante</p></th>
@@ -562,8 +570,8 @@ se reservaron 2 espacios para la parte entera del número a desplegar. El comand
 </tr>
 </tbody>
 </table>
-</section>
-<section id="ejercicio-de-la-practica-5">
+</div>
+<div class="section" id="ejercicio-de-la-practica-5">
 <h2>Ejercicio de la práctica 5.<a class="headerlink" href="#ejercicio-de-la-practica-5" title="Permalink to this heading">#</a></h2>
 <p>Haga un programa que despliegue un menú con 4 opciones que realice las siguientes funciones según la selección del usuario.</p>
 <p>1.- Grafica la parábola <span class="math notranslate nohighlight">\(y=3(x-2)^2\)</span> en el intervalo <span class="math notranslate nohighlight">\([-10,10]\)</span>.</p>
@@ -574,8 +582,8 @@ se reservaron 2 espacios para la parte entera del número a desplegar. El comand
 <p>6.- Use el comando  <code class="docutils literal notranslate"><span class="pre">disp</span></code> para crear encabezados de columna para la tabla anterior.</p>
 <p>7.- Cree un vector de centímetros desde 30 hasta 1200 con un incremento de 100. Calcule los correspondientes valores de pies. Agrupe el vector cm y el vector pies en una matriz tabla.
 Use el comando <code class="docutils literal notranslate"><span class="pre">fprintf</span></code> para enviar la tabla a la ventana de comandos para visualizarla.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
