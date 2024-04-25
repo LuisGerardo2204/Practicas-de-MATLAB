@@ -344,7 +344,7 @@ document.write(`
 <p><span class="caption-number">Figura 7 </span><span class="caption-text">Formato de archivo de datos con delimitador <strong>,</strong></span><a class="headerlink" href="#figura-datos" title="Enlace permanente a esta imagen">#</a></p>
 </figcaption>
 </figure>
-<p>Para hacer uso de los datos en un archivo es necesario cargarlos o importarlos al vorkspace de MATLAB, la importación de los datos se lleva a cabo usando la instrucción <code class="docutils literal notranslate"><span class="pre">load()</span></code>, el argumento de entrada es el nombre del archivo en el que se encuentran los datos.</p>
+<p>Para hacer uso de los datos en un archivo es necesario cargarlos o importarlos al workspace de MATLAB, la importación de los datos se lleva a cabo usando la instrucción <code class="docutils literal notranslate"><span class="pre">load()</span></code>, el argumento de entrada es el nombre del archivo en el que se encuentran los datos.</p>
 <section id="importacion-de-datos-desde-un-archivo-almacenado-en-el-disco-duro">
 <h2>Importación de datos desde un archivo almacenado en el disco duro<a class="headerlink" href="#importacion-de-datos-desde-un-archivo-almacenado-en-el-disco-duro" title="Permalink to this heading">#</a></h2>
 <p>El primer método para cargar datos es usando un archivo que se encuentra en la misma carpeta de trabajo en la que se encuentran los scripts o programas que se estan utilizando como se muestra en la <a class="reference internal" href="#figura-carpeta"><span class="std std-numref">Figura 8</span></a>.</p>
@@ -585,7 +585,7 @@ document.write(`
 </div>
 </div>
 <p>Se observa que la señal está centrada al rededor de cero Volts en vez de 1.68 Volts.</p>
-<p>En el caso de que sea conveniente guardar el archivo de datos en la computadora en la cual se está ejecutando MATLAB, es posible guardar el archivo de interés usando el comando o instrucción <code class="docutils literal notranslate"><span class="pre">websabe()</span></code>, colocando entre paréntesis el nombre asignado al archivo que se almacenará en el disco duro local, seguido de la dirección en internet del archivo del cual se desea obtener la información. El proceso para guardar los datos de las formas de onda del ejemplo anterior se consigue usando los siguientes comandos de MATLAB:</p>
+<p>En el caso de que sea conveniente guardar el archivo de datos en la computadora en la cual se está ejecutando MATLAB, es posible guardar el archivo de interés usando el comando o instrucción <code class="docutils literal notranslate"><span class="pre">websave()</span></code>, colocando entre paréntesis el nombre asignado al archivo que se almacenará en el disco duro local, seguido de la dirección en internet del archivo del cual se desea obtener la información. El proceso para guardar los datos de las formas de onda del ejemplo anterior se consigue usando los siguientes comandos de MATLAB:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
