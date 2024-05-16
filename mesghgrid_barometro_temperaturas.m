@@ -31,3 +31,20 @@ tabla=[presion;h']; % Se agrupan los datos convertidos
 disp("  Tabla de equivalencias de distancias ")
 disp("Presión [Pa]   mercurio   agua")
 fprintf("   %6.3f     %6.3f    %6.3f  \n",tabla)
+
+
+base=[2:1:15]*2.54;
+altura=[2:1:18]*2.54;
+
+[bases,alturas]=meshgrid(base,altura);
+
+areas=(bases.*alturas*0.5)';
+
+tabla=[base' areas];
+disp("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+disp("                                               Tabla de  Areas de triángulos                                            ")
+fprintf("Base/Altura   %6.3f    %6.3f     %6.3f     %6.3f    %6.3f     %6.3f     %6.3f   %6.3f     %6.3f    %6.3f     %6.3f     %6.3f    %6.3f    %6.3f     %6.3f     %6.3f    %6.3f\n",altura)
+disp("----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------")
+fprintf("   %6.3f     %6.3f    %6.3f     %6.3f     %6.3f    %6.3f     %6.3f     %6.3f   %6.3f     %6.3f    %6.3f     %6.3f     %6.3f    %6.3f    %6.3f     %6.3f     %6.3f    %6.3f\n",tabla')
+
+

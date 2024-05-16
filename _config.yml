@@ -19,6 +19,7 @@ execute:
                 - Practica6.ipynb
                 - Practica7.ipynb
                 - Practica8.ipynb
+                - Practica9.ipynb
                 
 # Define the name of the latex output file for PDF builds
 latex:
