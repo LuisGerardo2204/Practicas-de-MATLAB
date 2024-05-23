@@ -7,8 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 8: Importación de datos desde archivos &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -173,6 +172,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica7.html">Práctica 7: Matrices para aplicaciones especiales</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 8: Importación de datos desde archivos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica9.html">Práctica 9: Graficación</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica10.html">Práctica 10: Otros tipos de gráficas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -335,26 +335,22 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-8-importacion-de-datos-desde-archivos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-8-importacion-de-datos-desde-archivos">
 <h1>Práctica 8: Importación de datos desde archivos<a class="headerlink" href="#practica-8-importacion-de-datos-desde-archivos" title="Permalink to this heading">#</a></h1>
 <p>En el ambiente de programación MATLAB es posible generar matrices y tablas de datos a partir de archivos en los formatos <strong>.txt</strong> y <strong>.CSV</strong>, este último formato se refiere a datos provenientes de un archivo de software de adquisición de datos o incluso de excell. El uso de archivos de datos funciona en sentido bidireccional, es decir, no solo es posible cargar los datos desde el archivo sino que tambien es posible crear un archivo de datos a partir de tablas generadas en MATLAB, como las tablas de conversiones de unidades analizadas en las prácticas anteriores.</p>
 <p>Una característica importante de los archivos de datos que se pueden manipular en MATLAB es el delimitador. Es importante que el archivo a leer separe los datos usando una coma, punto y coma o espacio, ademas de usar el tabulador para indicar el inicio de una nueva línea o renglón de datos, como se muestra en la <a class="reference internal" href="#figura-datos"><span class="std std-numref">Figura 7</span></a>. Estas condiciones permiten la creación de una matriz en la que las columnas almacenan los datos de interés, importados desde el archivo de datos <strong>.CSV</strong> o <strong>.txt</strong>.</p>
-<figure class="align-default" id="figura-datos">
+<div class="figure align-default" id="figura-datos">
 <a class="reference internal image-reference" href="_images/formato_datos.jpg"><img alt="_images/formato_datos.jpg" src="_images/formato_datos.jpg" style="height: 150px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 7 </span><span class="caption-text">Formato de archivo de datos con delimitador <strong>,</strong></span><a class="headerlink" href="#figura-datos" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 7 </span><span class="caption-text">Formato de archivo de datos con delimitador <strong>,</strong></span><a class="headerlink" href="#figura-datos" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Para hacer uso de los datos en un archivo es necesario cargarlos o importarlos al workspace de MATLAB, la importación de los datos se lleva a cabo usando la instrucción <code class="docutils literal notranslate"><span class="pre">load()</span></code>, el argumento de entrada es el nombre del archivo en el que se encuentran los datos.</p>
-<section id="importacion-de-datos-desde-un-archivo-almacenado-en-el-disco-duro">
+<div class="section" id="importacion-de-datos-desde-un-archivo-almacenado-en-el-disco-duro">
 <h2>Importación de datos desde un archivo almacenado en el disco duro<a class="headerlink" href="#importacion-de-datos-desde-un-archivo-almacenado-en-el-disco-duro" title="Permalink to this heading">#</a></h2>
 <p>El primer método para cargar datos es usando un archivo que se encuentra en la misma carpeta de trabajo en la que se encuentran los scripts o programas que se estan utilizando como se muestra en la <a class="reference internal" href="#figura-carpeta"><span class="std std-numref">Figura 8</span></a>.</p>
-<figure class="align-default" id="figura-carpeta">
+<div class="figure align-default" id="figura-carpeta">
 <a class="reference internal image-reference" href="_images/carpeta_archivos.jpg"><img alt="_images/carpeta_archivos.jpg" src="_images/carpeta_archivos.jpg" style="height: 250px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 8 </span><span class="caption-text">Ventana de usuarios que incluye al archivo de datos</span><a class="headerlink" href="#figura-carpeta" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 8 </span><span class="caption-text">Ventana de usuarios que incluye al archivo de datos</span><a class="headerlink" href="#figura-carpeta" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Para poder cargar los datos del archivo y guardarlos en una variable tipo matriz o arreglo se usan las instrucciones:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -395,6 +391,10 @@ document.write(`
 </ul>
 <table class="table" id="tabla-estadistica">
 <caption><span class="caption-number">Tabla 9 </span><span class="caption-text">Operaciones con conjuntos de datos.</span><a class="headerlink" href="#tabla-estadistica" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Parámetro estadistico</p></th>
 <th class="head"><p>Instrucción de MATLAB</p></th>
@@ -457,8 +457,8 @@ document.write(`
 <img alt="_images/ac01c5a793d1971b3a27fd809c301f4d355612d2c5895af53944fdfa8eaac858.png" src="_images/ac01c5a793d1971b3a27fd809c301f4d355612d2c5895af53944fdfa8eaac858.png" />
 </div>
 </div>
-</section>
-<section id="importacion-de-datos-desde-un-archivo-disponible-en-internet">
+</div>
+<div class="section" id="importacion-de-datos-desde-un-archivo-disponible-en-internet">
 <h2>Importación de datos desde un archivo disponible en internet<a class="headerlink" href="#importacion-de-datos-desde-un-archivo-disponible-en-internet" title="Permalink to this heading">#</a></h2>
 <p>Es posible importar datos desde archivos disponibles en repositorios de internet usando MATLAB. Esta opción permite adquirir datos de diferentes orígenes y naturalezas, además de permitir almacenar información en la nube para utilizarla cuando sea necesario sin necesidad de almacenar grandes archivos en la computadora personal. GitHub es una excelente opción para almacenar ese tipo de archivos. El comando o función de MATLAB que permite importar los archivos es <code class="docutils literal notranslate"><span class="pre">readtable()</span></code>. El argumento que se escribe entre paréntesis, es la dirección de internet o repositorio en el que está almacenado el archivo. Para leer directamente de internet el archivo sin necesidad de almacenarlo en la computadora y leer únicamente los datos alacenados en el se usan las siguientes instrucciones:</p>
 <div class="cell docutils container">
@@ -626,8 +626,8 @@ document.write(`
 <img alt="_images/bfb3a5ae06a9a46072d909fc2988ece22911722c3dedb1b6ca97079ba123e54b.png" src="_images/bfb3a5ae06a9a46072d909fc2988ece22911722c3dedb1b6ca97079ba123e54b.png" />
 </div>
 </div>
-</section>
-<section id="creacion-de-archivos-a-partir-de-matrices-o-arreglos-de-datos">
+</div>
+<div class="section" id="creacion-de-archivos-a-partir-de-matrices-o-arreglos-de-datos">
 <h2>Creación de archivos a partir de matrices o arreglos de datos<a class="headerlink" href="#creacion-de-archivos-a-partir-de-matrices-o-arreglos-de-datos" title="Permalink to this heading">#</a></h2>
 <p>Es posible hacer el proceso inverso al que se ha ilustrado con anterioridad, es decir, en vez de importar los datos desde un archivo, se puede crear un archivo de datos usando MATLAB. El comando que se utiliza para tal fin es <code class="docutils literal notranslate"><span class="pre">fopen()</span></code>, con el nombre del archivo entre comillas, seguido de la palabra <code class="docutils literal notranslate"><span class="pre">wt</span></code> para indicar que será un archivo reescribible. Para ilustrar lo anterior usaremos la tabla de conversiones de centímetros a pulgadas y yardas de la práctica anterior:</p>
 <div class="cell docutils container">
@@ -685,8 +685,8 @@ Una práctica usual es omitir los encabezados, es decir el título y los rótulo
 <video controls autoplay muted="true" loop="true" width="600">
     <source src="./_static/videos/guarda_txt.mp4 " type="video/mp4">
 </video>
-</div></section>
-<section id="ejercicio-de-la-practica-8">
+</div></div>
+<div class="section" id="ejercicio-de-la-practica-8">
 <h2>Ejercicio de la práctica 8<a class="headerlink" href="#ejercicio-de-la-practica-8" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Genere un archivo con nombre <strong>Tabla_de_barometro.txt</strong> que contenga la tabla de alturas contra presión barométrica del ejercicio 7 de la práctica 7.</p></li>
@@ -710,8 +710,8 @@ Una práctica usual es omitir los encabezados, es decir el título y los rótulo
 <p>e) Guarde en un vector llamado <span class="math notranslate nohighlight">\(Zm\)</span> los datos del vector <span class="math notranslate nohighlight">\(Z\)</span> menos su promedio usando el comnado <code class="docutils literal notranslate"><span class="pre">mean()</span></code> Grafique el vector <span class="math notranslate nohighlight">\(Zm\)</span> contra el vector de tiempo generado en el punto c), usando la instrucción <code class="docutils literal notranslate"><span class="pre">plot(t,Zm)</span></code>.</p>
 </li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
