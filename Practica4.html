@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 4: Estructuras de control de flujo del programa &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -173,6 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica8.html">Práctica 8: Importación de datos desde archivos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica9.html">Práctica 9: Graficación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica10.html">Práctica 10: Otros tipos de gráficas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica11.html">Práctica 11: Simulación de sistemas dinámicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -338,10 +340,10 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-4-estructuras-de-control-de-flujo-del-programa">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-4-estructuras-de-control-de-flujo-del-programa">
 <h1>Práctica 4: Estructuras de control de flujo del programa<a class="headerlink" href="#practica-4-estructuras-de-control-de-flujo-del-programa" title="Permalink to this heading">#</a></h1>
 <p>La instrucción <code class="docutils literal notranslate"><span class="pre">find()</span></code> es muy útil para seleccionar datos que complen con ciertas características en un conjunto más grande. Las instrucciones de comparación <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">==</span></code>, etc. son suficientes para determinar funciones definidas a pedazos y para construir arreglos con datos que cumplen con ciertas características a partir de un arreglo más general, sin embargo, a menudo es necesario hacer uso de estructuras más complejas para controlar el flujo de ejecución de un programa. Una de estas estructuras es la conocida como <code class="docutils literal notranslate"><span class="pre">if</span></code>.</p>
-<div class="section" id="estructura-if">
+<section id="estructura-if">
 <h2>Estructura if<a class="headerlink" href="#estructura-if" title="Permalink to this heading">#</a></h2>
 <p>La estrutura <code class="docutils literal notranslate"><span class="pre">if</span></code> tiene la forma:</p>
 <p><strong>if</strong>(expresión de comparación)</p>
@@ -368,8 +370,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="estructura-if-else">
+</section>
+<section id="estructura-if-else">
 <h2>Estructura if/else<a class="headerlink" href="#estructura-if-else" title="Permalink to this heading">#</a></h2>
 <p>En general, las estructuras <code class="docutils literal notranslate"><span class="pre">if</span></code> funcionan mejor con escalares o valores lógicos. Un complemento a la estructura <code class="docutils literal notranslate"><span class="pre">if</span></code>  es la estructura <strong>if/else</strong>, un ejemplo de aplicación de esta estructura es la siguiente:</p>
 <p><strong>if</strong>(a&gt;0)</p>
@@ -466,8 +468,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="estructura-elseif">
+</section>
+<section id="estructura-elseif">
 <h2>Estructura elseif<a class="headerlink" href="#estructura-elseif" title="Permalink to this heading">#</a></h2>
 <p>Una estructura <code class="docutils literal notranslate"><span class="pre">elseif</span></code> permite comprobar varios criterios de forma anidada, manteniendo una importante pulcritud y órden en el código, un ejemplo de lo anterior se ilustra como sigue:</p>
 <p><strong>if</strong>(a&gt;0)</p>
@@ -498,8 +500,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="estructura-switch-case">
+</section>
+<section id="estructura-switch-case">
 <h2>Estructura Switch/case<a class="headerlink" href="#estructura-switch-case" title="Permalink to this heading">#</a></h2>
 <p>La estructura de control de flujo de programa <code class="docutils literal notranslate"><span class="pre">switch/case</span></code> permite tomar decisiones en base a criterios, de forma parecida a lo que se realiza usado estructuras <code class="docutils literal notranslate"><span class="pre">else/if</span></code> pero de forma más ordenada y directa. Es posible establecer como criterios de desición a escalares o cadenas de caracteres. La estructura <code class="docutils literal notranslate"><span class="pre">Switch/case</span></code> tiene la estructura:</p>
 <p><strong>switch</strong>(variable)</p>
@@ -532,8 +534,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="estructuras-tipo-bucle">
+</section>
+<section id="estructuras-tipo-bucle">
 <h2>Estructuras tipo bucle<a class="headerlink" href="#estructuras-tipo-bucle" title="Permalink to this heading">#</a></h2>
 <p>Las estructuras bucle permiten realizar operaciones repetitivas, o dicho de otra manera, permiten realizar el mismo
 conjunto de instrucciones muchas veces sin la necesidad de escribirlo muchas veces. Las dos estructuras de repetición básicas en MATLAB son el ciclo <code class="docutils literal notranslate"><span class="pre">For</span></code> y la sentencia <code class="docutils literal notranslate"><span class="pre">While</span></code>. El ciclo <code class="docutils literal notranslate"><span class="pre">For</span></code> tiene la siguiente etructura:</p>
@@ -677,8 +679,8 @@ a!=a(a-1)!
 <div class="cell_output docutils container">
 <div class="output text_html"><html><body><pre>ans = 3628800</pre></body></html></div></div>
 </div>
-</div>
-<div class="section" id="calculo-de-sumatorias">
+</section>
+<section id="calculo-de-sumatorias">
 <h2>Cálculo de sumatorias<a class="headerlink" href="#calculo-de-sumatorias" title="Permalink to this heading">#</a></h2>
 <p>Un ejemplo del uso de los bucles es, por excelencia, el cálculo de sumatorias simples y dobles, por ejemplo</p>
 <div class="math notranslate nohighlight">
@@ -745,8 +747,8 @@ a!=a(a-1)!
 <div class="cell_output docutils container">
 <div class="output text_html"><html><body><pre>suma = 1.0286</pre></body></html></div></div>
 </div>
-</div>
-<div class="section" id="la-serie-trigonometrica-de-fourier">
+</section>
+<section id="la-serie-trigonometrica-de-fourier">
 <h2>La serie trigonométrica de Fourier<a class="headerlink" href="#la-serie-trigonometrica-de-fourier" title="Permalink to this heading">#</a></h2>
 <p>Sea <span class="math notranslate nohighlight">\(x(t)\)</span> una señal periódica, es decir que se puede expresar como <span class="math notranslate nohighlight">\(x(t)=x(t+T)\)</span>, donde <span class="math notranslate nohighlight">\(T\)</span> es el periódo de dicha señal en segundos. Según lo descubierto por Joseph Fourier (<span id="id1">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id8" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>), una señal periódica se puede representar como la sumatoria de una infinidad de términos seno y coseno, usando la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-serie-fourier">
@@ -877,8 +879,8 @@ b_k=-\frac{3}{k\pi}\left[cos(k\pi t)\right],k=1,2,3...
 </div>
 </div>
 <p>A la distorción en las siscontinuidades o cambios en la señal se le conoce como fenómeno de Gibbs (<span id="id2">Kamen and Heck [<a class="reference internal" href="Bibliograf%C3%ADa.html#id8" title="Edward W. Kamen and Bonnie S. Heck. Fundamentals of signals and systems using the Web and MATLAB. Pearson Prentice Hall, Upper Saddle River, NJ, 3rd ed. edition, 2007. ISBN 0131687379.">KH07</a>]</span>.)</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {

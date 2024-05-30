@@ -7,7 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 10: Otros tipos de gráficas &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -69,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica10';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="next" title="Práctica 11: Simulación de sistemas dinámicos" href="Practica11.html" />
     <link rel="prev" title="Práctica 9: Graficación" href="Practica9.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -173,6 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica8.html">Práctica 8: Importación de datos desde archivos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica9.html">Práctica 9: Graficación</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 10: Otros tipos de gráficas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica11.html">Práctica 11: Simulación de sistemas dinámicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -339,12 +341,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-10-otros-tipos-de-graficas">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-10-otros-tipos-de-graficas">
 <h1>Práctica 10: Otros tipos de gráficas<a class="headerlink" href="#practica-10-otros-tipos-de-graficas" title="Permalink to this heading">#</a></h1>
 <p>En ingeniería, las gráficas de dos variables son muy comunes dada su capacidad de transmitir de forma muy visual e instantánea la evolución de una magnitud en el tiempo o con respecto a otra varable de interés. Existen gráficas de otras naturalezas que también permiten la representación y análisis visual de datos, existen aplicaciones en las cuales tipos de gráfica muy diferentes en estructura a las de dos variables son much más explicitas y permiten obtener conclusiones de análisis con mejores bases o argumentos.</p>
-<div class="section" id="graficas-bidimencionales-alternativas">
+<section id="graficas-bidimencionales-alternativas">
 <h2>Gráficas bidimencionales alternativas<a class="headerlink" href="#graficas-bidimencionales-alternativas" title="Permalink to this heading">#</a></h2>
-<div class="section" id="la-grafica-polar">
+<section id="la-grafica-polar">
 <h3>La gráfica polar<a class="headerlink" href="#la-grafica-polar" title="Permalink to this heading">#</a></h3>
 <p>Una gráfica polar es una representación del tipo línea que se traza de forma circular de forma que la variable independiente, (eje <span class="math notranslate nohighlight">\(x\)</span>) es un ángulo y la variable dependiente (eje <span class="math notranslate nohighlight">\(y\)</span>) es una magnitud. En MATLAB, el comando para generar una gráfica polar es <strong>polar(r,<span class="math notranslate nohighlight">\(\theta\)</span>)</strong></p>
 <div class="cell docutils container">
@@ -364,11 +366,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1b0e984fceaa27a783d32ab2f86bb0f3e87cdefc6090b758c07ea0b3e628f7bd.png" src="_images/1b0e984fceaa27a783d32ab2f86bb0f3e87cdefc6090b758c07ea0b3e628f7bd.png" />
+<img alt="_images/d171733d73d51624b567ce275ded13de22e53b5984a8c0d36c1bbe07bae9541b.png" src="_images/d171733d73d51624b567ce275ded13de22e53b5984a8c0d36c1bbe07bae9541b.png" />
 </div>
 </div>
-</div>
-<div class="section" id="graficas-con-escala-logaritmica">
+</section>
+<section id="graficas-con-escala-logaritmica">
 <h3>Gráficas con escala logarítmica<a class="headerlink" href="#graficas-con-escala-logaritmica" title="Permalink to this heading">#</a></h3>
 <p>En ingeniería hay ocasiones en las que una escala con incrementos monótonos como los que hemos utilizado hasta el momento no son adecuadas por que una de las variables, ya sea la variable independiente o la dependiente tienen cambios en escalas con intervalos muy grandes. Por ejemplo, si se considera la gráfica de un polinomio como <span class="math notranslate nohighlight">\(y=5x^4-2x^2-45x+10\)</span>, es dificil visualizar la curva con detalle cuando se consideran rangos amplios para la variable <span class="math notranslate nohighlight">\(x\)</span>, por ejemplo para el intervalo <span class="math notranslate nohighlight">\(-10&lt;x&lt;10\)</span> la gráfica adquiere la siguiente forma:</p>
 <div class="cell docutils container">
@@ -384,7 +386,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8c6c987af1d450ac0a77eb3e428e0446b00dbeebdefb126723f5417590fc9b7b.png" src="_images/8c6c987af1d450ac0a77eb3e428e0446b00dbeebdefb126723f5417590fc9b7b.png" />
+<img alt="_images/daab6387ad88319c717f3c13f186c9a1d3037d59f5b2f02b0ec8a43edce9c24a.png" src="_images/daab6387ad88319c717f3c13f186c9a1d3037d59f5b2f02b0ec8a43edce9c24a.png" />
 </div>
 </div>
 <p>Una alternativa a la necesidad de usar valores tan grandes, en ingenería se recurre a la escala logaritmimca. En una escala lograírmica se usa la base 10, este tipo de escala tiene la ventaja de que no comprime los valores pequeños como sucede en el ejemplo anterior, note que en la gráfica del polinomio no se puede distinguir con claridad a loa valores entre <span class="math notranslate nohighlight">\(10\)</span> y <span class="math notranslate nohighlight">\(-10\)</span>. LA gráfica en escala logarítmica del ejemplo anterior se realiza al utilizar el comando <code class="docutils literal notranslate"><span class="pre">semilogx()</span></code> como se muestra a continuación:</p>
@@ -399,7 +401,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5385dd367b148a2f4c743499080d09b3031873dca54aeb02c699c6597602eb07.png" src="_images/5385dd367b148a2f4c743499080d09b3031873dca54aeb02c699c6597602eb07.png" />
+<img alt="_images/8cb206523784ab15224fa22003392ad531bec30446ea6449fb2ca673550fd3c3.png" src="_images/8cb206523784ab15224fa22003392ad531bec30446ea6449fb2ca673550fd3c3.png" />
 </div>
 </div>
 <p>En esta última gráfica, se puede apreciar un rango de valores más aplio en el eje <span class="math notranslate nohighlight">\(x\)</span>, la escala abarca el doble, dado que en la gráfica original el máximo valor en el eje <span class="math notranslate nohighlight">\(x\)</span> es 50. Dada la naturaleza de la función que se está graficando, el valor de <span class="math notranslate nohighlight">\(y\)</span> aumenta muy rápidamente con respecto a la variable <span class="math notranslate nohighlight">\(x\)</span>, dado que su razón de cambio o derivada es un polinomio de tercer grado. La magnitud de <span class="math notranslate nohighlight">\(y\)</span> se puede compactar usando la escala logaritmica, tambien por medio del comado de graficación <code class="docutils literal notranslate"><span class="pre">semilogy()</span></code>, note que el comando indica el eje que se desea representar en escala logarítmica en la gráfica que se está generando:</p>
@@ -414,7 +416,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8cf40ddaad40c7513ea0031b558451e1e38bae674e92ec912540e1a0f441b00b.png" src="_images/8cf40ddaad40c7513ea0031b558451e1e38bae674e92ec912540e1a0f441b00b.png" />
+<img alt="_images/bba96e2380a0fd3a6506bb0b0b26fef928071070947abf7a989bcaea64fea176.png" src="_images/bba96e2380a0fd3a6506bb0b0b26fef928071070947abf7a989bcaea64fea176.png" />
 </div>
 </div>
 <p>Si bien se redujo visualmente la velocidad de crecimiento de la variable <span class="math notranslate nohighlight">\(y\)</span>, sigue mostrando una tendencia de crecimiento que no permite visualizar de forma condensada mas valores de <span class="math notranslate nohighlight">\(y\)</span> cuando <span class="math notranslate nohighlight">\(x\)</span> se incrementa más allá de 50. Una tercera solución es usar escala logarítmica en ambos ejes, usando el comando de graficación <code class="docutils literal notranslate"><span class="pre">loglog()</span></code>.</p>
@@ -429,7 +431,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/70d047004036182f7c70820659fdf132580835229ba89814cce6c10afa2eba9d.png" src="_images/70d047004036182f7c70820659fdf132580835229ba89814cce6c10afa2eba9d.png" />
+<img alt="_images/d119d683a4a2c1196dde29b0b9e88e9ea25d3f20b570b80ccd6945253635f63c.png" src="_images/d119d683a4a2c1196dde29b0b9e88e9ea25d3f20b570b80ccd6945253635f63c.png" />
 </div>
 </div>
 <p>Las gráficas con escala logaritmica son especialemente útiles en ingeniería electrónica para representar el comportamiento o respuesta en frecuencia de los amplificadores dada el amplio rango de frecuencias que se manejan. Por ejemplo, la respuesta en frecuencia de un circuito RLC serie (resistecia, inductrancia capacitancia) se presenta en variable compleja como se muestra en el siguiente código:</p>
@@ -479,20 +481,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/04f355d7a0511af5fc63dbb2229f0b4edd750972b8ccec6e7e7d1126112c8265.png" src="_images/04f355d7a0511af5fc63dbb2229f0b4edd750972b8ccec6e7e7d1126112c8265.png" />
+<img alt="_images/bf8a4b18f067a32670108fa0ce681aaffd9b813cfeb691ed0e8cd2f85e4873d2.png" src="_images/bf8a4b18f067a32670108fa0ce681aaffd9b813cfeb691ed0e8cd2f85e4873d2.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="graficas-de-barra-y-circulares-para-estadistica">
+</section>
+</section>
+<section id="graficas-de-barra-y-circulares-para-estadistica">
 <h2>Gráficas de barra y circulares para estadística.<a class="headerlink" href="#graficas-de-barra-y-circulares-para-estadistica" title="Permalink to this heading">#</a></h2>
 <p>Las gráficas de barras y circulares permiten una presentación visual de conjuntos de datos que resulta muy atractivas dada su facilidad de lectura e interpretación. En MATLAB, los comandos para generar gráficas estadísticas son los mostrados en la <a class="reference internal" href="#tabla-barras"><span class="std std-numref">Tabla 13</span></a>.</p>
 <table class="table" id="tabla-barras">
 <caption><span class="caption-number">Tabla 13 </span><span class="caption-text">Tabla de instrucciones de graficación.</span><a class="headerlink" href="#tabla-barras" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Comando MATLAB</p></th>
 <th class="head"><p>Descripción</p></th>
@@ -545,11 +543,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6f599c50fe745713c1e4feb5235fb742aa82d2a8392e40eb738ef5402182aa9e.png" src="_images/6f599c50fe745713c1e4feb5235fb742aa82d2a8392e40eb738ef5402182aa9e.png" />
+<img alt="_images/f8b619fa4c4a7cad10c3829a8dec88e3b4d3058f5089a4a925f388332dc4691c.png" src="_images/f8b619fa4c4a7cad10c3829a8dec88e3b4d3058f5089a4a925f388332dc4691c.png" />
 </div>
 </div>
-</div>
-<div class="section" id="graficas-con-dos-ejes-de-escalas-diferentes">
+</section>
+<section id="graficas-con-dos-ejes-de-escalas-diferentes">
 <h2>Gráficas con dos ejes de escalas diferentes.<a class="headerlink" href="#graficas-con-dos-ejes-de-escalas-diferentes" title="Permalink to this heading">#</a></h2>
 <p>En ingeniería resulta de utilidad, en ocasiones, el sobreponer dos gráficas de dos dimensiones en una misma figura. Pero en no pocas ocasiones sucede que no son compatibles las magnitudes de las curvas que se desean contrastar o graficar en la misma figura. Por ejemplo, considérese el caso de un sistema masa-resorte-amortiguador cuya salida es un desplazamiento <span class="math notranslate nohighlight">\(x(t)\)</span> en unidades de metros. Se desea contrastar con la fuerza de entrada que actúa sobre la masa con orden de Newtons. suponiendo que las funciones para la fuerza y el desplazamiento son:</p>
 <div class="math notranslate nohighlight">
@@ -579,7 +577,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2e4d8c090a2720093cbf3b2e7a135245fd00dc57f40d297a849e91a0c465fd6a.png" src="_images/2e4d8c090a2720093cbf3b2e7a135245fd00dc57f40d297a849e91a0c465fd6a.png" />
+<img alt="_images/8bdb0b6c830d0b6e15128172e287b4d7cae53f07e27348021563599f409e6f79.png" src="_images/8bdb0b6c830d0b6e15128172e287b4d7cae53f07e27348021563599f409e6f79.png" />
 </div>
 </div>
 <p>Como se observa en la gráfica anterior, es imposible comparar las dos magnitudes dada la gran diferencia en sus magnitudes. En MATLAB, es posible juntar ambas gráficas usando el comando <code class="docutils literal notranslate"><span class="pre">plotyy()</span></code> para generar una gráfica de datos que adapte las escalas para poder contrastar dos curvas, como se muestra en el siguiente código:</p>
@@ -597,11 +595,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/af373a6eb66ef3cf80aab3ce2ef5eea55dbca27d012d28446d0997e91cf56c50.png" src="_images/af373a6eb66ef3cf80aab3ce2ef5eea55dbca27d012d28446d0997e91cf56c50.png" />
+<img alt="_images/6fce65f4cd883cdf858901da5a3b7ed26cc340f677d561d3171aa9466ebc9432.png" src="_images/6fce65f4cd883cdf858901da5a3b7ed26cc340f677d561d3171aa9466ebc9432.png" />
 </div>
 </div>
-</div>
-<div class="section" id="ejercicio-de-la-practica-10">
+</section>
+<section id="ejercicio-de-la-practica-10">
 <h2>Ejercicio de la práctica 10<a class="headerlink" href="#ejercicio-de-la-practica-10" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Defina un vector o arreglo llamado <span class="math notranslate nohighlight">\(angulo\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,2\pi]\)</span>, con un incremento de <span class="math notranslate nohighlight">\(0.01\pi\)</span>. Defina un arreglo de distancias <span class="math notranslate nohighlight">\(d=7cos(4.5*angulo)\)</span>. Elabore una gráfica polar de <span class="math notranslate nohighlight">\(angulo\)</span> contra <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
@@ -626,14 +624,14 @@ document.write(`
 <ol class="arabic simple" start="5">
 <li><p>Genere dos gráficas de reporte de datos con la información de la tabla siguiente:</p></li>
 </ol>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p><span class="math notranslate nohighlight">\(t\)</span> <span class="math notranslate nohighlight">\([s]\)</span></p></th>
-<th class="text-left head"><p><span class="math notranslate nohighlight">\(T_1\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
-<th class="text-left head"><p><span class="math notranslate nohighlight">\(T_2\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
-<th class="text-left head"><p><span class="math notranslate nohighlight">\(T_3\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
-<th class="text-left head"><p><span class="math notranslate nohighlight">\(T_4\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
-<th class="text-right head"><p><span class="math notranslate nohighlight">\(T_5\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(t\)</span> <span class="math notranslate nohighlight">\([s]\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(T_1\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(T_2\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(T_3\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(T_4\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(T_5\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -724,8 +722,8 @@ document.write(`
 <p>b.4)<span class="math notranslate nohighlight">\(24&lt;T&lt;24.5°\)</span></p>
 <p>c) Genere una gráfica de barras tridimencional de los datos de temperatura de todas las columnas para los 5 primeros datos.</p>
 <p>Coloque los rótulos para los ejes, título y tamaño de fuente adecuados en todas sus gráficas.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -768,11 +766,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="Practica11.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Práctica 11: Simulación de sistemas dinámicos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
