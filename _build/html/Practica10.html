@@ -1,0 +1,867 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="es" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Práctica 10: Otros tipos de gráficas &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/myfile-checkpoint.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/translations.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Practica10';</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="next" title="Práctica 11: Simulación de sistemas dinámicos" href="Practica11.html" />
+    <link rel="prev" title="Práctica 9: Graficación" href="Practica9.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="es"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Prácticas con el software MATLAB
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="SoftwareMATLAB.html">Breve introducción a MATLAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Primeros pasos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Archivos de programa y funciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Sentencias de control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica4.html">Práctica 4: Estructuras de control de flujo del programa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica5.html">Práctica 5: Entrada-salida de datos y formatos de despliegue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica6.html">Práctica 6: Matrices y su manejo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica7.html">Práctica 7: Matrices para aplicaciones especiales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica8.html">Práctica 8: Importación de datos desde archivos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica9.html">Práctica 9: Graficación</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 10: Otros tipos de gráficas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica11.html">Práctica 11: Simulación de sistemas dinámicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Descarga esta pagina">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Practica10.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Descargar archivo fuente"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Imprimir en PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Modo de pantalla completa"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Práctica 10: Otros tipos de gráficas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contenido </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-bidimencionales-alternativas">Gráficas bidimencionales alternativas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-grafica-polar">La gráfica polar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-con-escala-logaritmica">Gráficas con escala logarítmica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-barra-y-circulares-para-estadistica">Gráficas de barra y circulares para estadística.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-con-dos-ejes-de-escalas-diferentes">Gráficas con dos ejes de escalas diferentes.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-10">Ejercicio de la práctica 10</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-10-otros-tipos-de-graficas">
+<h1>Práctica 10: Otros tipos de gráficas<a class="headerlink" href="#practica-10-otros-tipos-de-graficas" title="Permalink to this heading">#</a></h1>
+<p>En ingeniería, las gráficas de dos variables son muy comunes dada su capacidad de transmitir de forma muy visual e instantánea la evolución de una magnitud en el tiempo o con respecto a otra varable de interés. Existen gráficas de otras naturalezas que también permiten la representación y análisis visual de datos, existen aplicaciones en las cuales tipos de gráfica muy diferentes en estructura a las de dos variables son much más explicitas y permiten obtener conclusiones de análisis con mejores bases o argumentos.</p>
+<section id="graficas-bidimencionales-alternativas">
+<h2>Gráficas bidimencionales alternativas<a class="headerlink" href="#graficas-bidimencionales-alternativas" title="Permalink to this heading">#</a></h2>
+<section id="la-grafica-polar">
+<h3>La gráfica polar<a class="headerlink" href="#la-grafica-polar" title="Permalink to this heading">#</a></h3>
+<p>Una gráfica polar es una representación del tipo línea que se traza de forma circular de forma que la variable independiente, (eje <span class="math notranslate nohighlight">\(x\)</span>) es un ángulo y la variable dependiente (eje <span class="math notranslate nohighlight">\(y\)</span>) es una magnitud. En MATLAB, el comando para generar una gráfica polar es <strong>polar(r,<span class="math notranslate nohighlight">\(\theta\)</span>)</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="n">theta</span><span class="p">=[</span><span class="o">-</span><span class="nb">pi</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">pi</span><span class="p">];</span>
+<span class="n">r1</span><span class="p">=</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">r2</span><span class="p">=</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">);</span>
+<span class="n">polar</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">r1</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span>
+<span class="n">polar</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">r2</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica polar de las funciones seno y coseno&quot;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;sen(\theta)&quot;</span><span class="p">,</span><span class="s">&quot;cos(\theta)&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;\theta&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d171733d73d51624b567ce275ded13de22e53b5984a8c0d36c1bbe07bae9541b.png" src="_images/d171733d73d51624b567ce275ded13de22e53b5984a8c0d36c1bbe07bae9541b.png" />
+</div>
+</div>
+</section>
+<section id="graficas-con-escala-logaritmica">
+<h3>Gráficas con escala logarítmica<a class="headerlink" href="#graficas-con-escala-logaritmica" title="Permalink to this heading">#</a></h3>
+<p>En ingeniería hay ocasiones en las que una escala con incrementos monótonos como los que hemos utilizado hasta el momento no son adecuadas por que una de las variables, ya sea la variable independiente o la dependiente tienen cambios en escalas con intervalos muy grandes. Por ejemplo, si se considera la gráfica de un polinomio como <span class="math notranslate nohighlight">\(y=5x^4-2x^2-45x+10\)</span>, es dificil visualizar la curva con detalle cuando se consideran rangos amplios para la variable <span class="math notranslate nohighlight">\(x\)</span>, por ejemplo para el intervalo <span class="math notranslate nohighlight">\(-10&lt;x&lt;10\)</span> la gráfica adquiere la siguiente forma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">50</span><span class="p">];</span>
+<span class="n">y</span><span class="p">=</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">4</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/daab6387ad88319c717f3c13f186c9a1d3037d59f5b2f02b0ec8a43edce9c24a.png" src="_images/daab6387ad88319c717f3c13f186c9a1d3037d59f5b2f02b0ec8a43edce9c24a.png" />
+</div>
+</div>
+<p>Una alternativa a la necesidad de usar valores tan grandes, en ingenería se recurre a la escala logaritmimca. En una escala lograírmica se usa la base 10, este tipo de escala tiene la ventaja de que no comprime los valores pequeños como sucede en el ejemplo anterior, note que en la gráfica del polinomio no se puede distinguir con claridad a loa valores entre <span class="math notranslate nohighlight">\(10\)</span> y <span class="math notranslate nohighlight">\(-10\)</span>. LA gráfica en escala logarítmica del ejemplo anterior se realiza al utilizar el comando <code class="docutils literal notranslate"><span class="pre">semilogx()</span></code> como se muestra a continuación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">semilogx</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8cb206523784ab15224fa22003392ad531bec30446ea6449fb2ca673550fd3c3.png" src="_images/8cb206523784ab15224fa22003392ad531bec30446ea6449fb2ca673550fd3c3.png" />
+</div>
+</div>
+<p>En esta última gráfica, se puede apreciar un rango de valores más aplio en el eje <span class="math notranslate nohighlight">\(x\)</span>, la escala abarca el doble, dado que en la gráfica original el máximo valor en el eje <span class="math notranslate nohighlight">\(x\)</span> es 50. Dada la naturaleza de la función que se está graficando, el valor de <span class="math notranslate nohighlight">\(y\)</span> aumenta muy rápidamente con respecto a la variable <span class="math notranslate nohighlight">\(x\)</span>, dado que su razón de cambio o derivada es un polinomio de tercer grado. La magnitud de <span class="math notranslate nohighlight">\(y\)</span> se puede compactar usando la escala logaritmica, tambien por medio del comado de graficación <code class="docutils literal notranslate"><span class="pre">semilogy()</span></code>, note que el comando indica el eje que se desea representar en escala logarítmica en la gráfica que se está generando:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">semilogy</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bba96e2380a0fd3a6506bb0b0b26fef928071070947abf7a989bcaea64fea176.png" src="_images/bba96e2380a0fd3a6506bb0b0b26fef928071070947abf7a989bcaea64fea176.png" />
+</div>
+</div>
+<p>Si bien se redujo visualmente la velocidad de crecimiento de la variable <span class="math notranslate nohighlight">\(y\)</span>, sigue mostrando una tendencia de crecimiento que no permite visualizar de forma condensada mas valores de <span class="math notranslate nohighlight">\(y\)</span> cuando <span class="math notranslate nohighlight">\(x\)</span> se incrementa más allá de 50. Una tercera solución es usar escala logarítmica en ambos ejes, usando el comando de graficación <code class="docutils literal notranslate"><span class="pre">loglog()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">loglog</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d119d683a4a2c1196dde29b0b9e88e9ea25d3f20b570b80ccd6945253635f63c.png" src="_images/d119d683a4a2c1196dde29b0b9e88e9ea25d3f20b570b80ccd6945253635f63c.png" />
+</div>
+</div>
+<p>Las gráficas con escala logaritmica son especialemente útiles en ingeniería electrónica para representar el comportamiento o respuesta en frecuencia de los amplificadores dada el amplio rango de frecuencias que se manejan. Por ejemplo, la respuesta en frecuencia de un circuito RLC serie (resistecia, inductrancia capacitancia) se presenta en variable compleja como se muestra en el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+<span class="n">frecuencia</span><span class="p">=[</span><span class="mf">0.1</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="mi">100000</span><span class="p">];</span><span class="w"> </span><span class="c">%Rango de frecuencias de $0.1$ a $100$ $KHz$</span>
+<span class="c">%Parámetros del sistema </span>
+<span class="n">L</span><span class="p">=</span><span class="mf">100e-3</span><span class="p">;</span>
+<span class="n">C</span><span class="p">=</span><span class="mf">1e-6</span><span class="p">;</span>
+<span class="n">R</span><span class="p">=</span><span class="mi">150</span><span class="p">;</span>
+<span class="c">%Cálculo de la respuesta en frecuencia del sistema ante una entrada sinusoide</span>
+<span class="c">% Se mide el voltaje en el capacitor como salida.</span>
+<span class="n">Vw</span><span class="p">=</span><span class="mi">1</span><span class="o">./</span><span class="p">(</span><span class="n">L</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="p">(</span><span class="nb">i</span><span class="o">*</span><span class="n">frecuencia</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="n">R</span><span class="o">*</span><span class="n">C</span><span class="o">*</span><span class="p">(</span><span class="nb">i</span><span class="o">*</span><span class="n">frecuencia</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">frecuencia</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Vw</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Respuesta en frecuencia&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;Frecuencia [Hz]&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;Amplitud&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">semilogx</span><span class="p">(</span><span class="n">frecuencia</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Vw</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Respuesta en frecuencia&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;Frecuencia [Hz]&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;Amplitud&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">semilogy</span><span class="p">(</span><span class="n">frecuencia</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Vw</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Respuesta en frecuencia&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;Frecuencia [Hz]&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;Amplitud&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">loglog</span><span class="p">(</span><span class="n">frecuencia</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">Vw</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Respuesta en frecuencia&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;Frecuencia [Hz]&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;Amplitud&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bf8a4b18f067a32670108fa0ce681aaffd9b813cfeb691ed0e8cd2f85e4873d2.png" src="_images/bf8a4b18f067a32670108fa0ce681aaffd9b813cfeb691ed0e8cd2f85e4873d2.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="graficas-de-barra-y-circulares-para-estadistica">
+<h2>Gráficas de barra y circulares para estadística.<a class="headerlink" href="#graficas-de-barra-y-circulares-para-estadistica" title="Permalink to this heading">#</a></h2>
+<p>Las gráficas de barras y circulares permiten una presentación visual de conjuntos de datos que resulta muy atractivas dada su facilidad de lectura e interpretación. En MATLAB, los comandos para generar gráficas estadísticas son los mostrados en la <a class="reference internal" href="#tabla-barras"><span class="std std-numref">Tabla 13</span></a>.</p>
+<table class="table" id="tabla-barras">
+<caption><span class="caption-number">Tabla 13 </span><span class="caption-text">Tabla de instrucciones de graficación.</span><a class="headerlink" href="#tabla-barras" title="Enlace permanente a esta tabla">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Comando MATLAB</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bar(x)</span></code></p></td>
+<td><p>Genera una gráfica de barras vertical de los datos almacenados en el vector <strong>x</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">barh(x)</span></code></p></td>
+<td><p>Genera una gráfica de barras horizontal de los datos almacenados en el vector <strong>x</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">bar3(x)</span></code></p></td>
+<td><p>Genera una gráfica de barras tridimencional de los datos almacenados en el vector <strong>x</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">bar3h(x)</span></code></p></td>
+<td><p>Genera una gráfica de barras tridimencional y horizpntal  de los datos almacenados en el vector <strong>x</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">pie(A)</span></code></p></td>
+<td><p>Genera una gráfica circular de los datos almacenados en la matriz <strong>A</strong></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pie3(A)</span></code></p></td>
+<td><p>Genera una gráfica circular tridimencional de los datos almacenados en la matriz <strong>A</strong></p></td>
+</tr>
+</tbody>
+</table>
+<p>Para ejemplificar los tipos de gráficos mencionados en la tabla, los siguientes comandos sirven para graficar en una misma figura, todos los tipos de gráfica con un conjunto de datos de ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">clc</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+
+<span class="n">a</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">11</span><span class="p">];</span>
+<span class="n">b</span><span class="p">=[</span><span class="n">a</span><span class="p">;</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">];</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">bar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica de barras&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">bar</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica de barras de una matriz&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">bar3</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica de barras tridimencional&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">pie3</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica circular tridimencional&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/f8b619fa4c4a7cad10c3829a8dec88e3b4d3058f5089a4a925f388332dc4691c.png" src="_images/f8b619fa4c4a7cad10c3829a8dec88e3b4d3058f5089a4a925f388332dc4691c.png" />
+</div>
+</div>
+</section>
+<section id="graficas-con-dos-ejes-de-escalas-diferentes">
+<h2>Gráficas con dos ejes de escalas diferentes.<a class="headerlink" href="#graficas-con-dos-ejes-de-escalas-diferentes" title="Permalink to this heading">#</a></h2>
+<p>En ingeniería resulta de utilidad, en ocasiones, el sobreponer dos gráficas de dos dimensiones en una misma figura. Pero en no pocas ocasiones sucede que no son compatibles las magnitudes de las curvas que se desean contrastar o graficar en la misma figura. Por ejemplo, considérese el caso de un sistema masa-resorte-amortiguador cuya salida es un desplazamiento <span class="math notranslate nohighlight">\(x(t)\)</span> en unidades de metros. Se desea contrastar con la fuerza de entrada que actúa sobre la masa con orden de Newtons. suponiendo que las funciones para la fuerza y el desplazamiento son:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{eqnarray}
+&amp;f(t)=sen(4\pi t)~[N]\\
+&amp;x(t)=e^{-3t}(0.0018cos(\sqrt{149}t)+0.0073sen(\sqrt{149}t))-0.0018cos(4\pi t)-0.0056sen(4\pi t)~[m]
+\end{eqnarray}
+\end{split}\]</div>
+<p>Para contrastar la salida del sistema con la fuerza de entrada se grafica en una misma gráfica o par de ejes cordenados las dos funciones <span class="math notranslate nohighlight">\(x(t)\)</span> y <span class="math notranslate nohighlight">\(f(t)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="n">t</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="n">f</span><span class="p">=</span><span class="nb">sin</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<span class="n">x</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="mf">0.0018</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">149</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mf">0.0073</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="nb">sqrt</span><span class="p">(</span><span class="mi">149</span><span class="p">)</span><span class="o">*</span><span class="n">t</span><span class="p">))</span><span class="o">-</span><span class="mf">0.0018</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">-</span><span class="mf">0.0056</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="nb">pi</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t [s]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8bdb0b6c830d0b6e15128172e287b4d7cae53f07e27348021563599f409e6f79.png" src="_images/8bdb0b6c830d0b6e15128172e287b4d7cae53f07e27348021563599f409e6f79.png" />
+</div>
+</div>
+<p>Como se observa en la gráfica anterior, es imposible comparar las dos magnitudes dada la gran diferencia en sus magnitudes. En MATLAB, es posible juntar ambas gráficas usando el comando <code class="docutils literal notranslate"><span class="pre">plotyy()</span></code> para generar una gráfica de datos que adapte las escalas para poder contrastar dos curvas, como se muestra en el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span><span class="w"> </span>
+
+<span class="n">plotyy</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;x(t)&quot;</span><span class="p">,</span><span class="s">&quot;f(t)&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;x(t) [m]&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;t [s]&quot;</span><span class="p">)</span>
+<span class="nb">yyaxis</span><span class="w"> </span><span class="n">right</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;f(t) [N]&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6fce65f4cd883cdf858901da5a3b7ed26cc340f677d561d3171aa9466ebc9432.png" src="_images/6fce65f4cd883cdf858901da5a3b7ed26cc340f677d561d3171aa9466ebc9432.png" />
+</div>
+</div>
+</section>
+<section id="ejercicio-de-la-practica-10">
+<h2>Ejercicio de la práctica 10<a class="headerlink" href="#ejercicio-de-la-practica-10" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Defina un vector o arreglo llamado <span class="math notranslate nohighlight">\(angulo\)</span> en el intervalo <span class="math notranslate nohighlight">\([0,2\pi]\)</span>, con un incremento de <span class="math notranslate nohighlight">\(0.01\pi\)</span>. Defina un arreglo de distancias <span class="math notranslate nohighlight">\(d=7cos(4.5*angulo)\)</span>. Elabore una gráfica polar de <span class="math notranslate nohighlight">\(angulo\)</span> contra <span class="math notranslate nohighlight">\(d\)</span>.</p></li>
+<li><p>Use el comando <code class="docutils literal notranslate"><span class="pre">hold</span> <span class="pre">on</span></code> para graficar en la figura del punto anterior <span class="math notranslate nohighlight">\(d=3cos(6.5*angulo)\)</span>.</p></li>
+<li><p>En una nueva figura, use el mismo arreglo <span class="math notranslate nohighlight">\(angulo\)</span> para graficar <span class="math notranslate nohighlight">\(d=\sqrt(25cos(2angulo))\)</span>, en una gráfica polar.</p></li>
+<li><p>Genere arreglos <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> para graficar cada una de las funciones que se expresan en el conjunto de ecuaciones <a class="reference internal" href="#equation-graficas-funciones">(11)</a> . Use el comando subplot para repartir las gráficas de manera que se presenten en una sola figura, con los siguientes tipos de gráfica</p></li>
+</ol>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(y_1\)</span> escala lineal.</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_2\)</span> semilogarítmica en el eje <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_3\)</span> semilogarítmica en el eje <span class="math notranslate nohighlight">\(y\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_4\)</span> escala logarítmica en ambos ejes.</p></li>
+</ul>
+<div class="math notranslate nohighlight" id="equation-graficas-funciones">
+<span class="eqno">(11)<a class="headerlink" href="#equation-graficas-funciones" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+   &amp;y_1=7x+4\\
+   &amp;y_2=4x^2\\
+   &amp;y_3=14e^{(x+3)}\\
+   &amp;y_4=\frac{1}{(2x)}
+ \end{eqnarray}\end{split}\]</div>
+<p>Indique cuales de los formatos producen una línea recta.</p>
+<ol class="arabic simple" start="5">
+<li><p>Genere dos gráficas de reporte de datos con la información de la tabla siguiente:</p></li>
+</ol>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(t\)</span> <span class="math notranslate nohighlight">\([s]\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(T_1\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(T_2\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(T_3\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(T_4\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(T_5\)</span> <span class="math notranslate nohighlight">\(°C\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>0.000</p></td>
+<td class="text-left"><p>22.430</p></td>
+<td class="text-left"><p>24.404</p></td>
+<td class="text-left"><p>23.194</p></td>
+<td class="text-left"><p>21.199</p></td>
+<td class="text-right"><p>20.595</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1.000</p></td>
+<td class="text-left"><p>22.398</p></td>
+<td class="text-left"><p>24.278</p></td>
+<td class="text-left"><p>23.364</p></td>
+<td class="text-left"><p>21.223</p></td>
+<td class="text-right"><p>20.762</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2.000</p></td>
+<td class="text-left"><p>22.341</p></td>
+<td class="text-left"><p>24.239</p></td>
+<td class="text-left"><p>23.213</p></td>
+<td class="text-left"><p>21.150</p></td>
+<td class="text-right"><p>20.340</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>3.000</p></td>
+<td class="text-left"><p>22.422</p></td>
+<td class="text-left"><p>24.419</p></td>
+<td class="text-left"><p>23.133</p></td>
+<td class="text-left"><p>21.155</p></td>
+<td class="text-right"><p>20.479</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>4.000</p></td>
+<td class="text-left"><p>22.215</p></td>
+<td class="text-left"><p>24.457</p></td>
+<td class="text-left"><p>23.101</p></td>
+<td class="text-left"><p>21.371</p></td>
+<td class="text-right"><p>20.589</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>5.000</p></td>
+<td class="text-left"><p>22.434</p></td>
+<td class="text-left"><p>24.391</p></td>
+<td class="text-left"><p>23.268</p></td>
+<td class="text-left"><p>21.230</p></td>
+<td class="text-right"><p>20.604</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>6.000</p></td>
+<td class="text-left"><p>22.424</p></td>
+<td class="text-left"><p>24.383</p></td>
+<td class="text-left"><p>23.284</p></td>
+<td class="text-left"><p>21.423</p></td>
+<td class="text-right"><p>20.819</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>7.000</p></td>
+<td class="text-left"><p>22.442</p></td>
+<td class="text-left"><p>24.344</p></td>
+<td class="text-left"><p>22.920</p></td>
+<td class="text-left"><p>21.488</p></td>
+<td class="text-right"><p>20.495</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>8.000</p></td>
+<td class="text-left"><p>22.423</p></td>
+<td class="text-left"><p>24.313</p></td>
+<td class="text-left"><p>23.478</p></td>
+<td class="text-left"><p>21.212</p></td>
+<td class="text-right"><p>20.828</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>9.000</p></td>
+<td class="text-left"><p>22.353</p></td>
+<td class="text-left"><p>24.469</p></td>
+<td class="text-left"><p>22.980</p></td>
+<td class="text-left"><p>21.306</p></td>
+<td class="text-right"><p>20.813</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>10.000</p></td>
+<td class="text-left"><p>22.395</p></td>
+<td class="text-left"><p>24.404</p></td>
+<td class="text-left"><p>22.963</p></td>
+<td class="text-left"><p>21.314</p></td>
+<td class="text-right"><p>20.578</p></td>
+</tr>
+</tbody>
+</table>
+<p>a) Genere una grafica de barras con los promedios de cada una de las cinco columnas de temperatura.</p>
+<p>b) Genere una gráfica circular, tridimencional con los valores de temperatura de toda la tabla que se encuentren en los siguientes intervalos de temperatura:</p>
+<p>b.1)<span class="math notranslate nohighlight">\(20°&lt;T&lt;21.5°\)</span></p>
+<p>b.2)<span class="math notranslate nohighlight">\(22°&lt;T&lt;23°\)</span></p>
+<p>b.3)<span class="math notranslate nohighlight">\(23°&lt;T&lt;24°\)</span></p>
+<p>b.4)<span class="math notranslate nohighlight">\(24&lt;T&lt;24.5°\)</span></p>
+<p>c) Genere una gráfica de barras tridimencional de los datos de temperatura de todas las columnas para los 5 primeros datos.</p>
+<p>Coloque los rótulos para los ejes, título y tamaño de fuente adecuados en todas sus gráficas.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "jupyter_matlab_kernel"
+        },
+        kernelOptions: {
+            name: "jupyter_matlab_kernel",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'jupyter_matlab_kernel'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Practica9.html"
+       title="página anterior">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">anterior</p>
+        <p class="prev-next-title">Práctica 9: Graficación</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Practica11.html"
+       title="siguiente página">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">siguiente</p>
+        <p class="prev-next-title">Práctica 11: Simulación de sistemas dinámicos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contenido
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-bidimencionales-alternativas">Gráficas bidimencionales alternativas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#la-grafica-polar">La gráfica polar</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-con-escala-logaritmica">Gráficas con escala logarítmica</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-de-barra-y-circulares-para-estadistica">Gráficas de barra y circulares para estadística.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#graficas-con-dos-ejes-de-escalas-diferentes">Gráficas con dos ejes de escalas diferentes.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-10">Ejercicio de la práctica 10</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+Por Dr. Luis Gerardo Trujillo Franco
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

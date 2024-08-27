@@ -1,0 +1,20 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: SoftwareMATLAB.md
+- file: Practica1
+- file: Practica2
+- file: Practica3
+- file: Practica4
+- file: Practica5
+- file: Practica6
+- file: Practica7
+- file: Practica8
+- file: Practica9
+- file: Practica10
+- file: Practica11
+- file: Bibliografía
+
