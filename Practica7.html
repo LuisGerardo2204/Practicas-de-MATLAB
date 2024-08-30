@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 7: Matrices para aplicaciones especiales &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +134,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -294,22 +281,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -354,7 +339,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-7-matrices-para-aplicaciones-especiales">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-7-matrices-para-aplicaciones-especiales">
 <h1>Práctica 7: Matrices para aplicaciones especiales<a class="headerlink" href="#practica-7-matrices-para-aplicaciones-especiales" title="Permalink to this heading">#</a></h1>
 <p>En el ambiente de programación MATLAB es posible generar matrices con características especiales, por ejemplo, la creación de una matriz identidad de dimenciones <span class="math notranslate nohighlight">\(4\times 4\)</span>:</p>
 <div class="cell docutils container">
@@ -428,7 +413,7 @@ A^{T}=\begin{bmatrix}-1&amp;-4&amp;3\\4&amp;10&amp;6\\3&amp;15&amp;11\end{bmatri
      5
 </pre></body></html></div></div>
 </div>
-<section id="operaciones-con-matrices">
+<div class="section" id="operaciones-con-matrices">
 <h2>Operaciones con matrices<a class="headerlink" href="#operaciones-con-matrices" title="Permalink to this heading">#</a></h2>
 <p>Cuando se realizan operaciones con matrices, es muy importante que exista compatibilidad entre las dimensiones de las mismas. Para que sea posible una multiplicación entre matrices, bebe existrir un puente que genera compatibilidad entre las matrices para poder multiplicarlas, además de que las dimensiones de las matrices que se están multiplicando dicatrán las dimenciones de la matriz resultante:</p>
 <div class="math notranslate nohighlight">
@@ -506,7 +491,7 @@ Z=\begin{bmatrix}x&amp;y&amp;z\end{bmatrix}\begin{bmatrix}1&amp;-4&amp;13\\-14&a
 \[                        
 Z=x^2-14xy+3xz-4xy-8y^2+6yz+13xz+5yz+11z^2
 \]</div>
-<section id="matrices-diagonales">
+<div class="section" id="matrices-diagonales">
 <h3>Matrices diagonales<a class="headerlink" href="#matrices-diagonales" title="Permalink to this heading">#</a></h3>
 <p>La extracción de la diagonal principal de una matriz se puede realizar en MATLAB, accediendo manuelamente a las localidade de la diagonal de interés y alamacenandolos en una matriz o arreglo para su posterior manipulación, por ejemplo, para una matriz:</p>
 <div class="math notranslate nohighlight">
@@ -602,8 +587,8 @@ D=\begin{bmatrix}-1\\10\\11\end{bmatrix}
      0     0     0     0     0     0
 </pre></body></html></div></div>
 </div>
-</section>
-<section id="matriz-magica">
+</div>
+<div class="section" id="matriz-magica">
 <h3>Matriz mágica<a class="headerlink" href="#matriz-magica" title="Permalink to this heading">#</a></h3>
 <p>Una matriz mágica es aquella que que tiene la característica de que la suma de los elementos de sus filas, colunas y diagonales es igual a la misma constante:</p>
 <div class="math notranslate nohighlight">
@@ -650,14 +635,20 @@ M=\begin{bmatrix}8&amp;1&amp;6\\3&amp;5&amp;7\\4&amp;9&amp;2\end{bmatrix}
     15    15    15
 </pre></body></html></div></div>
 </div>
-</section>
-</section>
-<section id="manipulacion-de-dos-variables-usando-matrices">
+</div>
+</div>
+<div class="section" id="manipulacion-de-dos-variables-usando-matrices">
 <h2>Manipulación de dos variables usando matrices<a class="headerlink" href="#manipulacion-de-dos-variables-usando-matrices" title="Permalink to this heading">#</a></h2>
 <p>En MATLAB, el comando <code class="docutils literal notranslate"><span class="pre">meshgrid()</span></code> toma los dos vectores de entrada y crea dos matrices bidimensionales que tiene el mismo número de filas y columnas. Por ejemplo, considérese la <a class="reference internal" href="#tabla-mesh"><span class="std std-numref">Tabla 7</span></a>, donde cada uno de los elementos del vector <strong>X</strong>
 se multiplica por los elementos del vector <strong>V</strong>. Este conjuto de multiplicaciones equivale a la conversión se unidades si se considera a los elementos del vector <strong>V</strong> como los factores de conversión. En la <a class="reference internal" href="#tabla-mesh"><span class="std std-numref">Tabla 7</span></a> se muestran algunas conversiones, el resto se podría calcular a mano para poder completar la tabla, por ejemplo el producto <span class="math notranslate nohighlight">\(0.1\times 0.35=0.035\)</span> se colocaría en la primera fila y tercera columna de la tabla.</p>
 <table class="table" id="tabla-mesh">
 <caption><span class="caption-number">Tabla 7 </span><span class="caption-text">Un ejemplo de tabla de conversiones.</span><a class="headerlink" href="#tabla-mesh" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"></th>
 <th class="head"></th>
@@ -794,6 +785,11 @@ centímetros   pulgadas    pies    yardas
 <p>En el ambiente de programación MATLAB es posible generar matrices con características especiales como las que se muestran en la <a class="reference internal" href="#tabla-mesh"><span class="std std-numref">Tabla 7</span></a>.</p>
 <table class="table" id="tabla-matrices">
 <caption><span class="caption-number">Tabla 8 </span><span class="caption-text">Tabla de formatos especiales.</span><a class="headerlink" href="#tabla-matrices" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Comando de creación</p></th>
 <th class="head"><p>Descripción</p></th>
@@ -844,8 +840,8 @@ centímetros   pulgadas    pies    yardas
 </tr>
 </tbody>
 </table>
-</section>
-<section id="ejercicio-de-la-practica-7">
+</div>
+<div class="section" id="ejercicio-de-la-practica-7">
 <h2>Ejercicio de la práctica 7<a class="headerlink" href="#ejercicio-de-la-practica-7" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Construya una matriz <span class="math notranslate nohighlight">\(A\)</span> de ceros de  dimensiones <span class="math notranslate nohighlight">\(4\times4\)</span>.</p></li>
@@ -888,8 +884,8 @@ h=\frac{P}{\rho g}
 <ol class="arabic simple" start="8">
 <li><p>El área de un triángulo se obtiene como área<span class="math notranslate nohighlight">\(=\frac{1}{2}bh\)</span>. Encuentre  el área de un grupo de triángulos en centímetros cuadrados, cuya base varía de 2 a 15 pulgadas y cuya altura varía de 2 a 18 pulgadas. Reporte los cálculos en una tabla. Use un espaciamiento adecuado para sus variables de cálculo.</p></li>
 </ol>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -916,10 +912,11 @@ h=\frac{P}{\rho g}
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica6.html"
@@ -939,7 +936,10 @@ h=\frac{P}{\rho g}
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -982,7 +982,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -1009,8 +1008,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

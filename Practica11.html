@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 11: Simulación de sistemas dinámicos &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +134,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -294,22 +281,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -349,7 +334,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-11-simulacion-de-sistemas-dinamicos">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-11-simulacion-de-sistemas-dinamicos">
 <h1>Práctica 11: Simulación de sistemas dinámicos<a class="headerlink" href="#practica-11-simulacion-de-sistemas-dinamicos" title="Permalink to this heading">#</a></h1>
 <p>Un énte matemático que sirve para representar la relación que existe entre las entradas y las salidas en los sistemas es una ecuación diferencial. A lo largo de nuestra formación académica como ingenieros, estamos en contacto con el término ecuación, cuya definición formal es: <em>Una ecuación se define como una igualdad establecida entre dos expresiones, en la cual puede haber una o más incógnitas o términos cuyo valor numérico es desconocido</em>.</p>
 <p>A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incognita a una función. Una ecuación diferencial en el contexto de los sistemas dinámicos, involucra a las señales de entrada y salida, así como diversas derivadas de cualquiera de ellas o de ambas. Por ejemplo, la ecuación diferencial:</p>
@@ -363,12 +348,10 @@ document.write(`
      m\frac{d^2x(t)}{dt^2}=ma~~F_b=b\frac{dx(t)}{dt}~~F_r=kx(t)
 	\end{equation}\]</div>
 <p>Donde <span class="math notranslate nohighlight">\(m\)</span> es la masa en <span class="math notranslate nohighlight">\([kg]\)</span>, <span class="math notranslate nohighlight">\(b\)</span> la constante de amortiguador con unidades <span class="math notranslate nohighlight">\([Ns/m]\)</span> y <span class="math notranslate nohighlight">\(k\)</span> en unidades <span class="math notranslate nohighlight">\([N/m]\)</span>. Las fuerzas <span class="math notranslate nohighlight">\(F_b\)</span> y <span class="math notranslate nohighlight">\(F_r\)</span> son las fuerzas del amortiguador y la fuerza del resorte respectivamente. Además, de acurdo con los conceptos de la cinemática, se sabe que la aceleración es la segunda derivada de la posicion y la velocidad es la razón de cambio o derivada de la posición <span class="math notranslate nohighlight">\(a=\frac{d^2x(t)}{dt}\)</span> y <span class="math notranslate nohighlight">\(v=\frac{dx(t)}{dt}\)</span>. La <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a> muestra un típico sistema masa resorte amortiguador:</p>
-<figure class="align-default" id="mbk">
+<div class="figure align-default" id="mbk">
 <a class="reference internal image-reference" href="_images/mbk.png"><img alt="_images/mbk.png" src="_images/mbk.png" style="height: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 10 </span><span class="caption-text">Sistema masa resorte amortiguador.</span><a class="headerlink" href="#mbk" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 10 </span><span class="caption-text">Sistema masa resorte amortiguador.</span><a class="headerlink" href="#mbk" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Aplicando la segunda ley de Newton al sistema masa resorte amortiguador se obtiene la ecuación diferencial o el modelo del sistema masa resorte amortiguador:</p>
 <div class="math notranslate nohighlight" id="equation-edombk1">
 <span class="eqno">(14)<a class="headerlink" href="#equation-edombk1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
@@ -452,19 +435,15 @@ m\ddot{x}+b\dot{x}+kx=f
 x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\int^{t}_0\frac{dx(\tau_1)}{d\tau_1}d\tau_1-\frac{k}{m}\int^{t}_0\int^{\tau_1}_0x(\tau_1)d\tau_1d\tau_2
 \]</div>
 <p>El operador integral en MATLAB Simulink es el bloque marcado con la etiqueta <span class="math notranslate nohighlight">\(\frac{1}{s}\)</span>, un diagrama de bloques de ejmeplo, para una ecuación diferencial lineal y de coeficientes constantes se muestra en la <a class="reference internal" href="#bloques-mbk"><span class="std std-numref">Figura 11</span></a></p>
-<figure class="align-default" id="bloques-mbk">
+<div class="figure align-default" id="bloques-mbk">
 <a class="reference internal image-reference" href="_images/bloques_mbk.png"><img alt="_images/bloques_mbk.png" src="_images/bloques_mbk.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 11 </span><span class="caption-text">Diagrama de bloques para la solución de una ecuación diferencial.</span><a class="headerlink" href="#bloques-mbk" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 11 </span><span class="caption-text">Diagrama de bloques para la solución de una ecuación diferencial.</span><a class="headerlink" href="#bloques-mbk" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Para el caso de un sistema eléctrico del tipo resistencia capacitor inductancia, como el mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 12</span></a></p>
-<figure class="align-default" id="rlc">
+<div class="figure align-default" id="rlc">
 <a class="reference internal image-reference" href="_images/Imagen8.png"><img alt="_images/Imagen8.png" src="_images/Imagen8.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 12 </span><span class="caption-text">Circuito RLC.</span><a class="headerlink" href="#rlc" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 12 </span><span class="caption-text">Circuito RLC.</span><a class="headerlink" href="#rlc" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Las relaciones constitutivas del sistema eléctrico son:</p>
 <div class="math notranslate nohighlight" id="equation-relconst2">
 <span class="eqno">(15)<a class="headerlink" href="#equation-relconst2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
@@ -476,21 +455,17 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
   LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
 	\end{equation}\]</div>
 <p>El diagrama de bloques de esta última ecuación diferencial se realiza de forma similar al del sistema masa-resorte-amortiguador. En la siguiente sección se detalla la manera de realizar la simulación usando diagramas de bloques en el ambiente gráfico simulink.</p>
-<section id="el-entorno-de-simulacion-grafica-simulink">
+<div class="section" id="el-entorno-de-simulacion-grafica-simulink">
 <h2>El entorno de simulación gráfica simulink<a class="headerlink" href="#el-entorno-de-simulacion-grafica-simulink" title="Permalink to this heading">#</a></h2>
 <p>El entorno gráfico de simulación de MATLAB permite la construcción de modelos de sistemas dinámicos en forma de diagramas de bloques. La representación en diagramas de bloques es común dada su facilidad para representar la interacción entre las variables y los elementos de un sistema. Existen muchas maneras de repesentar el mismo sistema dinámico; en forma de ecuación matricial o en espacio de estados, la representación haciedo uso de la función de transferencia y la reperesentación como ecuación diferencial en la que se presentan los integradores como los bloques básicos de solución al problema de modelado matemático. En este curso no ahondaremos en el tema de los modelos matemáticos, esta práctica tiene por objetivo ser una introducción al ambiente gráfico de simulación de MATLAB conocido como simulink. El entorno gráfico de simulink se encuentra en el menú de la parte superior de la página principal de MATLAB cono se muestra en la <a class="reference internal" href="#simulink-icono"><span class="std std-numref">Figura 13</span></a> y la <a class="reference internal" href="#modelo-en-blanco"><span class="std std-numref">Figura 14</span></a>:</p>
-<figure class="align-default" id="simulink-icono">
+<div class="figure align-default" id="simulink-icono">
 <a class="reference internal image-reference" href="_images/icono_simulink.png"><img alt="_images/icono_simulink.png" src="_images/icono_simulink.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 13 </span><span class="caption-text">Localización del botón de inicio de simulink.</span><a class="headerlink" href="#simulink-icono" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="modelo-en-blanco">
+<p class="caption"><span class="caption-number">Figura 13 </span><span class="caption-text">Localización del botón de inicio de simulink.</span><a class="headerlink" href="#simulink-icono" title="Enlace permanente a esta imagen">#</a></p>
+</div>
+<div class="figure align-default" id="modelo-en-blanco">
 <a class="reference internal image-reference" href="_images/modelo_en_blanco.png"><img alt="_images/modelo_en_blanco.png" src="_images/modelo_en_blanco.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 14 </span><span class="caption-text">Interfaz de inicio de simulink.</span><a class="headerlink" href="#modelo-en-blanco" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 14 </span><span class="caption-text">Interfaz de inicio de simulink.</span><a class="headerlink" href="#modelo-en-blanco" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <p>Al hacer click en ese ícono, se abrirá la interfaz gráfica para la creación de un modelo en forma de diragrama de bloques como se muestra en el siguiente video:</p>
 <div align='center'>
 <video controls autoplay muted="true" loop="true" width="600">
@@ -498,12 +473,10 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
 </video>
 </div>
 <p>La creación de un diagrama de bloques se logra arrastrando los bloques necesarios desde la biblioteca de symulink, que se muestran en la <a class="reference internal" href="#biblioteca-bloques"><span class="std std-numref">Figura 15</span></a></p>
-<figure class="align-default" id="biblioteca-bloques">
+<div class="figure align-default" id="biblioteca-bloques">
 <a class="reference internal image-reference" href="_images/biblioteca_bloques.png"><img alt="_images/biblioteca_bloques.png" src="_images/biblioteca_bloques.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 15 </span><span class="caption-text">Biblioteca de bloques de simulink</span><a class="headerlink" href="#biblioteca-bloques" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figura 15 </span><span class="caption-text">Biblioteca de bloques de simulink</span><a class="headerlink" href="#biblioteca-bloques" title="Enlace permanente a esta imagen">#</a></p>
+</div>
 <div align='center'>
 <video controls autoplay muted="true" loop="true" width="600">
     <source src="./_static/videos/arrastra_bloques.mp4 " type="video/mp4">
@@ -527,8 +500,8 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
     <source src="./_static/videos/bloques_to_worspace.mp4 " type="video/mp4">
 </video>
 </div>
-</section>
-<section id="ejercicio-de-la-practica-11">
+</div>
+<div class="section" id="ejercicio-de-la-practica-11">
 <h2>Ejercicio de la práctica 11<a class="headerlink" href="#ejercicio-de-la-practica-11" title="Permalink to this heading">#</a></h2>
 <p>1.-Simule el sistema masa resorte amortiguador mostrado en la <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a>, con los parámetros de la <a class="reference internal" href="#tabla-param-mbk"><span class="std std-numref">Tabla 14</span></a>, para los siguientes casos de <span class="math notranslate nohighlight">\(f(t)\)</span>:</p>
 <ol class="arabic simple">
@@ -538,6 +511,10 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
 </ol>
 <table class="table" id="tabla-param-mbk">
 <caption><span class="caption-number">Tabla 14 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param-mbk" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[Parámetro\]</div>
@@ -580,6 +557,10 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
 </ol>
 <table class="table" id="tabla-param-rlc">
 <caption><span class="caption-number">Tabla 15 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param-rlc" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
 \[Parámetro\]</div>
@@ -614,8 +595,8 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
 </tbody>
 </table>
 <p>Añada los bloques necesarios para la exportación de datos a workspace y genere una gráfica del voltaje de entrada contra el tiempo y una del voltaje en el capacitor contra el tiempo en la misma figura.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -642,10 +623,11 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica10.html"
@@ -665,7 +647,10 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -703,7 +688,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -730,8 +714,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

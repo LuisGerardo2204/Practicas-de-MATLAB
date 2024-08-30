@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 2: Archivos de programa y funciones &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +134,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -294,22 +281,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -351,7 +336,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-2-archivos-de-programa-y-funciones">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-2-archivos-de-programa-y-funciones">
 <h1>Práctica 2: Archivos de programa y funciones<a class="headerlink" href="#practica-2-archivos-de-programa-y-funciones" title="Permalink to this heading">#</a></h1>
 <p>En esta práctica se presenta el procedimiento para generar funciones personalizadas y programas. MATLAB cuenta con un basto repertorio de funciones y operaciones nativas como las que se utilizaron en la práctica pasada. Cuando re requiere ejecutar un conjunto de instrucciones en particular de manera repetida, que no se encuentre entre las que ofrece MATLAB, se debe crear una función o programa.</p>
 <div class="admonition-caracteristicas-de-las-funciones-y-los-programas admonition">
@@ -362,7 +347,7 @@ document.write(`
 <li><p><strong>Las funciones</strong> son secuencias de instrucciones que entregan alguna o varias salidas y requieren parámetros de entrada con los cuales trabajar o procesar. Se invocan usando el nombre con el que se guardaron, el resultado o resultados que entregan se almacena en alguna o algunas variables, por ejemplo: <code class="docutils literal notranslate"><span class="pre">a=area_circulo(2);</span></code>, esta instrucción calculará el radio de un circulo de radio 2.</p></li>
 </ul>
 </div>
-<section id="seleccion-de-la-carpeta-de-trabajo">
+<div class="section" id="seleccion-de-la-carpeta-de-trabajo">
 <h2>Selección de la carpeta de trabajo<a class="headerlink" href="#seleccion-de-la-carpeta-de-trabajo" title="Permalink to this heading">#</a></h2>
 <p>Con el fin de tener orden en las programas y funciones que se crean con fines específicos, es recpmendable crear una carpeta
 de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpeta en especiífico, se debe seguir el procedimiento que se muestra en el video siguiente:</p>
@@ -371,8 +356,8 @@ de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpet
     <source src="./_static/videos/cambio_dir.mp4 " type="video/mp4">
 </video>
 </div>
-</section>
-<section id="creacion-de-programas">
+</div>
+<div class="section" id="creacion-de-programas">
 <h2>Creación de programas<a class="headerlink" href="#creacion-de-programas" title="Permalink to this heading">#</a></h2>
 <p>Un programa en MATLAB es un conjunto de instrucciones que se escriben como una secuencia de pasos para lograr un determinado objetivo. Dichas instrucciones se almacenan en un archivo de texto. El archivo generado tendrá la extensión .m, lo que le permite a MATLAB identificar que se trata de un conjunto de instrucciones o sentencias ejecutables en el command window de manera automática. El programa o conjunto de intrucciones se genera usando la pestaña nombrada editor, en el siguiente video se muestra el procedimiento para escribir un programa:</p>
  <div align='center'>
@@ -411,8 +396,8 @@ de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpet
 </pre></div>
 </div>
 <p>Este programa en particular no realiza ninguna tarea en específico, simplemente fue creado como ejemplo, recopilando las instrucciones básicas vistas en la Práctica 1.</p>
-</section>
-<section id="creacion-de-funciones">
+</div>
+<div class="section" id="creacion-de-funciones">
 <h2>Creación de funciones<a class="headerlink" href="#creacion-de-funciones" title="Permalink to this heading">#</a></h2>
 <p>El procedimiento para generar funciones se presenta en el siguiente video:</p>
  <div align='center'>
@@ -449,17 +434,17 @@ de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpet
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans = 12.566
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =  12.566
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a = 201.06
-v = 2412.7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  201.06
+v =  2412.7
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="entrada-de-datos-a-traves-del-teclado">
+</div>
+<div class="section" id="entrada-de-datos-a-traves-del-teclado">
 <h2>Entrada de datos a traves del teclado<a class="headerlink" href="#entrada-de-datos-a-traves-del-teclado" title="Permalink to this heading">#</a></h2>
 <p>A menudo se requiere de la interacción con el usuario de un programa, en el sentido de que resulta más cómodo proporcionar un valor numérico a travez del teclado, en vez de editar el código si se requiere hacer cálculos de formulas incluidas en el cuerpo de los programas con diferentes valores o parámetros. La instrucción para proporcionar datos a travez del teclado en<br />
 MATLAB es <code class="docutils literal notranslate"><span class="pre">a=input(&quot;mensaje&quot;)</span></code>, donde <code class="docutils literal notranslate"><span class="pre">a</span></code> es la variable en donde se almacena el dato proporcionado por el usuario. Por ejemplo, la estructura de un programa que calcula el volumen de un tanque cilindrico es la siguiente:</p>
@@ -476,8 +461,8 @@ MATLAB es <code class="docutils literal notranslate"><span class="pre">a=input(&
 <span class="n">volumen</span>
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -504,10 +489,11 @@ MATLAB es <code class="docutils literal notranslate"><span class="pre">a=input(&
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica1.html"
@@ -527,7 +513,10 @@ MATLAB es <code class="docutils literal notranslate"><span class="pre">a=input(&
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -567,7 +556,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -594,8 +582,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
