@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 5: Entrada-salida de datos y formatos de despliegue &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -281,20 +294,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -336,7 +351,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-5-entrada-salida-de-datos-y-formatos-de-despliegue">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-5-entrada-salida-de-datos-y-formatos-de-despliegue">
 <h1>Práctica 5: Entrada-salida de datos y formatos de despliegue<a class="headerlink" href="#practica-5-entrada-salida-de-datos-y-formatos-de-despliegue" title="Permalink to this heading">#</a></h1>
 <p>En esta prácitca se abordan situaciones que se presentan cuando se trabaja con programas, cuyo objetivo o aplicación final implican que el programador y el usuario final del código pudieran ser personas diferentes. Esto hará necesaria una comunicación sencilla y efectiva con el usuario a través de instrucciones y funciones de entrada y salid. Como se vio en la Práctica 2, en  MATLAB existen funciones nativas que permiten al usuario comunicarse con un programa conforme se ejecuta. El comando <code class="docutils literal notranslate"><span class="pre">input()</span></code> permite solicitar al usuario el valor de un dato de entrada y almacenarlo para su posterior uso. Las funciones nativas <code class="docutils literal notranslate"><span class="pre">disp()</span></code> y <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> porporcionan una salida visual en la ventana de comandos.</p>
 <p>La función <code class="docutils literal notranslate"><span class="pre">input()</span></code> permite ingresar incluso arreglos completos, por ejemplom si se usa la instrucción:</p>
@@ -351,7 +366,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;nombre=input(&quot;ingese</span> <span class="pre">su</span> <span class="pre">nombre</span> <span class="pre">completo</span> <span class="pre">entre</span> <span class="pre">comillas&quot;)</span></code></p>
 <p>El usuario entonces puede introducir su nombre usando el formato de las comillas:</p>
 <p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&quot;Luis</span> <span class="pre">Gerardo</span> <span class="pre">Trujillo</span> <span class="pre">Franco&quot;</span></code></p>
-<div class="section" id="recoleccion-de-puntos-de-una-grafica">
+<section id="recoleccion-de-puntos-de-una-grafica">
 <h2>Recolección de puntos de una gráfica<a class="headerlink" href="#recoleccion-de-puntos-de-una-grafica" title="Permalink to this heading">#</a></h2>
 <p>Una opción más para solicitar datos de entrada al usuario, es por medio de la coleción de datos directamente de una curva en una gráfica. Esta forma de solicitar datos al usuario se lleva a cabo usado la función <code class="docutils literal notranslate"><span class="pre">ginput()</span></code>. Esta función se utiliza para colectar puntos en forma de pares ordenados, el número entre paréntesis es el total de puntos o pares ordenados que se colectarán de la gráfica. Lo anterior se muestra en el siguiente video:</p>
  <div align='center'>
@@ -386,8 +401,8 @@ document.write(`
     0.3574
 </pre></body></html></div></div>
 </div>
-</div>
-<div class="section" id="la-funcion-menu-como-entrada-de-datos">
+</section>
+<section id="la-funcion-menu-como-entrada-de-datos">
 <h2>La función menú como entrada de datos<a class="headerlink" href="#la-funcion-menu-como-entrada-de-datos" title="Permalink to this heading">#</a></h2>
 <p>Una opción interactiva es la que ofrece la función interna <code class="docutils literal notranslate"><span class="pre">menu</span></code>, cuya sintaxis se muestra a continuación:
 ``entrada=menu(«Mensaje al usuario»,»Texto para el botón 1»,»Texto para el botón 2»,…,»Texto para el botón n»). La salida, que se almacena en la variable entrada, es un número entero que depende del botón sobre el cual se hizo click, por ejemplo si se presiona el botón rotulado con el mensaje opción 1 la salida enttrada será igual a uno como se muestra en el siguiente clip y en el código de salida de abajo.</p>
@@ -434,8 +449,8 @@ document.write(`
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="formatos-de-salida-de-datos">
+</section>
+<section id="formatos-de-salida-de-datos">
 <h2>Formatos de salida de datos<a class="headerlink" href="#formatos-de-salida-de-datos" title="Permalink to this heading">#</a></h2>
 <p>En MATLAB, la función <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> (función impresión formateada) proporciona un mayor control sobre la salida
 de la que tiene con la función <code class="docutils literal notranslate"><span class="pre">disp()</span></code>. Además de desplegar valores tanto texto como arreglos, puede especificar el formato requerido para desplegar los valores, y puede especificar también un cambio de línea. La forma general de la función nativa <code class="docutils literal notranslate"><span class="pre">fprintf()</span></code> contiene dos argumentos, uno tipo texto o cadena de caracteres y otro una lista de variables en forma de constantes o matrices, según se requiera: <code class="docutils literal notranslate"><span class="pre">fprintf(&quot;Texto</span> <span class="pre">de</span> <span class="pre">formato&quot;,variable</span> <span class="pre">1,</span> <span class="pre">variable</span> <span class="pre">2,...,variable</span> <span class="pre">n)</span></code>. Un ejemplo se muestra abajo:</p>
@@ -475,10 +490,6 @@ de la que tiene con la función <code class="docutils literal notranslate"><span
 <p>La siguiente tabla resume algunos de los formatos de datos más utilizados para representar información en MATLAB:</p>
 <table class="table" id="tabla6">
 <caption><span class="caption-number">Tabla 5 </span><span class="caption-text">Tabla de formatos para despliegue de información.</span><a class="headerlink" href="#tabla6" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tipo de formato</p></th>
 <th class="head"><p>Dato o notación resultante</p></th>
@@ -550,10 +561,6 @@ se reservaron 2 espacios para la parte entera del número a desplegar. El comand
 <p>Una tabla con comandos de formato especial es la siguiente:</p>
 <table class="table" id="tabla7">
 <caption><span class="caption-number">Tabla 6 </span><span class="caption-text">Tabla de formatos especiales.</span><a class="headerlink" href="#tabla7" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tipo de formato</p></th>
 <th class="head"><p>Acción de formato resultante</p></th>
@@ -574,8 +581,8 @@ se reservaron 2 espacios para la parte entera del número a desplegar. El comand
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="ejercicio-de-la-practica-5">
+</section>
+<section id="ejercicio-de-la-practica-5">
 <h2>Ejercicio de la práctica 5.<a class="headerlink" href="#ejercicio-de-la-practica-5" title="Permalink to this heading">#</a></h2>
 <p>Escriba un programa que despliegue un menú con 4 opciones que realice las siguientes funciones según la selección del usuario.</p>
 <p>1.- Grafica la parábola <span class="math notranslate nohighlight">\(y=3(x-2)^2\)</span> en el intervalo <span class="math notranslate nohighlight">\([-10,10]\)</span>.</p>
@@ -586,8 +593,8 @@ se reservaron 2 espacios para la parte entera del número a desplegar. El comand
 <p>6.- Use el comando  <code class="docutils literal notranslate"><span class="pre">disp</span></code> para crear encabezados de columna para la tabla anterior.</p>
 <p>7.- Cree un vector de centímetros desde 30 hasta 1200 con un incremento de 100. Calcule los correspondientes valores de pies. Agrupe el vector cm y el vector pies en una matriz tabla.
 Use el comando <code class="docutils literal notranslate"><span class="pre">fprintf</span></code> para enviar la tabla a la ventana de comandos para visualizarla.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -614,11 +621,10 @@ Use el comando <code class="docutils literal notranslate"><span class="pre">fpri
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica4.html"
@@ -638,10 +644,7 @@ Use el comando <code class="docutils literal notranslate"><span class="pre">fpri
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -681,6 +684,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -707,8 +711,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

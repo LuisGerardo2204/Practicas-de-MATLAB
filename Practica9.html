@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 9: Graficación &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -281,20 +294,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -336,20 +351,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-9-graficacion">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-9-graficacion">
 <h1>Práctica 9: Graficación<a class="headerlink" href="#practica-9-graficacion" title="Permalink to this heading">#</a></h1>
 <p>Las gráficas son una herramienta básica del ingeniero y del cientifico en general, dada su utilidad para representar datos de forma visual y la oportunidad que ofrecen para interpretar la relación etre pares o triadas de variables o bien, la evolución en el tiempo de las variables de interés. En este curso hemos escrito el código para generar gráficas y hemos comprobado su utilidad para el desarrollo de la ingeniería. En esta práctica trataremos con algunos aspectos importantes de la graficación de datos haciendo uso de MATLAB para complementar y mejorar la presentación de las gráficas.</p>
-<div class="section" id="graficas-de-funciones-de-una-variable">
+<section id="graficas-de-funciones-de-una-variable">
 <h2>Gráficas de funciones de una variable<a class="headerlink" href="#graficas-de-funciones-de-una-variable" title="Permalink to this heading">#</a></h2>
 <p>Una aplicación clásica de las gráficas en la ingeniería es la graficación de funciones en las asignaturas de cálculo diferencial e integral. La definición de función clásica involucra a una variable independiente y una transformación numérica que genera una nueva variable, matemáticamente se expresa como <span class="math notranslate nohighlight">\(y=f(x)\)</span>, donde <span class="math notranslate nohighlight">\(f(x)\)</span> tiene muy variadas estructuras, desde la recta <span class="math notranslate nohighlight">\(f(x)=mx+b\)</span>, hasta la combinación de funciones exponenciales y trigonométricas <span class="math notranslate nohighlight">\(f(x)=e^{-3x}cos(2\pi x+\phi)\)</span>.</p>
 <p>En ingeniería, es común que las gráficas se generen a partir de tablas de datos que se construyen a partir de conjuntos ordenados de variables que constituyen los puntos de la gráfica. Las gráficas resultan ser entonces reprecentaciones de la interacción o correlación entre dos variables de algún proceso o fenómeno.</p>
 <p>Por ejemplo, en un experimento se obtienen los puntos que relacionan la deformación y la fuerza medida por un dinamómetro, para el caso de un resorte no lineal, se almacenan los datos en dos columnas principales, una con las deformaciones del resorte y una más con la fuerza registrada por un dinamómetro. La gráfica de los datos mostrará la relación entre ambas variables. Una gráfica de fuerza contra deformación se realiza fácilmente a partir de los datos experimentales mostrados en la <a class="reference internal" href="#tabla-duffing"><span class="std std-numref">Tabla 10</span></a>.</p>
 <table class="table" id="tabla-duffing">
 <caption><span class="caption-number">Tabla 10 </span><span class="caption-text">Tabla de datos experimentales de un resorte cúbico.</span><a class="headerlink" href="#tabla-duffing" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p><span class="math notranslate nohighlight">\(\Delta x\)</span></p></th>
 <th class="head"><p><span class="math notranslate nohighlight">\(F~[N]\)</span></p></th>
@@ -440,14 +451,6 @@ document.write(`
 <p>Es importante tomar en cuenta que todos los comandos anteriores surten efecto mientras la gráfica esté abierta, una vez cerrada la imagen con la gráfica se perderán los datos graficados y solo aparecerá un título, cuadrícula o rótulo para el eje x o y sin ningun dato graficado.</p>
 <table class="table" id="tabla-graficas">
 <caption><span class="caption-number">Tabla 11 </span><span class="caption-text">Tabla de formatos para una gráfica en MATLAB.</span><a class="headerlink" href="#tabla-graficas" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-<col style="width: 17%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Tipo de línea</p></th>
 <th class="head"><p>Caracter</p></th>
@@ -590,8 +593,8 @@ document.write(`
 <img alt="_images/59950652d23fd770fb92ce2a5a2d20b5c8ae14d05e8e3b33a3b2ae74ba96ad70.png" src="_images/59950652d23fd770fb92ce2a5a2d20b5c8ae14d05e8e3b33a3b2ae74ba96ad70.png" />
 </div>
 </div>
-</div>
-<div class="section" id="graficas-en-tres-dimensiones">
+</section>
+<section id="graficas-en-tres-dimensiones">
 <h2>Graficas en tres dimensiones<a class="headerlink" href="#graficas-en-tres-dimensiones" title="Permalink to this heading">#</a></h2>
 <p>La instrucción <code class="docutils literal notranslate"><span class="pre">plot()</span></code> genera gráficas de dos variables en una figura, es decir, genera gráficas con dos coordenadas, En ingeniería es común el uso de gráficas de tres dimensiones o bien el graficar curvas en el espacio <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, la instrucción o comando para generar una gráfica tridimensional es <code class="docutils literal notranslate"><span class="pre">plot3()</span></code>, la cual tiene por argumentos tres arreglos o vectores correspondientes a los datos a graficar por cada eje, por ejemplo sea la hélice definida como:</p>
 <div class="math notranslate nohighlight">
@@ -651,11 +654,6 @@ z=&amp;t
 </div>
 <table class="table" id="tabla-graficas-funciones">
 <caption><span class="caption-number">Tabla 12 </span><span class="caption-text">Tabla de instrucciones de graficación.</span><a class="headerlink" href="#tabla-graficas-funciones" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Comando MATLAB</p></th>
 <th class="head"><p>Descripción</p></th>
@@ -709,8 +707,8 @@ z=&amp;t
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="graficas-multiples-en-una-misma-figura">
+</section>
+<section id="graficas-multiples-en-una-misma-figura">
 <h2>Gráficas múltiples en una misma figura<a class="headerlink" href="#graficas-multiples-en-una-misma-figura" title="Permalink to this heading">#</a></h2>
 <p>Es posible generar multiples ejes coordenados en una misma figura para trazar curvas independientes si la necesidad de que compertan una misma gráfica. Esta división de gráficas se consigue haciendo uso del comando <code class="docutils literal notranslate"><span class="pre">subplot(i,j,n)</span></code>, donde <code class="docutils literal notranslate"><span class="pre">i</span></code> es el número de renglón, <code class="docutils literal notranslate"><span class="pre">j</span></code> el número de columna y <code class="docutils literal notranslate"><span class="pre">n</span></code> el número de gráfica o curva a dibujar, por ejemplo para generar dos gráficas, en dos diferentes ejes coordenados, en dos columnas y en una misma figura se usan las siguientes instrucciones:</p>
 <div class="cell docutils container">
@@ -848,17 +846,19 @@ z=&amp;t
     <source src="./_static/videos/guarda_figura.mp4 " type="video/mp4">
 </video>
 </div>
-</div>
-<div class="section" id="ejercicio-de-la-practica-9">
+</section>
+<section id="ejercicio-de-la-practica-9">
 <h2>Ejercicio de la práctica 9<a class="headerlink" href="#ejercicio-de-la-practica-9" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Genere una figura en la que se incluyan las gráficas de las funciones <span class="math notranslate nohighlight">\(y=cos(2x)\)</span>, <span class="math notranslate nohighlight">\(w=sen(5x)\)</span> y <span class="math notranslate nohighlight">\(z=e^{-3.5x}\)</span> usando los mismos ejes <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, donde <span class="math notranslate nohighlight">\(0&lt;x&lt;2\pi\)</span>, con incrementos de <span class="math notranslate nohighlight">\(0.05\pi\)</span>. Agrege título de la gráfica, rótulos a cada eje y cuadrícula, además incluya la leyenda que indique con claridad que curva corresponde a cada función.</p></li>
 <li><p>El moviento de un proyectil se define por medio de las ecuaciones de movimiento en el plano:</p></li>
 </ol>
-<div class="figure align-default" id="tiro-parabolico">
+<figure class="align-default" id="tiro-parabolico">
 <a class="reference internal image-reference" href="_images/tiro_proyectil.png"><img alt="_images/tiro_proyectil.png" src="_images/tiro_proyectil.png" style="height: 150px;" /></a>
-<p class="caption"><span class="caption-number">Figura 9 </span><span class="caption-text">Tiro y trayectoria de un proyectil</span><a class="headerlink" href="#tiro-parabolico" title="Enlace permanente a esta imagen">#</a></p>
-</div>
+<figcaption>
+<p><span class="caption-number">Figura 9 </span><span class="caption-text">Tiro y trayectoria de un proyectil</span><a class="headerlink" href="#tiro-parabolico" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{eqnarray}
@@ -891,8 +891,8 @@ y(t)=y_0+V_0sen(\theta)t-\frac{9.81}{2}t^2
 \end{eqnarray}
 \end{split}\]</div>
 <p>con <span class="math notranslate nohighlight">\(0&lt;t&lt;40\pi\)</span>, use incremento de 0.01 para su vector de tiempo y proporciones rótulos a los ejes, título a la gráfica, use línea punteada color rojo y añada cuadrícula.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -919,11 +919,10 @@ y(t)=y_0+V_0sen(\theta)t-\frac{9.81}{2}t^2
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica8.html"
@@ -943,10 +942,7 @@ y(t)=y_0+V_0sen(\theta)t-\frac{9.81}{2}t^2
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -986,6 +982,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1012,8 +1009,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
