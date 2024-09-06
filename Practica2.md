@@ -139,4 +139,27 @@ volumen=(pi*r^2)*h;
 disp("El volumen del cilindro es:")
 volumen
 ```
+## Ejercicios
+
+1.- Escriba un programa para generar  las gráficas de las siguientes funciones:
+
+* $y=2(x-2)^2$
+* $y=5x^3-4x^2-40x+3$
+* $y=cos(20.4x)-3.5sen(14.5x)$
+* $x=e^{-3t}cos(11.9t)$
+
+Cada gráfica debe mostrarse en una figura diferente, elija intervalos e incrementos adecuados para sus gráficas. 
+
+2.-Escriba una función independiente que realice los cálculos que se solicitan:
+
+* $c(a,b)=a^3+b^4+\frac{4ab}{3b}$
+* $d(a,b,c)=\frac{a^b}{c}-4$
+* $r(a,b,c)=\frac{-b+\sqrt{b^2-4ac}}{2a}$
+* $s(x,y)=\frac{sen(4\pi x)-2xy}{2y}$
+
+3.- Escriba un programa que calcule el volumen de un prisma triangular, que solicite al usuario ingresar base, altura del triangulo de base y la altura del prisma
+para calcular el volumen solicitado.
+
+4.- Escriba un programa que dibuje la gráfica de la función $y=e^{-at}cos(bt)$. El programa debe solicitar al usuario los parámetros $a$ y $b$. Escriba una función para
+el cálculo de $y(a,b,t)$.
 

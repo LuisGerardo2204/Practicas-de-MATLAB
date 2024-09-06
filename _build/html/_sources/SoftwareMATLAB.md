@@ -73,7 +73,7 @@ Area de inicio general de MATLAB (Home)
   -  calcula la raiz cuadrada de x
 * - `abs(x)`
   - calcula el valor absoluto de x
-* - `nthroot(x)`
+* - `nthroot(x,n)`
   -  calcula la n-ésima raiz de x
 * - `sign(x)`
   -  regresa el signo de x, -1 si x es negativo, 0 si x es igual a 0 y 1 si x es positivo
@@ -83,8 +83,8 @@ Area de inicio general de MATLAB (Home)
   - calcula el logaritmo natural de x
 * - `log10(x)`
   - calcula el coseno inverso de x, devuelve un ángulo en radianes, x debe estar entre -1 y 1
-* - `round(x)`
-  - calcula el logaritmo base 10 de x  
+* - `round(x,n)`
+  - redondea el valor de x al número mas próximo con n decimales
 ```
 
 
