@@ -25,8 +25,8 @@ Las diferencias entre programas y funciones son las siguientes:
 
 ## Selección de la carpeta de trabajo
 
-Con el fin de tener orden en las programas y funciones que se crean con fines específicos, es recpmendable crear una carpeta
-de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpeta en especiífico, se debe seguir el procedimiento que se muestra en el video siguiente:
+Con el fin de tener orden en las programas y funciones que se crean con fines específicos, es recomendable crear una carpeta
+de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpeta en específico, se debe seguir el procedimiento que se muestra en el video siguiente:
 
 <div align='center'>
 <video controls autoplay muted="true" loop="true" width="600">
@@ -37,7 +37,7 @@ de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpet
 
 ## Creación de programas
 
-Un programa en MATLAB es un conjunto de instrucciones que se escriben como una secuencia de pasos para lograr un determinado objetivo. Dichas instrucciones se almacenan en un archivo de texto. El archivo generado tendrá la extensión .m, lo que le permite a MATLAB identificar que se trata de un conjunto de instrucciones o sentencias ejecutables en el command window de manera automática. El programa o conjunto de intrucciones se genera usando la pestaña nombrada editor, en el siguiente video se muestra el procedimiento para escribir un programa:
+Un programa en MATLAB es un conjunto de instrucciones que se escriben como una secuencia de pasos para lograr un determinado objetivo. Dichas instrucciones se almacenan en un archivo de texto. El archivo generado tendrá la extensión .m, lo que le permite a MATLAB identificar que se trata de un conjunto de instrucciones o sentencias ejecutables en el command window de manera automática. El programa o conjunto de instrucciones se genera usando la pestaña nombrada editor, en el siguiente video se muestra el procedimiento para escribir un programa:
 
  <div align='center'>
 <video controls autoplay muted="true" loop="true" width="600">
@@ -122,8 +122,8 @@ area_circulo(radio1)
 
 ## Entrada de datos a traves del teclado
 
-A menudo se requiere de la interacción con el usuario de un programa, en el sentido de que resulta más cómodo proporcionar un valor numérico a travez del teclado, en vez de editar el código si se requiere hacer cálculos de formulas incluidas en el cuerpo de los programas con diferentes valores o parámetros. La instrucción para proporcionar datos a travez del teclado en  
-MATLAB es `a=input("mensaje")`, donde `a` es la variable en donde se almacena el dato proporcionado por el usuario. Por ejemplo, la estructura de un programa que calcula el volumen de un tanque cilindrico es la siguiente:
+A menudo se requiere de la interacción con el usuario de un programa, en el sentido de que resulta más cómodo proporcionar un valor numérico a través del teclado, en vez de editar el código si se requiere hacer cálculos de formulas incluidas en el cuerpo de los programas con diferentes valores o parámetros. La instrucción para proporcionar datos a través del teclado en  
+MATLAB es `a=input("mensaje")`, donde `a` es la variable en donde se almacena el dato proporcionado por el usuario. Por ejemplo, la estructura de un programa que calcula el volumen de un tanque cilíndrico es la siguiente:
 
 
 ```Octave

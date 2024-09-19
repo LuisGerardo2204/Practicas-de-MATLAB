@@ -363,7 +363,7 @@ document.write(`
 </figure>
 <section id="operaciones-y-comandos-basicos">
 <h2>Operaciones y comandos básicos<a class="headerlink" href="#operaciones-y-comandos-basicos" title="Permalink to this heading">#</a></h2>
-<p>A continuacion se enlistan los comandos básicos que se usan comunmente en la ventana de comandos (command window) de MATLAB.</p>
+<p>A continuación se enlistan los comandos básicos que se usan comúnmente en la ventana de comandos (command window) de MATLAB.</p>
 <p>1.-Limpiar pantalla de comandos: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;clc</span></code></p>
 <p>2.-Limpiar las variables almacenadas en memoria: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;clear</span></code></p>
 <p>3.-Despliegue de información de las variables: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;whos</span></code></p>
@@ -396,8 +396,8 @@ y operaciones comunes en MATLAB:</p>
 <p>4.- Resta: <code class="docutils literal notranslate"><span class="pre">a-b</span></code></p>
 <p>5.-División:<code class="docutils literal notranslate"><span class="pre">a/b</span></code></p>
 <p>6.-Potencia: <code class="docutils literal notranslate"><span class="pre">a^b</span></code> (a elevado a la potencia b)</p>
-<p>7.- Raiz cuadrada: <code class="docutils literal notranslate"><span class="pre">sqrt(b)</span></code></p>
-<p>Para reprodicir estas operaciones, se puede copiar y pegar el conjunto de instrucciones siguiente en el command wondow de MATLAB.</p>
+<p>7.- Raíz cuadrada: <code class="docutils literal notranslate"><span class="pre">sqrt(b)</span></code></p>
+<p>Para reproducir estas operaciones, se puede copiar y pegar el conjunto de instrucciones siguiente en el command wondow de MATLAB.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
@@ -439,7 +439,7 @@ y operaciones comunes en MATLAB:</p>
 </div>
 <div class="output text_html"><html><body><pre>ans = 6.7082</pre></body></html></div></div>
 </div>
-<p>Una instrucción muy util es la de limpiar pantalla, esto permite borrar resultados anteriores para evitar la saturación de datos desplegados.</p>
+<p>Una instrucción muy útil es la de limpiar pantalla, esto permite borrar resultados anteriores para evitar la saturación de datos desplegados.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clc</span>
@@ -551,7 +551,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
      3
 </pre></body></html></div></div>
 </div>
-<p>En caso de ser necesario, es posible hacer la conversión de grados Centígrados a Farenheit con una mayor resolución, de manera tal que en vez de mostrar una tabla de conversiones se puede mostrar una gráfica. Por ejemplo, para en rango de grados centígrados <span class="math notranslate nohighlight">\(-4&lt;°C&lt;40\)</span> con incremento de <span class="math notranslate nohighlight">\(0.5\)</span> <span class="math notranslate nohighlight">\(°C\)</span>, para tener un total de 91 pares de datos, en MATLAB se expresa lo siguiente:</p>
+<p>En caso de ser necesario, es posible hacer la conversión de grados Centígrados a Farenheit con una mayor resolución, de manera tal que en vez de mostrar una tabla de conversiones se puede mostrar una gráfica. Por ejemplo, para en rango de grados Centígrados <span class="math notranslate nohighlight">\(-4&lt;°C&lt;40\)</span> con incremento de <span class="math notranslate nohighlight">\(0.5\)</span> <span class="math notranslate nohighlight">\(°C\)</span>, para tener un total de 91 pares de datos, en MATLAB se expresa lo siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">=[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">40</span><span class="p">];</span>
@@ -584,7 +584,7 @@ y la variable dependiente separadas por una coma</p>
 <section id="generacion-de-graficas-de-funciones">
 <h2>Generación de gráficas de funciones<a class="headerlink" href="#generacion-de-graficas-de-funciones" title="Permalink to this heading">#</a></h2>
 <p>Para generar la gráfica de una función en MATLAB, se crean dos vectores; uno con la variable independiente y
-un segundo con la variable independiente, por ejemplo, para gráficar la función del tiempo,
+un segundo con la variable independiente, por ejemplo, para graficar la función del tiempo,
 expresada en la ecuación siguiente:</p>
 <div class="math notranslate nohighlight" id="equation-func-exp">
 <span class="eqno">(2)<a class="headerlink" href="#equation-func-exp" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
@@ -599,7 +599,7 @@ expresada en la ecuación siguiente:</p>
 </div>
 </div>
 </div>
-<p>Después se genera la variable indepenndiente <span class="math notranslate nohighlight">\(y(t)\)</span> evaluando la función con operadores multiplicación y exponencial</p>
+<p>Después se genera la variable independiente <span class="math notranslate nohighlight">\(y(t)\)</span> evaluando la función con operadores multiplicación y exponencial</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mf">11.35</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
@@ -721,7 +721,7 @@ B=\begin{bmatrix}
     z=0.3877
 	\label{tres}
 	\end{eqnarray}\end{split}\]</div>
-<p>Es fácil comprobar que estos valores satisfacen el sistema de ecuaciones si se realizan las sustiticiones en el sistema de ecuaciones original:</p>
+<p>Es fácil comprobar que estos valores satisfacen el sistema de ecuaciones si se realizan las sustituciones en el sistema de ecuaciones original:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Ecuacion (1) 3x+2y-5z</span>
