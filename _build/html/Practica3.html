@@ -352,11 +352,11 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="practica-3-sentencias-de-control">
 <h1>Práctica 3: Sentencias de control<a class="headerlink" href="#practica-3-sentencias-de-control" title="Permalink to this heading">#</a></h1>
-<p>En las secciones pasadas se trató el tema de la elaboración de secuencias de istrucciones en forma de un archivo de extensión .m para su ejecución repetida sin necesidad de duplicar el trabajo de volverlas a escribir. Por otra parte se desarrollaron funciones para poder invocarlas o reutilizarlas como fórmulas matemáticas destinadas a obtener resultados de manera recurrente, una vez más sin a necesidad de duplicar código.</p>
-<p>En esta práctica, analizaremos las secuencias de control. Las secuencias de control permiten al usuario tener un criterio de desición sobre que conjunto de instrucciones a ejecutar, con base en necesidades o condiciones específicas, en vez de ejecutar todas las instrucciones de manera secuencial.</p>
-<p>Las estructuras de repetición se utilizan en ingeniería para realizar procesos que se conocen como iterativos, para poderlas aplicar de una manera eficiente a la solución de problemas, se depende de opradores que relacionan variables para tomar decisiones basadas en su comparación, estas deciciones a menudo sirven para controlar el programa e incluso terminarlo.</p>
+<p>En las secciones pasadas se trató el tema de la elaboración de secuencias de instrucciones en forma de un archivo de extensión .m para su ejecución repetida sin necesidad de duplicar el trabajo de volverlas a escribir. Por otra parte se desarrollaron funciones para poder invocarlas o reutilizarlas como fórmulas matemáticas destinadas a obtener resultados de manera recurrente, una vez más sin a necesidad de duplicar código.</p>
+<p>En esta práctica, analizaremos las secuencias de control. Las secuencias de control permiten al usuario tener un criterio de decisión sobre que conjunto de instrucciones a ejecutar, con base en necesidades o condiciones específicas, en vez de ejecutar todas las instrucciones de manera secuencial.</p>
+<p>Las estructuras de repetición se utilizan en ingeniería para realizar procesos que se conocen como iterativos, para poderlas aplicar de una manera eficiente a la solución de problemas, se depende de operadores que relacionan variables para tomar decisiones basadas en su comparación, estas decisiones a menudo sirven para controlar el programa e incluso terminarlo.</p>
 <p>Las operaciones de comparación son básicas para lograr el objetivo antes mencionado. La mayoría de los lenguajes de programación usan el variables booleanas, «1» lógico para verdadero (TRUE) y  «0» lógico para falso (FALSE). En MATLAB, cualquier número diferente de cero indica una condición booleana de verdadero.</p>
-<p>Por ejemplo, sean dos variables a=5 y b=10, la comparacion entre sus valores numéricos se hace en MATLAB como sigue:</p>
+<p>Por ejemplo, sean dos variables a=5 y b=10, la comparación entre sus valores numéricos se hace en MATLAB como sigue:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%Primero se declaran las variables</span>
@@ -409,7 +409,7 @@ document.write(`
    1   1   1   0   1
 </pre></body></html></div></div>
 </div>
-<p>Como se observa en los resultados anteriores, el operador de comparación entrega un arreglo con la misma cantidad de localidades que los dos arreglos que estan bajo comparación. Por ejemplo, cuando se compara al arreglo y con el arreglo x, se observa que 3&gt;2, por lo tanto, la primera comparación es verdadera, resultando en un «1» lógico en la primera localidad de la respuesta, minetras que 1&lt;5, resultando un cero en la localidad 4 del arreglo de respuesta.</p>
+<p>Como se observa en los resultados anteriores, el operador de comparación entrega un arreglo con la misma cantidad de localidades que los dos arreglos que estan bajo comparación. Por ejemplo, cuando se compara al arreglo y con el arreglo x, se observa que 3&gt;2, por lo tanto, la primera comparación es verdadera, resultando en un «1» lógico en la primera localidad de la respuesta, mientras que 1&lt;5, resultando un cero en la localidad 4 del arreglo de respuesta.</p>
 <p>Es posible combinar las comparaciones con otros operadores lógicos como AND y OR:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -489,7 +489,7 @@ comparación y el relacional lógico, por ejemplo para la instrucción <code cla
 </table>
 <section id="busqueda-de-elementos-en-un-conjunto-de-datos-que-cumplen-con-cierto-criterio">
 <h2>Búsqueda de elementos en un conjunto de datos que cumplen con cierto criterio<a class="headerlink" href="#busqueda-de-elementos-en-un-conjunto-de-datos-que-cumplen-con-cierto-criterio" title="Permalink to this heading">#</a></h2>
-<p>En MATLAB existe una instrucción especial denominada <code class="docutils literal notranslate"><span class="pre">find()</span></code>, esta instrucción especial busca entre los elementos de un arreglo los elementos que cumplen con un criterio especificado en entre paréntesis. Por ejemplo, consiere las mediciones de temperatura almacenadas en un arreglo llamado T. una forma de encontrar las temperaturas superiores a 30 grados es la siguiente:</p>
+<p>En MATLAB existe una instrucción especial denominada <code class="docutils literal notranslate"><span class="pre">find()</span></code>, esta instrucción especial busca entre los elementos de un arreglo los elementos que cumplen con un criterio especificado en entre paréntesis. Por ejemplo, considere las mediciones de temperatura almacenadas en un arreglo llamado T. una forma de encontrar las temperaturas superiores a 30 grados es la siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">T</span><span class="p">=[</span><span class="mi">22</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">31</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">33</span><span class="p">];</span>
@@ -502,7 +502,7 @@ comparación y el relacional lógico, por ejemplo para la instrucción <code cla
      3     4     9    11
 </pre></body></html></div></div>
 </div>
-<p>Como se puede observar, la instrucción <code class="docutils literal notranslate"><span class="pre">find(T)</span></code> devuelve las localidades en las cuales el valor almacenado es superior a 30. Así, se puede construir un vector que contenga únicamnente los datos que cumplen el criterio. El procedimiento las instrucciones de MATLAB son las siguientes:</p>
+<p>Como se puede observar, la instrucción <code class="docutils literal notranslate"><span class="pre">find(T)</span></code> devuelve las localidades en las cuales el valor almacenado es superior a 30. Así, se puede construir un vector que contenga únicamente los datos que cumplen el criterio. El procedimiento las instrucciones de MATLAB son las siguientes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">T_30</span><span class="p">=</span><span class="n">T</span><span class="p">(</span><span class="nb">find</span><span class="p">(</span><span class="n">T</span><span class="o">&gt;</span><span class="mi">30</span><span class="p">))</span>
@@ -514,7 +514,7 @@ comparación y el relacional lógico, por ejemplo para la instrucción <code cla
     33    31    32    33
 </pre></body></html></div></div>
 </div>
-<p>Cuando se trata con arreglos multidimencionales como las matrices, se puede usar la instrucción <code class="docutils literal notranslate"><span class="pre">find()</span></code> para localizar los valores que cumplan con los criterios, adicionalmente, se pueden almacenar en dos variables la localización de los elementos buscados en forma de filas y columnas. Por ejemplo, supongase que se desea encontrar los elementos mayores a 5 en la matriz <span class="math notranslate nohighlight">\(A\)</span> definida como:</p>
+<p>Cuando se trata con arreglos multidimencionales como las matrices, se puede usar la instrucción <code class="docutils literal notranslate"><span class="pre">find()</span></code> para localizar los valores que cumplan con los criterios, adicionalmente, se pueden almacenar en dos variables la localización de los elementos buscados en forma de filas y columnas. Por ejemplo, suponga que se desea encontrar los elementos mayores a 5 en la matriz <span class="math notranslate nohighlight">\(A\)</span> definida como:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation}
@@ -560,7 +560,7 @@ A=\begin{bmatrix}
     16
 </pre></body></html></div></div>
 </div>
-<p>Las localizaciones de las entradas de la matriz que cumplen con el criterio se almacenan en orden simple, no hay información de la fila y columna, en este caso, las localidades se ubican en orden ascendente, observe que el primer elemento que cumple con el criterio de búsqueda (x&gt;5) se encuentra en la pimera columna, en la fila cuatro, minetras que el segundo elemento que cumple con el criterio se encuentra en la fila uno y la segunda columna, es decir, el quinto elemento contando desde el elemento de la fila uno columna uno y continuando en orden aescendente. Para obtener la localización de los datos en formato de filas y columnas se usa la instrucción <code class="docutils literal notranslate"><span class="pre">find()</span></code> antecedida por un par de variables entre corchetes para almacenar los índices:</p>
+<p>Las localizaciones de las entradas de la matriz que cumplen con el criterio se almacenan en orden simple, no hay información de la fila y columna, en este caso, las localidades se ubican en orden ascendente, observe que el primer elemento que cumple con el criterio de búsqueda (x&gt;5) se encuentra en la primera columna, en la fila cuatro, mientras que el segundo elemento que cumple con el criterio se encuentra en la fila uno y la segunda columna, es decir, el quinto elemento contando desde el elemento de la fila uno columna uno y continuando en orden ascendente. Para obtener la localización de los datos en formato de filas y columnas se usa la instrucción <code class="docutils literal notranslate"><span class="pre">find()</span></code> antecedida por un par de variables entre corchetes para almacenar los índices:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="nb">i</span><span class="w"> </span><span class="nb">j</span><span class="p">]=</span><span class="nb">find</span><span class="p">(</span><span class="n">A</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
@@ -588,7 +588,7 @@ A=\begin{bmatrix}
      4
 </pre></body></html></div></div>
 </div>
-<p>En el arreglo <code class="docutils literal notranslate"><span class="pre">i</span></code> se almacena la información del renglón y en el arreglo <code class="docutils literal notranslate"><span class="pre">j</span></code> se almacena la información de la columna, de manera que se verifica que el elemento o entrada de la matriz <span class="math notranslate nohighlight">\(a_{ij}\)</span> cumple con el criterio de busqueda, por ejemplo, en el caso que aterior, el elemento <code class="docutils literal notranslate"><span class="pre">A(4,1)</span></code> es mayor que 5:</p>
+<p>En el arreglo <code class="docutils literal notranslate"><span class="pre">i</span></code> se almacena la información del renglón y en el arreglo <code class="docutils literal notranslate"><span class="pre">j</span></code> se almacena la información de la columna, de manera que se verifica que el elemento o entrada de la matriz <span class="math notranslate nohighlight">\(a_{ij}\)</span> cumple con el criterio de búsqueda, por ejemplo, en el caso que anterior, el elemento <code class="docutils literal notranslate"><span class="pre">A(4,1)</span></code> es mayor que 5:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -611,7 +611,7 @@ A=\begin{bmatrix}
 </section>
 <section id="graficacion-de-funciones-continuas-a-pedazos">
 <h2>Graficación de funciones continuas a pedazos<a class="headerlink" href="#graficacion-de-funciones-continuas-a-pedazos" title="Permalink to this heading">#</a></h2>
-<p>Se dice que una función es definida a pedazos si es continua en un intervalo dado si está definida en un intervalo cualquiera y además, las expresiones matemáticas que describen o modelan a dicha función son continuas en ese intervalo. Adicionalemente, tambien se cumple que no hay discontinuidad en ningún punto extremo de los subintervalos. Una función contínua a pedazos se define por medio de un conjunto de expresiones, utilizando una llave, funciones locales e intervalos. Por ejemplo, considere la función contínua a pedazos definida en la siguiente expresión:</p>
+<p>Se dice que una función es definida a pedazos si es continua en un intervalo dado si está definida en un intervalo cualquiera y además, las expresiones matemáticas que describen o modelan a dicha función son continuas en ese intervalo. Adicionalemente, también se cumple que no hay discontinuidad en ningún punto extremo de los subintervalos. Una función continua a pedazos se define por medio de un conjunto de expresiones, utilizando una llave, funciones locales e intervalos. Por ejemplo, considere la función continua a pedazos definida en la siguiente expresión:</p>
 <div class="math notranslate nohighlight" id="equation-func-pedazos">
 <span class="eqno">(5)<a class="headerlink" href="#equation-func-pedazos" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{equation}
          g(t)= \left\{ \begin{array}{lcc} 5 &amp; si &amp; 0 \leq t \leq 2 \\ \\ t^2-t+10 &amp; si &amp; 2 &lt; t \leq 5 \\ \\ -4t-15 &amp; si &amp; 5 &lt; t &lt; 7 \\ \\ 0 &amp; si &amp; 7 \leq t  \end{array} \right.
@@ -630,7 +630,7 @@ A=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3ed9a512167bcf5886e9799afa635826d3b08eb574058afe9d6b71f206eaf163.png" src="_images/3ed9a512167bcf5886e9799afa635826d3b08eb574058afe9d6b71f206eaf163.png" />
+<img alt="_images/e5538c2276a0339cc88941eacfaa35b29a302018a759f4a2ada89a1fc403d9ea.png" src="_images/e5538c2276a0339cc88941eacfaa35b29a302018a759f4a2ada89a1fc403d9ea.png" />
 </div>
 </div>
 <div class="admonition attention">
