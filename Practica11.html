@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Práctica 11: Simulación de sistemas dinámicos &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <title>Práctica 11: Métodos numéricos con MATLAB &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +40,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -71,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica11';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="next" title="Práctica 12: Simulación de sistemas dinámicos" href="Practica12.html" />
     <link rel="prev" title="Práctica 10: Otros tipos de gráficas" href="Practica10.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -83,15 +82,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +135,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +147,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -186,7 +174,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica8.html">Práctica 8: Importación de datos desde archivos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica9.html">Práctica 9: Graficación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica10.html">Práctica 10: Otros tipos de gráficas</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 11: Simulación de sistemas dinámicos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 11: Métodos numéricos con MATLAB</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="Practica12.html">Práctica 12: Simulación de sistemas dinámicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -294,22 +284,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -326,7 +314,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Práctica 11: Simulación de sistemas dinámicos</h1>
+    <h1>Práctica 11: Métodos numéricos con MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -336,9 +324,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-entorno-de-simulacion-grafica-simulink">El entorno de simulación gráfica simulink</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Práctica 11: Métodos numéricos con MATLAB</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">Interpolación lineal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterpolacion-con-aproximacion-no-lineal">Iterpolación con aproximación no lineal</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-de-funciones-de-dos-variables">Interpolación de funciones de dos variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-basica-o-ajuste-de-curvas">Regresión básica o ajuste de curvas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-lineal">Regresión lineal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-polinomial">Regresión polinomial</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-11">Ejercicio de la práctica 11</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -349,271 +348,579 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-11-simulacion-de-sistemas-dinamicos">
-<h1>Práctica 11: Simulación de sistemas dinámicos<a class="headerlink" href="#practica-11-simulacion-de-sistemas-dinamicos" title="Permalink to this heading">#</a></h1>
-<p>Un énte matemático que sirve para representar la relación que existe entre las entradas y las salidas en los sistemas es una ecuación diferencial. A lo largo de nuestra formación académica como ingenieros, estamos en contacto con el término ecuación, cuya definición formal es: <em>Una ecuación se define como una igualdad establecida entre dos expresiones, en la cual puede haber una o más incógnitas o términos cuyo valor numérico es desconocido</em>.</p>
-<p>A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incognita a una función. Una ecuación diferencial en el contexto de los sistemas dinámicos, involucra a las señales de entrada y salida, así como diversas derivadas de cualquiera de ellas o de ambas. Por ejemplo, la ecuación diferencial:</p>
-<div class="math notranslate nohighlight" id="equation-edo1">
-<span class="eqno">(12)<a class="headerlink" href="#equation-edo1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  2\frac{d^2y(t)}{dt^2}+300y(t)=4.5x(t)+5\frac{dx(t)}{dt}
-	\end{equation}\]</div>
-<p>La solución a la ecuación diferencial es la salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span>, es decir, es aquella función que satisface la igualdad establecida en la transformación o estructura <a class="reference internal" href="#equation-edo1">(12)</a>. En el caso de los sistemas mecánicos <span class="math notranslate nohighlight">\(x(t)\)</span> representará la evolución en el tiempo de una fuerza de entrada, en forma de par o empuje. En sistemas en los que existan almacenes de energía cinética en forma de masas, es común usar tambien aceleración. En el caso de los sistemas eléctricos, los alamacenes de energía son los inductores o bobinas y los capacitores y la entrada son variables como los voltajes o corrientes. Es posible encontrar análogos muy útiles entre los sistemas mecánicos y eléctricos debido a su comportamiento y las realciones constitutivas que se usan para construir la estructura de la ecuación diferencial que los modelan. Ejemplos de relaciones constitutivas para los sistemas mecánicos, de acuerdo con la ley de Newton son:</p>
-<div class="math notranslate nohighlight" id="equation-relconst1">
-<span class="eqno">(13)<a class="headerlink" href="#equation-relconst1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-     m\frac{d^2x(t)}{dt^2}=ma~~F_b=b\frac{dx(t)}{dt}~~F_r=kx(t)
-	\end{equation}\]</div>
-<p>Donde <span class="math notranslate nohighlight">\(m\)</span> es la masa en <span class="math notranslate nohighlight">\([kg]\)</span>, <span class="math notranslate nohighlight">\(b\)</span> la constante de amortiguador con unidades <span class="math notranslate nohighlight">\([Ns/m]\)</span> y <span class="math notranslate nohighlight">\(k\)</span> en unidades <span class="math notranslate nohighlight">\([N/m]\)</span>. Las fuerzas <span class="math notranslate nohighlight">\(F_b\)</span> y <span class="math notranslate nohighlight">\(F_r\)</span> son las fuerzas del amortiguador y la fuerza del resorte respectivamente. Además, de acurdo con los conceptos de la cinemática, se sabe que la aceleración es la segunda derivada de la posicion y la velocidad es la razón de cambio o derivada de la posición <span class="math notranslate nohighlight">\(a=\frac{d^2x(t)}{dt}\)</span> y <span class="math notranslate nohighlight">\(v=\frac{dx(t)}{dt}\)</span>. La <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a> muestra un típico sistema masa resorte amortiguador:</p>
-<figure class="align-default" id="mbk">
-<a class="reference internal image-reference" href="_images/mbk.png"><img alt="_images/mbk.png" src="_images/mbk.png" style="height: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 10 </span><span class="caption-text">Sistema masa resorte amortiguador.</span><a class="headerlink" href="#mbk" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Aplicando la segunda ley de Newton al sistema masa resorte amortiguador se obtiene la ecuación diferencial o el modelo del sistema masa resorte amortiguador:</p>
-<div class="math notranslate nohighlight" id="equation-edombk1">
-<span class="eqno">(14)<a class="headerlink" href="#equation-edombk1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  m\frac{d^2x(t)}{dt^2}+b_1\frac{dx(t)}{dt}+k_1x(t)=f(t)
-	\end{equation}\]</div>
-<p>En este caso, la salida se nombra <span class="math notranslate nohighlight">\(x(t)\)</span> dado que es un desplazamiento causado por la fuerza de entrada <span class="math notranslate nohighlight">\(f(t)\)</span>, que sería equivalente a la función estímulo o de entrada, se dice entoces que para este sistema, la entrada es una fuerza y la salida un desplazamiento.</p>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Es común usar la notación abreviada para las ecuaciones diferenciales:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{d^2x(t)}{dt^2}=\ddot{x}~~\frac{x(t)}{dt}=\dot{x}
-\]</div>
-<p>Usando esta notación se obtiene la forma alternativa de la ecuación diferencial de movimiento o modelo matemático del sistema masa resorte amortiguador como:</p>
-<div class="math notranslate nohighlight">
-\[
-m\ddot{x}+b\dot{x}+kx=f
-\]</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-11-metodos-numericos-con-matlab">
+<h1>Práctica 11: Métodos numéricos con MATLAB<a class="headerlink" href="#practica-11-metodos-numericos-con-matlab" title="Permalink to this heading">#</a></h1>
+<p>Los métodos numéricos son las herramientas matemáticas que permiten resolver problemas de ingeniería usando operaciones básicas que permiten aproximar soluciones a planteamientos de cálculo integral y diferencial. Los métodos numéricos como procedimientos matemáticos formales se ven ampliamente favorecidos con las herramientas computacionales como lo son los lenguajes de programación y por supuesto, ambientes especializados como MATLAB.</p>
+<p>En esta práctica, haremos uso de las funciones incluidas en MATLAB para la aplicación de métodos numéricos a conjuntos de datos. Exploraremos las técnicas de interpolación y regresión numérica en forma introductoria.</p>
+<section id="interpolacion-lineal">
+<h2>Interpolación lineal<a class="headerlink" href="#interpolacion-lineal" title="Permalink to this heading">#</a></h2>
+<p>La interpolación lineal es una técnica que permite determinar valores numéricos de variables experimentales que no se encuentran en un conjunto de mediciones experimentales. Cuando se realiza un experimento, es imposible tomar mediciones de cada uno de los pares ordenados o puntos de interés (<span id="id1">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>). Lo anterior se ejemplifica en la siguiente figura:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/30b7ea4e57c034307018a88b55606ef7930cb5cc4c386f6c9cfb6768f5032550.png" src="_images/30b7ea4e57c034307018a88b55606ef7930cb5cc4c386f6c9cfb6768f5032550.png" />
 </div>
-<p>En Matlab, la solución de las ecuaciones diferenciales se obtiene usando el comando <code class="docutils literal notranslate"><span class="pre">dsolve(edo,ci)</span></code>, donde edo es la ecuación diferencial que se desea resolver y ci son las condiciones iniciales <span class="math notranslate nohighlight">\(x(0)\)</span> y <span class="math notranslate nohighlight">\(\frac{dx}{dt}|_{t=0}\)</span>. Por ejemlo, para un sistema masa-resorte-amortiguador con la ecuación diferencial de movimiento:</p>
-<div class="math notranslate nohighlight">
-\[
-2.5\frac{dx^2}{dt}+3\frac{dx}{dt}+350x(t)=0
-\]</div>
-<p>con condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0.01\)</span> y <span class="math notranslate nohighlight">\(\frac{dx}{dt}|_{t=0}=0\)</span> se resuelve con los siguientes comandos:</p>
+</div>
+<p>El método más común para encontrar punto que falta, que se ilustra en la figura anterior es el conocido como la interpolación lineal. Esta técnica consiste en asumir que el comportamiento de los datos es lineal, es decir, se asume que los datos que se midieron de forma experimental describen un comportamiento que se puede modelar usando una línea recta. Si se conoce la ecuación de dicha recta, es posible determinar el valor de cualquier valor de la variable <span class="math notranslate nohighlight">\(y\)</span>, a partir de cualquier valor deseado o propuesto para la variable <span class="math notranslate nohighlight">\(x\)</span>. Entre más cercanos estén entre ellos los puntos, más precisa será la aproximación (<span id="id2">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>, <span id="id3">Chapra <em>et al.</em> [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="S.C. Chapra, R.P. Canale, J.E. Brito, and M.C.R. Hano. Métodos numéricos para ingenieros. Elibro Catedra. McGraw-Hill, 2006. ISBN 9789701061145. URL: https://books.google.com.mx/books?id=hoH0MAAACAAJ.">CCBH06</a>]</span>).</p>
+<p>Por ejemplo, si se cuenta con un par de puntos, obtenidos a partir de los pares ordenados de datos que se ilustran en la gráfica anterior, <span class="math notranslate nohighlight">\(P_1=(1,2)\)</span> y <span class="math notranslate nohighlight">\(P_2=(7.5,9)\)</span>, el valor numérico de la coordenada <span class="math notranslate nohighlight">\(y\)</span> para <span class="math notranslate nohighlight">\(x=5\)</span> se obtiene usando el comando <code class="docutils literal notranslate"><span class="pre">interp1(P_1,P2,5)</span></code> como se ilustra a continuación:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
-<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
-<span class="nb">clc</span>
-<span class="n">syms</span><span class="w"> </span><span class="s">x(t)</span><span class="p">;</span>
-<span class="n">Dx</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
-<span class="n">ode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">350</span><span class="o">*</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">cond1</span><span class="p">=</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.01</span><span class="p">;</span>
-<span class="n">cond2</span><span class="p">=</span><span class="n">Dx</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">ci</span><span class="p">=[</span><span class="n">cond1</span><span class="w"> </span><span class="n">cond2</span><span class="p">];</span>
-<span class="n">xSol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span><span class="n">ci</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[xSol(t) =\frac{{\mathrm{e}}^{-\frac{3\,t}{5}} \,{\left(3491\,\cos \left(\frac{\sqrt{3491}\,t}{5}\right)+3\,\sqrt{3491}\,\sin \left(\frac{\sqrt{3491}\,t}{5}\right)\right)}}{349100}\]</div>
+<div class="output text_html"><html><body><pre>ans = 3.6154</pre></body></html></div></div>
+</div>
+<p>Esto significa que el punto obtenido con interpolación corresponde a las coordenadas <span class="math notranslate nohighlight">\(x=5\)</span> y <span class="math notranslate nohighlight">\(y=3.6154\)</span>, es decir <span class="math notranslate nohighlight">\(P_{interpolado}=(5,3.6154)\)</span>. De forma gráfica, el valor calculado para la coordenada <span class="math notranslate nohighlight">\(y\)</span> se usa para construir el punto interpolado deseado, como se muestra en la siguiente figura:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/73f473ed56d50b3e68802a307c0eb39de0ec69e076bb818f554bc87981cc19b9.png" src="_images/73f473ed56d50b3e68802a307c0eb39de0ec69e076bb818f554bc87981cc19b9.png" />
 </div>
 </div>
-<p>La solución de la ecuación diferencial es <span class="math notranslate nohighlight">\(x(t)\)</span> y describe el movimiento de la masa como una función del tiempo. La ecuación diferencial anterior, al estar igualada a cero, es decir, cuando <span class="math notranslate nohighlight">\(f(t)=0\)</span>, se denomina ecuación diferencial homogénea, en este tipo de ecuaciones diferenciales, la única manera en la que la solución es diferente de cero, es cuando al menos una de las condiciones iniciales <span class="math notranslate nohighlight">\(x(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)\)</span> sea diferente de cero. Un ejemplo de aplicación para cuando <span class="math notranslate nohighlight">\(f(t)\)</span> es diferente de cero, es el caso de la ecuadión diferencial no homogénea, En Matlab se plantea y resuelve con las siguientes instrucciones:</p>
+<p>Es posible interpolar múltiples valores de la variable independiente con un solo uso de la istrucción <code class="docutils literal notranslate"><span class="pre">iterp1()</span></code>, por ejemplo para los pares ordenados de la siguiente tabla:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>0.0</p></td>
+<td class="text-right"><p>22.430</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1.0</p></td>
+<td class="text-right"><p>19.398</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2.0</p></td>
+<td class="text-right"><p>11.341</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>3.0</p></td>
+<td class="text-right"><p>8.422</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>4.0</p></td>
+<td class="text-right"><p>5.215</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>5.0</p></td>
+<td class="text-right"><p>0.434</p></td>
+</tr>
+</tbody>
+</table>
+<p>Si se desea interpolar un conjunto de datos en la variable independiente <span class="math notranslate nohighlight">\(x\)</span> con una resolución, es decir, con un incremento diferente se usan las instrucciones siguientes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
 
-<span class="n">syms</span><span class="w"> </span><span class="s">x(t)</span><span class="p">;</span>
-<span class="n">Dx</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
-<span class="n">ode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">350</span><span class="o">*</span><span class="n">x</span><span class="o">==</span><span class="mi">4</span><span class="p">;</span>
-<span class="n">cond1</span><span class="p">=</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="n">cond2</span><span class="p">=</span><span class="n">Dx</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="n">ci</span><span class="p">=[</span><span class="n">cond1</span><span class="w"> </span><span class="n">cond2</span><span class="p">];</span>
-<span class="n">xSol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span><span class="n">ci</span><span class="p">)</span>
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c">%vector x original</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">22.430</span><span class="p">,</span><span class="mf">19.398</span><span class="p">,</span><span class="mf">11.342</span><span class="p">,</span><span class="mf">8.422</span><span class="p">,</span><span class="mf">5.215</span><span class="p">,</span><span class="mf">0.434</span><span class="p">];</span><span class="w"> </span><span class="c">% vector y original</span>
+<span class="c">% Proceso de interpolación de valores de y para un conjunto de valores de x con</span>
+<span class="c">% mayor resolución</span>
+<span class="n">x_nuevo</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">y_nuevo</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_nuevo</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[xSol(t) =\frac{2}{175}-\frac{6\,\sqrt{3491}\,{\mathrm{e}}^{-\frac{3\,t}{5}} \,\sin \left(\frac{\sqrt{3491}\,t}{5}\right)}{610925}-\frac{2\,{\mathrm{e}}^{-\frac{3\,t}{5}} \,\cos \left(\frac{\sqrt{3491}\,t}{5}\right)}{175}\]</div>
+<div class="output text_html"><html><body><pre>y_nuevo = 1x11 double
+   22.4300   20.9140   19.3980   15.3700   11.3420    9.8820    8.4220    6.8185    5.2150    2.8245    0.4340
+</pre></body></html></div></div>
+</div>
+<p>La gráfica de los datos originales en contraste con los datos interpolados se obtiene usando las instrucciones:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&quot;o&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">30</span><span class="p">])</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Interpolación lineal de múltiples datos&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_nuevo</span><span class="p">,</span><span class="n">y_nuevo</span><span class="p">,</span><span class="s">&quot;*-&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;Datos originales&quot;</span><span class="p">,</span><span class="s">&quot;interpolación lineal&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+</pre></div>
 </div>
 </div>
-<p>La ecuación diferencial que modela a un sistema masa-resorte-amortiguador se puede escribor de forma alternativa si se hace un <em>despeje</em> de la función de movimiento y se escribe de forma alternativa:</p>
+<div class="cell_output docutils container">
+<img alt="_images/67bf7d54980c742a9df058dc410e6a03dc107085ba20bf94efcecba476ff603d.png" src="_images/67bf7d54980c742a9df058dc410e6a03dc107085ba20bf94efcecba476ff603d.png" />
+</div>
+</div>
+</section>
+<section id="iterpolacion-con-aproximacion-no-lineal">
+<h2>Iterpolación con aproximación no lineal<a class="headerlink" href="#iterpolacion-con-aproximacion-no-lineal" title="Permalink to this heading">#</a></h2>
+<p>Una forma de interpolar datos que no se encuentran en el conjunto de mediciones experimentales, de manera más suave que la que se realiza por medio de la interpolación usando lineas rectas es la interpolación no lineal. Usando esta técnica de interpolación se consigue un comportamiento más suave de las aproximaciones. Para hacer uso de esta técnica en MATLAB, se especifica el tipo de interpolación añadiendo una cadena de caracteres con la especificación deseada para la interpolación; <code class="docutils literal notranslate"><span class="pre">iterp1(x,y,'spline')</span></code>. Lo anterior queda ejemplificado con las siguientes líneas de código que retoman el primer caso ejmplo para interpolación lineal:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mf">3.5</span><span class="p">,</span><span class="s">&#39;spline&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 7.0687</pre></body></html></div></div>
+</div>
+<p>De la misma manera que se hizo para el caso de la interpolación lineal, se puede hacer uso de la interpolación no lienal para la aproximación de un conjunto de datos a la vez como se ilustra en la siguiente figura:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">y_nolineal</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_nuevo</span><span class="p">,</span><span class="s">&#39;spline&#39;</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_nuevo</span><span class="p">,</span><span class="n">y_nolineal</span><span class="p">,</span><span class="s">&quot;k+-&quot;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;Datos originales&quot;</span><span class="p">,</span><span class="s">&quot;interpolación lineal&quot;</span><span class="p">,</span><span class="s">&quot;interpolación no lineal&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/aac66cdef42e85a993dc05caebf5386e12d5526f69ac9edab64a1c94b06a787f.png" src="_images/aac66cdef42e85a993dc05caebf5386e12d5526f69ac9edab64a1c94b06a787f.png" />
+</div>
+</div>
+<p>La siguiente tabla muestra un resumen de las opciones disponibles para la interpolación de datos usando el compado <code class="docutils literal notranslate"><span class="pre">interp1()</span></code>:</p>
+<table class="table" id="tabla-interp">
+<caption><span class="caption-number">Tabla 14 </span><span class="caption-text">Tabla de opciones de interpolación.</span><a class="headerlink" href="#tabla-interp" title="Enlace permanente a esta tabla">#</a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Comando MATLAB</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">interp(x,y,'linear')</span></code></p></td>
+<td><p>Iterpolación lineal del valor de <span class="math notranslate nohighlight">\(y\)</span> dado <span class="math notranslate nohighlight">\(x=a\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">interp(x,y,a,'nearest')</span></code></p></td>
+<td><p>Iterpolación del valor más cercano de <span class="math notranslate nohighlight">\(y\)</span> dado <span class="math notranslate nohighlight">\(x=a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">interp(x,y,a,'spline')</span></code></p></td>
+<td><p>Interpolación cúbica seccionada del valor de <span class="math notranslate nohighlight">\(y\)</span> dado <span class="math notranslate nohighlight">\(x=a\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">interp(x,y,a,'pchip')</span></code></p></td>
+<td><p>Interpolación cúbica, preservando la forma de la curva original del valor de <span class="math notranslate nohighlight">\(y\)</span> dado <span class="math notranslate nohighlight">\(x=a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">interp(x,y,a,'cubic')</span></code></p></td>
+<td><p>Interpolación del valor de <span class="math notranslate nohighlight">\(y\)</span> dado <span class="math notranslate nohighlight">\(x=a\)</span> similar a la opción “pchip”</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">interp(x,y,a,'v5cubic')</span></code></p></td>
+<td><p>Interpolación cúbica, sin extrapolación, del valor de <span class="math notranslate nohighlight">\(y\)</span> dado <span class="math notranslate nohighlight">\(x=a\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>En las siguientes líneas se ejemplifica el uso de las opciones contenidas en la tabla anterior para interpolar el valor de <span class="math notranslate nohighlight">\(x=2.5\)</span> de los datos usados para los ejemplos anteriores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c">%vector x original</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">22.430</span><span class="p">,</span><span class="mf">19.398</span><span class="p">,</span><span class="mf">11.342</span><span class="p">,</span><span class="mf">8.422</span><span class="p">,</span><span class="mf">5.215</span><span class="p">,</span><span class="mf">0.434</span><span class="p">];</span><span class="w"> </span><span class="c">% vector y original</span>
+<span class="c">% Proceso de interpolación de valores de y para un conjunto de valores de x con</span>
+<span class="c">% usando las diferentes opciones para la interpolación</span>
+<span class="n">a</span><span class="p">=</span><span class="mf">2.5</span><span class="p">;</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;interpolación lineal&quot;</span><span class="p">)</span>
+<span class="n">y_nuevo</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s">&#39;linear&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;interpolación valor más cercano&quot;</span><span class="p">)</span>
+<span class="n">y_nuevo</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s">&#39;nearest&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;interpolación cubica&quot;</span><span class="p">)</span>
+<span class="n">y_nuevo</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s">&#39;spline&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;interpolación cúbica conservando la forma&quot;</span><span class="p">)</span>
+<span class="n">y_nuevo</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s">&#39;cubic&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;interpolación con opción pchip&quot;</span><span class="p">)</span>
+<span class="n">y_nuevo</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s">&#39;pchip&#39;</span><span class="p">)</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;interlpolación con opción v5cubic&quot;</span><span class="p">)</span>
+<span class="n">y_nuevo</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="s">&#39;v5cubic&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interpolación lineal
+</pre></div>
+</div>
+<div class="output text_html"><html><body><pre>y_nuevo = 9.8820</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interpolación valor más cercano
+</pre></div>
+</div>
+<div class="output text_html"><html><body><pre>y_nuevo = 8.4220</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interpolación cubica
+</pre></div>
+</div>
+<div class="output text_html"><html><body><pre>y_nuevo = 9.4359</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interpolación cúbica conservando la forma
+</pre></div>
+</div>
+<div class="output text_html"><html><body><pre>y_nuevo = 9.5789</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interpolación con opción pchip
+</pre></div>
+</div>
+<div class="output text_html"><html><body><pre>y_nuevo = 9.7283</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>interlpolación con opción v5cubic
+</pre></div>
+</div>
+<div class="output text_html"><html><body><pre>y_nuevo = 9.5789</pre></body></html></div></div>
+</div>
+<p>Para conjuntos de valores de la variable independiente <span class="math notranslate nohighlight">\(x\)</span> se pueden usar las mismas opciones para la interpolación de puntos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c">%vector x original</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">22.430</span><span class="p">,</span><span class="mf">19.398</span><span class="p">,</span><span class="mf">11.342</span><span class="p">,</span><span class="mf">8.422</span><span class="p">,</span><span class="mf">5.215</span><span class="p">,</span><span class="mf">0.434</span><span class="p">];</span><span class="w"> </span><span class="c">% vector y original</span>
+<span class="c">% Proceso de interpolación de valores de y para un conjunto de valores de x con</span>
+<span class="c">% mayor resolución</span>
+<span class="n">x_nuevo</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
+<span class="n">y_nuevo_lineal</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_nuevo</span><span class="p">,</span><span class="s">&#39;linear&#39;</span><span class="p">);</span>
+<span class="n">y_nuevo_nearest</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_nuevo</span><span class="p">,</span><span class="s">&#39;nearest&#39;</span><span class="p">);</span>
+<span class="n">y_nuevo_spline</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_nuevo</span><span class="p">,</span><span class="s">&#39;spline&#39;</span><span class="p">);</span>
+<span class="n">y_nuevo_pchip</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_nuevo</span><span class="p">,</span><span class="s">&#39;pchip&#39;</span><span class="p">);</span>
+<span class="n">y_nuevo_cubic</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_nuevo</span><span class="p">,</span><span class="s">&#39;cubic&#39;</span><span class="p">);</span>
+<span class="n">y_nuevo_v5cubic</span><span class="p">=</span><span class="nb">interp1</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">x_nuevo</span><span class="p">,</span><span class="s">&#39;v5cubic&#39;</span><span class="p">);</span>
+
+<span class="n">figure</span>
+<span class="s">plot(x,y,&quot;o&quot;,&quot;LineWidth&quot;,3)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_nuevo</span><span class="p">,</span><span class="n">y_nuevo_lineal</span><span class="p">,</span><span class="s">&quot;o&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_nuevo</span><span class="p">,</span><span class="n">y_nuevo_nearest</span><span class="p">,</span><span class="s">&quot;r-x&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_nuevo</span><span class="p">,</span><span class="n">y_nuevo_spline</span><span class="p">,</span><span class="s">&quot;g-+&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_nuevo</span><span class="p">,</span><span class="n">y_nuevo_pchip</span><span class="p">,</span><span class="s">&quot;c-*&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_nuevo</span><span class="p">,</span><span class="n">y_nuevo_cubic</span><span class="p">,</span><span class="s">&quot;m-s&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x_nuevo</span><span class="p">,</span><span class="n">y_nuevo_v5cubic</span><span class="p">,</span><span class="s">&quot;k-d&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Interpolación múltiple con diferentes métodos&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;Datos originales&quot;</span><span class="p">,</span><span class="s">&quot;interpolación lineal&quot;</span><span class="p">,</span><span class="s">&quot;interpolación nearest&quot;</span><span class="p">,</span><span class="k">...</span>
+<span class="s">&quot;interpolación spline&quot;</span><span class="p">,</span><span class="s">&quot;interpolación pchip&quot;</span><span class="p">,</span><span class="s">&quot;interpolación cubic&quot;</span><span class="p">,</span><span class="k">...</span>
+<span class="s">&quot;interpolación v5cubic&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5353e4eefdd4b6774f49bf4beb3f68ac09285cb48da23648ef7aee6ab924b6f5.png" src="_images/5353e4eefdd4b6774f49bf4beb3f68ac09285cb48da23648ef7aee6ab924b6f5.png" />
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="interpolacion-de-funciones-de-dos-variables">
+<h1>Interpolación de funciones de dos variables<a class="headerlink" href="#interpolacion-de-funciones-de-dos-variables" title="Permalink to this heading">#</a></h1>
+<p>La interpolación tambien se puede utilizar para calcular datos no medidos cuando se tienen datos de un experimento que depende de dos variables. Por ejemplo, considérese la tabla de datos siguiente:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(x=1.5\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(x=2.0\)</span></p></th>
+<th class="head text-left"><p><span class="math notranslate nohighlight">\(x=2.5\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(x=3.0\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(y=0.0\)</span></p></td>
+<td class="text-left"><p>11.5</p></td>
+<td class="text-left"><p>13.43</p></td>
+<td class="text-left"><p>23.56</p></td>
+<td class="text-right"><p>30.45</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(y=1.0\)</span></p></td>
+<td class="text-left"><p>22.0</p></td>
+<td class="text-left"><p>44.67</p></td>
+<td class="text-left"><p>54.45</p></td>
+<td class="text-right"><p>218.74</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(y=2.0\)</span></p></td>
+<td class="text-left"><p>32.5</p></td>
+<td class="text-left"><p>64.67</p></td>
+<td class="text-left"><p>96.15</p></td>
+<td class="text-right"><p>16.15</p></td>
+</tr>
+</tbody>
+</table>
+<p>Para encontrar el valor de la variable <span class="math notranslate nohighlight">\(z\)</span> cuando <span class="math notranslate nohighlight">\(y=1.5\)</span> y <span class="math notranslate nohighlight">\(x=1.8\)</span>, dado que son valores que no se tienen disponibles en la tabla de mediciones, es necesario hacer una interpolación. Para hacer una interpolación en el caso de dos variables independientes, se utiliza la función nativa de MATLAB <code class="docutils literal notranslate"><span class="pre">interp2()</span></code> Las siguientes líneas de código muestran el proceso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+<span class="n">x</span><span class="p">=[</span><span class="mf">1.5</span><span class="w"> </span><span class="mf">2.0</span><span class="w"> </span><span class="mf">2.5</span><span class="w"> </span><span class="mf">3.0</span><span class="p">];</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">0.0</span><span class="w"> </span><span class="mf">1.0</span><span class="w"> </span><span class="mf">2.0</span><span class="p">];</span>
+<span class="n">z</span><span class="p">=[</span><span class="mf">11.5</span><span class="w"> </span><span class="mf">13.43</span><span class="w"> </span><span class="mf">23.56</span><span class="w"> </span><span class="mf">30.45</span><span class="p">;</span>
+<span class="w">   </span><span class="mf">22.0</span><span class="w"> </span><span class="mf">44.67</span><span class="w"> </span><span class="mf">54.45</span><span class="w"> </span><span class="mf">218.74</span><span class="p">;</span>
+<span class="w">   </span><span class="mf">32.5</span><span class="w"> </span><span class="mf">64.67</span><span class="w"> </span><span class="mf">96.15</span><span class="w"> </span><span class="mf">16.15</span><span class="p">];</span>
+<span class="c">%interpolación para el valor z para los valores y=1.5 y x=1.8</span>
+<span class="n">z_nuevo</span><span class="p">=</span><span class="nb">interp2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="mf">1.8</span><span class="p">,</span><span class="mf">1.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>z_nuevo = 43.7020</pre></body></html></div></div>
+</div>
+<section id="regresion-basica-o-ajuste-de-curvas">
+<h2>Regresión básica o ajuste de curvas<a class="headerlink" href="#regresion-basica-o-ajuste-de-curvas" title="Permalink to this heading">#</a></h2>
+<p>La interpolación, junto con todas sus opciones permite encontrar valores numéricos de datos que no fueron adquiridos o medidos de manera experimental, sin embargo, es un proceso que es conveniente cuando se requieren solo los valores numéricos de un conjunto de datos que no se midieron de forma experimental. La regresión de datos o ajuste de curvas (curve fitting en inglés) permite encontrar un modelo, es decir, una función que describa el comportamiento del conjunto de datos experimentales por medio de una fórmula específica expresada como <span class="math notranslate nohighlight">\(y=f(x)\)</span>. A continuación se presentan las funciones básicas de regresión de datos disponibles en MATLAB.</p>
+</section>
+<section id="regresion-lineal">
+<h2>Regresión lineal<a class="headerlink" href="#regresion-lineal" title="Permalink to this heading">#</a></h2>
+<p>La función mas simple que se puede usar para modelar matemáticamente a un conjunto de datos es la recta, es decir <span class="math notranslate nohighlight">\(y=mx+b\)</span>. Por ejemplo, para los datos descritos en la siguiente tabla</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(0.0\)</span></p></td>
+<td class="text-right"><p>15.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(0.5\)</span></p></td>
+<td class="text-right"><p>13.4</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(1.0\)</span></p></td>
+<td class="text-right"><p>9.85</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(1.5\)</span></p></td>
+<td class="text-right"><p>7.34</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(2.0\)</span></p></td>
+<td class="text-right"><p>3.82</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(2.5\)</span></p></td>
+<td class="text-right"><p>1.54</p></td>
+</tr>
+</tbody>
+</table>
+<p>Se puede calcular la ecuación de una recta que pase por el primer y último punto como:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{d^2x}{dt^2}= \frac{1}{m}\left ( f(t) - b\frac{dx}{dt}-kx(t)\right )
+m=\frac{y_2-y_1}{x_2-x_1}=\frac{1.54-15.5}{2.5-0}=-5.5840
 \]</div>
-<p>Si se integra dos veces con respecto al tiempo la ecuación anterior se obtiene:</p>
+<p>dado que <span class="math notranslate nohighlight">\(y=15.5\)</span> cuando <span class="math notranslate nohighlight">\(x=0\)</span>, la ecuación de la recta que pasa por el primer y último punto es:</p>
 <div class="math notranslate nohighlight">
 \[
-\int^{t}_0\int^{\tau_1}_0\frac{d^2x}{dt^2}d\tau_1d\tau_2= \int^{t}_0\int^{\tau_1}_0\frac{1}{m}\left ( f(\tau_1) - b\frac{dx(\tau_1)}{d\tau_1}-kx(\tau_1)\right )d\tau_1d\tau_2
+y=-5.5840x+15.5
 \]</div>
-<p>se obtiene la siguiente expresión:</p>
+<p>La gráfica siguiente muestra una comparación entre los datos originales y la recta cuya pendiente y ordenada al origen se calculó usando el primero y el útimo punto del conjunto de datos:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/519eff70c22aaf8d79a6169d054763fe46c83bb4229edef8132c939da2ea6605.png" src="_images/519eff70c22aaf8d79a6169d054763fe46c83bb4229edef8132c939da2ea6605.png" />
+</div>
+</div>
+<p>El método de los mínimos cuadrados permite el ajuste óptimo de la recta, es decir, proporciona el valor de la pendiente y la ordenada al origen de la recta que se propone como modelo que mejor se ajuste a los datos experimentales. La explicación del método de los mínimos cuadrados está fuera del ámbito de este curso y se puede consultar en la literatura (<span id="id4">Chapra <em>et al.</em> [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="S.C. Chapra, R.P. Canale, J.E. Brito, and M.C.R. Hano. Métodos numéricos para ingenieros. Elibro Catedra. McGraw-Hill, 2006. ISBN 9789701061145. URL: https://books.google.com.mx/books?id=hoH0MAAACAAJ.">CCBH06</a>]</span>). MATALB ofrece el método de los mínimos cuadrados en la función <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>. Para el ejemplo anterior se usan las siguientes líneas de código para efectuar la regresión lineal de los datos propuestos y se comparan con la primera aproximación que se mostró en la gráfica anterior, primero se muestra el cálculo de la ecuación del de la recta que minimiza la diferencia entre los datos calculados con el modelo y los datos experimentales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">2.5</span><span class="p">];</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">15.5</span><span class="p">,</span><span class="mf">13.4</span><span class="p">,</span><span class="mf">9.85</span><span class="p">,</span><span class="mf">7.34</span><span class="p">,</span><span class="mf">3.82</span><span class="p">,</span><span class="mf">1.54</span><span class="p">];</span>
+<span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 1x2 double
+   -5.7743   15.7929
+</pre></body></html></div></div>
+</div>
+<p>La ecuación de la recta óptima que une a los puntos es entonces:
+$<span class="math notranslate nohighlight">\(
+y=-5.7743x+15.7929
+\)</span>$
+nótese que la estructura de la instrucción <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> incluye un número 1 como argumento para especificar que se usará un polinomio de primer grado o línea recta para crear el modelo de los datos. A continuación se muestra la comparación de la regresión calculada con la primera recta propuesta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">2.5</span><span class="p">];</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">15.5</span><span class="p">,</span><span class="mf">13.4</span><span class="p">,</span><span class="mf">9.85</span><span class="p">,</span><span class="mf">7.34</span><span class="p">,</span><span class="mf">3.82</span><span class="p">,</span><span class="mf">1.54</span><span class="p">];</span>
+<span class="n">figure</span>
+<span class="s">plot(x,y,&quot;*&quot;,&quot;LineWidth&quot;,2)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,(</span><span class="o">-</span><span class="mf">5.5840</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">15.5</span><span class="p">),</span><span class="s">&#39;ko-&#39;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Modelo lineal de los datos&quot;</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,(</span><span class="o">-</span><span class="mf">5.7743</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">15.7929</span><span class="p">),</span><span class="s">&#39;r+-&#39;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;Datos originales&quot;</span><span class="p">,</span><span class="s">&quot;Recta y=-5.5840x+15.5&quot;</span><span class="p">,</span><span class="s">&quot;Recta y=-5.7743x+15.7929&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fa92dd9afcab7982c881ac7b4ef853a4de1edf825aa1497d93f21fb9962d3bd0.png" src="_images/fa92dd9afcab7982c881ac7b4ef853a4de1edf825aa1497d93f21fb9962d3bd0.png" />
+</div>
+</div>
+</section>
+<section id="regresion-polinomial">
+<h2>Regresión polinomial<a class="headerlink" href="#regresion-polinomial" title="Permalink to this heading">#</a></h2>
+<p>Para el caso de datos con un comportamiento no lineal, es posible usar la función <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> especificando un grado diferente a 1 para aproximar una curva a los datos experimentales de la forma (<span id="id5">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>):</p>
 <div class="math notranslate nohighlight">
 \[
-x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\int^{t}_0\frac{dx(\tau_1)}{d\tau_1}d\tau_1-\frac{k}{m}\int^{t}_0\int^{\tau_1}_0x(\tau_1)d\tau_1d\tau_2
+y=a_1x^n+a_2x^{n-1}+a_3x^{n-2}+...+a_nx+a_{n+1}
 \]</div>
-<p>El operador integral en MATLAB Simulink es el bloque marcado con la etiqueta <span class="math notranslate nohighlight">\(\frac{1}{s}\)</span>, un diagrama de bloques de ejmeplo, para una ecuación diferencial lineal y de coeficientes constantes se muestra en la <a class="reference internal" href="#bloques-mbk"><span class="std std-numref">Figura 11</span></a></p>
-<figure class="align-default" id="bloques-mbk">
-<a class="reference internal image-reference" href="_images/bloques_mbk.png"><img alt="_images/bloques_mbk.png" src="_images/bloques_mbk.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 11 </span><span class="caption-text">Diagrama de bloques para la solución de una ecuación diferencial.</span><a class="headerlink" href="#bloques-mbk" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Para el caso de un sistema eléctrico del tipo resistencia capacitor inductancia, como el mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 12</span></a></p>
-<figure class="align-default" id="rlc">
-<a class="reference internal image-reference" href="_images/Imagen8.png"><img alt="_images/Imagen8.png" src="_images/Imagen8.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 12 </span><span class="caption-text">Circuito RLC.</span><a class="headerlink" href="#rlc" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Las relaciones constitutivas del sistema eléctrico son:</p>
-<div class="math notranslate nohighlight" id="equation-relconst2">
-<span class="eqno">(15)<a class="headerlink" href="#equation-relconst2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-     v_L=L\frac{di(t)}{dt}~~i_C=C\frac{dv_c(t)}{dt}~~v_R=i(t)R
-	\end{equation}\]</div>
-<p>Con <span class="math notranslate nohighlight">\(L\)</span> la inductancia en <span class="math notranslate nohighlight">\([H]\)</span>, <span class="math notranslate nohighlight">\(C\)</span> la capacitancia en <span class="math notranslate nohighlight">\([F]\)</span> y <span class="math notranslate nohighlight">\(R\)</span> la resistencia en <span class="math notranslate nohighlight">\([\Omega]\)</span>. Además, por la ley de Kirchoff, la corriente en el capacitor <span class="math notranslate nohighlight">\(i_C(t)=i(t)\)</span>. En este caso, la salida se nombra <span class="math notranslate nohighlight">\(v_c(t)\)</span> el voltaje en el capacitor, debido a la presencia de la fuente de alimentación <span class="math notranslate nohighlight">\(V_s(t)\)</span>, que sería equivalente a la función estímulo o de entrada. La ecuación diferencial que modela a este sistema eléctrico es:</p>
-<div class="math notranslate nohighlight" id="equation-edorlc">
-<span class="eqno">(16)<a class="headerlink" href="#equation-edorlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
-	\end{equation}\]</div>
-<p>El diagrama de bloques de esta última ecuación diferencial se realiza de forma similar al del sistema masa-resorte-amortiguador. En la siguiente sección se detalla la manera de realizar la simulación usando diagramas de bloques en el ambiente gráfico simulink.</p>
-<section id="el-entorno-de-simulacion-grafica-simulink">
-<h2>El entorno de simulación gráfica simulink<a class="headerlink" href="#el-entorno-de-simulacion-grafica-simulink" title="Permalink to this heading">#</a></h2>
-<p>El entorno gráfico de simulación de MATLAB permite la construcción de modelos de sistemas dinámicos en forma de diagramas de bloques. La representación en diagramas de bloques es común dada su facilidad para representar la interacción entre las variables y los elementos de un sistema. Existen muchas maneras de repesentar el mismo sistema dinámico; en forma de ecuación matricial o en espacio de estados, la representación haciedo uso de la función de transferencia y la reperesentación como ecuación diferencial en la que se presentan los integradores como los bloques básicos de solución al problema de modelado matemático. En este curso no ahondaremos en el tema de los modelos matemáticos, esta práctica tiene por objetivo ser una introducción al ambiente gráfico de simulación de MATLAB conocido como simulink. El entorno gráfico de simulink se encuentra en el menú de la parte superior de la página principal de MATLAB cono se muestra en la <a class="reference internal" href="#simulink-icono"><span class="std std-numref">Figura 13</span></a> y la <a class="reference internal" href="#modelo-en-blanco"><span class="std std-numref">Figura 14</span></a>:</p>
-<figure class="align-default" id="simulink-icono">
-<a class="reference internal image-reference" href="_images/icono_simulink.png"><img alt="_images/icono_simulink.png" src="_images/icono_simulink.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 13 </span><span class="caption-text">Localización del botón de inicio de simulink.</span><a class="headerlink" href="#simulink-icono" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="modelo-en-blanco">
-<a class="reference internal image-reference" href="_images/modelo_en_blanco.png"><img alt="_images/modelo_en_blanco.png" src="_images/modelo_en_blanco.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 14 </span><span class="caption-text">Interfaz de inicio de simulink.</span><a class="headerlink" href="#modelo-en-blanco" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Al hacer click en ese ícono, se abrirá la interfaz gráfica para la creación de un modelo en forma de diragrama de bloques como se muestra en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/abre_simulink.mp4 " type="video/mp4">
-</video>
+<p>Por ejemplo, para los datos del ejemplo anterior, se propone un modelo cuadrático usando la instrucción <code class="docutils literal notranslate"><span class="pre">polyfit(x,y,2)</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">2.5</span><span class="p">];</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">15.5</span><span class="p">,</span><span class="mf">13.4</span><span class="p">,</span><span class="mf">9.85</span><span class="p">,</span><span class="mf">7.34</span><span class="p">,</span><span class="mf">3.82</span><span class="p">,</span><span class="mf">1.54</span><span class="p">];</span>
+<span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
 </div>
-<p>La creación de un diagrama de bloques se logra arrastrando los bloques necesarios desde la biblioteca de symulink, que se muestran en la <a class="reference internal" href="#biblioteca-bloques"><span class="std std-numref">Figura 15</span></a></p>
-<figure class="align-default" id="biblioteca-bloques">
-<a class="reference internal image-reference" href="_images/biblioteca_bloques.png"><img alt="_images/biblioteca_bloques.png" src="_images/biblioteca_bloques.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 15 </span><span class="caption-text">Biblioteca de bloques de simulink</span><a class="headerlink" href="#biblioteca-bloques" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/arrastra_bloques.mp4 " type="video/mp4">
-</video>
 </div>
-<p>La solución de la ecuación diferencial es <span class="math notranslate nohighlight">\(x(t)\)</span> y describe el movimiento de la masa como una función del tiempo. La herramienta simulink permite crear simulaciones en forma de diagramas de bloques como se muestra en los siguientes videos.</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/abre_simulink.mp4 " type="video/mp4">
-</video>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 1x3 double
+   -0.0557   -5.6350   15.7464
+</pre></body></html></div></div>
 </div>
-<p>La creación del diagrama de bloques y los detalles de la simulación se muestran en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/crea_bloques.mp4 " type="video/mp4">
-</video>
+<p>El modelo obtenido para los datos en este caso es:
+$<span class="math notranslate nohighlight">\(
+y= -0.0557x^2   -5.6350x  + 15.7464
+\)</span>$
+Una regresión de tercer grado se obtendría usando las siguientes líneas de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
 </div>
-<p>En el ambiente gráfico de Simulink, existe un bloque que permite almacenar el resultado de la simulación en un arreglo para poder hacer una gráfica o hacer calculos estadísticos como el promedio, desviación estandar, etc. Los bloques de exportación de datos al workspace se muestra en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/bloques_to_worspace.mp4 " type="video/mp4">
-</video>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>ans = 1x4 double
+    0.5407   -2.0835   -3.7830   15.5437
+</pre></body></html></div></div>
+</div>
+<p>Lo anterior corresponde al modelo:</p>
+<div class="math notranslate nohighlight">
+\[
+y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
+\]</div>
+<p>Finalmente las siguientes líneas de código permiten contrastar los modelos calculados con los datos originales:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+<span class="c">%Datos originales</span>
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mf">2.5</span><span class="p">];</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">15.5</span><span class="p">,</span><span class="mf">13.4</span><span class="p">,</span><span class="mf">9.85</span><span class="p">,</span><span class="mf">7.34</span><span class="p">,</span><span class="mf">3.82</span><span class="p">,</span><span class="mf">1.54</span><span class="p">];</span>
+<span class="c">%regresión cuadrática</span>
+<span class="n">coef_2</span><span class="p">=</span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="c">%regresión de tercer grado</span>
+<span class="n">coef_3</span><span class="p">=</span><span class="nb">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">plot(x,y,&#39;*&#39;,&quot;LineWidth&quot;,2)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Regresion polinomial&quot;</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mf">0.0557</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mf">5.6350</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">15.7464</span><span class="p">,</span><span class="s">&#39;ko-&#39;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mf">0.5407</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="mf">2.0835</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mf">3.7830</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mf">15.5437</span><span class="p">,</span><span class="s">&#39;r+-&#39;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;Datos originales&quot;</span><span class="p">,</span><span class="s">&quot;Regresión cuadrática&quot;</span><span class="p">,</span><span class="s">&quot;Regresión cúbica&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">16</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/75d63a6e13c1b049cdc011b59a10e6d2d15aca8bcb9177c03a7ca023f4d38fc1.png" src="_images/75d63a6e13c1b049cdc011b59a10e6d2d15aca8bcb9177c03a7ca023f4d38fc1.png" />
+</div>
 </div>
 </section>
 <section id="ejercicio-de-la-practica-11">
 <h2>Ejercicio de la práctica 11<a class="headerlink" href="#ejercicio-de-la-practica-11" title="Permalink to this heading">#</a></h2>
-<p>1.-Simule el sistema masa resorte amortiguador mostrado en la <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a>, con los parámetros de la <a class="reference internal" href="#tabla-param-mbk"><span class="std std-numref">Tabla 14</span></a>, para los siguientes casos de <span class="math notranslate nohighlight">\(f(t)\)</span>:</p>
 <ol class="arabic simple">
-<li><p>Escalón con amplitud <span class="math notranslate nohighlight">\(10~[N]\)</span> y retardo de <span class="math notranslate nohighlight">\(0.5\)</span> segundos.</p></li>
-<li><p>Escalón con amplitud de <span class="math notranslate nohighlight">\(15~[N]\)</span> sin retardo.</p></li>
-<li><p>Fuerza definida por la función <span class="math notranslate nohighlight">\(f(t)=5sen(4\pi t)~[N]\)</span>.</p></li>
+<li><p>Construya un par de arreglos <span class="math notranslate nohighlight">\(y\)</span> y <span class="math notranslate nohighlight">\(x\)</span> que contengan los datos de la siguiente tabla:</p></li>
 </ol>
-<table class="table" id="tabla-param-mbk">
-<caption><span class="caption-number">Tabla 14 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param-mbk" title="Enlace permanente a esta tabla">#</a></caption>
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
-\[Parámetro\]</div>
-</th>
-<th class="head"><div class="math notranslate nohighlight">
-\[Valor\]</div>
-</th>
+<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[m\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[3.5~[Kg]\]</div>
-</td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(10.0\)</span></p></td>
+<td class="text-right"><p>23.5</p></td>
 </tr>
-<tr class="row-odd"><td><div class="math notranslate nohighlight">
-\[b\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[0.15~[Ns/m]\]</div>
-</td>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(20.15\)</span></p></td>
+<td class="text-right"><p>45.4</p></td>
 </tr>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[k\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[430~[N/m]\]</div>
-</td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(30.0\)</span></p></td>
+<td class="text-right"><p>60.05</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(40.15\)</span></p></td>
+<td class="text-right"><p>82.34</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(50.0\)</span></p></td>
+<td class="text-right"><p>110.82</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(60.15\)</span></p></td>
+<td class="text-right"><p>140.54</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(70.0\)</span></p></td>
+<td class="text-right"><p>167.35</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(80.15\)</span></p></td>
+<td class="text-right"><p>197.88</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(90.0\)</span></p></td>
+<td class="text-right"><p>200.85</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(100.15\)</span></p></td>
+<td class="text-right"><p>220.34</p></td>
 </tr>
 </tbody>
 </table>
-<p>Añada los bloques necesarios para la exportación de datos a workspace y genere una gráfica de la fuerza de entrada contra el tiempo y una del desplazamiento contra el tiempo en la misma figura.</p>
-<p>2.-Simule el circuito RLC mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 12</span></a>, con los parámetros de la <a class="reference internal" href="#tabla-param-rlc"><span class="std std-numref">Tabla 15</span></a>, para los siguientes casos de <span class="math notranslate nohighlight">\(V_s(t)\)</span>:</p>
-<ol class="arabic simple">
-<li><p>Escalón con amplitud <span class="math notranslate nohighlight">\(2.5~[V]\)</span> y retardo de <span class="math notranslate nohighlight">\(0.5\)</span> segundos.</p></li>
-<li><p>Escalón con amplitud de <span class="math notranslate nohighlight">\(1.63~[V]\)</span> sin retardo.</p></li>
-<li><p>Voltaje definido por la función <span class="math notranslate nohighlight">\(f(t)=5sen(2\pi t)~[V]\)</span>.</p></li>
+<p>a) Grafique los datos originales <span class="math notranslate nohighlight">\(x-y\)</span>.</p>
+<p>b) Use una interpolación lineal para calcular el valor de <span class="math notranslate nohighlight">\(y\)</span> cuado <span class="math notranslate nohighlight">\(x=16\)</span></p>
+<p>c) Use una interpolación cúbica para calcular el valor de <span class="math notranslate nohighlight">\(y\)</span> cuado <span class="math notranslate nohighlight">\(x=16\)</span></p>
+<p>d) Use una interpolación lineal para calcular el valor de <span class="math notranslate nohighlight">\(x\)</span> cuado <span class="math notranslate nohighlight">\(y=81\)</span></p>
+<p>e) Use una interpolación cúbica para calcular el valor de <span class="math notranslate nohighlight">\(x\)</span> cuado <span class="math notranslate nohighlight">\(y=81\)</span></p>
+<p>f) Use una interpolación del tipo spline para aproximar los valores de <span class="math notranslate nohighlight">\(y\)</span> para aquellos valores de <span class="math notranslate nohighlight">\(x\)</span> en el intervalo <span class="math notranslate nohighlight">\([10,100]\)</span> con un incremento de 2.</p>
+<p>g) Haga una gráfica de los datos originales y los obtenidos con la interpolación del ejercicio 6. Use etiquetas, colores, tipos de línea y rótulos para una correcta interpretación de la gráfica.</p>
+<ol class="arabic simple" start="2">
+<li><p>Construya un par de arreglos <span class="math notranslate nohighlight">\(y\)</span> y <span class="math notranslate nohighlight">\(x\)</span> que contengan los datos de la siguiente tabla:</p></li>
 </ol>
-<table class="table" id="tabla-param-rlc">
-<caption><span class="caption-number">Tabla 15 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param-rlc" title="Enlace permanente a esta tabla">#</a></caption>
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
-\[Parámetro\]</div>
-</th>
-<th class="head"><div class="math notranslate nohighlight">
-\[Valor\]</div>
-</th>
+<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[R\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[1600~[\Omega]\]</div>
-</td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(10\)</span></p></td>
+<td class="text-right"><p>33.51</p></td>
 </tr>
-<tr class="row-odd"><td><div class="math notranslate nohighlight">
-\[L\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[15~[H]\]</div>
-</td>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(20\)</span></p></td>
+<td class="text-right"><p>55.42</p></td>
 </tr>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[C\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[1~[\mu F]\]</div>
-</td>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(30\)</span></p></td>
+<td class="text-right"><p>70.15</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(40\)</span></p></td>
+<td class="text-right"><p>92.34</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(50\)</span></p></td>
+<td class="text-right"><p>120.82</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(60\)</span></p></td>
+<td class="text-right"><p>150.54</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(70\)</span></p></td>
+<td class="text-right"><p>177.35</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(80\)</span></p></td>
+<td class="text-right"><p>197.88</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><span class="math notranslate nohighlight">\(90\)</span></p></td>
+<td class="text-right"><p>209.85</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><span class="math notranslate nohighlight">\(100\)</span></p></td>
+<td class="text-right"><p>230.34</p></td>
 </tr>
 </tbody>
 </table>
-<p>Añada los bloques necesarios para la exportación de datos a workspace y genere una gráfica del voltaje de entrada contra el tiempo y una del voltaje en el capacitor contra el tiempo en la misma figura.</p>
+<p>a) Use la función <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> para realizar una regresión lineal de los datos. Escriba la ecuación del modelo obtenido.
+b) Haga una gráfica para comparar los datos originales con el modelo obtenido en el punto a).
+c) Use la función <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> para realizar una regresión cuadrática de los datos. Escriba la ecuación del modelo obtenido.
+d) Haga una gráfica para comparar los datos originales con el modelo obtenido en el punto c).
+Use etiquetas, colores, tipos de línea y rótulos para una correcta interpretación de las gráficas.</p>
 </section>
 </section>
 
@@ -642,10 +949,11 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica10.html"
@@ -657,15 +965,18 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="Practica12.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Práctica 12: Simulación de sistemas dinámicos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -680,9 +991,20 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-entorno-de-simulacion-grafica-simulink">El entorno de simulación gráfica simulink</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Práctica 11: Métodos numéricos con MATLAB</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">Interpolación lineal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterpolacion-con-aproximacion-no-lineal">Iterpolación con aproximación no lineal</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-de-funciones-de-dos-variables">Interpolación de funciones de dos variables</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-basica-o-ajuste-de-curvas">Regresión básica o ajuste de curvas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-lineal">Regresión lineal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regresion-polinomial">Regresión polinomial</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-11">Ejercicio de la práctica 11</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
@@ -703,7 +1025,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -730,8 +1051,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
