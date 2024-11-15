@@ -7,9 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
-    <title>Práctica 12: Simulación de sistemas dinámicos &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica 12: Diferenciación e integración numéricas con MATLAB &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
   
@@ -70,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica12';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="next" title="Práctica 13: Simulación de sistemas dinámicos" href="Practica13.html" />
     <link rel="prev" title="Práctica 11: Algunos Métodos numéricos con MATLAB" href="Practica11.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -176,7 +175,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica10.html">Práctica 10: Otros tipos de gráficas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica11.html">Práctica 11: Algunos Métodos numéricos con MATLAB</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 12: Simulación de sistemas dinámicos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 12: Diferenciación e integración numéricas con MATLAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica13.html">Práctica 13: Simulación de sistemas dinámicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -314,7 +314,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Práctica 12: Simulación de sistemas dinámicos</h1>
+    <h1>Práctica 12: Diferenciación e integración numéricas con MATLAB</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -324,8 +324,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-entorno-de-simulacion-grafica-simulink">El entorno de simulación gráfica simulink</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-12">Ejercicio de la práctica 12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenciacion-numerica">Diferenciación numérica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencias-divididas-finitas">Diferencias divididas finitas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencias-divididas-finitas-hacia-atras">Diferencias divididas finitas hacia atrás</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencias-divididas-centrales">Diferencias divididas centrales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-numerica">Integración numérica</a></li>
 </ul>
             </nav>
         </div>
@@ -337,273 +342,417 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-12-simulacion-de-sistemas-dinamicos">
-<h1>Práctica 12: Simulación de sistemas dinámicos<a class="headerlink" href="#practica-12-simulacion-de-sistemas-dinamicos" title="Permalink to this heading">#</a></h1>
-<p>Un ente matemático que sirve para representar la relación que existe entre las entradas y las salidas en los sistemas es una ecuación diferencial. A lo largo de nuestra formación académica como ingenieros, estamos en contacto con el término ecuación, cuya definición formal es: <em>Una ecuación se define como una igualdad establecida entre dos expresiones, en la cual puede haber una o más incógnitas o términos cuyo valor numérico es desconocido</em>.</p>
-<p>A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incógnita a una función. Una ecuación diferencial en el contexto de los sistemas dinámicos, involucra a las señales de entrada y salida, así como diversas derivadas de cualquiera de ellas o de ambas. Por ejemplo, la ecuación diferencial:</p>
-<div class="math notranslate nohighlight" id="equation-edo1">
-<span class="eqno">(12)<a class="headerlink" href="#equation-edo1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  2\frac{d^2y(t)}{dt^2}+300y(t)=4.5x(t)+5\frac{dx(t)}{dt}
-	\end{equation}\]</div>
-<p>La solución a la ecuación diferencial es la salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span>, es decir, es aquella función que satisface la igualdad establecida en la transformación o estructura <a class="reference internal" href="#equation-edo1">(12)</a>. En el caso de los sistemas mecánicos <span class="math notranslate nohighlight">\(x(t)\)</span> representará la evolución en el tiempo de una fuerza de entrada, en forma de par o empuje. En sistemas en los que existan almacenes de energía cinética en forma de masas, es común usar también aceleración. En el caso de los sistemas eléctricos, los almacenes de energía son los inductores o bobinas y los capacitores y la entrada son variables como los voltajes o corrientes. Es posible encontrar análogos muy útiles entre los sistemas mecánicos y eléctricos debido a su comportamiento y las relaciones constitutivas que se usan para construir la estructura de la ecuación diferencial que los modelan. Ejemplos de relaciones constitutivas para los sistemas mecánicos, de acuerdo con la ley de Newton son:</p>
-<div class="math notranslate nohighlight" id="equation-relconst1">
-<span class="eqno">(13)<a class="headerlink" href="#equation-relconst1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-     m\frac{d^2x(t)}{dt^2}=ma~~F_b=b\frac{dx(t)}{dt}~~F_r=kx(t)
-	\end{equation}\]</div>
-<p>Donde <span class="math notranslate nohighlight">\(m\)</span> es la masa en <span class="math notranslate nohighlight">\([kg]\)</span>, <span class="math notranslate nohighlight">\(b\)</span> la constante de amortiguador con unidades <span class="math notranslate nohighlight">\([Ns/m]\)</span> y <span class="math notranslate nohighlight">\(k\)</span> en unidades <span class="math notranslate nohighlight">\([N/m]\)</span>. Las fuerzas <span class="math notranslate nohighlight">\(F_b\)</span> y <span class="math notranslate nohighlight">\(F_r\)</span> son las fuerzas del amortiguador y la fuerza del resorte respectivamente. Además, de acurdo con los conceptos de la cinemática, se sabe que la aceleración es la segunda derivada de la posición y la velocidad es la razón de cambio o derivada de la posición <span class="math notranslate nohighlight">\(a=\frac{d^2x(t)}{dt}\)</span> y <span class="math notranslate nohighlight">\(v=\frac{dx(t)}{dt}\)</span>. La <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a> muestra un típico sistema masa resorte amortiguador:</p>
-<figure class="align-default" id="mbk">
-<a class="reference internal image-reference" href="_images/mbk.png"><img alt="_images/mbk.png" src="_images/mbk.png" style="height: 200px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 10 </span><span class="caption-text">Sistema masa resorte amortiguador.</span><a class="headerlink" href="#mbk" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Aplicando la segunda ley de Newton al sistema masa resorte amortiguador se obtiene la ecuación diferencial o el modelo del sistema masa resorte amortiguador:</p>
-<div class="math notranslate nohighlight" id="equation-edombk1">
-<span class="eqno">(14)<a class="headerlink" href="#equation-edombk1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  m\frac{d^2x(t)}{dt^2}+b_1\frac{dx(t)}{dt}+k_1x(t)=f(t)
-	\end{equation}\]</div>
-<p>En este caso, la salida se nombra <span class="math notranslate nohighlight">\(x(t)\)</span> dado que es un desplazamiento causado por la fuerza de entrada <span class="math notranslate nohighlight">\(f(t)\)</span>, que sería equivalente a la función estímulo o de entrada, se dice entonces que para este sistema, la entrada es una fuerza y la salida un desplazamiento.</p>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Es común usar la notación abreviada para las ecuaciones diferenciales:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-12-diferenciacion-e-integracion-numericas-con-matlab">
+<h1>Práctica 12: Diferenciación e integración numéricas con MATLAB<a class="headerlink" href="#practica-12-diferenciacion-e-integracion-numericas-con-matlab" title="Permalink to this heading">#</a></h1>
+<p>En ingeniería, es muy común usar el término derivada en diversos cursos como cálculo diferencial e integral, modelado de sistemas dinámicos, análisis de señales y control clásico entre otros. El concepto de derivada es de gran utilidad devido a que proporciona una medición de la razón de cambio de una variable respecto de los cambios que presenta una segunda variable de interés o bajo análisis. La derivada de una función <span class="math notranslate nohighlight">\(y=f(x)\)</span> se denomina también como la razón de cambion entre la variable <span class="math notranslate nohighlight">\(y\)</span> y la variable <span class="math notranslate nohighlight">\(x\)</span>. La derivada de una función se puede obtener usando la herramienta de cómputo simbólico disponible en MATLAB, por ejemplo, la derivada de la función: <span class="math notranslate nohighlight">\(y=2x^3-4x^2+3\)</span>, definida como:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{d^2x(t)}{dt^2}=\ddot{x}~~\frac{x(t)}{dt}=\dot{x}
+\frac{dy}{dx}=y'=\dot{y}=6x^2-8x
 \]</div>
-<p>Usando esta notación se obtiene la forma alternativa de la ecuación diferencial de movimiento o modelo matemático del sistema masa resorte amortiguador como:</p>
-<div class="math notranslate nohighlight">
-\[
-m\ddot{x}+b\dot{x}+kx=f
-\]</div>
-</div>
-<p>En Matlab, la solución de las ecuaciones diferenciales se obtiene usando el comando <code class="docutils literal notranslate"><span class="pre">dsolve(edo,ci)</span></code>, donde edo es la ecuación diferencial que se desea resolver y ci son las condiciones iniciales <span class="math notranslate nohighlight">\(x(0)\)</span> y <span class="math notranslate nohighlight">\(\frac{dx}{dt}|_{t=0}\)</span>. Por ejemplo, para un sistema masa-resorte-amortiguador con la ecuación diferencial de movimiento:</p>
-<div class="math notranslate nohighlight">
-\[
-2.5\frac{dx^2}{dt}+3\frac{dx}{dt}+350x(t)=0
-\]</div>
-<p>con condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0.01\)</span> y <span class="math notranslate nohighlight">\(\frac{dx}{dt}|_{t=0}=0\)</span> se resuelve con los siguientes comandos:</p>
+<p>Se puede resolver la derivada de la función <span class="math notranslate nohighlight">\(y\)</span> respecto de <span class="math notranslate nohighlight">\(x\)</span> usando la herramienta de cómputo simbólico de MATLAB, con las siguientes instrucciones:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
-<span class="n">syms</span><span class="w"> </span><span class="s">x(t)</span><span class="p">;</span>
-<span class="n">Dx</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
-<span class="n">ode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">350</span><span class="o">*</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">cond1</span><span class="p">=</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.01</span><span class="p">;</span>
-<span class="n">cond2</span><span class="p">=</span><span class="n">Dx</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">ci</span><span class="p">=[</span><span class="n">cond1</span><span class="w"> </span><span class="n">cond2</span><span class="p">];</span>
-<span class="n">xSol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span><span class="n">ci</span><span class="p">)</span>
+
+<span class="n">syms</span><span class="w"> </span><span class="s">y(x)</span><span class="w"> </span><span class="s">x</span><span class="p">;</span><span class="w"> </span><span class="c">% Creación de variables simbólicas</span>
+
+<span class="n">y</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="n">x</span>^<span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span>^<span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="c">% Se especifica la función a diferenciar</span>
+<span class="n">Derivada</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">diff</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[xSol(t) =\frac{{\mathrm{e}}^{-\frac{3\,t}{5}} \,{\left(3491\,\cos \left(\frac{\sqrt{3491}\,t}{5}\right)+3\,\sqrt{3491}\,\sin \left(\frac{\sqrt{3491}\,t}{5}\right)\right)}}{349100}\]</div>
+\[Derivada(x) =6\,x^2 -8\,x\]</div>
 </div>
 </div>
-<p>La solución de la ecuación diferencial es <span class="math notranslate nohighlight">\(x(t)\)</span> y describe el movimiento de la masa como una función del tiempo. La ecuación diferencial anterior, al estar igualada a cero, es decir, cuando <span class="math notranslate nohighlight">\(f(t)=0\)</span>, se denomina ecuación diferencial homogénea, en este tipo de ecuaciones diferenciales, la única manera en la que la solución es diferente de cero, es cuando al menos una de las condiciones iniciales <span class="math notranslate nohighlight">\(x(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)\)</span> sea diferente de cero. Un ejemplo de aplicación para cuando <span class="math notranslate nohighlight">\(f(t)\)</span> es diferente de cero, es el caso de la ecuadión diferencial no homogénea, En Matlab se plantea y resuelve con las siguientes instrucciones:</p>
+<div class="section" id="diferenciacion-numerica">
+<h2>Diferenciación numérica<a class="headerlink" href="#diferenciacion-numerica" title="Permalink to this heading">#</a></h2>
+<p>Como se trató en la práctica pasada, existen muchos casos en la ingeniería donde no se cuenta con una función en específico o forma cerrada, sino que se cuenta con un conjunto de datos experimentales en forma de pares ordenados, de manera que la derivada se calcula de forma numérica (<span id="id1">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{dy}{dx}=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}
+\]</div>
+<p>Considere los pares ordenados de la práctica anterior y mostrados en la siguiente tabla:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="text-right head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>0.0</p></td>
+<td class="text-right"><p>22.430</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>1.0</p></td>
+<td class="text-right"><p>19.398</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>2.0</p></td>
+<td class="text-right"><p>11.341</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>3.0</p></td>
+<td class="text-right"><p>8.422</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>4.0</p></td>
+<td class="text-right"><p>5.215</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>5.0</p></td>
+<td class="text-right"><p>0.434</p></td>
+</tr>
+</tbody>
+</table>
+<p>Si se usa la función <code class="docutils literal notranslate"><span class="pre">diff()</span></code> para aplicarla a los datos reportados en las columnas de la tabla anterior, se encontrará la pendiente de la recta que une cada par de datos consecutivos:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
 
-<span class="n">syms</span><span class="w"> </span><span class="s">x(t)</span><span class="p">;</span>
-<span class="n">Dx</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
-<span class="n">ode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">350</span><span class="o">*</span><span class="n">x</span><span class="o">==</span><span class="mi">4</span><span class="p">;</span>
-<span class="n">cond1</span><span class="p">=</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="n">cond2</span><span class="p">=</span><span class="n">Dx</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="n">ci</span><span class="p">=[</span><span class="n">cond1</span><span class="w"> </span><span class="n">cond2</span><span class="p">];</span>
-<span class="n">xSol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span><span class="n">ci</span><span class="p">)</span>
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span><span class="w"> </span><span class="c">%vector x original</span>
+<span class="n">y</span><span class="p">=[</span><span class="mf">22.430</span><span class="p">,</span><span class="mf">19.398</span><span class="p">,</span><span class="mf">11.342</span><span class="p">,</span><span class="mf">8.422</span><span class="p">,</span><span class="mf">5.215</span><span class="p">,</span><span class="mf">0.434</span><span class="p">];</span><span class="w"> </span><span class="c">% vector y original</span>
+
+<span class="n">delta_x</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[xSol(t) =\frac{2}{175}-\frac{6\,\sqrt{3491}\,{\mathrm{e}}^{-\frac{3\,t}{5}} \,\sin \left(\frac{\sqrt{3491}\,t}{5}\right)}{610925}-\frac{2\,{\mathrm{e}}^{-\frac{3\,t}{5}} \,\cos \left(\frac{\sqrt{3491}\,t}{5}\right)}{175}\]</div>
+<div class="output text_html"><html><body><pre>delta_x = 1x5 double
+     1     1     1     1     1
+</pre></body></html></div></div>
+</div>
+<p>El resultado anterior refleja el hecho de que los datos en el vector <span class="math notranslate nohighlight">\(x\)</span> están espaciados de manera uniforme. Ahora bien si se diferencian los datos contenidos en la columna <span class="math notranslate nohighlight">\(y\)</span> se obtiene:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">delta_y</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<p>La ecuación diferencial que modela a un sistema masa-resorte-amortiguador se puede escribor de forma alternativa si se hace un <em>despeje</em> de la función de movimiento y se escribe de forma alternativa:</p>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>delta_y = 1x5 double
+   -3.0320   -8.0560   -2.9200   -3.2070   -4.7810
+</pre></body></html></div></div>
+</div>
+<p>Para encontrar las pendientes de las rectas que unen a cada par de puntos se establece el cociente <span class="math notranslate nohighlight">\(\frac{\Delta y}{\Delta x}\)</span> de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">pendientes</span><span class="p">=</span><span class="n">delta_y</span><span class="o">./</span><span class="n">delta_x</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>pendientes = 1x5 double
+   -3.0320   -8.0560   -2.9200   -3.2070   -4.7810
+</pre></body></html></div></div>
+</div>
+<p>El arreglo o vector pendientes tiene un elemento menos que los datos originales de las columnas <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, debido a que se calculan diferencias entre los elementos de los arreglos originales. La siguiente figura ilustra gráficamente lo anteriormente expuesto:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/4deb8b25f954fb8053d2357b67d48f85173d57f5663ef84b219bf575a21b8a24.png" src="_images/4deb8b25f954fb8053d2357b67d48f85173d57f5663ef84b219bf575a21b8a24.png" />
+</div>
+</div>
+<p>En el caso de que se conozca en forma cerrada la expresión o fórmula que relaciona los pares de datos, se puede usar la función de MATLAB <code class="docutils literal notranslate"><span class="pre">diff()</span></code> para hacer una aproximación numérica de la derivada. Por ejemplo, para la función:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{d^2x}{dt^2}= \frac{1}{m}\left ( f(t) - b\frac{dx}{dt}-kx(t)\right )
+y=2x^3-4x^2+3
 \]</div>
-<p>Si se integra dos veces con respecto al tiempo la ecuación anterior se obtiene:</p>
+<p>se obtiene gráficamente lo siguiente:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/f94b7cf988c3d7e49576de688c2addef2d237951895f87104299c49dca49186a.png" src="_images/f94b7cf988c3d7e49576de688c2addef2d237951895f87104299c49dca49186a.png" />
+</div>
+</div>
+<p>Las gráficas anteriores muestran el cálculo de la derivada de la función <span class="math notranslate nohighlight">\(y=2x^3-4x^2+3\)</span> en forma de gráficas de barras con diferente resolución en los datos. Las siguientes líneas de código ilustran el cálculo numérico de la derivada de la función antes mencionada con las dos resoluciones que se muestran en la figura anterior:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">clc</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span><span class="w"> </span>
+
+<span class="n">x</span><span class="p">=[</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">y</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">;</span>
+
+
+<span class="n">figure</span>
+<span class="s">subplot(2,2,1)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;y=2x^3-4x^2+3, con \Deltax=1&quot;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+
+<span class="n">pendientes</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">./</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">./</span><span class="mi">2</span><span class="p">,</span><span class="n">pendientes</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">35</span><span class="p">])</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Derivada de y(x)&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+
+<span class="n">x2</span><span class="p">=</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">pendientes</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x2</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">./</span><span class="nb">diff</span><span class="p">(</span><span class="n">x2</span><span class="p">);</span>
+
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">x2</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="nb">diff</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">./</span><span class="mi">2</span><span class="p">,</span><span class="n">pendientes</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Derivada de y(x)&quot;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">35</span><span class="p">])</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="mi">6</span><span class="o">*</span><span class="n">x2</span><span class="o">.^</span><span class="mi">2</span><span class="o">-</span><span class="mi">8</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">x2</span><span class="o">.^</span><span class="mi">3</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x2</span><span class="o">.^</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;y=2x^3-4x^2+3, con \Deltax=0.1&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">grid</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6fce3494848ee17e980592b993fc3eac213044c0dc1b1a95eecf4e60d9cd71e7.png" src="_images/6fce3494848ee17e980592b993fc3eac213044c0dc1b1a95eecf4e60d9cd71e7.png" />
+</div>
+</div>
+<div class="section" id="diferencias-divididas-finitas">
+<h3>Diferencias divididas finitas<a class="headerlink" href="#diferencias-divididas-finitas" title="Permalink to this heading">#</a></h3>
+<p>En el caso de necesitar evaluar la derivada de un punto en específico en vez de la derivada numérica de un conjunto de pares ordenados experimentales, en forma de una curva, como en el caso anterior, se utiliza la pendiente de la recta que une dos puntos de interés, de manera que la derivada se aproxima de forma numérica como (<span id="id2">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>):</p>
 <div class="math notranslate nohighlight">
 \[
-\int^{t}_0\int^{\tau_1}_0\frac{d^2x}{dt^2}d\tau_1d\tau_2= \int^{t}_0\int^{\tau_1}_0\frac{1}{m}\left ( f(\tau_1) - b\frac{dx(\tau_1)}{d\tau_1}-kx(\tau_1)\right )d\tau_1d\tau_2
+\left ( \frac{dy}{dx} \right ) _{i}=\frac{y_{i+1}-y_i}{x_{i+1}-x_i}
 \]</div>
-<p>se obtiene la siguiente expresión:</p>
+<p>En este caso, es tambien completamente compatible la instrucción <code class="docutils literal notranslate"><span class="pre">diff()</span></code>. de manera que se asigna el resultado como la derivada evaluada en el primer punto en el rango. Dado que se utiliza un dato hacia adelante del conjunto, esta técnica de diferenciación se conoce como el método de diferencias finitas hacia adelante.</p>
+<p>EL siguiente ejemplo permite ilustrar el método de las diferencias divididas finitas hacia adelante:</p>
+<p>Por ejemplo, para la función <span class="math notranslate nohighlight">\(y=2x^3\)</span> se sabe que su derivada es:</p>
 <div class="math notranslate nohighlight">
 \[
-x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\int^{t}_0\frac{dx(\tau_1)}{d\tau_1}d\tau_1-\frac{k}{m}\int^{t}_0\int^{\tau_1}_0x(\tau_1)d\tau_1d\tau_2
+\frac{dy}{dx}=6x^2
 \]</div>
-<p>El operador integral en MATLAB Simulink es el bloque marcado con la etiqueta <span class="math notranslate nohighlight">\(\frac{1}{s}\)</span>, un diagrama de bloques de ejmeplo, para una ecuación diferencial lineal y de coeficientes constantes se muestra en la <a class="reference internal" href="#bloques-mbk"><span class="std std-numref">Figura 11</span></a></p>
-<figure class="align-default" id="bloques-mbk">
-<a class="reference internal image-reference" href="_images/bloques_mbk.png"><img alt="_images/bloques_mbk.png" src="_images/bloques_mbk.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 11 </span><span class="caption-text">Diagrama de bloques para la solución de una ecuación diferencial.</span><a class="headerlink" href="#bloques-mbk" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Para el caso de un sistema eléctrico del tipo resistencia capacitor inductancia, como el mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 12</span></a></p>
-<figure class="align-default" id="rlc">
-<a class="reference internal image-reference" href="_images/Imagen8.png"><img alt="_images/Imagen8.png" src="_images/Imagen8.png" style="height: 300px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 12 </span><span class="caption-text">Circuito RLC.</span><a class="headerlink" href="#rlc" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Las relaciones constitutivas del sistema eléctrico son:</p>
-<div class="math notranslate nohighlight" id="equation-relconst2">
-<span class="eqno">(15)<a class="headerlink" href="#equation-relconst2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-     v_L=L\frac{di(t)}{dt}~~i_C=C\frac{dv_c(t)}{dt}~~v_R=i(t)R
-	\end{equation}\]</div>
-<p>Con <span class="math notranslate nohighlight">\(L\)</span> la inductancia en <span class="math notranslate nohighlight">\([H]\)</span>, <span class="math notranslate nohighlight">\(C\)</span> la capacitancia en <span class="math notranslate nohighlight">\([F]\)</span> y <span class="math notranslate nohighlight">\(R\)</span> la resistencia en <span class="math notranslate nohighlight">\([\Omega]\)</span>. Además, por la ley de Kirchoff, la corriente en el capacitor <span class="math notranslate nohighlight">\(i_C(t)=i(t)\)</span>. En este caso, la salida se nombra <span class="math notranslate nohighlight">\(v_c(t)\)</span> el voltaje en el capacitor, debido a la presencia de la fuente de alimentación <span class="math notranslate nohighlight">\(V_s(t)\)</span>, que sería equivalente a la función estímulo o de entrada. La ecuación diferencial que modela a este sistema eléctrico es:</p>
-<div class="math notranslate nohighlight" id="equation-edorlc">
-<span class="eqno">(16)<a class="headerlink" href="#equation-edorlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
-	\end{equation}\]</div>
-<p>El diagrama de bloques de esta última ecuación diferencial se realiza de forma similar al del sistema masa-resorte-amortiguador. En la siguiente sección se detalla la manera de realizar la simulación usando diagramas de bloques en el ambiente gráfico simulink.</p>
-<section id="el-entorno-de-simulacion-grafica-simulink">
-<h2>El entorno de simulación gráfica simulink<a class="headerlink" href="#el-entorno-de-simulacion-grafica-simulink" title="Permalink to this heading">#</a></h2>
-<p>El entorno gráfico de simulación de MATLAB permite la construcción de modelos de sistemas dinámicos en forma de diagramas de bloques. La representación en diagramas de bloques es común dada su facilidad para representar la interacción entre las variables y los elementos de un sistema. Existen muchas maneras de repesentar el mismo sistema dinámico; en forma de ecuación matricial o en espacio de estados, la representación haciedo uso de la función de transferencia y la reperesentación como ecuación diferencial en la que se presentan los integradores como los bloques básicos de solución al problema de modelado matemático. En este curso no ahondaremos en el tema de los modelos matemáticos, esta práctica tiene por objetivo ser una introducción al ambiente gráfico de simulación de MATLAB conocido como simulink. El entorno gráfico de simulink se encuentra en el menú de la parte superior de la página principal de MATLAB cono se muestra en la <a class="reference internal" href="#simulink-icono"><span class="std std-numref">Figura 13</span></a> y la <a class="reference internal" href="#modelo-en-blanco"><span class="std std-numref">Figura 14</span></a>:</p>
-<figure class="align-default" id="simulink-icono">
-<a class="reference internal image-reference" href="_images/icono_simulink.png"><img alt="_images/icono_simulink.png" src="_images/icono_simulink.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 13 </span><span class="caption-text">Localización del botón de inicio de simulink.</span><a class="headerlink" href="#simulink-icono" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<figure class="align-default" id="modelo-en-blanco">
-<a class="reference internal image-reference" href="_images/modelo_en_blanco.png"><img alt="_images/modelo_en_blanco.png" src="_images/modelo_en_blanco.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 14 </span><span class="caption-text">Interfaz de inicio de simulink.</span><a class="headerlink" href="#modelo-en-blanco" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p>Al hacer click en ese ícono, se abrirá la interfaz gráfica para la creación de un modelo en forma de diragrama de bloques como se muestra en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/abre_simulink.mp4 " type="video/mp4">
-</video>
+<p>de manera que un programa para calcular la derivada de 10 puntos de esta función es el siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="c">% Programa para el cálculo de la derivada de y=3x^2 en 10 puntos </span>
+<span class="n">x</span><span class="p">=</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">y</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">derivada</span><span class="p">=</span><span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c">% derivada analítica</span>
+<span class="n">dif_finitas</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">./</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c">% Diferencias divididas finitas</span>
+<span class="n">dif_finitas</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">))=</span><span class="nb">NaN</span><span class="p">;</span><span class="w"> </span><span class="c">% Se ajusta el tamaño del arreglo para </span>
+<span class="c">%establecer compatibilidad</span>
+<span class="c">%cálculo del porcentaje de error</span>
+<span class="nb">error</span><span class="p">=((</span><span class="n">derivada</span><span class="o">-</span><span class="n">dif_finitas</span><span class="p">)</span><span class="o">./</span><span class="n">derivada</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
+<span class="c">%construcción de una tabla </span>
+<span class="n">titulo</span><span class="p">=[</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;2*x.^3&quot;</span><span class="p">,</span><span class="s">&quot;Diferencias hacia adelante&quot;</span><span class="p">,</span><span class="s">&quot;error %&quot;</span><span class="p">];</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">table</span><span class="p">(</span><span class="n">x</span><span class="o">&#39;</span><span class="p">,</span><span class="n">derivada</span><span class="o">&#39;</span><span class="p">,</span><span class="n">dif_finitas</span><span class="o">&#39;</span><span class="p">,</span><span class="nb">error</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;VariableNames&#39;</span><span class="p">,</span><span class="n">titulo</span><span class="p">))</span>
+</pre></div>
 </div>
-<p>La creación de un diagrama de bloques se logra arrastrando los bloques necesarios desde la biblioteca de symulink, que se muestran en la <a class="reference internal" href="#biblioteca-bloques"><span class="std std-numref">Figura 15</span></a></p>
-<figure class="align-default" id="biblioteca-bloques">
-<a class="reference internal image-reference" href="_images/biblioteca_bloques.png"><img alt="_images/biblioteca_bloques.png" src="_images/biblioteca_bloques.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 15 </span><span class="caption-text">Biblioteca de bloques de simulink</span><a class="headerlink" href="#biblioteca-bloques" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/arrastra_bloques.mp4 " type="video/mp4">
-</video>
 </div>
-<p>La solución de la ecuación diferencial es <span class="math notranslate nohighlight">\(x(t)\)</span> y describe el movimiento de la masa como una función del tiempo. La herramienta simulink permite crear simulaciones en forma de diagramas de bloques como se muestra en los siguientes videos.</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/abre_simulink.mp4 " type="video/mp4">
-</video>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    x     2*x.^3    Diferencias hacia adelante    error %
+    __    ______    __________________________    _______
+
+    -2      24                  14                 41.667
+    -1       6                   2                 66.667
+     0       0                   2                   -Inf
+     1       6                  14                -133.33
+     2      24                 NaN                    NaN
+</pre></div>
 </div>
-<p>La creación del diagrama de bloques y los detalles de la simulación se muestran en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/crea_bloques.mp4 " type="video/mp4">
-</video>
 </div>
-<p>En el ambiente gráfico de Simulink, existe un bloque que permite almacenar el resultado de la simulación en un arreglo para poder hacer una gráfica o hacer calculos estadísticos como el promedio, desviación estandar, etc. Los bloques de exportación de datos al workspace se muestra en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/bloques_to_worspace.mp4 " type="video/mp4">
-</video>
 </div>
-</section>
-<section id="ejercicio-de-la-practica-12">
-<h2>Ejercicio de la práctica 12<a class="headerlink" href="#ejercicio-de-la-practica-12" title="Permalink to this heading">#</a></h2>
-<p>1.-Simule el sistema masa resorte amortiguador mostrado en la <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a>, con los parámetros de la <a class="reference internal" href="#tabla-param-mbk"><span class="std std-numref">Tabla 15</span></a>, para los siguientes casos de <span class="math notranslate nohighlight">\(f(t)\)</span>:</p>
-<ol class="arabic simple">
-<li><p>Escalón con amplitud <span class="math notranslate nohighlight">\(10~[N]\)</span> y retardo de <span class="math notranslate nohighlight">\(0.5\)</span> segundos.</p></li>
-<li><p>Escalón con amplitud de <span class="math notranslate nohighlight">\(15~[N]\)</span> sin retardo.</p></li>
-<li><p>Fuerza definida por la función <span class="math notranslate nohighlight">\(f(t)=5sen(4\pi t)~[N]\)</span>.</p></li>
-</ol>
-<table class="table" id="tabla-param-mbk">
-<caption><span class="caption-number">Tabla 15 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param-mbk" title="Enlace permanente a esta tabla">#</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
-\[Parámetro\]</div>
-</th>
-<th class="head"><div class="math notranslate nohighlight">
-\[Valor\]</div>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[m\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[3.5~[Kg]\]</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="math notranslate nohighlight">
-\[b\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[0.15~[Ns/m]\]</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[k\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[430~[N/m]\]</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p>Añada los bloques necesarios para la exportación de datos a workspace y genere una gráfica de la fuerza de entrada contra el tiempo y una del desplazamiento contra el tiempo en la misma figura.</p>
-<p>2.-Simule el circuito RLC mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 12</span></a>, con los parámetros de la <a class="reference internal" href="#tabla-param-rlc"><span class="std std-numref">Tabla 16</span></a>, para los siguientes casos de <span class="math notranslate nohighlight">\(V_s(t)\)</span>:</p>
-<ol class="arabic simple">
-<li><p>Escalón con amplitud <span class="math notranslate nohighlight">\(2.5~[V]\)</span> y retardo de <span class="math notranslate nohighlight">\(0.5\)</span> segundos.</p></li>
-<li><p>Escalón con amplitud de <span class="math notranslate nohighlight">\(1.63~[V]\)</span> sin retardo.</p></li>
-<li><p>Voltaje definido por la función <span class="math notranslate nohighlight">\(f(t)=5sen(2\pi t)~[V]\)</span>.</p></li>
-</ol>
-<table class="table" id="tabla-param-rlc">
-<caption><span class="caption-number">Tabla 16 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param-rlc" title="Enlace permanente a esta tabla">#</a></caption>
-<thead>
-<tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
-\[Parámetro\]</div>
-</th>
-<th class="head"><div class="math notranslate nohighlight">
-\[Valor\]</div>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[R\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[1600~[\Omega]\]</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="math notranslate nohighlight">
-\[L\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[15~[H]\]</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[C\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[1~[\mu F]\]</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p>Añada los bloques necesarios para la exportación de datos a workspace y genere una gráfica del voltaje de entrada contra el tiempo y una del voltaje en el capacitor contra el tiempo en la misma figura.</p>
-</section>
-</section>
+<p>Como puede observarse, el error en la aproximación es muy grande. Esto se debe a la resolución o número de puntos utilizados para generar la función y los cálculos, si se utiliza una resolución mayor, es decir si se reduce el tamaño del incremento del vector <span class="math notranslate nohighlight">\(x\)</span> se obtiene una mejor aproximación:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="c">% Programa para el cálculo de la derivada de y=3x^2 en 10 puntos </span>
+<span class="n">x</span><span class="p">=</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">y</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">derivada</span><span class="p">=</span><span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c">% derivada analítica</span>
+<span class="n">dif_finitas</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">./</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c">% Diferencias divididas finitas</span>
+<span class="n">dif_finitas</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">))=</span><span class="nb">NaN</span><span class="p">;</span><span class="w"> </span><span class="c">% Se ajusta el tamaño del arreglo para </span>
+<span class="c">%establecer compatibilidad de manera que al establecer el último elemento</span>
+<span class="c">% se indica que serán diferencias hacia adelante</span>
+<span class="c">%cálculo del porcentaje de error</span>
+<span class="nb">error</span><span class="p">=((</span><span class="n">derivada</span><span class="o">-</span><span class="n">dif_finitas</span><span class="p">)</span><span class="o">./</span><span class="n">derivada</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
+<span class="c">%construcción de una tabla </span>
+<span class="n">titulo</span><span class="p">=[</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;2*x.^3&quot;</span><span class="p">,</span><span class="s">&quot;Diferencias hacia adelante&quot;</span><span class="p">,</span><span class="s">&quot;error %&quot;</span><span class="p">];</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">table</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="n">derivada</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="n">dif_finitas</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="nb">error</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;VariableNames&#39;</span><span class="p">,</span><span class="n">titulo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     x      2*x.^3    Diferencias hacia adelante    error %
+    ____    ______    __________________________    _______
+
+      -2       24               22.82               4.9167 
+    -1.9    21.66               20.54               5.1708 
+    -1.8    19.44               18.38               5.4527 
+    -1.7    17.34               16.34                5.767 
+    -1.6    15.36               14.42               6.1198 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="diferencias-divididas-finitas-hacia-atras">
+<h3>Diferencias divididas finitas hacia atrás<a class="headerlink" href="#diferencias-divididas-finitas-hacia-atras" title="Permalink to this heading">#</a></h3>
+<p>El cálculo de las diferencias finitas hacia atrás es similar al caso anterior con la diferencia de que el planteamiento es el siguiente:</p>
+<div class="math notranslate nohighlight">
+\[
+\left ( \frac{dy}{dx} \right ) _{i}=\frac{y_i-y_{i-1}}{x_i-x_{i-1}}
+\]</div>
+<p>En este caso se utiliza la misma función <code class="docutils literal notranslate"><span class="pre">diff()</span></code> pero en este caso se establece el valor <code class="docutils literal notranslate"><span class="pre">NaN</span></code> al primer valor del arreglo en vez de el último.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="c">% Programa para el cálculo de la derivada de y=3x^2 en 10 puntos </span>
+<span class="n">x</span><span class="p">=</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">y</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">derivada</span><span class="p">=</span><span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c">% derivada analítica</span>
+<span class="n">diff_finitas</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">./</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c">% Diferencias divididas finitas</span>
+<span class="n">dif_finitas</span><span class="p">=[</span><span class="nb">NaN</span><span class="p">,</span><span class="n">diff_finitas</span><span class="p">];</span><span class="w"> </span><span class="c">% Se ajusta el tamaño del arreglo para </span>
+<span class="c">%establecer compatibilidad de manera que al establecer el primer elemento</span>
+<span class="c">% se indica que serán diferencias hacia atrás</span>
+<span class="c">%cálculo del porcentaje de error</span>
+<span class="nb">error</span><span class="p">=((</span><span class="n">derivada</span><span class="o">-</span><span class="n">dif_finitas</span><span class="p">)</span><span class="o">./</span><span class="n">derivada</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
+<span class="c">%construcción de una tabla </span>
+<span class="n">titulo</span><span class="p">=[</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;2*x.^3&quot;</span><span class="p">,</span><span class="s">&quot;Diferencias hacia adelante&quot;</span><span class="p">,</span><span class="s">&quot;error %&quot;</span><span class="p">];</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">table</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="n">derivada</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="n">dif_finitas</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="nb">error</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;VariableNames&#39;</span><span class="p">,</span><span class="n">titulo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     x      2*x.^3    Diferencias hacia adelante    error %
+    ____    ______    __________________________    _______
+
+      -2       24                 NaN                   NaN
+    -1.9    21.66               22.82               -5.3555
+    -1.8    19.44               20.54               -5.6584
+    -1.7    17.34               18.38               -5.9977
+    -1.6    15.36               16.34               -6.3802
+</pre></div>
+</div>
+</div>
+</div>
+<p>Se observa en este caso que el error es negativo, debido a la dirección en la que se toman las diferencias divididas finitas.</p>
+</div>
+<div class="section" id="diferencias-divididas-centrales">
+<h3>Diferencias divididas centrales<a class="headerlink" href="#diferencias-divididas-centrales" title="Permalink to this heading">#</a></h3>
+<p>El cálculo de la derivada en los puntos de interés usando diferencias divididas finitas centradas es similar a los métodos antes expuestos con la diferencia principal de tomar en cuenta a los puntos siguiente y anterior del punto de interés:</p>
+<div class="math notranslate nohighlight">
+\[
+\left ( \frac{dy}{dx} \right ) _{i}=\frac{y_{i+1}-y_{i-1}}{x_{i+1}-x_{i-1}}
+\]</div>
+<p>Una desventaja de este método es que no se toman en cuenta el primer y último dato del conjunto. La aplicación del método de diferencias divididas finitas en MATLAB se realiza con la función <code class="docutils literal notranslate"><span class="pre">gradient()</span></code>. Es necesario especificar el incremento del arreglo cuando se usa esta función, de no indicarse, se tomará como incremento 1 por defecto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="c">% Programa para el cálculo de la derivada de y=3x^2 en 10 puntos </span>
+<span class="n">incremento</span><span class="p">=</span><span class="mf">0.1</span><span class="p">;</span>
+<span class="n">x</span><span class="p">=</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">incremento</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">y</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">derivada</span><span class="p">=</span><span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c">% derivada analítica</span>
+<span class="n">diff_finitas</span><span class="p">=</span><span class="nb">gradient</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">incremento</span><span class="p">);</span><span class="w"> </span><span class="c">% Diferencias divididas finitas</span>
+
+<span class="nb">error</span><span class="p">=((</span><span class="n">derivada</span><span class="o">-</span><span class="n">diff_finitas</span><span class="p">)</span><span class="o">./</span><span class="n">derivada</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
+<span class="c">%construcción de una tabla </span>
+<span class="n">titulo</span><span class="p">=[</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="s">&quot;2*x.^3&quot;</span><span class="p">,</span><span class="s">&quot;Diferencias hacia adelante&quot;</span><span class="p">,</span><span class="s">&quot;error %&quot;</span><span class="p">];</span>
+<span class="nb">disp</span><span class="p">(</span><span class="nb">table</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="n">derivada</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="n">diff_finitas</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="nb">error</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">)</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;VariableNames&#39;</span><span class="p">,</span><span class="n">titulo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     x      2*x.^3    Diferencias hacia adelante     error % 
+    ____    ______    __________________________    _________
+
+      -2       24               22.82                  4.9167
+    -1.9    21.66               21.68               -0.092336
+    -1.8    19.44               19.46                -0.10288
+    -1.7    17.34               17.36                -0.11534
+    -1.6    15.36               15.38                -0.13021
+</pre></div>
+</div>
+</div>
+</div>
+<p>El error se reduce de forma considerable usando este método principalmente en los valores de los datos centrales, pero se puede notar un error considerablemente mayor para el primer cálculo. Una comparación del desempeño de las técnicas se muestra en la siguiente gráfica:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
+
+<span class="c">% Programa para el cálculo de la derivada de y=2x^3 en 10 puntos </span>
+<span class="n">incremento</span><span class="p">=</span><span class="mf">0.1</span><span class="p">;</span>
+<span class="n">x</span><span class="p">=</span><span class="o">-</span><span class="mi">2</span><span class="p">:</span><span class="n">incremento</span><span class="p">:</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">y</span><span class="p">=</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">3</span><span class="p">;</span>
+<span class="n">derivada</span><span class="p">=</span><span class="mi">6</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">2</span><span class="p">;</span><span class="w"> </span><span class="c">% derivada analítica</span>
+
+<span class="n">dif_finitas</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="o">./</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">);</span><span class="w"> </span><span class="c">% Diferencias divididas finitas</span>
+<span class="n">dif_adelante</span><span class="p">=</span><span class="n">dif_finitas</span><span class="p">;</span>
+<span class="n">dif_adelante</span><span class="p">(</span><span class="nb">length</span><span class="p">(</span><span class="n">x</span><span class="p">))=</span><span class="nb">NaN</span><span class="p">;</span><span class="w"> </span><span class="c">% Se ajusta el tamaño del arreglo para </span>
+<span class="c">%establecer compatibilidad de manera que al establecer el último elemento</span>
+<span class="c">% se indica que serán diferencias hacia adelante</span>
+
+<span class="n">dif_atras</span><span class="p">=[</span><span class="nb">NaN</span><span class="p">,</span><span class="n">dif_finitas</span><span class="p">];</span><span class="w"> </span><span class="c">% Se ajusta el tamaño del arreglo para </span>
+<span class="c">%establecer compatibilidad de manera que al establecer el primer elemento</span>
+<span class="c">% se indica que serán diferencias hacia atrás</span>
+
+<span class="n">dif_centrales</span><span class="p">=</span><span class="nb">gradient</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">incremento</span><span class="p">);</span><span class="w"> </span><span class="c">% Diferencias divididas finitas centrales</span>
+
+<span class="nb">figure</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">derivada</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">dif_adelante</span><span class="p">,</span><span class="s">&quot;o-&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">dif_atras</span><span class="p">,</span><span class="s">&quot;*-&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">dif_centrales</span><span class="p">,</span><span class="s">&quot;^-&quot;</span><span class="p">,</span><span class="s">&quot;LineWidth&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Técnicas de diferencias divididas&quot;</span><span class="p">)</span>
+<span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
+<span class="nb">ylabel</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">)</span>
+<span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">grid</span>
+<span class="nb">legend</span><span class="p">(</span><span class="s">&quot;Analítica: 6x^2&quot;</span><span class="p">,</span><span class="s">&quot;Diferencias adelante&quot;</span><span class="p">,</span><span class="s">&quot;Diferencias atrás&quot;</span><span class="p">,</span><span class="s">&quot;Diferencias centrales&quot;</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">15</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Times New Roman&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;Bold&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/bed879ea0f578ad8f961fe93d6dafe021f5389d8375d84c7827c77736e123a13.png" src="_images/bed879ea0f578ad8f961fe93d6dafe021f5389d8375d84c7827c77736e123a13.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="integracion-numerica">
+<h2>Integración numérica<a class="headerlink" href="#integracion-numerica" title="Permalink to this heading">#</a></h2>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -646,11 +795,11 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="Practica13.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Práctica 13: Simulación de sistemas dinámicos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -672,8 +821,13 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-entorno-de-simulacion-grafica-simulink">El entorno de simulación gráfica simulink</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-12">Ejercicio de la práctica 12</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#diferenciacion-numerica">Diferenciación numérica</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencias-divididas-finitas">Diferencias divididas finitas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencias-divididas-finitas-hacia-atras">Diferencias divididas finitas hacia atrás</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#diferencias-divididas-centrales">Diferencias divididas centrales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-numerica">Integración numérica</a></li>
 </ul>
   </nav></div>
 
