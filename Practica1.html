@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 1: Primeros pasos &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -285,20 +298,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -341,14 +356,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-1-primeros-pasos">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-1-primeros-pasos">
 <h1>Práctica 1: Primeros pasos<a class="headerlink" href="#practica-1-primeros-pasos" title="Permalink to this heading">#</a></h1>
 <p>En esta práctica se utilizan comandos básicos de MATLAB y un ejemplo sencillo de solución de un sistema de ecuaciones, utilizando matrices. Las instrucciones que se tratan en esta sección se introducen en el command window (ver <a class="reference internal" href="#figura11"><span class="std std-numref">Figura 6</span></a>) de la interfaz principal de MATLAB.</p>
-<div class="figure align-center" id="figura11">
+<figure class="align-center" id="figura11">
 <a class="reference internal image-reference" href="_images/figura2a.jpg"><img alt="_images/figura2a.jpg" src="_images/figura2a.jpg" style="height: 250px;" /></a>
-<p class="caption"><span class="caption-number">Figura 6 </span><span class="caption-text">Ventana de comandos (Command window)</span><a class="headerlink" href="#figura11" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-<div class="section" id="operaciones-y-comandos-basicos">
+<figcaption>
+<p><span class="caption-number">Figura 6 </span><span class="caption-text">Ventana de comandos (Command window)</span><a class="headerlink" href="#figura11" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<section id="operaciones-y-comandos-basicos">
 <h2>Operaciones y comandos básicos<a class="headerlink" href="#operaciones-y-comandos-basicos" title="Permalink to this heading">#</a></h2>
 <p>A continuación se enlistan los comandos básicos que se usan comúnmente en la ventana de comandos (command window) de MATLAB.</p>
 <p>1.-Limpiar pantalla de comandos: <code class="docutils literal notranslate"><span class="pre">&gt;&gt;clc</span></code></p>
@@ -372,7 +389,22 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>a = 3</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>Como se puede observar en la salida, el comentario al lado de la instrucción a=3 no se despliega
 en la ventana de comandos. Para desplegar texto en el command window se usa la función interna de MATLAB <code class="docutils literal notranslate"><span class="pre">disp(&quot;mensaje&quot;)</span></code>. A continuación se presentan ejemplos de los resultados del uso de comandos
@@ -406,30 +438,44 @@ y operaciones comunes en MATLAB:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>a = 3</pre></body></html></div><div class="output text_html"><html><body><pre>b = 45</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Multiplicación a*b
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
 </pre></div>
 </div>
-<div class="output text_html"><html><body><pre>ans = 135</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Suma a+b
-</pre></div>
 </div>
-<div class="output text_html"><html><body><pre>ans = 48</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resta a-b
-</pre></div>
-</div>
-<div class="output text_html"><html><body><pre>ans = -42</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>División a/b
-</pre></div>
-</div>
-<div class="output text_html"><html><body><pre>ans = 0.0667</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Potencia a^b (a elevado a la potencia b)
-</pre></div>
-</div>
-<div class="output text_html"><html><body><pre>ans = 27</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Raiz cuadrada de a
-</pre></div>
-</div>
-<div class="output text_html"><html><body><pre>ans = 6.7082</pre></body></html></div></div>
 </div>
 <p>Una instrucción muy útil es la de limpiar pantalla, esto permite borrar resultados anteriores para evitar la saturación de datos desplegados.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clc</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
 </pre></div>
 </div>
 </div>
@@ -442,11 +488,19 @@ y operaciones comunes en MATLAB:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Name      Size            Bytes  Class     Attributes
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
 
-  a         1x1                 8  double              
-  ans       1x1                 8  double              
-  b         1x1                 8  double              
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
 </pre></div>
 </div>
 </div>
@@ -454,6 +508,23 @@ y operaciones comunes en MATLAB:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
 </pre></div>
 </div>
 </div>
@@ -467,14 +538,48 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
 </div>
 </div>
-<div class="section" id="conversion-de-grados-celsius-a-farenheit">
+</div>
+</section>
+<section id="conversion-de-grados-celsius-a-farenheit">
 <h2>Conversión de grados Celsius a Farenheit<a class="headerlink" href="#conversion-de-grados-celsius-a-farenheit" title="Permalink to this heading">#</a></h2>
 <p>Es posible realizar la conversión de un conjunto de datos en un sistema de unidades a otro usando variables tipo arreglo en MATLAB. Haremos un ejemplo de la conversión a grados Farenheit de un conjunto de datos almacenados en un arreglo en las siguientes líneas de código. Se crea el conjunto de datos en grados Centígrados <span class="math notranslate nohighlight">\(-4&lt;°C&lt;4\)</span> con incremento de <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(°C\)</span>, para tener un total de 10 datos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">=[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
 </pre></div>
 </div>
 </div>
@@ -491,6 +596,23 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>Se puede desplegar la información en forma de tabla si se crea una variable tipo matriz para tal efecto.</p>
 <div class="cell docutils container">
@@ -500,17 +622,22 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>Tabla_conv = 9x2 double
-   -4.0000   24.8000
-   -3.0000   26.6000
-   -2.0000   28.4000
-   -1.0000   30.2000
-         0   32.0000
-    1.0000   33.8000
-    2.0000   35.6000
-    3.0000   37.4000
-    4.0000   39.2000
-</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>La comilla simple se usa para generar la versión transpuesta de un vector o matriz, es decir, se puede convertir un vector fila en un vector columna, por ejemplo:</p>
 <div class="cell docutils container">
@@ -520,9 +647,22 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>V = 1x3 double
-     1    -1     3
-</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>Su versión transpuesta <span class="math notranslate nohighlight">\(V^{T}\)</span> es</p>
 <div class="cell docutils container">
@@ -532,11 +672,22 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>ans = 3x1 double
-     1
-    -1
-     3
-</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>En caso de ser necesario, es posible hacer la conversión de grados Centígrados a Farenheit con una mayor resolución, de manera tal que en vez de mostrar una tabla de conversiones se puede mostrar una gráfica. Por ejemplo, para en rango de grados Centígrados <span class="math notranslate nohighlight">\(-4&lt;°C&lt;40\)</span> con incremento de <span class="math notranslate nohighlight">\(0.5\)</span> <span class="math notranslate nohighlight">\(°C\)</span>, para tener un total de 91 pares de datos, en MATLAB se expresa lo siguiente:</p>
 <div class="cell docutils container">
@@ -545,11 +696,45 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>Se hace la conversión a grados Farenheit como en el caso anterior, usando la Ecuación <a class="reference internal" href="#equation-conv-grados">(1)</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="p">=(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
 </pre></div>
 </div>
 </div>
@@ -564,11 +749,25 @@ y la variable dependiente separadas por una coma</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0668a564bcec35fb783e34ca896eca7db8116ed150365b002935e04611c6ff8e.png" src="_images/0668a564bcec35fb783e34ca896eca7db8116ed150365b002935e04611c6ff8e.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="generacion-de-graficas-de-funciones">
+</section>
+<section id="generacion-de-graficas-de-funciones">
 <h2>Generación de gráficas de funciones<a class="headerlink" href="#generacion-de-graficas-de-funciones" title="Permalink to this heading">#</a></h2>
 <p>Para generar la gráfica de una función en MATLAB, se crean dos vectores; uno con la variable independiente y
 un segundo con la variable independiente, por ejemplo, para graficar la función del tiempo,
@@ -585,11 +784,45 @@ expresada en la ecuación siguiente:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>Después se genera la variable independiente <span class="math notranslate nohighlight">\(y(t)\)</span> evaluando la función con operadores multiplicación y exponencial</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mf">11.35</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
 </pre></div>
 </div>
 </div>
@@ -604,11 +837,25 @@ constante o escalares</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/52d669c17067b2cfbcaf16c45bfdff9985bbcb58b0edd25f7f3b1cf400b7e413.png" src="_images/52d669c17067b2cfbcaf16c45bfdff9985bbcb58b0edd25f7f3b1cf400b7e413.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="resolver-un-sistema-de-ecuaciones-usando-matlab">
+</section>
+<section id="resolver-un-sistema-de-ecuaciones-usando-matlab">
 <h2>Resolver un sistema de ecuaciones usando MATLAB<a class="headerlink" href="#resolver-un-sistema-de-ecuaciones-usando-matlab" title="Permalink to this heading">#</a></h2>
 <p>El siguiente ejemplo muestra como utilizar MATLAB para resolver un sistema de ecuaciones de tres incógnitas. Considere el sistema de tres ecuaciones con tres incógnitas de la Ecuación <a class="reference internal" href="#equation-uno">(3)</a></p>
 <div class="math notranslate nohighlight" id="equation-uno">
@@ -648,11 +895,22 @@ B=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>A = 3x3 double
-    3.0000    2.0000   -5.0000
-    1.0000    0.5000    3.0000
-   -2.0000    7.0000   -3.0000
-</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>Para crear el vector de coeficientes:</p>
 <div class="cell docutils container">
@@ -662,11 +920,22 @@ B=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>B = 3x1 double
-    10
-     5
-    -2
-</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>La solución del sistema de ecuaciones se encuentra al realizar la operación matricial:</p>
 <div class="math notranslate nohighlight">
@@ -680,11 +949,22 @@ B=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>X = 3x1 double
-    3.4097
-    0.8546
-    0.3877
-</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>De manera alternativa, dado que <span class="math notranslate nohighlight">\(A^{-1}\)</span> es la inversa de la matriz <span class="math notranslate nohighlight">\(A\)</span>, se puede usar el comando inv(A), de manera que la solución se puede calcular como:</p>
 <div class="cell docutils container">
@@ -694,11 +974,22 @@ B=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>X = 3x1 double
-    3.4097
-    0.8546
-    0.3877
-</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <p>De manera que el valor numérico de las variables es:</p>
 <div class="math notranslate nohighlight" id="equation-dos">
@@ -717,7 +1008,22 @@ B=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>ans = 9.9998</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -727,7 +1033,22 @@ B=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>ans = 5.0001</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,10 +1058,25 @@ B=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>ans = -2.0003</pre></body></html></div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MATLAB Kernel Error:
+Error using &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&gt;updateRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 72)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&gt;updateRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,72,0)&quot;&gt;line 72&lt;/a&gt;)
+Invalid API version. Create an issue at https://github.com/mathworks/jupyter-matlab-proxy for further support.
+
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;jupyter.execute&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;, 43)&quot; style=&quot;font-weight:bold&quot;&gt;jupyter.execute&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\+jupyter\execute.m&#39;,43,0)&quot;&gt;line 43&lt;/a&gt;)
+request = updateRequest(request, code);
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in &lt;a href=&quot;matlab:matlab.lang.internal.introspective.errorDocCallback(&#39;processJupyterKernelRequest&#39;, &#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;, 54)&quot; style=&quot;font-weight:bold&quot;&gt;processJupyterKernelRequest&lt;/a&gt; (&lt;a href=&quot;matlab: opentoline(&#39;C:\Users\lcisn\AppData\Local\Programs\Python\Python38\Lib\site-packages\jupyter_matlab_kernel\matlab\processJupyterKernelRequest.m&#39;,54,0)&quot;&gt;line 54&lt;/a&gt;)
+            output = jupyter.execute(code, kernelId);
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Error in connector.internal.fevalMatlab
+
+Error in connector.internal.fevalJSON
+</pre></div>
 </div>
 </div>
-<div class="section" id="ejercicios">
+</div>
+</section>
+<section id="ejercicios">
 <h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this heading">#</a></h2>
 <p>Escriba en un archivo .m, almacenado en su carpeta de trabajo y con un nombre válido, un programa
 en el que se realicen los siguientes ejercicios y problemas:</p>
@@ -764,8 +1100,8 @@ en el que se realicen los siguientes ejercicios y problemas:</p>
      \end{eqnarray}
 \end{split}\]</div>
 <p>usando operaciones matriciales.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -792,11 +1128,10 @@ en el que se realicen los siguientes ejercicios y problemas:</p>
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="SoftwareMATLAB.html"
@@ -816,10 +1151,7 @@ en el que se realicen los siguientes ejercicios y problemas:</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -860,6 +1192,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -886,8 +1219,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

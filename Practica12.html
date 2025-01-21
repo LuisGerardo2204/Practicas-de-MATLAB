@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 12: Diferenciación e integración numéricas con MATLAB &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -285,20 +298,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -344,7 +359,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-12-diferenciacion-e-integracion-numericas-con-matlab">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-12-diferenciacion-e-integracion-numericas-con-matlab">
 <h1>Práctica 12: Diferenciación e integración numéricas con MATLAB<a class="headerlink" href="#practica-12-diferenciacion-e-integracion-numericas-con-matlab" title="Permalink to this heading">#</a></h1>
 <p>En ingeniería, es muy común usar el término derivada en diversos cursos como cálculo diferencial e integral, modelado de sistemas dinámicos, análisis de señales y control clásico entre otros. El concepto de derivada es de gran utilidad devido a que proporciona una medición de la razón de cambio de una variable respecto de los cambios que presenta una segunda variable de interés o bajo análisis. La derivada de una función <span class="math notranslate nohighlight">\(y=f(x)\)</span> se denomina también como la razón de cambion entre la variable <span class="math notranslate nohighlight">\(y\)</span> y la variable <span class="math notranslate nohighlight">\(x\)</span>. La derivada de una función se puede obtener usando la herramienta de cómputo simbólico disponible en MATLAB, por ejemplo, la derivada de la función: <span class="math notranslate nohighlight">\(y=2x^3-4x^2+3\)</span>, definida como:</p>
 <div class="math notranslate nohighlight">
@@ -370,7 +385,7 @@ document.write(`
 \[Derivada(x) =6\,x^2 -8\,x\]</div>
 </div>
 </div>
-<div class="section" id="diferenciacion-numerica">
+<section id="diferenciacion-numerica">
 <h2>Diferenciación numérica<a class="headerlink" href="#diferenciacion-numerica" title="Permalink to this heading">#</a></h2>
 <p>Como se trató en la práctica pasada, existen muchos casos en la ingeniería donde no se cuenta con una función en específico o forma cerrada, sino que se cuenta con un conjunto de datos experimentales en forma de pares ordenados, de manera que la derivada se calcula de forma numérica (<span id="id1">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>):</p>
 <div class="math notranslate nohighlight">
@@ -378,10 +393,10 @@ document.write(`
 \frac{dy}{dx}=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}
 \]</div>
 <p>Considere los pares ordenados de la práctica anterior y mostrados en la siguiente tabla:</p>
-<table class="colwidths-auto table">
+<table class="table">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="text-right head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -531,7 +546,7 @@ y=2x^3-4x^2+3
 <img alt="_images/0d33b3e3068ce246ff9b2c9a5e21f276a632c8541092b7646852a74b68ec54cd.png" src="_images/0d33b3e3068ce246ff9b2c9a5e21f276a632c8541092b7646852a74b68ec54cd.png" />
 </div>
 </div>
-<div class="section" id="diferencias-divididas-finitas">
+<section id="diferencias-divididas-finitas">
 <h3>Diferencias divididas finitas<a class="headerlink" href="#diferencias-divididas-finitas" title="Permalink to this heading">#</a></h3>
 <p>En el caso de necesitar evaluar la derivada de un punto en específico en vez de la derivada numérica de un conjunto de pares ordenados experimentales, en forma de una curva, como en el caso anterior, se utiliza la pendiente de la recta que une dos puntos de interés, de manera que la derivada se aproxima de forma numérica como (<span id="id2">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>):</p>
 <div class="math notranslate nohighlight">
@@ -616,8 +631,8 @@ y=2x^3-4x^2+3
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="diferencias-divididas-finitas-hacia-atras">
+</section>
+<section id="diferencias-divididas-finitas-hacia-atras">
 <h3>Diferencias divididas finitas hacia atrás<a class="headerlink" href="#diferencias-divididas-finitas-hacia-atras" title="Permalink to this heading">#</a></h3>
 <p>El cálculo de las diferencias finitas hacia atrás es similar al caso anterior con la diferencia de que el planteamiento es el siguiente:</p>
 <div class="math notranslate nohighlight">
@@ -661,8 +676,8 @@ y=2x^3-4x^2+3
 </div>
 </div>
 <p>Se observa en este caso que el error es negativo, debido a la dirección en la que se toman las diferencias divididas finitas.</p>
-</div>
-<div class="section" id="diferencias-divididas-centrales">
+</section>
+<section id="diferencias-divididas-centrales">
 <h3>Diferencias divididas centrales<a class="headerlink" href="#diferencias-divididas-centrales" title="Permalink to this heading">#</a></h3>
 <p>El cálculo de la derivada en los puntos de interés usando diferencias divididas finitas centradas es similar a los métodos antes expuestos con la diferencia principal de tomar en cuenta a los puntos siguiente y anterior del punto de interés:</p>
 <div class="math notranslate nohighlight">
@@ -749,9 +764,9 @@ y=2x^3-4x^2+3
 <img alt="_images/c7484cd2a94539ff52e1c7bfb3191c564d6f3c690f35d5c541ca0aec1fbf94ba.png" src="_images/c7484cd2a94539ff52e1c7bfb3191c564d6f3c690f35d5c541ca0aec1fbf94ba.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="integracion-numerica">
+</section>
+</section>
+<section id="integracion-numerica">
 <h2>Integración numérica<a class="headerlink" href="#integracion-numerica" title="Permalink to this heading">#</a></h2>
 <p>En ingeniería y en otras áreas de la ciencia, una integral se interptreta de manera frecuente como el área bajo una curva, esta área se puede calcular si se divide en rectángulos pequeños al espacio que cubre dicha curva, de manera que se puede aproximar el cálculo de un área irregular en términos de la suma del área independiente de los rectángulos pequeños antes mencionados, usando la fómula básica <span class="math notranslate nohighlight">\(área=base\times altura\)</span> (<span id="id3">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>, <span id="id4">Chapra <em>et al.</em> [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="S.C. Chapra, R.P. Canale, J.E. Brito, and M.C.R. Hano. Métodos numéricos para ingenieros. Elibro Catedra. McGraw-Hill, 2006. ISBN 9789701061145. URL: https://books.google.com.mx/books?id=hoH0MAAACAAJ.">CCBH06</a>]</span>).</p>
 <div class="math notranslate nohighlight">
@@ -982,8 +997,8 @@ y=f(x)=-3.5x^3+12x^2-50
 \[I_def =\frac{1}{3}\]</div>
 </div>
 </div>
-</div>
-<div class="section" id="ejercicio-de-la-practica-12">
+</section>
+<section id="ejercicio-de-la-practica-12">
 <h2>Ejercicio de la práctica 12<a class="headerlink" href="#ejercicio-de-la-practica-12" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Considere la función:</p></li>
@@ -1021,8 +1036,8 @@ c)  Use el paquete de cálculo simbólico para calcular la integral:</p>
 y=4.5cos(15x)e^{-3x}
 \]</div>
 <p>En el intervalo <span class="math notranslate nohighlight">\([0,3]\)</span>.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1049,11 +1064,10 @@ y=4.5cos(15x)e^{-3x}
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica11.html"
@@ -1073,10 +1087,7 @@ y=4.5cos(15x)e^{-3x}
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1120,6 +1131,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -1146,8 +1158,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
