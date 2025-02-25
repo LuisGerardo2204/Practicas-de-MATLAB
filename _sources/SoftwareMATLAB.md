@@ -15,8 +15,7 @@ kernelspec:
 
 # Breve introducción a MATLAB
 
-Para empezar con este cuadernillo de prácticas, empezaremos por definir el software MATLAB usando la siguiente frase ({cite:t}`Moore2007`): ``MATLAB es una de las muchas sofisticadas herramientas de computación disponibles
-en el comercio para resolver problemas de matemáticas, tales como Maple, Mathematica y MathCad... El nombre mismo de MATLAB es una abreviatura de Matrix Laboratory, laboratorio matricial``
+Para empezar con este cuadernillo de prácticas, empezaremos por definir el software MATLAB: A diferencia de un lenguaje de programación, este software es una herramienta computacional que integra un conjunto de funciones específicas y sub-interfaces para el desarrollo de soluciones matemáticas de métodos numéricos, simulación, redes neuronales e incluso visión artificial. 
 
 
 La interfaz gráfica o ventana principal del software se muestra en la {numref}`figura1`.
