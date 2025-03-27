@@ -738,7 +738,7 @@ se multiplica por los elementos del vector <strong>V</strong>. Este conjuto de m
     0.0600    0.1400    0.0960
 </pre></body></html></div></div>
 </div>
-<p>Se observa que todas las filas en <strong>nuevo_V</strong> son las mismas y todas las columnas en <strong>nuevo_X</strong> son las mismas, de manera que se hace posible multiplicar <strong>nuevo_V</strong> por <strong>nuevo_X</strong> y obtener una tabla de resultados en los que la primera columna del arreglo <strong>nuevo_X</strong> es un arreglo con valores de referencia y <strong>nuevo_V</strong> es un arreglo de factores de conversión:</p>
+<p>Dado que todas las filas del arreglo <strong>nuevo_V</strong> se repiten y, de la mismma manera las columnas <strong>nuevo_X</strong> se han copiado, es posible combinar a los arreglos <strong>nuevo_V</strong> y <strong>nuevo_X</strong>, por medio de un producto y obtener una tabla de resultados en los que la primera columna del arreglo <strong>nuevo_X</strong> es un arreglo con valores de referencia y <strong>nuevo_V</strong> es un arreglo de factores de conversión:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">cm</span><span class="p">=[</span><span class="mi">1</span><span class="p">:</span><span class="mf">1.5</span><span class="p">:</span><span class="mi">33</span><span class="p">];</span>
@@ -806,23 +806,23 @@ centímetros   pulgadas    pies    yardas
 </thead>
 <tbody>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">ones(m)</span></code></p></td>
-<td><p>Crea una matriz <span class="math notranslate nohighlight">\(m\times m\)</span> de unos</p></td>
+<td><p>Construye una matriz <span class="math notranslate nohighlight">\(m\times m\)</span> de unos</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">A=ones(2)</span></code><span class="math notranslate nohighlight">\(=\begin{bmatrix}1&amp;1\\1&amp;1\end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ones(m,n)</span></code></p></td>
-<td><p>Crea una matriz <span class="math notranslate nohighlight">\(m\times n\)</span> de unos</p></td>
+<td><p>Construye una matriz <span class="math notranslate nohighlight">\(m\times n\)</span> de unos</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">A=ones(2,3)</span></code><span class="math notranslate nohighlight">\(=\begin{bmatrix}1&amp;1&amp;1\\1&amp;1&amp;1\end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">eye(m)</span></code></p></td>
-<td><p>Crea una matriz identidad <span class="math notranslate nohighlight">\(m\times m\)</span></p></td>
+<td><p>Construye una matriz identidad <span class="math notranslate nohighlight">\(m\times m\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">A=eye(3)</span></code><span class="math notranslate nohighlight">\(=\begin{bmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1 \end{bmatrix}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">zeros(m)</span></code></p></td>
-<td><p>Crea una matriz <span class="math notranslate nohighlight">\(m\times m\)</span> de ceros</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">zeros(n)</span></code></p></td>
+<td><p>Construye una matriz <span class="math notranslate nohighlight">\(n\times n\)</span> de ceros</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">A=zeros(2)</span></code><span class="math notranslate nohighlight">\(=\begin{bmatrix}0&amp;0\\0&amp;0\end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">diag(A)</span></code></p></td>
-<td><p>Extrae la diagonal principal de una matriz</p></td>
+<td><p>Obtiene la diagonal principal de una matriz</p></td>
 <td><p><span class="math notranslate nohighlight">\(A=\begin{bmatrix}1&amp;4&amp;7\\2&amp;-3&amp;5\\-8&amp;5&amp;7\end{bmatrix}\)</span>,<span class="math notranslate nohighlight">\(~~~~~~\)</span><code class="docutils literal notranslate"><span class="pre">diag(A)</span></code><span class="math notranslate nohighlight">\(=\begin{bmatrix}1\\-3\\7\end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td></td>
@@ -830,11 +830,11 @@ centímetros   pulgadas    pies    yardas
 <td><p><span class="math notranslate nohighlight">\(V=\begin{bmatrix}-2&amp;3&amp;4\end{bmatrix}\)</span>,<span class="math notranslate nohighlight">\(~~~~~~~~~~~~~~~~\)</span><code class="docutils literal notranslate"><span class="pre">diag(V)</span></code><span class="math notranslate nohighlight">\(=\begin{bmatrix}-2&amp;0&amp;0\\0&amp;3&amp;0\\0&amp;0&amp;4\end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">flipud(A)</span></code></p></td>
-<td><p>Voltea una matriz verticalmente</p></td>
+<td><p>Refleja una matriz de forma vertical</p></td>
 <td><p><span class="math notranslate nohighlight">\(A=\begin{bmatrix}11&amp;0&amp;0\\0&amp;-13&amp;0\\0&amp;0&amp;7\end{bmatrix}\)</span>,<span class="math notranslate nohighlight">\(~~~~\)</span><code class="docutils literal notranslate"><span class="pre">flipud(A)</span></code><span class="math notranslate nohighlight">\(=\begin{bmatrix}0&amp;0&amp;7\\0&amp;-13&amp;0\\11&amp;0&amp;0\end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">magic(3)</span></code></p></td>
-<td><p>Crea una matriz mágica de dimensiones <span class="math notranslate nohighlight">\(n\times n\)</span></p></td>
+<td><p>Construye una matriz mágica de dimensiones <span class="math notranslate nohighlight">\(n\times n\)</span></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">magic(V)</span></code><span class="math notranslate nohighlight">\(=\begin{bmatrix}8&amp;1&amp;6\\3&amp;5&amp;7\\4&amp;9&amp;2\end{bmatrix}\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">:</span></code></p></td>
@@ -883,14 +883,14 @@ del fluido <span class="math notranslate nohighlight">\(\rho\)</span> y la acele
 \[
 P=h\rho g
 \]</div>
-<p>Si se despeja la altura <span class="math notranslate nohighlight">\(h\)</span> se obtiene:</p>
+<p>DE manera tal que la altura <span class="math notranslate nohighlight">\(h\)</span> se expresa como:</p>
 <div class="math notranslate nohighlight">
 \[
 h=\frac{P}{\rho g}
 \]</div>
-<p>Escriba un programa que despliegue una tabla con los valores de altura <span class="math notranslate nohighlight">\(h\)</span> a los que se elevará una columna de líquido ante un rango de presiones de 0 a 10 kilo Pascales, para dos líquidos diferentes, agua pesada con <span class="math notranslate nohighlight">\(\rho =1110kg/m^3\)</span> y mercurio con una densidad <span class="math notranslate nohighlight">\(\rho =13560kg/m^3\)</span>. Recuerde que un kilo Pascal equivale a 1000 Pascales.</p>
+<p>Escriba un programa que despliegue una tabla con los valores de altura <span class="math notranslate nohighlight">\(h\)</span> a los que se elevará una columna de líquido ante un rango de presiones de 0 a 8 kilo Pascales, para dos líquidos diferentes, agua pesada con <span class="math notranslate nohighlight">\(\rho =1110kg/m^3\)</span> y mercurio con una densidad <span class="math notranslate nohighlight">\(\rho =13560kg/m^3\)</span>. Considere que un kilo Pascal equivale a 1000 Pascales.</p>
 <ol class="arabic simple" start="8">
-<li><p>El área de un triángulo se obtiene como área<span class="math notranslate nohighlight">\(=\frac{1}{2}bh\)</span>. Encuentre  el área de un grupo de triángulos en centímetros cuadrados, cuya base varía de 2 a 15 pulgadas y cuya altura varía de 2 a 18 pulgadas. Reporte los cálculos en una tabla. Use un espaciamiento adecuado para sus variables de cálculo.</p></li>
+<li><p>Encuentre  el área de un grupo de triángulos en centímetros cuadrados, cuya base varía de 2 a 15 pulgadas y cuya altura varía de 2 a 18 pulgadas. Reporte los cálculos en una tabla. Use un espaciamiento adecuado para sus variables de cálculo.</p></li>
 </ol>
 </section>
 </section>

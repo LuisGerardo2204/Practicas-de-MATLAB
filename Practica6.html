@@ -367,14 +367,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>C = 1.3000</pre></body></html></div><div class="output text_html"><html><body><pre>B = 1x3 double
+<div class="output text_html"><html><body><pre>C = 1.3000</pre></body></html></div><div class="output text_html"><html><body><pre>B = 1×3 double
      1    -3     4
-</pre></body></html></div><div class="output text_html"><html><body><pre>B = 1x3 double
+</pre></body></html></div><div class="output text_html"><html><body><pre>B = 1×3 double
      1    -3     4
-</pre></body></html></div><div class="output text_html"><html><body><pre>A = 2x2 double
+</pre></body></html></div><div class="output text_html"><html><body><pre>A = 2×2 double
     -1     3
      3    -4
-</pre></body></html></div><div class="output text_html"><html><body><pre>A = 2x2 double
+</pre></body></html></div><div class="output text_html"><html><body><pre>A = 2×2 double
     -1     3
      3    -4
 </pre></body></html></div></div>
@@ -389,13 +389,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>A = 3x3 double
+<div class="output text_html"><html><body><pre>A = 3×3 double
     -1     3     4
      5     3     6
      3    -4     8
 </pre></body></html></div></div>
 </div>
-<p>Alternativamente, se puede usar un formato que permite que no sea necesario utilizar el punto y coma para iniciar un nuevo renglón, para crear la misma matriz que en el caso anterior:</p>
+<p>Alternativamente, se puede evitar el uso de punto y coma, usando la siguiente sintaxis:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span>
@@ -405,7 +405,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>A = 3x3 double
+<div class="output text_html"><html><body><pre>A = 3×3 double
     -1     3     4
      5     3     6
      3    -4     8
@@ -419,16 +419,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>V = 3x1 double
+<div class="output text_html"><html><body><pre>V = 3×1 double
      1
      3
      5
 </pre></body></html></div></div>
 </div>
-<p>Si existen demasiados números en una fila como para encajar en una línea, puede continuar
-el enunciado en la línea siguiente, pero se requieren una coma y una elipsis (…) al final de la
-línea, lo que indica que la fila continúa. También puede usar la elipsis para continuar otros
-enunciados de asignación largos en MATLAB. Por ejemplo:</p>
+<p>Haciendo uso del operador elipsis (…) es posible reducir el espacio horizontal necesario para la construcción de un areglo o vector de grandes dimensiones o gran cantidad de datos de entrada.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="p">=[</span><span class="mi">11</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">54</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="mi">67</span><span class="p">,</span><span class="mi">79</span><span class="p">,</span><span class="mi">34</span><span class="p">,</span><span class="mi">89</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">78</span><span class="p">]</span><span class="w"> </span>
@@ -439,12 +436,12 @@ enunciados de asignación largos en MATLAB. Por ejemplo:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>R = 1x11 double
+<div class="output text_html"><html><body><pre>R = 1×11 double
     11    43    54    65    67    79    34    89    55    43    78
 </pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Usando la elipsis tres puntos:
 </pre></div>
 </div>
-<div class="output text_html"><html><body><pre>R = 1x11 double
+<div class="output text_html"><html><body><pre>R = 1×11 double
     11    43    54    65    67    79    34    89    55    43    78
 </pre></body></html></div></div>
 </div>
@@ -487,14 +484,14 @@ X &amp; Y
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>X = 1x3 double
+<div class="output text_html"><html><body><pre>X = 1×3 double
      3     2    -5
-</pre></body></html></div><div class="output text_html"><html><body><pre>Y = 1x5 double
+</pre></body></html></div><div class="output text_html"><html><body><pre>Y = 1×5 double
     -3    22   -15    34   -16
 </pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Matriz Z=[X Y]
 </pre></div>
 </div>
-<div class="output text_html"><html><body><pre>Z = 1x8 double
+<div class="output text_html"><html><body><pre>Z = 1×8 double
      3     2    -5    -3    22   -15    34   -16
 </pre></body></html></div></div>
 </div>
@@ -507,7 +504,7 @@ X &amp; Y
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>A = 1x5 double
+<div class="output text_html"><html><body><pre>A = 1×5 double
     -4    -1     4     5     8
 </pre></body></html></div></div>
 </div>
@@ -519,7 +516,7 @@ X &amp; Y
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>A = 1x6 double
+<div class="output text_html"><html><body><pre>A = 1×6 double
     -4    -1     4     5     8    13
 </pre></body></html></div></div>
 </div>
@@ -533,9 +530,9 @@ X &amp; Y
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>A = 1x8 double
+<div class="output text_html"><html><body><pre>A = 1×8 double
     -4     3     4     5     8     0     0    -3
-</pre></body></html></div><div class="output text_html"><html><body><pre>A = 1x10 double
+</pre></body></html></div><div class="output text_html"><html><body><pre>A = 1×10 double
     -4     3     4     5     8     0     0    -3     0     5
 </pre></body></html></div></div>
 </div>
@@ -555,7 +552,7 @@ X &amp; Y
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d188a35cc2a74fe2ca59df44126319f1fe515ef000f147426fc70feab5eb2cb7.png" src="_images/d188a35cc2a74fe2ca59df44126319f1fe515ef000f147426fc70feab5eb2cb7.png" />
+<img alt="_images/f82ad7cf51e035e287a5aee230d391f1ba2e5334bd246a69a300e94ced4646e0.png" src="_images/f82ad7cf51e035e287a5aee230d391f1ba2e5334bd246a69a300e94ced4646e0.png" />
 </div>
 </div>
 <p>Por defecto, el incremento es unitario, es decir, de no especificarse, MATLAB creará una matriz con números que difieren exactamete en uno:</p>
@@ -566,17 +563,17 @@ X &amp; Y
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>t = 1x8 double
+<div class="output text_html"><html><body><pre>t = 1×8 double
      0     1     2     3     4     5     6     7
 </pre></body></html></div></div>
 </div>
-<p>El operador <strong>:</strong> se puede usar para extraer datos de las matrices o arreglos. Esta característica es muy útil cuando se analizan datos. Cuando en una matriz se usa el operador <strong>:</strong> como referencia en lugar de especificar un índice, el operador <strong>:</strong> representa toda una columna o fila. Por ejemplo, sea la matriz <span class="math notranslate nohighlight">\(A\)</span> definida como:</p>
+<p>El operador <strong>:</strong> permite incluso aislar las entradas o localidades los arreglos en general. De manera equivalente, se puede decir que esta función de MATLAB permite la cosntrucción de sub-arreglos o sub-matrices. Por ejemplo, sea la matriz <span class="math notranslate nohighlight">\(A\)</span> definida como:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A=\begin{bmatrix}
-1&amp;2&amp;-4&amp;3\\
-3&amp;4&amp;6&amp;12\\
--5&amp;8&amp;10&amp;7\\
+11&amp;-23&amp;-4.5&amp;3.8\\
+-3&amp;14&amp;66&amp;-12\\
+-51&amp;81&amp;104&amp;.67\\
 -4&amp;3&amp;7&amp;-9
 \end{bmatrix}
 \end{split}\]</div>
@@ -592,15 +589,15 @@ A=\begin{bmatrix}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>c = 4x1 double
+<div class="output text_html"><html><body><pre>c = 4×1 double
      2
      4
      8
      3
 </pre></body></html></div></div>
 </div>
-<p>La sintaxis anterior se puede leer como “todas las filas en la columna 2”. Para extraer
-una fila en específico se usa la sintaxis <code class="docutils literal notranslate"><span class="pre">d=A(2,:)</span></code>, que significa todas las columnas de la fila 2.</p>
+<p>La operación anterior se interpreta de la siguiente manera: extrae “todas las filas en la columna 2”. Para extraer
+una fila en específico se usa la sintaxis <code class="docutils literal notranslate"><span class="pre">d=A(2,:)</span></code>, que significa; extrae todas las columnas de la fila 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">=</span><span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,:)</span>
@@ -608,7 +605,7 @@ una fila en específico se usa la sintaxis <code class="docutils literal notrans
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>d = 1x4 double
+<div class="output text_html"><html><body><pre>d = 1×4 double
      3     4     6    12
 </pre></body></html></div></div>
 </div>
@@ -620,12 +617,12 @@ una fila en específico se usa la sintaxis <code class="docutils literal notrans
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>s = 2x4 double
+<div class="output text_html"><html><body><pre>s = 2×4 double
      1     2    -4     3
      3     4     6    12
 </pre></body></html></div></div>
 </div>
-<p>La isntrucción anterior se interpreta como “filas 1 a 2, todas las columnas”. De manera similar, para extraer sólo los cuatro números en la esquina inferior derecha de la matriz A se escribe:</p>
+<p>La instrucción anterior se interpreta como “filas 1 a 2, todas las columnas”. De manera similar, para extraer sólo los cuatro números en la esquina inferior derecha de la matriz A se escribe:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">i</span><span class="p">=</span><span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">)</span>
@@ -633,7 +630,7 @@ una fila en específico se usa la sintaxis <code class="docutils literal notrans
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>i = 2x2 double
+<div class="output text_html"><html><body><pre>i = 2×2 double
     10     7
      7    -9
 </pre></body></html></div></div>
@@ -660,7 +657,7 @@ una fila en específico se usa la sintaxis <code class="docutils literal notrans
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>A = 4x4 double
+<div class="output text_html"><html><body><pre>A = 4×4 double
      1     2     3     4
      5     6     7     8
      9    10    11    12
@@ -691,7 +688,7 @@ columna 2 de la matriz A es el elemento número 7. (Se cuenta la columna 1, lueg
 </section>
 <section id="ejercicio-de-la-practica-6">
 <h2>Ejercicio de la práctica 6.<a class="headerlink" href="#ejercicio-de-la-practica-6" title="Permalink to this heading">#</a></h2>
-<p>Genere las siguientes matrices:</p>
+<p>Construya los siguientes arreglos:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 w=\begin{bmatrix}
@@ -708,19 +705,17 @@ w=\begin{bmatrix}
  4.5 
 \end{bmatrix}
 \end{split}\]</div>
-<p>Una vez creadas las matrices, resuelva los siguientes ejercicios:</p>
-<p>1.- Asigne a la variable <span class="math notranslate nohighlight">\(x_1\)</span> el valor en la segunda columna de la matriz <span class="math notranslate nohighlight">\(w\)</span> el cual se representa como el elemento <span class="math notranslate nohighlight">\(w_{1,2}\)</span> y se expresa como <span class="math notranslate nohighlight">\(x_1=w_{1,2}\)</span>.</p>
-<p>2.- Asigne a la variable <span class="math notranslate nohighlight">\(x_2\)</span> la tercera columna de la matriz <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>3.- Asigne a la variable <span class="math notranslate nohighlight">\(x_3\)</span> la tercera fila de la matriz <span class="math notranslate nohighlight">\(x\)</span>.</p>
-<p>4.- Asigne a la variable <span class="math notranslate nohighlight">\(x_4\)</span> los valores en la matriz <span class="math notranslate nohighlight">\(x\)</span> a lo largo de la diagonal (es
-decir: elementos <span class="math notranslate nohighlight">\(x_{1,1}\)</span>, <span class="math notranslate nohighlight">\(x_{2,2}\)</span>, <span class="math notranslate nohighlight">\(x_{3,3}\)</span> y <span class="math notranslate nohighlight">\(x_{4,4}\)</span>).</p>
-<p>5.- Asigne a la variable <span class="math notranslate nohighlight">\(x_5\)</span> los primeros cuatro valores en la matriz <span class="math notranslate nohighlight">\(w\)</span> como la primera
-fila y todos los valores en la matriz <span class="math notranslate nohighlight">\(x\)</span> como la segunda a la cuarta filas.</p>
-<p>6.- Asigne a la variable <span class="math notranslate nohighlight">\(x_6\)</span> los valores en la matriz <span class="math notranslate nohighlight">\(y\)</span> como la primera columna,
+<p>Una vez creadas las matrices o arreglos , resuelva los siguientes ejercicios:</p>
+<p>1.- Extraiga y almacene en una variable <span class="math notranslate nohighlight">\(v_1\)</span> el elemento <span class="math notranslate nohighlight">\(w_{1,3}\)</span>.</p>
+<p>2.- Extraiga y almacene en un arreglo <span class="math notranslate nohighlight">\(v_2\)</span> la primera fila de la matriz <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>3.- Extraiga y almacene en un arreglo <span class="math notranslate nohighlight">\(v_3\)</span> la segunda columna de la matriz <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>4.- Asigne a la variable <span class="math notranslate nohighlight">\(z\)</span> los valores en la matriz <span class="math notranslate nohighlight">\(x\)</span> a lo largo de la diagonal principal.</p>
+<p>5.- Construya una matriz <span class="math notranslate nohighlight">\(r\)</span> tal que los primeros cuatro valores en la matriz <span class="math notranslate nohighlight">\(w\)</span> sean su primera
+fila y las localidades en la matriz <span class="math notranslate nohighlight">\(x\)</span> como el resto de columnas y filas.</p>
+<p>6.- Asigne a la variable <span class="math notranslate nohighlight">\(t\)</span> los valores en la matriz <span class="math notranslate nohighlight">\(y\)</span> como la primera columna,
 los valores en la matriz <span class="math notranslate nohighlight">\(x\)</span> como las columnas 2, 3, 4 y 5, y los valores en la matriz <span class="math notranslate nohighlight">\(w\)</span> como la última fila.</p>
-<p>7.- Asigne a la variable <span class="math notranslate nohighlight">\(x_7\)</span> el valor del elemento 7 en la matriz <span class="math notranslate nohighlight">\(x\)</span>, use el esquema
-de identificación de número de índice simple.</p>
-<p>8.- Convierta la matriz <span class="math notranslate nohighlight">\(x\)</span> en un vector columna que se almacene en la variable <span class="math notranslate nohighlight">\(x_8\)</span>.</p>
+<p>7.- Asigne a la variable <span class="math notranslate nohighlight">\(a\)</span> el valor del elemento 7 en la matriz <span class="math notranslate nohighlight">\(x\)</span>, aplicando la asignación de índice simple.</p>
+<p>8.- Construya un arreglo <span class="math notranslate nohighlight">\(G\)</span> tal que almacene el resultado de convertir al arreglo o matriz <span class="math notranslate nohighlight">\(x\)</span> en un vector tipo columna.</p>
 </section>
 </section>
 
