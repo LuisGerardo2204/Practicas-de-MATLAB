@@ -3,12 +3,11 @@
 <!DOCTYPE html>
 
 
-<html lang="es" data-content_root="" >
+<html lang="es" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Práctica 11: Algunos Métodos numéricos con MATLAB &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -19,12 +18,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -40,9 +39,8 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
-  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -83,15 +81,6 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
-  
-  <div id="pst-scroll-pixel-helper"></div>
-
-  
-  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
-
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -145,11 +134,9 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
   
 
 <a class="navbar-brand logo" href="intro.html">
-  
   
   
   
@@ -159,8 +146,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -298,22 +285,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    <i class="fa-solid fa-magnifying-glass"></i>
   </button>
 `);
 </script>
@@ -364,11 +349,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-11-algunos-metodos-numericos-con-matlab">
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-11-algunos-metodos-numericos-con-matlab">
 <h1>Práctica 11: Algunos Métodos numéricos con MATLAB<a class="headerlink" href="#practica-11-algunos-metodos-numericos-con-matlab" title="Permalink to this heading">#</a></h1>
 <p>Los métodos numéricos son las herramientas matemáticas que permiten resolver problemas de ingeniería usando operaciones básicas que permiten aproximar soluciones a planteamientos de cálculo integral y diferencial. Los métodos numéricos como procedimientos matemáticos formales se ven ampliamente favorecidos con las herramientas computacionales como lo son los lenguajes de programación y por supuesto, ambientes especializados como MATLAB.</p>
 <p>En esta práctica, haremos uso de las funciones incluidas en MATLAB para la aplicación de métodos numéricos a conjuntos de datos. Exploraremos las técnicas de interpolación y regresión numérica en forma introductoria.</p>
-<section id="interpolacion-lineal">
+<div class="section" id="interpolacion-lineal">
 <h2>Interpolación lineal<a class="headerlink" href="#interpolacion-lineal" title="Permalink to this heading">#</a></h2>
 <p>La interpolación lineal es una técnica que permite determinar valores numéricos de variables experimentales que no se encuentran en un conjunto de mediciones experimentales. Cuando se realiza un experimento, es imposible tomar mediciones de cada uno de los pares ordenados o puntos de interés (<span id="id1">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>). Lo anterior se ejemplifica en la siguiente figura:</p>
 <div class="cell tag_remove-input docutils container">
@@ -391,10 +376,10 @@ document.write(`
 </div>
 </div>
 <p>Es posible interpolar múltiples valores de la variable independiente con un solo uso de la istrucción <code class="docutils literal notranslate"><span class="pre">iterp1()</span></code>, por ejemplo para los pares ordenados de la siguiente tabla:</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<tr class="row-odd"><th class="text-left head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="text-right head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -461,8 +446,8 @@ document.write(`
 <img alt="_images/a5433f101b83335fedd07026477686bd57dbf0e8b93a9f8a2ec6accae2ff5d81.png" src="_images/a5433f101b83335fedd07026477686bd57dbf0e8b93a9f8a2ec6accae2ff5d81.png" />
 </div>
 </div>
-</section>
-<section id="iterpolacion-con-aproximacion-no-lineal">
+</div>
+<div class="section" id="iterpolacion-con-aproximacion-no-lineal">
 <h2>Iterpolación con aproximación no lineal<a class="headerlink" href="#iterpolacion-con-aproximacion-no-lineal" title="Permalink to this heading">#</a></h2>
 <p>Una forma de interpolar datos que no se encuentran en el conjunto de mediciones experimentales, de manera más suave que la que se realiza por medio de la interpolación usando lineas rectas es la interpolación no lineal. Usando esta técnica de interpolación se consigue un comportamiento más suave de las aproximaciones. Para hacer uso de esta técnica en MATLAB, se especifica el tipo de interpolación añadiendo una cadena de caracteres con la especificación deseada para la interpolación; <code class="docutils literal notranslate"><span class="pre">iterp1(x,y,'spline')</span></code>. Lo anterior queda ejemplificado con las siguientes líneas de código que retoman el primer caso ejmplo para interpolación lineal de los puntos :</p>
 <div class="cell docutils container">
@@ -490,6 +475,10 @@ document.write(`
 <p>La siguiente tabla muestra un resumen de las opciones disponibles para la interpolación de datos usando el compado <code class="docutils literal notranslate"><span class="pre">interp1()</span></code>:</p>
 <table class="table" id="tabla-interp">
 <caption><span class="caption-number">Tabla 14 </span><span class="caption-text">Tabla de opciones de interpolación.</span><a class="headerlink" href="#tabla-interp" title="Enlace permanente a esta tabla">#</a></caption>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Comando MATLAB</p></th>
 <th class="head"><p>Descripción</p></th>
@@ -608,18 +597,18 @@ document.write(`
 <img alt="_images/92d85844b5e53daed138b77d07f0adfe3e93dea8411b0aa392bec7f7b2178b50.png" src="_images/92d85844b5e53daed138b77d07f0adfe3e93dea8411b0aa392bec7f7b2178b50.png" />
 </div>
 </div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="interpolacion-de-funciones-de-dos-variables">
+</div>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="interpolacion-de-funciones-de-dos-variables">
 <h1>Interpolación de funciones de dos variables<a class="headerlink" href="#interpolacion-de-funciones-de-dos-variables" title="Permalink to this heading">#</a></h1>
 <p>La interpolación tambien se puede utilizar para calcular datos no medidos cuando se tienen datos de un experimento que depende de dos variables. Por ejemplo, considérese la tabla de datos siguiente:</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p><span class="math notranslate nohighlight">\(x=1.5\)</span></p></th>
-<th class="head text-left"><p><span class="math notranslate nohighlight">\(x=2.0\)</span></p></th>
-<th class="head text-left"><p><span class="math notranslate nohighlight">\(x=2.5\)</span></p></th>
-<th class="head text-right"><p><span class="math notranslate nohighlight">\(x=3.0\)</span></p></th>
+<tr class="row-odd"><th class="text-left head"><p></p></th>
+<th class="text-left head"><p><span class="math notranslate nohighlight">\(x=1.5\)</span></p></th>
+<th class="text-left head"><p><span class="math notranslate nohighlight">\(x=2.0\)</span></p></th>
+<th class="text-left head"><p><span class="math notranslate nohighlight">\(x=2.5\)</span></p></th>
+<th class="text-right head"><p><span class="math notranslate nohighlight">\(x=3.0\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -662,17 +651,17 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_html"><html><body><pre>z_nuevo = 43.7020</pre></body></html></div></div>
 </div>
-<section id="regresion-basica-o-ajuste-de-curvas">
+<div class="section" id="regresion-basica-o-ajuste-de-curvas">
 <h2>Regresión básica o ajuste de curvas<a class="headerlink" href="#regresion-basica-o-ajuste-de-curvas" title="Permalink to this heading">#</a></h2>
 <p>La interpolación, junto con todas sus opciones permite encontrar valores numéricos de datos que no fueron adquiridos o medidos de manera experimental, sin embargo, es un proceso que es conveniente cuando se requieren solo los valores numéricos de un conjunto de datos que no se midieron de forma experimental. La regresión de datos o ajuste de curvas (curve fitting en inglés) permite encontrar un modelo, es decir, una función que describa el comportamiento del conjunto de datos experimentales por medio de una fórmula específica expresada como <span class="math notranslate nohighlight">\(y=f(x)\)</span>. A continuación se presentan las funciones básicas de regresión de datos disponibles en MATLAB.</p>
-</section>
-<section id="regresion-lineal">
+</div>
+<div class="section" id="regresion-lineal">
 <h2>Regresión lineal<a class="headerlink" href="#regresion-lineal" title="Permalink to this heading">#</a></h2>
 <p>La función mas simple que se puede usar para modelar matemáticamente a un conjunto de datos es la recta, es decir <span class="math notranslate nohighlight">\(y=mx+b\)</span>. Por ejemplo, para los datos descritos en la siguiente tabla</p>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<tr class="row-odd"><th class="text-left head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="text-right head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -758,8 +747,8 @@ nótese que la estructura de la instrucción <code class="docutils literal notra
 <img alt="_images/8f81336b70da542334e706ece9937de840371cb2ce509de81aaabca67a1e5c84.png" src="_images/8f81336b70da542334e706ece9937de840371cb2ce509de81aaabca67a1e5c84.png" />
 </div>
 </div>
-</section>
-<section id="regresion-polinomial">
+</div>
+<div class="section" id="regresion-polinomial">
 <h2>Regresión polinomial<a class="headerlink" href="#regresion-polinomial" title="Permalink to this heading">#</a></h2>
 <p>Para el caso de datos con un comportamiento no lineal, es posible usar la función <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> especificando un grado diferente a 1 para aproximar una curva a los datos experimentales de la forma (<span id="id5">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>):</p>
 <div class="math notranslate nohighlight">
@@ -835,16 +824,16 @@ y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
 <img alt="_images/0466b945afb549151400f26b34d69af816423dc185daa534e74fbc3f1aecea59.png" src="_images/0466b945afb549151400f26b34d69af816423dc185daa534e74fbc3f1aecea59.png" />
 </div>
 </div>
-</section>
-<section id="ejercicio-de-la-practica-11">
+</div>
+<div class="section" id="ejercicio-de-la-practica-11">
 <h2>Ejercicio de la práctica 11<a class="headerlink" href="#ejercicio-de-la-practica-11" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Construya un par de arreglos <span class="math notranslate nohighlight">\(y\)</span> y <span class="math notranslate nohighlight">\(x\)</span> que contengan los datos de la siguiente tabla:</p></li>
 </ol>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<tr class="row-odd"><th class="text-left head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="text-right head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -890,10 +879,10 @@ y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
 <ol class="arabic simple" start="2">
 <li><p>Construya un par de arreglos <span class="math notranslate nohighlight">\(y\)</span> y <span class="math notranslate nohighlight">\(x\)</span> que contengan los datos de la siguiente tabla:</p></li>
 </ol>
-<table class="table">
+<table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head text-left"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
-<th class="head text-right"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
+<tr class="row-odd"><th class="text-left head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="text-right head"><p><span class="math notranslate nohighlight">\(y\)</span></p></th>
 </tr>
 </thead>
 <tbody>
@@ -934,8 +923,8 @@ y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
 <p>c) Use la función <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code> para realizar una regresión cuadrática de los datos. Escriba la ecuación del modelo obtenido.</p>
 <p>d) Haga una gráfica para comparar los datos originales con el modelo obtenido en el punto c).</p>
 <p>Use etiquetas, colores, tipos de línea y rótulos para una correcta interpretación de las gráficas.</p>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -962,10 +951,11 @@ y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
 
               
               
-              
-              
-                <footer class="prev-next-footer">
+                <footer class="bd-footer-article">
                   
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica10.html"
@@ -985,7 +975,10 @@ y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1034,7 +1027,6 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2022.
@@ -1061,8 +1053,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
