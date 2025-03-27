@@ -384,7 +384,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c346ac1abfe3bf987b151c74a2cf0439cd6c8d49bd60d71268e458e22a27df24.png" src="_images/c346ac1abfe3bf987b151c74a2cf0439cd6c8d49bd60d71268e458e22a27df24.png" />
+<img alt="_images/c1123fd10ee37dc537a04343bac64e30b7571ea56b1069cfd8008216651c3145.png" src="_images/c1123fd10ee37dc537a04343bac64e30b7571ea56b1069cfd8008216651c3145.png" />
 </div>
 </div>
 </section>
@@ -394,7 +394,7 @@ document.write(`
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
-<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">50</span><span class="p">];</span>
+<span class="n">x</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">70</span><span class="p">];</span>
 <span class="n">y</span><span class="p">=</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="o">.^</span><span class="mi">4</span><span class="p">;</span>
 <span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="nb">xlabel</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">)</span>
@@ -404,7 +404,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3867e614ac5607046b0700a9bc2f94d4bfd4e7c4f7b8fd2e1d67f3421b3470e1.png" src="_images/3867e614ac5607046b0700a9bc2f94d4bfd4e7c4f7b8fd2e1d67f3421b3470e1.png" />
+<img alt="_images/434e601435b8ea169b756406f162af6aea6699cd77b617c207756fce0b0643c9.png" src="_images/434e601435b8ea169b756406f162af6aea6699cd77b617c207756fce0b0643c9.png" />
 </div>
 </div>
 <p>Una alternativa a la necesidad de usar valores tan grandes, en ingenería se recurre a la escala logaritmimca. En una escala lograírmica se usa la base 10, este tipo de escala tiene la ventaja de que no comprime los valores pequeños como sucede en el ejemplo anterior, note que en la gráfica del polinomio no se puede distinguir con claridad a loa valores entre <span class="math notranslate nohighlight">\(10\)</span> y <span class="math notranslate nohighlight">\(-10\)</span>. LA gráfica en escala logarítmica del ejemplo anterior se realiza al utilizar el comando <code class="docutils literal notranslate"><span class="pre">semilogx()</span></code> como se muestra a continuación:</p>
@@ -419,7 +419,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f86960c3cbd452800012045415d68320ba70ec4e7c301c3d6d89427b3516d8cd.png" src="_images/f86960c3cbd452800012045415d68320ba70ec4e7c301c3d6d89427b3516d8cd.png" />
+<img alt="_images/bbc08363b70de37dcb95ccb8c084da92ac256a403b361beaa7062d210a823632.png" src="_images/bbc08363b70de37dcb95ccb8c084da92ac256a403b361beaa7062d210a823632.png" />
 </div>
 </div>
 <p>En esta última gráfica, se puede apreciar un rango de valores más aplio en el eje <span class="math notranslate nohighlight">\(x\)</span>, la escala abarca el doble, dado que en la gráfica original el máximo valor en el eje <span class="math notranslate nohighlight">\(x\)</span> es 50. Dada la naturaleza de la función que se está graficando, el valor de <span class="math notranslate nohighlight">\(y\)</span> aumenta muy rápidamente con respecto a la variable <span class="math notranslate nohighlight">\(x\)</span>, dado que su razón de cambio o derivada es un polinomio de tercer grado. La magnitud de <span class="math notranslate nohighlight">\(y\)</span> se puede compactar usando la escala logaritmica, tambien por medio del comado de graficación <code class="docutils literal notranslate"><span class="pre">semilogy()</span></code>, note que el comando indica el eje que se desea representar en escala logarítmica en la gráfica que se está generando:</p>
@@ -434,7 +434,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bba96e2380a0fd3a6506bb0b0b26fef928071070947abf7a989bcaea64fea176.png" src="_images/bba96e2380a0fd3a6506bb0b0b26fef928071070947abf7a989bcaea64fea176.png" />
+<img alt="_images/8f2d4587a42ba1c28f34194d91bb75e7022ab522ec747561a85340b12543511c.png" src="_images/8f2d4587a42ba1c28f34194d91bb75e7022ab522ec747561a85340b12543511c.png" />
 </div>
 </div>
 <p>Si bien se redujo visualmente la velocidad de crecimiento de la variable <span class="math notranslate nohighlight">\(y\)</span>, sigue mostrando una tendencia de crecimiento que no permite visualizar de forma condensada mas valores de <span class="math notranslate nohighlight">\(y\)</span> cuando <span class="math notranslate nohighlight">\(x\)</span> se incrementa más allá de 50. Una tercera solución es usar escala logarítmica en ambos ejes, usando el comando de graficación <code class="docutils literal notranslate"><span class="pre">loglog()</span></code>.</p>
@@ -449,7 +449,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d119d683a4a2c1196dde29b0b9e88e9ea25d3f20b570b80ccd6945253635f63c.png" src="_images/d119d683a4a2c1196dde29b0b9e88e9ea25d3f20b570b80ccd6945253635f63c.png" />
+<img alt="_images/41fc9b5fd6ef98ffec942aaac275f17dedff6a9218e29a6f7f61d935f650b2de.png" src="_images/41fc9b5fd6ef98ffec942aaac275f17dedff6a9218e29a6f7f61d935f650b2de.png" />
 </div>
 </div>
 <p>Las gráficas con escala logaritmica son especialemente útiles en ingeniería electrónica para representar el comportamiento o respuesta en frecuencia de los amplificadores dada el amplio rango de frecuencias que se manejan. Por ejemplo, la respuesta en frecuencia de un circuito RLC serie (resistecia, inductrancia capacitancia) se presenta en variable compleja como se muestra en el siguiente código:</p>
@@ -499,7 +499,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/bf8a4b18f067a32670108fa0ce681aaffd9b813cfeb691ed0e8cd2f85e4873d2.png" src="_images/bf8a4b18f067a32670108fa0ce681aaffd9b813cfeb691ed0e8cd2f85e4873d2.png" />
+<img alt="_images/7e0b72409982a1855878e05732a964d1695f1291f33b42cb0fe9f3f956dfb8ee.png" src="_images/7e0b72409982a1855878e05732a964d1695f1291f33b42cb0fe9f3f956dfb8ee.png" />
 </div>
 </div>
 </section>
@@ -542,26 +542,28 @@ document.write(`
 <span class="nb">clc</span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 
-<span class="n">a</span><span class="p">=[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">11</span><span class="p">];</span>
-<span class="n">b</span><span class="p">=[</span><span class="n">a</span><span class="p">;</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">];</span>
+<span class="n">a</span><span class="p">=[</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">2.1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mf">9.4</span><span class="p">,</span><span class="mf">4.3</span><span class="p">,</span><span class="mi">7</span><span class="p">];</span>
+<span class="n">b</span><span class="p">=[</span><span class="n">a</span><span class="p">;</span><span class="mi">2</span><span class="p">:</span><span class="mi">8</span><span class="p">];</span>
 
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">bar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica de barras&quot;</span><span class="p">)</span>
+<span class="nb">pie3</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica circular tridimencional&quot;</span><span class="p">)</span>
+
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">bar</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica de barras de una matriz&quot;</span><span class="p">)</span>
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">bar3</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica de barras tridimencional&quot;</span><span class="p">)</span>
+<span class="nb">bar</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica de barras&quot;</span><span class="p">)</span>
+
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">pie3</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica circular tridimencional&quot;</span><span class="p">)</span>
+<span class="nb">bar3</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Gráfica tridimencional&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f8b619fa4c4a7cad10c3829a8dec88e3b4d3058f5089a4a925f388332dc4691c.png" src="_images/f8b619fa4c4a7cad10c3829a8dec88e3b4d3058f5089a4a925f388332dc4691c.png" />
+<img alt="_images/cba0279a5e36df8fdf337d172ec604324803ff039c602c3b46fd56ab6c3a64f2.png" src="_images/cba0279a5e36df8fdf337d172ec604324803ff039c602c3b46fd56ab6c3a64f2.png" />
 </div>
 </div>
 </section>
@@ -595,7 +597,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8bdb0b6c830d0b6e15128172e287b4d7cae53f07e27348021563599f409e6f79.png" src="_images/8bdb0b6c830d0b6e15128172e287b4d7cae53f07e27348021563599f409e6f79.png" />
+<img alt="_images/1faea59c9f3ce45dc663b75de75b6e5ab26628713eeb971da4c515af6f4edeb1.png" src="_images/1faea59c9f3ce45dc663b75de75b6e5ab26628713eeb971da4c515af6f4edeb1.png" />
 </div>
 </div>
 <p>Como se observa en la gráfica anterior, es imposible comparar las dos magnitudes dada la gran diferencia en sus magnitudes. En MATLAB, es posible juntar ambas gráficas usando el comando <code class="docutils literal notranslate"><span class="pre">plotyy()</span></code> para generar una gráfica de datos que adapte las escalas para poder contrastar dos curvas, como se muestra en el siguiente código:</p>
@@ -613,7 +615,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6fce65f4cd883cdf858901da5a3b7ed26cc340f677d561d3171aa9466ebc9432.png" src="_images/6fce65f4cd883cdf858901da5a3b7ed26cc340f677d561d3171aa9466ebc9432.png" />
+<img alt="_images/c8a17e30428a3618d0c32334c323964a5ccddb029c0c16438f0c623aa0cfec5c.png" src="_images/c8a17e30428a3618d0c32334c323964a5ccddb029c0c16438f0c623aa0cfec5c.png" />
 </div>
 </div>
 </section>
