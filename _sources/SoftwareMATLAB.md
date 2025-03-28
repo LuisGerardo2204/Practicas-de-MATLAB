@@ -13,16 +13,16 @@ kernelspec:
   name: Octave
 ---
 
-# Breve introducción a MATLAB
+# Breve introducción a MATLAB®
 
-Para empezar con este cuadernillo de prácticas, empezaremos por definir el software MATLAB: A diferencia de un lenguaje de programación, este software es una herramienta computacional que integra un conjunto de funciones específicas y sub-interfaces para el desarrollo de soluciones matemáticas de métodos numéricos, simulación, redes neuronales e incluso visión artificial. 
+Para empezar con este cuadernillo de prácticas, empezaremos por definir el software MATLAB®: A diferencia de un lenguaje de programación, este software es una herramienta computacional que integra un conjunto de funciones específicas y sub-interfaces para el desarrollo de soluciones matemáticas de métodos numéricos, simulación, redes neuronales e incluso visión artificial. 
 
 
 La interfaz gráfica o ventana principal del software se muestra en la {numref}`figura1`.
 ```{figure} /images/figura1.jpg
 :height: 450px
 :name: figura1
-Pantalla principal de MATLAB
+Pantalla principal de MATLAB®
 ```
 
 Las funciones y operaciones básicas, así como los cálculos con fórmulas complejas se llevan a cabo utilizando la ventana de comandos (ver {numref}`figura2`). Esta ventana de comandos recueerda a una calculadora científica, como es posible intuir, la sintaxis para realizar operaciones es muy similar a la que se utiliza en ese tipo de calculadoras. Para realizar una operación básica basta con expresarla con la sintaxis correcta, por ejemplo: 
@@ -57,7 +57,7 @@ Area de la carpeta activa (Current folder)
 ```{figure} /images/figura3c.jpg
 :height: 150px
 :name: figura5
-Area de inicio general de MATLAB (Home)
+Area de inicio general de MATLAB® (Home)
 
 ```
 

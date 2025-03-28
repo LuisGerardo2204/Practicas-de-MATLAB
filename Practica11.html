@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Práctica 11: Algunos Métodos numéricos con MATLAB\(^{\textregistered}\) &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <title>Práctica 11: Algunos Métodos numéricos con MATLAB® &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
   
@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica11';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Práctica 12: Diferenciación e integración numéricas con MATLAB\(^{\textregistered}\)" href="Practica12.html" />
+    <link rel="next" title="Práctica 12: Diferenciación e integración numéricas con MATLAB®" href="Practica12.html" />
     <link rel="prev" title="Práctica 10: Otros tipos de gráficas" href="Practica10.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -170,12 +170,12 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Prácticas con el software MATLAB^{\textregistered}
+                    Prácticas con el software MATLAB®
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="SoftwareMATLAB.html">Breve introducción a MATLAB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SoftwareMATLAB.html">Breve introducción a MATLAB®</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica1.html">Práctica 1: Primeros pasos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica2.html">Práctica 2: Archivos de programa y funciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica3.html">Práctica 3: Sentencias de control</a></li>
@@ -186,9 +186,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica8.html">Práctica 8: Importación de datos desde archivos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica9.html">Práctica 9: Graficación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica10.html">Práctica 10: Otros tipos de gráficas</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 11: Algunos Métodos numéricos con MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 11: Algunos Métodos numéricos con MATLAB®</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="Practica12.html">Práctica 12: Diferenciación e integración numéricas con MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span></a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica12.html">Práctica 12: Diferenciación e integración numéricas con MATLAB®</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica13.html">Práctica 13: Simulación de sistemas dinámicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica14.html">Práctica 14: Creación de interfaces gráficas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
@@ -330,7 +330,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Práctica 11: Algunos Métodos numéricos con MATLAB^{\textregistered}</h1>
+    <h1>Práctica 11: Algunos Métodos numéricos con MATLAB®</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -340,7 +340,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Práctica 11: Algunos Métodos numéricos con MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Práctica 11: Algunos Métodos numéricos con MATLAB®</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">Interpolación lineal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterpolacion-con-aproximacion-no-lineal">Iterpolación con aproximación no lineal</a></li>
 </ul>
@@ -364,16 +364,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="practica-11-algunos-metodos-numericos-con-matlab-textregistered">
-<h1>Práctica 11: Algunos Métodos numéricos con MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span><a class="headerlink" href="#practica-11-algunos-metodos-numericos-con-matlab-textregistered" title="Permalink to this heading">#</a></h1>
-<p>Los métodos numéricos son las herramientas matemáticas que permiten resolver problemas de ingeniería usando operaciones básicas que permiten aproximar soluciones a planteamientos de cálculo integral y diferencial. Los métodos numéricos como procedimientos matemáticos formales se ven ampliamente favorecidos con las herramientas computacionales como lo son los lenguajes de programación y por supuesto, ambientes especializados como MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span>.</p>
-<p>En esta práctica, haremos uso de las funciones incluidas en MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span> para la aplicación de métodos numéricos a conjuntos de datos. Exploraremos las técnicas de interpolación y regresión numérica en forma introductoria.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-11-algunos-metodos-numericos-con-matlab">
+<h1>Práctica 11: Algunos Métodos numéricos con MATLAB®<a class="headerlink" href="#practica-11-algunos-metodos-numericos-con-matlab" title="Permalink to this heading">#</a></h1>
+<p>Los métodos numéricos son las herramientas matemáticas que permiten resolver problemas de ingeniería usando operaciones básicas que permiten aproximar soluciones a planteamientos de cálculo integral y diferencial. Los métodos numéricos como procedimientos matemáticos formales se ven ampliamente favorecidos con las herramientas computacionales como lo son los lenguajes de programación y por supuesto, ambientes especializados como MATLAB®.</p>
+<p>En esta práctica, haremos uso de las funciones incluidas en MATLAB® para la aplicación de métodos numéricos a conjuntos de datos. Exploraremos las técnicas de interpolación y regresión numérica en forma introductoria.</p>
 <section id="interpolacion-lineal">
 <h2>Interpolación lineal<a class="headerlink" href="#interpolacion-lineal" title="Permalink to this heading">#</a></h2>
 <p>La interpolación lineal es una técnica que permite determinar valores numéricos de variables experimentales que no se encuentran en un conjunto de mediciones experimentales. Cuando se realiza un experimento, es imposible tomar mediciones de cada uno de los pares ordenados o puntos de interés (<span id="id1">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>). Lo anterior se ejemplifica en la siguiente figura:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/42e47db68cce25f4b9f190af058731ae16e7da439b67b31c312c2ab4d08a2ce8.png" src="_images/42e47db68cce25f4b9f190af058731ae16e7da439b67b31c312c2ab4d08a2ce8.png" />
+<img alt="_images/1a086dadabad64a256a3faa4e6cd33bfdca3227b23f316946bd2409973177807.png" src="_images/1a086dadabad64a256a3faa4e6cd33bfdca3227b23f316946bd2409973177807.png" />
 </div>
 </div>
 <p>El método más común para encontrar punto que falta, que se ilustra en la figura anterior es el conocido como la interpolación lineal. Esta técnica consiste en asumir que el comportamiento de los datos es lineal, es decir, se asume que los datos que se midieron de forma experimental describen un comportamiento que se puede modelar usando una línea recta. Si se conoce la ecuación de dicha recta, es posible determinar el valor de cualquier valor de la variable <span class="math notranslate nohighlight">\(y\)</span>, a partir de cualquier valor deseado o propuesto para la variable <span class="math notranslate nohighlight">\(x\)</span>. Entre más cercanos estén entre ellos los puntos, más precisa será la aproximación (<span id="id2">Moore [<a class="reference internal" href="Bibliograf%C3%ADa.html#id5" title="Holly Moore. MATLAB®para ingenieros. Engineering mathematics-Data processing. Pearson Education, tercera edition, 2013. ISBN 9780132103251.">Moo13</a>]</span>, <span id="id3">Chapra <em>et al.</em> [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="S.C. Chapra, R.P. Canale, J.E. Brito, and M.C.R. Hano. Métodos numéricos para ingenieros. Elibro Catedra. McGraw-Hill, 2006. ISBN 9789701061145. URL: https://books.google.com.mx/books?id=hoH0MAAACAAJ.">CCBH06</a>]</span>).</p>
@@ -390,7 +390,7 @@ document.write(`
 <p>Esto significa que el punto obtenido con interpolación corresponde a las coordenadas <span class="math notranslate nohighlight">\(x=5\)</span> y <span class="math notranslate nohighlight">\(y=3.6154\)</span>, es decir <span class="math notranslate nohighlight">\(P_{interpolado}=(5,3.6154)\)</span>. De forma gráfica, el valor calculado para la coordenada <span class="math notranslate nohighlight">\(y\)</span> se usa para construir el punto interpolado deseado, como se muestra en la siguiente figura:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/077e30c45ede07b5a22d525a996f640e43e07c9675b80943bb1add2068d9fee6.png" src="_images/077e30c45ede07b5a22d525a996f640e43e07c9675b80943bb1add2068d9fee6.png" />
+<img alt="_images/0e1471acf8e3fbfc3f8769876e812aff770d7514d452aaf8891a7da0c5c7f012.png" src="_images/0e1471acf8e3fbfc3f8769876e812aff770d7514d452aaf8891a7da0c5c7f012.png" />
 </div>
 </div>
 <p>Es posible interpolar múltiples valores de la variable independiente con un solo uso de la istrucción <code class="docutils literal notranslate"><span class="pre">iterp1()</span></code>, por ejemplo para los pares ordenados de la siguiente tabla:</p>
@@ -461,13 +461,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/a8ae43ba1e8c717f38ff1783c776bcbcee4fb5af8801c1b7900c1132cc321941.png" src="_images/a8ae43ba1e8c717f38ff1783c776bcbcee4fb5af8801c1b7900c1132cc321941.png" />
+<img alt="_images/e4d90b5611c1132ee5906ee41c7c6f2e0cdf15d8f77190577e0053ea0c77bca7.png" src="_images/e4d90b5611c1132ee5906ee41c7c6f2e0cdf15d8f77190577e0053ea0c77bca7.png" />
 </div>
 </div>
 </section>
 <section id="iterpolacion-con-aproximacion-no-lineal">
 <h2>Iterpolación con aproximación no lineal<a class="headerlink" href="#iterpolacion-con-aproximacion-no-lineal" title="Permalink to this heading">#</a></h2>
-<p>Una forma de interpolar datos que no se encuentran en el conjunto de mediciones experimentales, de manera más suave que la que se realiza por medio de la interpolación usando lineas rectas es la interpolación no lineal. Usando esta técnica de interpolación se consigue un comportamiento más suave de las aproximaciones. Para hacer uso de esta técnica en <span class="math notranslate nohighlight">\(^{\textregistered}\)</span>, se especifica el tipo de interpolación añadiendo una cadena de caracteres con la especificación deseada para la interpolación; <code class="docutils literal notranslate"><span class="pre">iterp1(x,y,'spline')</span></code>. Lo anterior queda ejemplificado con las siguientes líneas de código que retoman el primer caso ejmplo para interpolación lineal de los puntos :</p>
+<p>Una forma de interpolar datos que no se encuentran en el conjunto de mediciones experimentales, de manera más suave que la que se realiza por medio de la interpolación usando lineas rectas es la interpolación no lineal. Usando esta técnica de interpolación se consigue un comportamiento más suave de las aproximaciones. Para hacer uso de esta técnica en MATLAB®, se especifica el tipo de interpolación añadiendo una cadena de caracteres con la especificación deseada para la interpolación; <code class="docutils literal notranslate"><span class="pre">iterp1(x,y,'spline')</span></code>. Lo anterior queda ejemplificado con las siguientes líneas de código que retoman el primer caso ejmplo para interpolación lineal de los puntos :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">interp1</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mf">7.5</span><span class="p">],[</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">9</span><span class="p">],</span><span class="mi">5</span><span class="p">,</span><span class="s">&#39;spline&#39;</span><span class="p">)</span>
@@ -487,14 +487,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1797748a65643197788e0496d7f17fe7c3cfacfa3dfd6ef4fa61f4a2860dc6b0.png" src="_images/1797748a65643197788e0496d7f17fe7c3cfacfa3dfd6ef4fa61f4a2860dc6b0.png" />
+<img alt="_images/df82d948f157213e8cb6410d5da6e2f72bb73b3441398c70d82a71ba7f9a797c.png" src="_images/df82d948f157213e8cb6410d5da6e2f72bb73b3441398c70d82a71ba7f9a797c.png" />
 </div>
 </div>
 <p>La siguiente tabla muestra un resumen de las opciones disponibles para la interpolación de datos usando el compado <code class="docutils literal notranslate"><span class="pre">interp1()</span></code>:</p>
 <table class="table" id="tabla-interp">
 <caption><span class="caption-number">Tabla 14 </span><span class="caption-text">Tabla de opciones de interpolación.</span><a class="headerlink" href="#tabla-interp" title="Enlace permanente a esta tabla">#</a></caption>
 <thead>
-<tr class="row-odd"><th class="head"><p>Comando MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span></p></th>
+<tr class="row-odd"><th class="head"><p>Comando MATLAB®</p></th>
 <th class="head"><p>Descripción</p></th>
 </tr>
 </thead>
@@ -608,7 +608,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8d6c508adc1e07f1e1c4cfac4c3d0b59f89e3016d11f124b23aca434ec191295.png" src="_images/8d6c508adc1e07f1e1c4cfac4c3d0b59f89e3016d11f124b23aca434ec191295.png" />
+<img alt="_images/213fde6ae33943e842863ea7b8a18fbaf524bb798b8726aa084fdcfb540b76ab.png" src="_images/213fde6ae33943e842863ea7b8a18fbaf524bb798b8726aa084fdcfb540b76ab.png" />
 </div>
 </div>
 </section>
@@ -646,7 +646,7 @@ document.write(`
 </tr>
 </tbody>
 </table>
-<p>Para encontrar el valor de la variable <span class="math notranslate nohighlight">\(z\)</span> cuando <span class="math notranslate nohighlight">\(y=1.5\)</span> y <span class="math notranslate nohighlight">\(x=1.8\)</span>, dado que son valores que no se tienen disponibles en la tabla de mediciones, es necesario hacer una interpolación. Para hacer una interpolación en el caso de dos variables independientes, se utiliza la función nativa de MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span> <code class="docutils literal notranslate"><span class="pre">interp2()</span></code> Las siguientes líneas de código muestran el proceso:</p>
+<p>Para encontrar el valor de la variable <span class="math notranslate nohighlight">\(z\)</span> cuando <span class="math notranslate nohighlight">\(y=1.5\)</span> y <span class="math notranslate nohighlight">\(x=1.8\)</span>, dado que son valores que no se tienen disponibles en la tabla de mediciones, es necesario hacer una interpolación. Para hacer una interpolación en el caso de dos variables independientes, se utiliza la función nativa de MATLAB®  <code class="docutils literal notranslate"><span class="pre">interp2()</span></code> Las siguientes líneas de código muestran el proceso:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
@@ -667,7 +667,7 @@ document.write(`
 </div>
 <section id="regresion-basica-o-ajuste-de-curvas">
 <h2>Regresión básica o ajuste de curvas<a class="headerlink" href="#regresion-basica-o-ajuste-de-curvas" title="Permalink to this heading">#</a></h2>
-<p>La interpolación, junto con todas sus opciones permite encontrar valores numéricos de datos que no fueron adquiridos o medidos de manera experimental, sin embargo, es un proceso que es conveniente cuando se requieren solo los valores numéricos de un conjunto de datos que no se midieron de forma experimental. La regresión de datos o ajuste de curvas (curve fitting en inglés) permite encontrar un modelo, es decir, una función que describa el comportamiento del conjunto de datos experimentales por medio de una fórmula específica expresada como <span class="math notranslate nohighlight">\(y=f(x)\)</span>. A continuación se presentan las funciones básicas de regresión de datos disponibles en MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span>.</p>
+<p>La interpolación, junto con todas sus opciones permite encontrar valores numéricos de datos que no fueron adquiridos o medidos de manera experimental, sin embargo, es un proceso que es conveniente cuando se requieren solo los valores numéricos de un conjunto de datos que no se midieron de forma experimental. La regresión de datos o ajuste de curvas (curve fitting en inglés) permite encontrar un modelo, es decir, una función que describa el comportamiento del conjunto de datos experimentales por medio de una fórmula específica expresada como <span class="math notranslate nohighlight">\(y=f(x)\)</span>. A continuación se presentan las funciones básicas de regresión de datos disponibles en MATLAB®.</p>
 </section>
 <section id="regresion-lineal">
 <h2>Regresión lineal<a class="headerlink" href="#regresion-lineal" title="Permalink to this heading">#</a></h2>
@@ -712,10 +712,10 @@ y=-5.5840x+15.5
 <p>La gráfica siguiente muestra una comparación entre los datos originales y la recta cuya pendiente y ordenada al origen se calculó usando el primero y el útimo punto del conjunto de datos:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/6f7f93a83bf82facfc06f96209eb88e9831c3217ce7ff035a229341798dcd0ae.png" src="_images/6f7f93a83bf82facfc06f96209eb88e9831c3217ce7ff035a229341798dcd0ae.png" />
+<img alt="_images/6bce655dd8a7280a8265515e7d823806e1841e6b4abee63e7b05d2a5ab86f6ad.png" src="_images/6bce655dd8a7280a8265515e7d823806e1841e6b4abee63e7b05d2a5ab86f6ad.png" />
 </div>
 </div>
-<p>El método de los mínimos cuadrados permite el ajuste óptimo de la recta, es decir, proporciona el valor de la pendiente y la ordenada al origen de la recta que se propone como modelo que mejor se ajuste a los datos experimentales. La explicación del método de los mínimos cuadrados está fuera del ámbito de este curso y se puede consultar en la literatura (<span id="id4">Chapra <em>et al.</em> [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="S.C. Chapra, R.P. Canale, J.E. Brito, and M.C.R. Hano. Métodos numéricos para ingenieros. Elibro Catedra. McGraw-Hill, 2006. ISBN 9789701061145. URL: https://books.google.com.mx/books?id=hoH0MAAACAAJ.">CCBH06</a>]</span>). MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span> ofrece el método de los mínimos cuadrados en la función <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>. Para el ejemplo anterior se usan las siguientes líneas de código para efectuar la regresión lineal de los datos propuestos y se comparan con la primera aproximación que se mostró en la gráfica anterior, primero se muestra el cálculo de la ecuación del de la recta que minimiza la diferencia entre los datos calculados con el modelo y los datos experimentales:</p>
+<p>El método de los mínimos cuadrados permite el ajuste óptimo de la recta, es decir, proporciona el valor de la pendiente y la ordenada al origen de la recta que se propone como modelo que mejor se ajuste a los datos experimentales. La explicación del método de los mínimos cuadrados está fuera del ámbito de este curso y se puede consultar en la literatura (<span id="id4">Chapra <em>et al.</em> [<a class="reference internal" href="Bibliograf%C3%ADa.html#id3" title="S.C. Chapra, R.P. Canale, J.E. Brito, and M.C.R. Hano. Métodos numéricos para ingenieros. Elibro Catedra. McGraw-Hill, 2006. ISBN 9789701061145. URL: https://books.google.com.mx/books?id=hoH0MAAACAAJ.">CCBH06</a>]</span>). MATLAB® ofrece el método de los mínimos cuadrados en la función <code class="docutils literal notranslate"><span class="pre">polyfit()</span></code>. Para el ejemplo anterior se usan las siguientes líneas de código para efectuar la regresión lineal de los datos propuestos y se comparan con la primera aproximación que se mostró en la gráfica anterior, primero se muestra el cálculo de la ecuación del de la recta que minimiza la diferencia entre los datos calculados con el modelo y los datos experimentales:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
@@ -758,7 +758,7 @@ nótese que la estructura de la instrucción <code class="docutils literal notra
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/84623a859a2d05a883714f28397dd3f31647a4b68fd047bbeae7c12ae0090340.png" src="_images/84623a859a2d05a883714f28397dd3f31647a4b68fd047bbeae7c12ae0090340.png" />
+<img alt="_images/68f3f186a4ac2832f06eb1e2d7bfb194b84ae9875016487c16a90903d3b4ca34.png" src="_images/68f3f186a4ac2832f06eb1e2d7bfb194b84ae9875016487c16a90903d3b4ca34.png" />
 </div>
 </div>
 </section>
@@ -835,7 +835,7 @@ y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/2566d31651a9f139c437769ad1551458e63cfa7ac1f8639f0e41df09512bc853.png" src="_images/2566d31651a9f139c437769ad1551458e63cfa7ac1f8639f0e41df09512bc853.png" />
+<img alt="_images/b634ef95fda9f59ddf0379da44d02af0a5c3ba715f86c8e5ca6d64364e361caa.png" src="_images/b634ef95fda9f59ddf0379da44d02af0a5c3ba715f86c8e5ca6d64364e361caa.png" />
 </div>
 </div>
 </section>
@@ -984,7 +984,7 @@ y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Práctica 12: Diferenciación e integración numéricas con MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span></p>
+        <p class="prev-next-title">Práctica 12: Diferenciación e integración numéricas con MATLAB®</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1003,7 +1003,7 @@ y= 0.5407x^3-2.0835x^2-3.7830x+15.5437
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Práctica 11: Algunos Métodos numéricos con MATLAB<span class="math notranslate nohighlight">\(^{\textregistered}\)</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Práctica 11: Algunos Métodos numéricos con MATLAB®</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpolacion-lineal">Interpolación lineal</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterpolacion-con-aproximacion-no-lineal">Iterpolación con aproximación no lineal</a></li>
 </ul>
