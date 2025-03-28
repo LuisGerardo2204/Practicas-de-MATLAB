@@ -14,7 +14,7 @@ kernelspec:
 ---
  # Práctica 2: Archivos de programa y funciones
 
- En esta práctica se presenta el procedimiento para generar funciones personalizadas y programas. MATLAB cuenta con un basto repertorio de funciones y operaciones nativas como las que se utilizaron en la práctica pasada. Cuando re requiere ejecutar un conjunto de instrucciones en particular de manera repetida, que no se encuentre entre las que ofrece MATLAB, se debe crear una función o programa. 
+ En esta práctica se presenta el procedimiento para generar funciones personalizadas y programas. MATLAB$^{\textregistered}$ cuenta con un basto repertorio de funciones y operaciones nativas como las que se utilizaron en la práctica pasada. Cuando re requiere ejecutar un conjunto de instrucciones en particular de manera repetida, que no se encuentre entre las que ofrece MATLAB$^{\textregistered}$, se debe crear una función o programa. 
 
 ```{admonition} Características de las funciones y los programas
 Las diferencias entre programas y funciones son las siguientes:
@@ -37,7 +37,7 @@ de trabajo en donde todos los archivos se almacenen. Para seleccionar una carpet
 
 ## Creación de programas
 
-Un programa en MATLAB es un conjunto de instrucciones que se escriben como una secuencia de pasos para lograr un determinado objetivo. Dichas instrucciones se almacenan en un archivo de texto. El archivo generado tendrá la extensión .m, lo que le permite a MATLAB identificar que se trata de un conjunto de instrucciones o sentencias ejecutables en el command window de manera automática. El programa o conjunto de instrucciones se genera usando la pestaña nombrada editor, en el siguiente video se muestra el procedimiento para escribir un programa:
+Un programa en MATLAB$^{\textregistered}$ es un conjunto de instrucciones que se escriben como una secuencia de pasos para lograr un determinado objetivo. Dichas instrucciones se almacenan en un archivo de texto. El archivo generado tendrá la extensión .m, lo que le permite a MATLAB$^{\textregistered}$ identificar que se trata de un conjunto de instrucciones o sentencias ejecutables en el command window de manera automática. El programa o conjunto de instrucciones se genera usando la pestaña nombrada editor, en el siguiente video se muestra el procedimiento para escribir un programa:
 
  <div align='center'>
 <video controls autoplay muted="true" loop="true" width="600">
@@ -88,7 +88,7 @@ El procedimiento para generar funciones se presenta en el siguiente video:
 </video>
 </div>
 
-Una función se diferencia de un programa por que tiene la característica de solicitar variables de entrada, en el caso de este ejemplo, el parámetro de entrada o argumento es el radio y la salida es la multiplicación de este valor al cuadrado por la constante $\pi$, que en MATLAB está almacenada en una variable propia llamada pi.
+Una función se diferencia de un programa por que tiene la característica de solicitar variables de entrada, en el caso de este ejemplo, el parámetro de entrada o argumento es el radio y la salida es la multiplicación de este valor al cuadrado por la constante $\pi$, que en MATLAB$^{\textregistered}$ está almacenada en una variable propia llamada pi.
 
 ```Octave
 function a=area_circulo(radio)
@@ -123,7 +123,7 @@ area_circulo(radio1)
 ## Entrada de datos a traves del teclado
 
 A menudo se requiere de la interacción con el usuario de un programa, en el sentido de que resulta más cómodo proporcionar un valor numérico a través del teclado, en vez de editar el código si se requiere hacer cálculos de formulas incluidas en el cuerpo de los programas con diferentes valores o parámetros. La instrucción para proporcionar datos a través del teclado en  
-MATLAB es `a=input("mensaje")`, donde `a` es la variable en donde se almacena el dato proporcionado por el usuario. Por ejemplo, la estructura de un programa que calcula el volumen de un tanque cilíndrico es la siguiente:
+MATLAB$^{\textregistered}$ es `a=input("mensaje")`, donde `a` es la variable en donde se almacena el dato proporcionado por el usuario. Por ejemplo, la estructura de un programa que calcula el volumen de un tanque cilíndrico es la siguiente:
 
 
 ```Octave
