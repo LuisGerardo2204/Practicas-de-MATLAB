@@ -176,8 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica11.html">Práctica 11: Algunos Métodos numéricos con MATLAB®</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Practica12.html">Práctica 12: Diferenciación e integración numéricas con MATLAB®</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practica13.html">Práctica 13: Simulación de sistemas dinámicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practica14.html">Práctica 14: Creación de interfaces gráficas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica13.html">Práctica 13: Imágenes y animaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica14.html">Práctica 14: Simulación de sistemas dinámicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica15.html">Práctica 15: Creación de interfaces gráficas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -367,7 +368,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">=</span><span class="mi">3</span><span class="w"> </span><span class="c">%Asignación del valor 3 a la variable a</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mi">3</span> <span class="o">%</span><span class="k">Asignación</span> del valor 3 a la variable a
 </pre></div>
 </div>
 </div>
@@ -387,21 +388,21 @@ y operaciones comunes en MATLAB®:</p>
 <p>Para reproducir estas operaciones, se puede copiar y pegar el conjunto de instrucciones siguiente en el command wondow de MATLAB®.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
-<span class="n">a</span><span class="p">=</span><span class="mi">3</span><span class="w">  </span><span class="c">% Creación de variables y asignación de valores numéricos</span>
-<span class="n">b</span><span class="p">=</span><span class="mi">45</span><span class="w"> </span><span class="c">% </span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Multiplicación a*b&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span>
+<span class="n">a</span><span class="o">=</span><span class="mi">3</span>  <span class="o">%</span> <span class="n">Creación</span> <span class="n">de</span> <span class="n">variables</span> <span class="n">y</span> <span class="n">asignación</span> <span class="n">de</span> <span class="n">valores</span> <span class="n">numéricos</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">45</span> <span class="o">%</span> 
+<span class="n">disp</span><span class="p">(</span><span class="s2">&quot;Multiplicación a*b&quot;</span><span class="p">)</span>
 <span class="n">a</span><span class="o">*</span><span class="n">b</span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Suma a+b&quot;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="w"> </span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Resta a-b&quot;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="w">  </span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;División a/b&quot;</span><span class="p">)</span>
-<span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="w"> </span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Potencia a^b (a elevado a la potencia b)&quot;</span><span class="p">)</span>
-<span class="n">a</span>^<span class="mi">3</span><span class="w">  </span>
-<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Raiz cuadrada de a&quot;</span><span class="p">)</span>
-<span class="nb">sqrt</span><span class="p">(</span><span class="n">b</span><span class="p">)</span><span class="w"> </span>
+<span class="n">disp</span><span class="p">(</span><span class="s2">&quot;Suma a+b&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">+</span><span class="n">b</span> 
+<span class="n">disp</span><span class="p">(</span><span class="s2">&quot;Resta a-b&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">-</span><span class="n">b</span>  
+<span class="n">disp</span><span class="p">(</span><span class="s2">&quot;División a/b&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">/</span><span class="n">b</span> 
+<span class="n">disp</span><span class="p">(</span><span class="s2">&quot;Potencia a^b (a elevado a la potencia b)&quot;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">^</span><span class="mi">3</span>  
+<span class="n">disp</span><span class="p">(</span><span class="s2">&quot;Raiz cuadrada de a&quot;</span><span class="p">)</span>
+<span class="n">sqrt</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -429,7 +430,7 @@ y operaciones comunes en MATLAB®:</p>
 <p>Una instrucción muy útil es la de limpiar pantalla, esto permite borrar resultados anteriores para evitar la saturación de datos desplegados.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clc</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clc</span>
 </pre></div>
 </div>
 </div>
@@ -437,7 +438,7 @@ y operaciones comunes en MATLAB®:</p>
 <p>También se puede desplegar información de las variables creadas y su tamaño en memoria</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">whos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">whos</span>
 </pre></div>
 </div>
 </div>
@@ -453,7 +454,7 @@ y operaciones comunes en MATLAB®:</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">close</span> <span class="nb">all</span>
 </pre></div>
 </div>
 </div>
@@ -462,8 +463,8 @@ y operaciones comunes en MATLAB®:</p>
 Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de un comando whos, esto producirá una salida vacía que indica que no hay variables en el espacio de trabajo o workspace.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
-<span class="nb">whos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clear</span>
+<span class="n">whos</span>
 </pre></div>
 </div>
 </div>
@@ -474,7 +475,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 <p>Es posible realizar la conversión de un conjunto de datos en un sistema de unidades a otro usando variables tipo arreglo en MATLAB®. Haremos un ejemplo de la conversión a grados Farenheit de un conjunto de datos almacenados en un arreglo en las siguientes líneas de código. Se crea el conjunto de datos en grados Centígrados <span class="math notranslate nohighlight">\(-4&lt;°C&lt;4\)</span> con incremento de <span class="math notranslate nohighlight">\(1\)</span> <span class="math notranslate nohighlight">\(°C\)</span>, para tener un total de 10 datos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">=[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -487,7 +488,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 <p>En MATLAB®, la operación se realiza en el vector completo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="p">=(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -495,7 +496,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 <p>Se puede desplegar la información en forma de tabla si se crea una variable tipo matriz para tal efecto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Tabla_conv</span><span class="p">=[</span><span class="n">C</span><span class="o">&#39;</span><span class="w"> </span><span class="n">F</span><span class="o">&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Tabla_conv</span><span class="o">=</span><span class="p">[</span><span class="n">C</span><span class="s1">&#39; F&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -515,7 +516,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 <p>La comilla simple se usa para generar la versión transpuesta de un vector o matriz, es decir, se puede convertir un vector fila en un vector columna, por ejemplo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="p">=[</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span> <span class="o">-</span><span class="mi">1</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -527,7 +528,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 <p>Su versión transpuesta <span class="math notranslate nohighlight">\(V^{T}\)</span> es</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="o">&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -541,7 +542,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 <p>En caso de ser necesario, es posible hacer la conversión de grados Centígrados a Farenheit con una mayor resolución, de manera tal que en vez de mostrar una tabla de conversiones se puede mostrar una gráfica. Por ejemplo, para en rango de grados Centígrados <span class="math notranslate nohighlight">\(-4&lt;°C&lt;40\)</span> con incremento de <span class="math notranslate nohighlight">\(0.5\)</span> <span class="math notranslate nohighlight">\(°C\)</span>, para tener un total de 91 pares de datos, en MATLAB® se expresa lo siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="p">=[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">40</span><span class="p">];</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.5</span><span class="p">:</span><span class="mi">40</span><span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -549,7 +550,7 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 <p>Se hace la conversión a grados Farenheit como en el caso anterior, usando la Ecuación <a class="reference internal" href="#equation-conv-grados">(1)</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="p">=(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">C</span><span class="o">+</span><span class="mi">32</span><span class="p">;</span>
 </pre></div>
 </div>
 </div>
@@ -558,8 +559,8 @@ Fácilmente se puede comprobar lo anterior usando un comando clear, seguido de u
 y la variable dependiente separadas por una coma</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
-<span class="nb">plot</span><span class="w"> </span><span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">F</span><span class="p">)</span><span class="w"> </span><span class="c">%Gráfica</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span>
+<span class="n">plot</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span><span class="n">F</span><span class="p">)</span> <span class="o">%</span><span class="k">Gráfica</span>
 </pre></div>
 </div>
 </div>
@@ -581,7 +582,7 @@ expresada en la ecuación siguiente:</p>
 <p>Se genera un vector de tiempo en el intervalo definido como <span class="math notranslate nohighlight">\(0&lt;t&lt;5\)</span> con un incremento <span class="math notranslate nohighlight">\(\Delta t=0.001\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="p">=[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">];</span>
 </pre></div>
 </div>
 </div>
@@ -589,7 +590,7 @@ expresada en la ecuación siguiente:</p>
 <p>Después se genera la variable independiente <span class="math notranslate nohighlight">\(y(t)\)</span> evaluando la función con operadores multiplicación y exponencial</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="p">=</span><span class="nb">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="nb">cos</span><span class="p">(</span><span class="mf">11.35</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="o">*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="n">cos</span><span class="p">(</span><span class="mf">11.35</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -599,7 +600,7 @@ constante o escalares</p>
 <p>Se genera la gráfica usando la instrucción plot</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -643,7 +644,7 @@ B=\begin{bmatrix}
 <p>A continuación se construye la matriz y el vector usando los comandos de MATLAB®:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="p">=[</span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">-</span><span class="mi">5</span><span class="p">;</span><span class="n">1</span><span class="w"> </span><span class="s">0.5</span><span class="w"> </span><span class="s">3</span><span class="p">;</span><span class="o">-</span><span class="mi">2</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span> <span class="mi">2</span> <span class="o">-</span><span class="mi">5</span><span class="p">;</span><span class="mi">1</span> <span class="mf">0.5</span> <span class="mi">3</span><span class="p">;</span><span class="o">-</span><span class="mi">2</span> <span class="mi">7</span> <span class="o">-</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -657,7 +658,7 @@ B=\begin{bmatrix}
 <p>Para crear el vector de coeficientes:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="p">=[</span><span class="mi">10</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">B</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">;</span><span class="mi">5</span><span class="p">;</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -675,7 +676,7 @@ B=\begin{bmatrix}
  \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">=</span><span class="nb">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">B</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">=</span><span class="n">inv</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">*</span><span class="n">B</span>
 </pre></div>
 </div>
 </div>
@@ -689,7 +690,7 @@ B=\begin{bmatrix}
 <p>De manera alternativa, dado que <span class="math notranslate nohighlight">\(A^{-1}\)</span> es la inversa de la matriz <span class="math notranslate nohighlight">\(A\)</span>, se puede usar el comando inv(A), de manera que la solución se puede calcular como:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">=(</span><span class="n">A</span>^<span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">B</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">=</span><span class="p">(</span><span class="n">A</span><span class="o">^-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">B</span>
 </pre></div>
 </div>
 </div>
@@ -711,7 +712,7 @@ B=\begin{bmatrix}
 <p>Es fácil comprobar que estos valores satisfacen el sistema de ecuaciones si se realizan las sustituciones en el sistema de ecuaciones original:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Ecuacion (1) 3x+2y-5z</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Ecuacion</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="mi">3</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="n">y</span><span class="o">-</span><span class="mi">5</span><span class="n">z</span>
 <span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mf">3.4097</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mf">0.8546</span><span class="p">)</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="p">(</span><span class="mf">0.3877</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -721,7 +722,7 @@ B=\begin{bmatrix}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Ecuacion (2) x+0.5y+3z</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Ecuacion</span> <span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">x</span><span class="o">+</span><span class="mf">0.5</span><span class="n">y</span><span class="o">+</span><span class="mi">3</span><span class="n">z</span>
 <span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mf">3.4097</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="mf">0.8546</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mf">0.3877</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -731,7 +732,7 @@ B=\begin{bmatrix}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Ecuacion (3) -2x+7y-3z</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span> <span class="n">Ecuacion</span> <span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span><span class="mi">2</span><span class="n">x</span><span class="o">+</span><span class="mi">7</span><span class="n">y</span><span class="o">-</span><span class="mi">3</span><span class="n">z</span>
 <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mf">3.4097</span><span class="p">)</span><span class="o">+</span><span class="mi">7</span><span class="o">*</span><span class="p">(</span><span class="mf">0.8546</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="p">(</span><span class="mf">0.3877</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -776,16 +777,16 @@ en el que se realicen los siguientes ejercicios y problemas:</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "jupyter_matlab_kernel"
+            mode: "python"
         },
         kernelOptions: {
-            name: "jupyter_matlab_kernel",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'jupyter_matlab_kernel'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               

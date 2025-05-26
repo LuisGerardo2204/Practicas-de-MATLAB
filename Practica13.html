@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Práctica 13: Simulación de sistemas dinámicos &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <title>Práctica 13: Imágenes y animaciones &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
   
@@ -69,7 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica13';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Práctica 14: Creación de interfaces gráficas" href="Practica14.html" />
+    <link rel="next" title="Práctica 14: Simulación de sistemas dinámicos" href="Practica14.html" />
     <link rel="prev" title="Práctica 12: Diferenciación e integración numéricas con MATLAB®" href="Practica12.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -176,8 +176,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica11.html">Práctica 11: Algunos Métodos numéricos con MATLAB®</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="Practica12.html">Práctica 12: Diferenciación e integración numéricas con MATLAB®</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 13: Simulación de sistemas dinámicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practica14.html">Práctica 14: Creación de interfaces gráficas</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 13: Imágenes y animaciones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica14.html">Práctica 14: Simulación de sistemas dinámicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica15.html">Práctica 15: Creación de interfaces gráficas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -315,7 +316,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Práctica 13: Simulación de sistemas dinámicos</h1>
+    <h1>Práctica 13: Imágenes y animaciones</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -325,8 +326,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-entorno-de-simulacion-grafica-simulink">El entorno de simulación gráfica Simulink®</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-13">Ejercicio de la práctica 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animacion-de-funciones">Animación de funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo">Movimiento rectilíneo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-oscilador-armonico">Sistema oscilador armónico.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-pratica-14">Ejercicio de la prática 14</a></li>
 </ul>
             </nav>
         </div>
@@ -338,267 +343,483 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-13-simulacion-de-sistemas-dinamicos">
-<h1>Práctica 13: Simulación de sistemas dinámicos<a class="headerlink" href="#practica-13-simulacion-de-sistemas-dinamicos" title="Permalink to this heading">#</a></h1>
-<p>Un ente matemático que sirve para representar la relación que existe entre las entradas y las salidas en los sistemas es una ecuación diferencial. A lo largo de nuestra formación académica como ingenieros, estamos en contacto con el término ecuación, cuya definición formal es: <em>Una ecuación se define como una igualdad establecida entre dos expresiones, en la cual puede haber una o más incógnitas o términos cuyo valor numérico es desconocido</em>.</p>
-<p>A diferencia de las ecuaciones con incógnitas reales o complejas, las ecuaciones diferenciales tienen como incógnita a una función. Una ecuación diferencial en el contexto de los sistemas dinámicos, involucra a las señales de entrada y salida, así como diversas derivadas de cualquiera de ellas o de ambas. Por ejemplo, la ecuación diferencial:</p>
-<div class="math notranslate nohighlight" id="equation-edo1">
-<span class="eqno">(12)<a class="headerlink" href="#equation-edo1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  2\frac{d^2y(t)}{dt^2}+300y(t)=4.5x(t)+5\frac{dx(t)}{dt}
-	\end{equation}\]</div>
-<p>La solución a la ecuación diferencial es la salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span>, es decir, es aquella función que satisface la igualdad establecida en la transformación o estructura <a class="reference internal" href="#equation-edo1">(12)</a>. En el caso de los sistemas mecánicos <span class="math notranslate nohighlight">\(x(t)\)</span> representará la evolución en el tiempo de una fuerza de entrada, en forma de par o empuje. En sistemas en los que existan almacenes de energía cinética en forma de masas, es común usar también aceleración. En el caso de los sistemas eléctricos, los almacenes de energía son los inductores o bobinas y los capacitores y la entrada son variables como los voltajes o corrientes. Es posible encontrar análogos muy útiles entre los sistemas mecánicos y eléctricos debido a su comportamiento y las relaciones constitutivas que se usan para construir la estructura de la ecuación diferencial que los modelan. Ejemplos de relaciones constitutivas para los sistemas mecánicos, de acuerdo con la ley de Newton son:</p>
-<div class="math notranslate nohighlight" id="equation-relconst1">
-<span class="eqno">(13)<a class="headerlink" href="#equation-relconst1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-     m\frac{d^2x(t)}{dt^2}=ma~~F_b=b\frac{dx(t)}{dt}~~F_r=kx(t)
-	\end{equation}\]</div>
-<p>Donde <span class="math notranslate nohighlight">\(m\)</span> es la masa en <span class="math notranslate nohighlight">\([kg]\)</span>, <span class="math notranslate nohighlight">\(b\)</span> la constante de amortiguador con unidades <span class="math notranslate nohighlight">\([Ns/m]\)</span> y <span class="math notranslate nohighlight">\(k\)</span> en unidades <span class="math notranslate nohighlight">\([N/m]\)</span>. Las fuerzas <span class="math notranslate nohighlight">\(F_b\)</span> y <span class="math notranslate nohighlight">\(F_r\)</span> son las fuerzas del amortiguador y la fuerza del resorte respectivamente. Además, de acurdo con los conceptos de la cinemática, se sabe que la aceleración es la segunda derivada de la posición y la velocidad es la razón de cambio o derivada de la posición <span class="math notranslate nohighlight">\(a=\frac{d^2x(t)}{dt}\)</span> y <span class="math notranslate nohighlight">\(v=\frac{dx(t)}{dt}\)</span>. La <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a> muestra un típico sistema masa resorte amortiguador:</p>
-<div class="figure align-default" id="mbk">
-<a class="reference internal image-reference" href="_images/mbk.png"><img alt="_images/mbk.png" src="_images/mbk.png" style="height: 200px;" /></a>
-<p class="caption"><span class="caption-number">Figura 10 </span><span class="caption-text">Sistema masa resorte amortiguador.</span><a class="headerlink" href="#mbk" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-<p>Aplicando la segunda ley de Newton al sistema masa resorte amortiguador se obtiene la ecuación diferencial o el modelo del sistema masa resorte amortiguador:</p>
-<div class="math notranslate nohighlight" id="equation-edombk1">
-<span class="eqno">(14)<a class="headerlink" href="#equation-edombk1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  m\frac{d^2x(t)}{dt^2}+b_1\frac{dx(t)}{dt}+k_1x(t)=f(t)
-	\end{equation}\]</div>
-<p>En este caso, la salida se nombra <span class="math notranslate nohighlight">\(x(t)\)</span> dado que es un desplazamiento causado por la fuerza de entrada <span class="math notranslate nohighlight">\(f(t)\)</span>, que sería equivalente a la función estímulo o de entrada, se dice entonces que para este sistema, la entrada es una fuerza y la salida un desplazamiento.</p>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Es común usar la notación abreviada para las ecuaciones diferenciales:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{d^2x(t)}{dt^2}=\ddot{x}~~\frac{x(t)}{dt}=\dot{x}
-\]</div>
-<p>Usando esta notación se obtiene la forma alternativa de la ecuación diferencial de movimiento o modelo matemático del sistema masa resorte amortiguador como:</p>
-<div class="math notranslate nohighlight">
-\[
-m\ddot{x}+b\dot{x}+kx=f
-\]</div>
-</div>
-<p>En MATLAB®, la solución de las ecuaciones diferenciales se obtiene usando el comando <code class="docutils literal notranslate"><span class="pre">dsolve(edo,ci)</span></code>, donde edo es la ecuación diferencial que se desea resolver y ci son las condiciones iniciales <span class="math notranslate nohighlight">\(x(0)\)</span> y <span class="math notranslate nohighlight">\(\frac{dx}{dt}|_{t=0}\)</span>. Por ejemplo, para un sistema masa-resorte-amortiguador con la ecuación diferencial de movimiento:</p>
-<div class="math notranslate nohighlight">
-\[
-2.5\frac{dx^2}{dt}+3\frac{dx}{dt}+350x(t)=0
-\]</div>
-<p>con condiciones iniciales <span class="math notranslate nohighlight">\(x(0)=0.01\)</span> y <span class="math notranslate nohighlight">\(\frac{dx}{dt}|_{t=0}=0\)</span> se resuelve con los siguientes comandos:</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="practica-13-imagenes-y-animaciones">
+<h1>Práctica 13: Imágenes y animaciones<a class="headerlink" href="#practica-13-imagenes-y-animaciones" title="Permalink to this heading">#</a></h1>
+<p>En esta práctica se revisaran algunas funciones de MATLAB® que permiten la manipulación de archivos que contienen imágenes, para su visualización y análisis como variables. Además de su despliegue en figuras nativas, es decir, como elementos gráficos, es posible almacenar los componentes básicos en espacios de memoria en un formato de arreglos o matrices, lo cual permite la descomposición de las imágenes en los componentes de colores básicos rojo, azul y verde, además de su manipulación usando muchas de las importantes herramientas del álgebra lineal. En esta práctica se tratará con los imágenes representadas usando los colores primario Rojo, Verde y Azul, que son la base del estandard o formato RGB para la representación de imágenes en dispositivos electrónicos como lo son las computadoras y las pantallas de los sistemas inteligentes.</p>
+<p>La unidad básica para la representación de las imágenes es el pixel, un pixel es entendido como una célula de una imágen. Una imágen se compone de miles o millones de estas unidades fundamnetales que a su vez se conforman de los tres colores primarios rojo, verde y azul, dado que la combinación de estos tres colores permite generar una amplia gama de colores y así representar imágenes. A cada pixel se le asignan tres variables que representan la intensidad de rojo, verde y azul en la imagen en ese punto en específico, en un rango de 0 a 255.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
-<span class="n">syms</span><span class="w"> </span><span class="s">x(t)</span><span class="p">;</span>
-<span class="n">Dx</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
-<span class="n">ode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">350</span><span class="o">*</span><span class="n">x</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">cond1</span><span class="p">=</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.01</span><span class="p">;</span>
-<span class="n">cond2</span><span class="p">=</span><span class="n">Dx</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">ci</span><span class="p">=[</span><span class="n">cond1</span><span class="w"> </span><span class="n">cond2</span><span class="p">];</span>
-<span class="n">xSol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span><span class="n">ci</span><span class="p">)</span>
+<span class="n">R</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">600</span><span class="p">);</span>
+<span class="n">G</span><span class="p">=</span><span class="n">R</span><span class="p">;</span>
+<span class="n">B</span><span class="p">=</span><span class="n">R</span><span class="p">;</span>
+<span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">200</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span>
+<span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">201</span><span class="p">:</span><span class="mi">400</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span>
+<span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">401</span><span class="p">:</span><span class="mi">600</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span>
+<span class="n">rgbimg</span><span class="p">=</span><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">B</span><span class="p">);</span>
+
+<span class="p">[</span><span class="n">A</span><span class="p">]=</span><span class="w"> </span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;micrófono.png&quot;</span><span class="p">);</span>
+<span class="c">%[A]= imread(&quot;retrato.tif&quot;);</span>
+<span class="c">%[A]= imread(&quot;Imagen.jpg&quot;);</span>
+<span class="c">%[A]= imread(&quot;Grafica_python.png&quot;);</span>
+<span class="c">%A=imread(&quot;https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/juguete.png&quot;);</span>
+<span class="p">[</span><span class="n">A</span><span class="p">]=</span><span class="w"> </span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;juguete.png&quot;</span><span class="p">);</span>
+<span class="n">whos</span><span class="w"> </span><span class="s">A</span>
+<span class="c">%[A]=cat(3,R,G,B); </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[xSol(t) =\frac{{\mathrm{e}}^{-\frac{3\,t}{5}} \,{\left(3491\,\cos \left(\frac{\sqrt{3491}\,t}{5}\right)+3\,\sqrt{3491}\,\sin \left(\frac{\sqrt{3491}\,t}{5}\right)\right)}}{349100}\]</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Name        Size                 Bytes  Class    Attributes
+
+  A         659x621x3            1227717  uint8              
+</pre></div>
 </div>
 </div>
-<p>La solución de la ecuación diferencial es <span class="math notranslate nohighlight">\(x(t)\)</span> y describe el movimiento de la masa como una función del tiempo. La ecuación diferencial anterior, al estar igualada a cero, es decir, cuando <span class="math notranslate nohighlight">\(f(t)=0\)</span>, se denomina ecuación diferencial homogénea, en este tipo de ecuaciones diferenciales, la única manera en la que la solución es diferente de cero, es cuando al menos una de las condiciones iniciales <span class="math notranslate nohighlight">\(x(0)\)</span> y <span class="math notranslate nohighlight">\(\dot{x}(0)\)</span> sea diferente de cero. Un ejemplo de aplicación para cuando <span class="math notranslate nohighlight">\(f(t)\)</span> es diferente de cero, es el caso de la ecuadión diferencial no homogénea, En MATLAB® se plantea y resuelve con las siguientes instrucciones:</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_espejo</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">imagen_reversa</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">imagen_espejo_reversa</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">imagen_reversa</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+
+<span class="n">figure</span>
+<span class="s">subplot(2,2,1)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_espejo</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen espejo&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_reversa</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen reversa&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_espejo_reversa</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen espejo reversa&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ada29e0adbd3a0a14b0d3fe480d3f642a8319c7eae4dd2a8590e77eb9a31d063.png" src="_images/ada29e0adbd3a0a14b0d3fe480d3f642a8319c7eae4dd2a8590e77eb9a31d063.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Rojo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
+<span class="n">Verde</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span>
+<span class="n">Azul</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="n">figure</span>
+<span class="s">imshow(cat(3,</span><span class="w"> </span><span class="s">Rojo,</span><span class="w"> </span><span class="s">Verde,</span><span class="w"> </span><span class="s">Azul))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/35a2da9045fa378627a0cfe2531b1442c40d2b3a121f60c28b3d5e25c11c713a.png" src="_images/35a2da9045fa378627a0cfe2531b1442c40d2b3a121f60c28b3d5e25c11c713a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_rotada</span><span class="p">=</span><span class="n">imrotate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s">&quot;Bilinear&quot;</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">imshow(imagen_rotada)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/9ca2c5b75bc8df3495d69f629294dd18757cc9e4cfdc1ccf9be5b7dda4b32060.png" src="_images/9ca2c5b75bc8df3495d69f629294dd18757cc9e4cfdc1ccf9be5b7dda4b32060.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_amplificada</span><span class="p">=</span><span class="nb">imresize</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s">&quot;nearest&quot;</span><span class="p">);</span>
+<span class="n">imagen_reducida</span><span class="p">=</span><span class="nb">imresize</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="s">&quot;nearest&quot;</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">subplot(1,2,1)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_amplificada</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen amplificada&quot;</span><span class="p">)</span>
+<span class="nb">figure</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_reducida</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen reducida&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d12a5ded6c24ea89e980d46a3674c336cfb8c48307f0e644378781f68d4f6c1a.png" src="_images/d12a5ded6c24ea89e980d46a3674c336cfb8c48307f0e644378781f68d4f6c1a.png" />
+<img alt="_images/ccd4de5b9e8e0b03321ea70ae852ecb648140e09372bb5db7930bb0616514814.png" src="_images/ccd4de5b9e8e0b03321ea70ae852ecb648140e09372bb5db7930bb0616514814.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="n">imagen_ajustada_manual</span><span class="p">=</span><span class="n">imadjust</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.2</span><span class="p">;</span><span class="w"> </span><span class="mf">0.7</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">;</span><span class="w"> </span><span class="mf">0.7</span><span class="p">]);</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_ajustada_manual</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/aadbcc267e1aeed7c0e638b9a49b48d619334bd12e3a9c6482b73051194be093.png" src="_images/aadbcc267e1aeed7c0e638b9a49b48d619334bd12e3a9c6482b73051194be093.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_ajustada_RGB</span><span class="p">=</span><span class="n">imadjust</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.4</span><span class="p">;</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="mf">0.5</span><span class="p">],[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.8</span><span class="p">]);</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_ajustada_RGB</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/34606b75738363b8d0db767d3aeb93b91faf0030eda57547754994654286506a.png" src="_images/34606b75738363b8d0db767d3aeb93b91faf0030eda57547754994654286506a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Rojo</span><span class="p">=</span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">);</span>
+<span class="n">Azul</span><span class="p">=</span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">Verde</span><span class="p">=</span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">3</span><span class="p">);</span>
+
+<span class="n">figure</span>
+<span class="s">subplot(2,2,1)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">Rojo</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Rojo&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">Verde</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Verde&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">Azul</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Azul&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/36256d7898fc09dcdd6d3b8d29f13e56446431a19ce3105848a63a461bee1b08.png" src="_images/36256d7898fc09dcdd6d3b8d29f13e56446431a19ce3105848a63a461bee1b08.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">HSI</span><span class="p">=</span><span class="nb">rgb2hsv</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="n">figure</span>
+<span class="s">subplot(2,2,1)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">HSI</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Hue&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">HSI</span><span class="p">(:,:,</span><span class="mi">2</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Saturación&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">HSI</span><span class="p">(:,:,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Intensidad&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0a0ec9018ce61ef54f45a93239b92827a8ec291b35574333cbfd2917d033e042.png" src="_images/0a0ec9018ce61ef54f45a93239b92827a8ec291b35574333cbfd2917d033e042.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">RGB_grises</span><span class="p">=</span><span class="nb">rgb2gray</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<span class="n">RGB_grises2</span><span class="p">=</span><span class="mf">0.299</span><span class="o">*</span><span class="n">Rojo</span><span class="o">+</span><span class="mf">0.587</span><span class="o">*</span><span class="n">Verde</span><span class="o">+</span><span class="mf">0.114</span><span class="o">*</span><span class="n">Azul</span><span class="p">;</span>
+<span class="n">RGB_grises3</span><span class="p">=</span><span class="mf">0.21</span><span class="o">*</span><span class="n">Rojo</span><span class="o">+</span><span class="mf">0.72</span><span class="o">*</span><span class="n">Verde</span><span class="o">+</span><span class="mf">0.07</span><span class="o">*</span><span class="n">Azul</span><span class="p">;</span>
+<span class="n">RGB_grises4</span><span class="p">=(</span><span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">,[],</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="nb">min</span><span class="p">(</span><span class="n">A</span><span class="p">,[],</span><span class="mi">3</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+<span class="n">figure</span>
+<span class="s">subplot(2,2,1)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">RGB_grises</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">RGB_grises2</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Conversión simple&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">RGB_grises3</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Estandard NTSC&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">RGB_grises4</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Luminosidad máxima&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7be5c91299dba0a9acb413fb4ae9b415f8599adb957445dd1cffe8eca94252c9.png" src="_images/7be5c91299dba0a9acb413fb4ae9b415f8599adb957445dd1cffe8eca94252c9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">min</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">(:,</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">))):</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span>
+<span class="w">       </span><span class="nb">plot3</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,:,</span><span class="n">k</span><span class="p">),[</span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,:,</span><span class="n">k</span><span class="p">))):</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span><span class="nb">i</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,:,</span><span class="n">k</span><span class="p">))))</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="k">end</span>
+<span class="nb">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;Xdir&#39;</span><span class="p">,</span><span class="s">&#39;reverse&#39;</span><span class="p">,</span><span class="s">&#39;Zdir&#39;</span><span class="p">,</span><span class="s">&#39;reverse&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0ba2a1d5b8578d09439b7d3de68244bc6f3d6cff5887cfea5ee9997155bba921.png" src="_images/0ba2a1d5b8578d09439b7d3de68244bc6f3d6cff5887cfea5ee9997155bba921.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span>
+<span class="c">%surf(1:c,1:r,Rojo,&#39;EdgeColor&#39;,&#39;none&#39;); </span>
+<span class="nb">figure</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">surf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">c</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">,</span><span class="n">Rojo</span><span class="p">,</span><span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">);</span><span class="w"> </span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Rojo&quot;</span><span class="p">)</span>
+<span class="nb">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">surf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">c</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">,</span><span class="n">Verde</span><span class="p">,</span><span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">);</span><span class="w"> </span>
+<span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;Intensidad del color&#39;</span><span class="p">)</span>
+<span class="nb">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Verde&quot;</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">surf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">c</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">,</span><span class="n">Azul</span><span class="p">,</span><span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">);</span><span class="w"> </span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Azul&quot;</span><span class="p">)</span>
+<span class="nb">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="c">%set(gca,&#39;Zdir&#39;,&#39;reverse&#39;,&#39;Ydir&#39;,&#39;reverse&#39;)</span>
+<span class="c">%surf(1:c,1:r,Verde,&#39;EdgeColor&#39;,&#39;none&#39;); </span>
+<span class="c">%set(gca,&#39;Zdir&#39;,&#39;reverse&#39;,&#39;Ydir&#39;,&#39;reverse&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/704731ba026dece5c618484a427ef68bedd510681300f4876f76c30b5c713445.png" src="_images/704731ba026dece5c618484a427ef68bedd510681300f4876f76c30b5c713445.png" />
+</div>
+</div>
+<div class="section" id="animacion-de-funciones">
+<h2>Animación de funciones<a class="headerlink" href="#animacion-de-funciones" title="Permalink to this heading">#</a></h2>
+<p>Es posible realizar la animación de funciones en las gráficas generadas con MATLAB®, con el fin de integrar dinámica visual a los resultados numéricos que representan las gráficas de las funciones. Una de las formas de generar animaciones es generar una gráfica que se atualice cada cierto intervalo. Los siguientes ejemplos muestran la forma de generar animaciones de dos casos clásicos en física, el movimiento rectilíneo y el oscilador armónico.</p>
+<div class="section" id="movimiento-rectilineo">
+<h3>Movimiento rectilíneo<a class="headerlink" href="#movimiento-rectilineo" title="Permalink to this heading">#</a></h3>
+<p>El movimiento rectilíneo es aquel que se puede representar en el plano usando una sola coordenada. Esta coordenada se modela como una función del tiempo y describe el movimiento de una partícula en términos de su posición respecto de un marco de referencia fíjo y su velocidad y aceleración definidas como:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(x(t)=\)</span> posición en metros.</p></li>
+<li><p><span class="math notranslate nohighlight">\(v(t)=\frac{dx(t)}{dt}=\)</span>velocidad en <span class="math notranslate nohighlight">\([m/s]\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a(t)=\frac{dx^2(t)}{dt^2}=\)</span> aceleración en <span class="math notranslate nohighlight">\(m/s^2\)</span>.</p></li>
+</ul>
+<p>El siguiente ejemplo permite generar la animación de un movimiento rectilíneo que describe una trayectoria oscilatoria en el eje <span class="math notranslate nohighlight">\(x\)</span>, descrito por la expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t)=4.5sen(2t)~~[m]
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
+<span class="w"> </span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="w"> </span><span class="nb">clc</span>
+
+
+<span class="n">t</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">6</span><span class="p">;</span>
+
+
+<span class="n">xt</span><span class="p">=</span><span class="mf">4.5</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
+
+<span class="n">uno</span><span class="p">=</span><span class="nb">figure</span><span class="p">;</span>
+<span class="n">grid</span>
+
+
+<span class="s">axis([-5</span><span class="w"> </span><span class="s">5,-5</span><span class="w"> </span><span class="s">5])</span>
+
+
+<span class="w">  </span><span class="nb">handle</span><span class="p">=</span><span class="nb">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;pushbutton&#39;</span><span class="p">,</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="s">&#39;backgroundcolor&#39;</span><span class="p">,</span><span class="s">&#39;red&#39;</span><span class="p">,</span><span class="s">&#39;position&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">            </span><span class="p">[</span><span class="mf">0.85</span><span class="w"> </span><span class="mf">.94</span><span class="w"> </span><span class="mf">.13</span><span class="w"> </span><span class="mf">.05</span><span class="p">],</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;Alto&#39;</span><span class="p">,</span><span class="s">&#39;callback&#39;</span><span class="p">,</span><span class="s">&#39;global stopstop;stopstop=1;&#39;</span><span class="p">);</span><span class="w"> </span>
+<span class="w">  </span><span class="n">handle2</span><span class="p">=</span><span class="nb">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;pushbutton&#39;</span><span class="p">,</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="s">&#39;backgroundcolor&#39;</span><span class="p">,</span><span class="s">&#39;yellow&#39;</span><span class="p">,</span><span class="s">&#39;position&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">            </span><span class="p">[</span><span class="mf">0.85</span><span class="w"> </span><span class="mf">.87</span><span class="w"> </span><span class="mf">.13</span><span class="w"> </span><span class="mf">.05</span><span class="p">],</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;Pausa&#39;</span><span class="p">,</span><span class="s">&#39;callback&#39;</span><span class="p">,</span><span class="s">&#39;global ppause;ppause=1;&#39;</span><span class="p">);</span>
+<span class="w">  </span><span class="n">handle3</span><span class="p">=</span><span class="nb">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;pushbutton&#39;</span><span class="p">,</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="s">&#39;backgroundcolor&#39;</span><span class="p">,</span><span class="s">&#39;green&#39;</span><span class="p">,</span><span class="s">&#39;position&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
+<span class="w">            </span><span class="p">[</span><span class="mf">0.85</span><span class="w"> </span><span class="mf">.8</span><span class="w"> </span><span class="mf">.13</span><span class="w"> </span><span class="mf">.05</span><span class="p">],</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;Reanudar&#39;</span><span class="p">,</span><span class="s">&#39;callback&#39;</span><span class="p">,</span><span class="s">&#39;global ppause;ppause=0;&#39;</span><span class="p">);</span>
+
+<span class="w">            </span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x(t) [m]&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="c">% </span>
+<span class="w"> </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x(t) [m]&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="w"> </span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">);</span><span class="w">  </span>
+
+<span class="k">global</span><span class="w"> </span><span class="n">stopstop</span><span class="w"> </span><span class="n">ppause</span><span class="p">;</span>
+<span class="n">ppause</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+<span class="n">stopstop</span><span class="w"> </span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="nb">i</span><span class="o">&lt;</span><span class="mi">5000</span><span class="o">&amp;&amp;</span><span class="n">stopstop</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
+<span class="w">    </span>
+<span class="w">     </span><span class="nb">cla</span>
+<span class="w">     </span>
+<span class="w">     </span><span class="nb">title</span><span class="p">(</span><span class="nb">strcat</span><span class="p">(</span><span class="s">&#39;t= &#39;</span><span class="p">,</span><span class="nb">num2str</span><span class="p">((</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.001</span><span class="p">),</span><span class="s">&#39; [s]&#39;</span><span class="p">,</span><span class="s">&#39;    x(t)= &#39;</span><span class="p">,</span><span class="nb">num2str</span><span class="p">(</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)),</span><span class="s">&#39; [m]&#39;</span><span class="p">))</span>
+<span class="w">     </span><span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="w">     </span><span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">     </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="n">xt</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">rectangle</span><span class="p">(</span><span class="s">&#39;Position&#39;</span><span class="p">,[</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.24</span><span class="w"> </span><span class="mf">0.24</span><span class="p">],</span><span class="s">&#39;FaceColor&#39;</span><span class="p">,[</span><span class="mi">0</span><span class="w"> </span><span class="mf">.5</span><span class="w"> </span><span class="mf">.5</span><span class="p">],</span><span class="s">&#39;Curvature&#39;</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">pause</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+<span class="w">   </span>
+<span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="n">ppause</span><span class="o">==</span><span class="mi">1</span>
+<span class="w">                    </span><span class="nb">pause</span><span class="p">(</span><span class="mf">.001</span><span class="p">)</span>
+<span class="w">                  </span>
+<span class="w">                </span><span class="k">end</span>
+<span class="w">        </span><span class="nb">i</span><span class="p">=</span><span class="nb">i</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span><span class="w">       </span>
+<span class="w">       </span><span class="n">cla</span>
+<span class="w">                  </span>
+<span class="w">    </span><span class="s">end</span>
+<span class="w">    </span><span class="nb">close</span><span class="p">(</span><span class="n">uno</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6990db238f3fca7db20f5f42d4d886618dbea8bd88fe2085c720b98744806158.png" src="_images/6990db238f3fca7db20f5f42d4d886618dbea8bd88fe2085c720b98744806158.png" />
+</div>
+</div>
+</div>
+<div class="section" id="sistema-oscilador-armonico">
+<h3>Sistema oscilador armónico.<a class="headerlink" href="#sistema-oscilador-armonico" title="Permalink to this heading">#</a></h3>
+<p>Un sistema masa-resorte-amortiguador se considera como un oscilador armónico y se modela matemáticamente usando la ecuación diferencial:</p>
+<div class="math notranslate nohighlight" id="equation-modelo1">
+<span class="eqno">(12)<a class="headerlink" href="#equation-modelo1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+  m\frac{d^2y(t)}{dt^2}+b\frac{dx(t)}{dt}+ky(t)=f(t)
+	\end{equation}\]</div>
+<p>Donde <span class="math notranslate nohighlight">\(y(t)\)</span> es la solución de la ecuación diferencial <a class="reference internal" href="#equation-modelo1">(12)</a> y representa al desplazamiento en metros de la masa <span class="math notranslate nohighlight">\(m\)</span> respecto del punto de equilibrio, <span class="math notranslate nohighlight">\(m\)</span> es la masa en <span class="math notranslate nohighlight">\([kg]\)</span>, <span class="math notranslate nohighlight">\(b\)</span> la constante de amortiguador con unidades <span class="math notranslate nohighlight">\([Ns/m]\)</span> y <span class="math notranslate nohighlight">\(k\)</span> en unidades <span class="math notranslate nohighlight">\([N/m]\)</span>. además <span class="math notranslate nohighlight">\(f(t)\)</span> es la fuerza externa. En una práctica posterior se retomará este modelo para hacer simulaciones en el entorno gráfico simulink®.</p>
+<p>La solución general para el caso de vibraciones libres, es decir, cuando <span class="math notranslate nohighlight">\(f(t)=0\)</span> y por lo menos alguna de las condiciones iniciales de posición <span class="math notranslate nohighlight">\(x(0)\)</span> en <span class="math notranslate nohighlight">\([m]\)</span> o velocidad <span class="math notranslate nohighlight">\(v(0)\)</span> en <span class="math notranslate nohighlight">\([m/s]\)</span> es</p>
+<div class="math notranslate nohighlight" id="equation-solgen">
+<span class="eqno">(13)<a class="headerlink" href="#equation-solgen" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+  y(t)=e^{-\frac{b}{2m}t}(x(0)cos(\omega_{d}t)+\betasen(\omega_{d}t))
+	\end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\omega_d\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> son la frecuencia natural mortiguada y <span class="math notranslate nohighlight">\(\beta\)</span> una constante dadas por:</p>
+<div class="math notranslate nohighlight">
+\[
+\omega_d=\sqrt{\frac{k}{m}-\frac{b^2}{4m^2}},~~~~\beta=\frac{mv(0)+bx(0)}{m\omega_d}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
 
-<span class="n">syms</span><span class="w"> </span><span class="s">x(t)</span><span class="p">;</span>
-<span class="n">Dx</span><span class="p">=</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">);</span>
-<span class="n">ode</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">2.5</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="nb">diff</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="mi">350</span><span class="o">*</span><span class="n">x</span><span class="o">==</span><span class="mi">4</span><span class="p">;</span>
-<span class="n">cond1</span><span class="p">=</span><span class="n">x</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="n">cond2</span><span class="p">=</span><span class="n">Dx</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">==</span><span class="mf">0.0</span><span class="p">;</span>
-<span class="n">ci</span><span class="p">=[</span><span class="n">cond1</span><span class="w"> </span><span class="n">cond2</span><span class="p">];</span>
-<span class="n">xSol</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">=</span><span class="n">dsolve</span><span class="p">(</span><span class="n">ode</span><span class="p">,</span><span class="n">ci</span><span class="p">)</span>
+<span class="n">A</span><span class="p">=</span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/juguete.png&quot;</span><span class="p">);</span>
+
+<span class="n">m</span><span class="p">=</span><span class="mf">0.43</span><span class="p">;</span>
+<span class="n">b</span><span class="p">=</span><span class="mf">0.15</span><span class="p">;</span>
+<span class="n">k</span><span class="p">=</span><span class="mf">4.5</span><span class="p">;</span>
+<span class="n">x0</span><span class="p">=</span><span class="mf">0.025</span><span class="p">;</span>
+<span class="n">dx0</span><span class="p">=</span><span class="mf">0.0</span><span class="p">;</span>
+
+<span class="n">wd</span><span class="p">=</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">m</span><span class="o">-</span><span class="n">b</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">m</span>^<span class="mi">2</span><span class="p">));</span>
+
+<span class="n">a</span><span class="p">=(</span><span class="n">m</span><span class="o">*</span><span class="n">dx0</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">wd</span><span class="p">);</span>
+
+
+<span class="n">t</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">15</span><span class="p">;</span>
+
+<span class="n">F1</span><span class="p">=</span><span class="nb">exp</span><span class="p">((</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">))</span><span class="o">.*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="n">x0</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">wd</span><span class="o">.*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">a</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">wd</span><span class="o">.*</span><span class="n">t</span><span class="p">));</span>
+
+<span class="n">xt</span><span class="p">=</span><span class="n">F1</span><span class="p">;</span>
+
+
+<span class="nb">dos</span><span class="p">=</span><span class="nb">figure</span><span class="p">;</span>
+<span class="k">global</span><span class="w"> </span><span class="n">stopstop</span><span class="w"> </span><span class="n">ppause</span><span class="p">;</span>
+
+<span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
+
+<span class="k">while</span><span class="p">((</span><span class="nb">i</span><span class="o">&lt;</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">))</span>
+<span class="w">    </span>
+<span class="w">     </span><span class="nb">cla</span>
+<span class="w">    </span>
+<span class="w">     </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="w">     </span><span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="w">       </span><span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="n">xt</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">      </span><span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="o">-</span><span class="mf">0.035</span><span class="w"> </span><span class="mf">0.035</span><span class="p">])</span>
+<span class="w">      </span>
+<span class="w">  </span>
+<span class="w">      </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t [s]&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="c">% </span>
+<span class="w">     </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;YLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x(t) [m]&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                     </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span>
+<span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">);</span><span class="w">  </span>
+<span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="nb">strcat</span><span class="p">(</span><span class="s">&#39;t= &#39;</span><span class="p">,</span><span class="nb">num2str</span><span class="p">((</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.001</span><span class="p">),</span><span class="s">&#39; [s]&#39;</span><span class="p">,</span><span class="s">&#39;    x(t)= &#39;</span><span class="p">,</span><span class="nb">num2str</span><span class="p">(</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)),</span><span class="s">&#39; [m]&#39;</span><span class="p">))</span>
+<span class="w">    </span>
+<span class="w">   </span>
+<span class="w">       </span>
+<span class="w">    </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">     </span><span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="w">     </span><span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">     </span><span class="nb">image</span><span class="p">([</span><span class="o">-</span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.02</span><span class="p">],[</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="mf">0.035</span><span class="w"> </span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="mf">0.035</span><span class="p">],</span><span class="n">A</span><span class="p">);</span><span class="w">   </span>
+<span class="w">     </span><span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="w"> </span><span class="mf">0.1</span><span class="p">])</span>
+<span class="w">     </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x(t) [m]&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="w">     </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span>
+<span class="w">     </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">);</span><span class="w">  </span>
+<span class="w">                </span>
+<span class="w">   </span><span class="nb">i</span><span class="p">=</span><span class="nb">i</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span><span class="w">       </span>
+<span class="w">   </span><span class="nb">pause</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="w">   </span><span class="nb">cla</span>
+<span class="w">                  </span>
+<span class="k">end</span><span class="w">     </span>
+
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">image</span><span class="p">([</span><span class="o">-</span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.02</span><span class="p">],[</span><span class="mf">0.035</span><span class="w"> </span><span class="o">-</span><span class="mf">0.035</span><span class="p">],</span><span class="n">A</span><span class="p">);</span><span class="w"> </span>
+<span class="w">     </span><span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="w"> </span><span class="mf">0.1</span><span class="p">])</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x(t) [m]&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontsize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">);</span><span class="w">  </span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[xSol(t) =\frac{2}{175}-\frac{6\,\sqrt{3491}\,{\mathrm{e}}^{-\frac{3\,t}{5}} \,\sin \left(\frac{\sqrt{3491}\,t}{5}\right)}{610925}-\frac{2\,{\mathrm{e}}^{-\frac{3\,t}{5}} \,\cos \left(\frac{\sqrt{3491}\,t}{5}\right)}{175}\]</div>
+<img alt="_images/1ad6c1e125f11b23f54da0711774cd4130a8b93251ff3cd4976f33d3e7aa77d9.png" src="_images/1ad6c1e125f11b23f54da0711774cd4130a8b93251ff3cd4976f33d3e7aa77d9.png" />
 </div>
 </div>
-<p>La ecuación diferencial que modela a un sistema masa-resorte-amortiguador se puede escribor de forma alternativa si se hace un <em>despeje</em> de la función de movimiento y se escribe de forma alternativa:</p>
+</div>
+</div>
+<div class="section" id="ejercicio-de-la-pratica-14">
+<h2>Ejercicio de la prática 14<a class="headerlink" href="#ejercicio-de-la-pratica-14" title="Permalink to this heading">#</a></h2>
+<p>1.- Descargue o lea desde la ruta las siguientes imágenes:</p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/flores.JPG">https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/flores.JPG</a>
+<a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/cedral.jpg">https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/cedral.jpg</a></p>
+<p>Realice las siguientes operaciones con las dos imágenes:</p>
+<p>a) En una figura muestre la imagen original, la imagen en escala de grises, la imagen invertida y la imagen escalada al 25% de su tamaño original.</p>
+<p>b) En otra figura muestre la imagen original y su versión con un filtro <code class="docutils literal notranslate"><span class="pre">imgaussfilt()</span></code>.</p>
+<p>c) En una tercer figura muestre la imagen original y la figura con las transformaciones:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{d^2x}{dt^2}= \frac{1}{m}\left ( f(t) - b\frac{dx}{dt}-kx(t)\right )
+Y= 0.3R+0.6G+0.114*B,~~~~I=-0.5R-0,3G+0.4B,~~~~~Q=0.7R-0.52G-0.12B
 \]</div>
-<p>Si se integra dos veces con respecto al tiempo la ecuación anterior se obtiene:</p>
-<div class="math notranslate nohighlight">
-\[
-\int^{t}_0\int^{\tau_1}_0\frac{d^2x}{dt^2}d\tau_1d\tau_2= \int^{t}_0\int^{\tau_1}_0\frac{1}{m}\left ( f(\tau_1) - b\frac{dx(\tau_1)}{d\tau_1}-kx(\tau_1)\right )d\tau_1d\tau_2
-\]</div>
-<p>se obtiene la siguiente expresión:</p>
-<div class="math notranslate nohighlight">
-\[
-x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\int^{t}_0\frac{dx(\tau_1)}{d\tau_1}d\tau_1-\frac{k}{m}\int^{t}_0\int^{\tau_1}_0x(\tau_1)d\tau_1d\tau_2
-\]</div>
-<p>El operador integral en MATLAB® Simulink® es el bloque marcado con la etiqueta <span class="math notranslate nohighlight">\(\frac{1}{s}\)</span>, un diagrama de bloques de ejmeplo, para una ecuación diferencial lineal y de coeficientes constantes se muestra en la <a class="reference internal" href="#bloques-mbk"><span class="std std-numref">Figura 11</span></a></p>
-<div class="figure align-default" id="bloques-mbk">
-<a class="reference internal image-reference" href="_images/bloques_mbk.png"><img alt="_images/bloques_mbk.png" src="_images/bloques_mbk.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Figura 11 </span><span class="caption-text">Diagrama de bloques para la solución de una ecuación diferencial.</span><a class="headerlink" href="#bloques-mbk" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-<p>Para el caso de un sistema eléctrico del tipo resistencia capacitor inductancia, como el mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 12</span></a></p>
-<div class="figure align-default" id="rlc">
-<a class="reference internal image-reference" href="_images/Imagen8.png"><img alt="_images/Imagen8.png" src="_images/Imagen8.png" style="height: 300px;" /></a>
-<p class="caption"><span class="caption-number">Figura 12 </span><span class="caption-text">Circuito RLC.</span><a class="headerlink" href="#rlc" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-<p>Las relaciones constitutivas del sistema eléctrico son:</p>
-<div class="math notranslate nohighlight" id="equation-relconst2">
-<span class="eqno">(15)<a class="headerlink" href="#equation-relconst2" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-     v_L=L\frac{di(t)}{dt}~~i_C=C\frac{dv_c(t)}{dt}~~v_R=i(t)R
-	\end{equation}\]</div>
-<p>Con <span class="math notranslate nohighlight">\(L\)</span> la inductancia en <span class="math notranslate nohighlight">\([H]\)</span>, <span class="math notranslate nohighlight">\(C\)</span> la capacitancia en <span class="math notranslate nohighlight">\([F]\)</span> y <span class="math notranslate nohighlight">\(R\)</span> la resistencia en <span class="math notranslate nohighlight">\([\Omega]\)</span>. Además, por la ley de Kirchoff, la corriente en el capacitor <span class="math notranslate nohighlight">\(i_C(t)=i(t)\)</span>. En este caso, la salida se nombra <span class="math notranslate nohighlight">\(v_c(t)\)</span> el voltaje en el capacitor, debido a la presencia de la fuente de alimentación <span class="math notranslate nohighlight">\(V_s(t)\)</span>, que sería equivalente a la función estímulo o de entrada. La ecuación diferencial que modela a este sistema eléctrico es:</p>
-<div class="math notranslate nohighlight" id="equation-edorlc">
-<span class="eqno">(16)<a class="headerlink" href="#equation-edorlc" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  LC\frac{d^2v_c(t)}{dt^2}+RC\frac{dv_c(t)}{dt}+v_c(t)=V_s(t)
-	\end{equation}\]</div>
-<p>El diagrama de bloques de esta última ecuación diferencial se realiza de forma similar al del sistema masa-resorte-amortiguador. En la siguiente sección se detalla la manera de realizar la simulación usando diagramas de bloques en el ambiente gráfico Simulink®.</p>
-<div class="section" id="el-entorno-de-simulacion-grafica-simulink">
-<h2>El entorno de simulación gráfica Simulink®<a class="headerlink" href="#el-entorno-de-simulacion-grafica-simulink" title="Permalink to this heading">#</a></h2>
-<p>El entorno gráfico de simulación de MATLAB® permite la construcción de modelos de sistemas dinámicos en forma de diagramas de bloques. La representación en diagramas de bloques es común dada su facilidad para representar la interacción entre las variables y los elementos de un sistema. Existen muchas maneras de repesentar el mismo sistema dinámico; en forma de ecuación matricial o en espacio de estados, la representación haciedo uso de la función de transferencia y la reperesentación como ecuación diferencial en la que se presentan los integradores como los bloques básicos de solución al problema de modelado matemático. En este curso no ahondaremos en el tema de los modelos matemáticos, esta práctica tiene por objetivo ser una introducción al ambiente gráfico de simulación de MATLAB® conocido como Simulink®. El entorno gráfico de simulink® se encuentra en el menú de la parte superior de la página principal de MATLAB® como se muestra en la <a class="reference internal" href="#simulink-icono"><span class="std std-numref">Figura 13</span></a> y la <a class="reference internal" href="#modelo-en-blanco"><span class="std std-numref">Figura 14</span></a>:</p>
-<div class="figure align-default" id="simulink-icono">
-<a class="reference internal image-reference" href="_images/icono_simulink.png"><img alt="_images/icono_simulink.png" src="_images/icono_simulink.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 13 </span><span class="caption-text">Localización del botón de inicio de simulink®.</span><a class="headerlink" href="#simulink-icono" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-<div class="figure align-default" id="modelo-en-blanco">
-<a class="reference internal image-reference" href="_images/modelo_en_blanco.png"><img alt="_images/modelo_en_blanco.png" src="_images/modelo_en_blanco.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 14 </span><span class="caption-text">Interfaz de inicio de simulink®.</span><a class="headerlink" href="#modelo-en-blanco" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-<p>Al hacer click en ese ícono, se abrirá la interfaz gráfica para la creación de un modelo en forma de diragrama de bloques como se muestra en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/abre_simulink.mp4 " type="video/mp4">
-</video>
-</div>
-<p>La creación de un diagrama de bloques se logra arrastrando los bloques necesarios desde la biblioteca de symulink, que se muestran en la <a class="reference internal" href="#biblioteca-bloques"><span class="std std-numref">Figura 15</span></a></p>
-<div class="figure align-default" id="biblioteca-bloques">
-<a class="reference internal image-reference" href="_images/biblioteca_bloques.png"><img alt="_images/biblioteca_bloques.png" src="_images/biblioteca_bloques.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Figura 15 </span><span class="caption-text">Biblioteca de bloques de simulink®</span><a class="headerlink" href="#biblioteca-bloques" title="Enlace permanente a esta imagen">#</a></p>
-</div>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/arrastra_bloques.mp4 " type="video/mp4">
-</video>
-</div>
-<p>La solución de la ecuación diferencial es <span class="math notranslate nohighlight">\(x(t)\)</span> y describe el movimiento de la masa como una función del tiempo. La herramienta simulink® permite crear simulaciones en forma de diagramas de bloques como se muestra en los siguientes videos.</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/abre_simulink.mp4 " type="video/mp4">
-</video>
-</div>
-<p>La creación del diagrama de bloques y los detalles de la simulación se muestran en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/crea_bloques.mp4 " type="video/mp4">
-</video>
-</div>
-<p>En el ambiente gráfico de Simulink®, existe un bloque que permite almacenar el resultado de la simulación en un arreglo para poder hacer una gráfica o hacer calculos estadísticos como el promedio, desviación estandar, etc. Los bloques de exportación de datos al workspace se muestra en el siguiente video:</p>
-<div align='center'>
-<video controls autoplay muted="true" loop="true" width="600">
-    <source src="./_static/videos/bloques_to_worspace.mp4 " type="video/mp4">
-</video>
-</div>
-</div>
-<div class="section" id="ejercicio-de-la-practica-13">
-<h2>Ejercicio de la práctica 13<a class="headerlink" href="#ejercicio-de-la-practica-13" title="Permalink to this heading">#</a></h2>
-<p>1.-Simule el sistema masa resorte amortiguador mostrado en la <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a>, con los parámetros de la <a class="reference internal" href="#tabla-param-mbk"><span class="std std-numref">Tabla 15</span></a>, para los siguientes casos de <span class="math notranslate nohighlight">\(f(t)\)</span>:</p>
-<ol class="arabic simple">
-<li><p>Escalón con amplitud <span class="math notranslate nohighlight">\(10~[N]\)</span> y retardo de <span class="math notranslate nohighlight">\(0.5\)</span> segundos.</p></li>
-<li><p>Escalón con amplitud de <span class="math notranslate nohighlight">\(15~[N]\)</span> sin retardo.</p></li>
-<li><p>Fuerza definida por la función <span class="math notranslate nohighlight">\(f(t)=5sen(4\pi t)~[N]\)</span>.</p></li>
-</ol>
-<table class="table" id="tabla-param-mbk">
-<caption><span class="caption-number">Tabla 15 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param-mbk" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
-\[Parámetro\]</div>
-</th>
-<th class="head"><div class="math notranslate nohighlight">
-\[Valor\]</div>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[m\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[3.5~[Kg]\]</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="math notranslate nohighlight">
-\[b\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[0.15~[Ns/m]\]</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[k\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[430~[N/m]\]</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p>Añada los bloques necesarios para la exportación de datos a workspace y genere una gráfica de la fuerza de entrada contra el tiempo y una del desplazamiento contra el tiempo en la misma figura.</p>
-<p>2.-Simule el circuito RLC mostrado en la <a class="reference internal" href="#rlc"><span class="std std-numref">Figura 12</span></a>, con los parámetros de la <a class="reference internal" href="#tabla-param-rlc"><span class="std std-numref">Tabla 16</span></a>, para los siguientes casos de <span class="math notranslate nohighlight">\(V_s(t)\)</span>:</p>
-<ol class="arabic simple">
-<li><p>Escalón con amplitud <span class="math notranslate nohighlight">\(2.5~[V]\)</span> y retardo de <span class="math notranslate nohighlight">\(0.5\)</span> segundos.</p></li>
-<li><p>Escalón con amplitud de <span class="math notranslate nohighlight">\(1.63~[V]\)</span> sin retardo.</p></li>
-<li><p>Voltaje definido por la función <span class="math notranslate nohighlight">\(f(t)=5sen(2\pi t)~[V]\)</span>.</p></li>
-</ol>
-<table class="table" id="tabla-param-rlc">
-<caption><span class="caption-number">Tabla 16 </span><span class="caption-text">Tabla de parámetros</span><a class="headerlink" href="#tabla-param-rlc" title="Enlace permanente a esta tabla">#</a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><div class="math notranslate nohighlight">
-\[Parámetro\]</div>
-</th>
-<th class="head"><div class="math notranslate nohighlight">
-\[Valor\]</div>
-</th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[R\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[1600~[\Omega]\]</div>
-</td>
-</tr>
-<tr class="row-odd"><td><div class="math notranslate nohighlight">
-\[L\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[15~[H]\]</div>
-</td>
-</tr>
-<tr class="row-even"><td><div class="math notranslate nohighlight">
-\[C\]</div>
-</td>
-<td><div class="math notranslate nohighlight">
-\[1~[\mu F]\]</div>
-</td>
-</tr>
-</tbody>
-</table>
-<p>Añada los bloques necesarios para la exportación de datos a workspace y genere una gráfica del voltaje de entrada contra el tiempo y una del voltaje en el capacitor contra el tiempo en la misma figura.</p>
+<p>donde <span class="math notranslate nohighlight">\(R\)</span> es la matriz componente rojo, <span class="math notranslate nohighlight">\(B\)</span> es la matriz componente azul y <span class="math notranslate nohighlight">\(G\)</span> es la matriz componente verde. Use el comando <code class="docutils literal notranslate"><span class="pre">imshow(cat(3,Y,I,Q))</span></code> para mostrar la imagen transformada.</p>
+<p>2.- Realice la animación de la gráfica <span class="math notranslate nohighlight">\(y(t)\)</span> para un sistema masa-resorte con condiciones iniciales <span class="math notranslate nohighlight">\(y(0)=0.015~[m]\)</span>, velocidad inicial <span class="math notranslate nohighlight">\(v(0)=0~[m/s]\)</span>, masa <span class="math notranslate nohighlight">\(m=0.5~[kg]\)</span> y constante de rigidez <span class="math notranslate nohighlight">\(k=300~[N/m]\)</span>. Considere que la ecuaciones <a class="reference internal" href="#equation-solgen">(13)</a> para construir la ecuación para simular el caso particular que se plantea.</p>
+<p>3.- Realice la animación de la gráfica de uno de los casos del tiro parabólico del ejercicio 2 de la Práctica 9.</p>
 </div>
 </div>
 
@@ -647,7 +868,7 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Práctica 14: Creación de interfaces gráficas</p>
+        <p class="prev-next-title">Práctica 14: Simulación de sistemas dinámicos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -669,8 +890,12 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-entorno-de-simulacion-grafica-simulink">El entorno de simulación gráfica Simulink®</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-13">Ejercicio de la práctica 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animacion-de-funciones">Animación de funciones</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo">Movimiento rectilíneo</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-oscilador-armonico">Sistema oscilador armónico.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-pratica-14">Ejercicio de la prática 14</a></li>
 </ul>
   </nav></div>
 
