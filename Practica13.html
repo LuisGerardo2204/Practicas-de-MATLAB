@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 
 
-<html lang="es" >
+<html lang="es" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
     <title>Práctica 13: Imágenes y animaciones &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
   
   
@@ -18,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +40,9 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -81,6 +83,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -134,9 +145,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="intro.html">
+  
   
   
   
@@ -146,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -286,20 +299,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="claro/oscuro" aria-label="claro/oscuro" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Búsqueda" aria-label="Búsqueda" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -326,12 +341,17 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-de-edicion-de-forma-de-imagenes">Operaciones de edición de forma de imágenes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-de-las-imagenes-en-componentes-hsv">Descomposicion de las imágenes en componentes HSV</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-a-escala-de-grises">Conversión a escala de grises</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animacion-de-funciones">Animación de funciones</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo">Movimiento rectilíneo</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-oscilador-armonico">Sistema oscilador armónico.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-pratica-14">Ejercicio de la prática 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-13">Ejercicio de la práctica 13</a></li>
 </ul>
             </nav>
         </div>
@@ -343,31 +363,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="practica-13-imagenes-y-animaciones">
+  <section class="tex2jax_ignore mathjax_ignore" id="practica-13-imagenes-y-animaciones">
 <h1>Práctica 13: Imágenes y animaciones<a class="headerlink" href="#practica-13-imagenes-y-animaciones" title="Permalink to this heading">#</a></h1>
 <p>En esta práctica se revisaran algunas funciones de MATLAB® que permiten la manipulación de archivos que contienen imágenes, para su visualización y análisis como variables. Además de su despliegue en figuras nativas, es decir, como elementos gráficos, es posible almacenar los componentes básicos en espacios de memoria en un formato de arreglos o matrices, lo cual permite la descomposición de las imágenes en los componentes de colores básicos rojo, azul y verde, además de su manipulación usando muchas de las importantes herramientas del álgebra lineal. En esta práctica se tratará con los imágenes representadas usando los colores primario Rojo, Verde y Azul, que son la base del estandard o formato RGB para la representación de imágenes en dispositivos electrónicos como lo son las computadoras y las pantallas de los sistemas inteligentes.</p>
 <p>La unidad básica para la representación de las imágenes es el pixel, un pixel es entendido como una célula de una imágen. Una imágen se compone de miles o millones de estas unidades fundamnetales que a su vez se conforman de los tres colores primarios rojo, verde y azul, dado que la combinación de estos tres colores permite generar una amplia gama de colores y así representar imágenes. A cada pixel se le asignan tres variables que representan la intensidad de rojo, verde y azul en la imagen en ese punto en específico, en un rango de 0 a 255.</p>
+<p>El comando básico para leer una imagen y almacenar su información pixel por pixel es ´imread()´ las impagenes se pueden leer desde archivos que se encuentren en la carpeta de trabajo, indicando la ruta al archivo si se encuentra en el disco duro en algún directorio diferente e inlcluso desde internet indicado la dirección completa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
-<span class="n">R</span><span class="p">=</span><span class="nb">zeros</span><span class="p">(</span><span class="mi">600</span><span class="p">);</span>
-<span class="n">G</span><span class="p">=</span><span class="n">R</span><span class="p">;</span>
-<span class="n">B</span><span class="p">=</span><span class="n">R</span><span class="p">;</span>
-<span class="n">R</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">200</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span>
-<span class="n">G</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">201</span><span class="p">:</span><span class="mi">400</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span>
-<span class="n">B</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="k">end</span><span class="p">,</span><span class="mi">401</span><span class="p">:</span><span class="mi">600</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span>
-<span class="n">rgbimg</span><span class="p">=</span><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">B</span><span class="p">);</span>
-
-<span class="p">[</span><span class="n">A</span><span class="p">]=</span><span class="w"> </span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;micrófono.png&quot;</span><span class="p">);</span>
-<span class="c">%[A]= imread(&quot;retrato.tif&quot;);</span>
-<span class="c">%[A]= imread(&quot;Imagen.jpg&quot;);</span>
-<span class="c">%[A]= imread(&quot;Grafica_python.png&quot;);</span>
-<span class="c">%A=imread(&quot;https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/juguete.png&quot;);</span>
-<span class="p">[</span><span class="n">A</span><span class="p">]=</span><span class="w"> </span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;juguete.png&quot;</span><span class="p">);</span>
-<span class="n">whos</span><span class="w"> </span><span class="s">A</span>
-<span class="c">%[A]=cat(3,R,G,B); </span>
+<span class="p">[</span><span class="n">A</span><span class="p">]=</span><span class="w"> </span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/juguete.png&quot;</span><span class="p">);</span><span class="w"> </span><span class="c">% Lectura y almacenamiento de una imagen en el arreglo A</span>
+<span class="nb">whos</span><span class="w"> </span><span class="n">A</span><span class="w"> </span><span class="c">% Se muestran las características del arreglo A</span>
 </pre></div>
 </div>
 </div>
@@ -379,14 +386,115 @@ document.write(`
 </div>
 </div>
 </div>
+<p>Como puede observarse, el arreglo A contiene 3 matrices de dimensiones 659x621. La primera matriz, es decir el elemento ´A(:,:,1)´ contiene la intensidad del color rojo de cada pixel, la matriz ´A(:,:,2)´ la intensidad del tono verde en cada pixel y finalmente la matriz ´A(:,:,3)´ la intensidad del color azul por pixel.</p>
+<p>Para mostrar la imagen descargada o almacenada en el arreglo A se usa el comando ´imshow()´</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_espejo</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">imagen_reversa</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">imagen_espejo_reversa</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">imagen_reversa</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span><span class="w"> </span><span class="c">%Se inicializa una nueva figura</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="w"> </span><span class="c">%Se despliega la imagen en la figura antes inicializada</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/aa70098f2dffb6b5a50551bb5ae76c3dbdcb68bf41ddb534ee71e67c5e9b6488.png" src="_images/aa70098f2dffb6b5a50551bb5ae76c3dbdcb68bf41ddb534ee71e67c5e9b6488.png" />
+</div>
+</div>
+<p>Es posible visualizar la imagen en una figura con el formato de las gráficas con escala numérica, con la particularidad de que en los ejes se muestran las dimensiones en pixeles de la imagen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="nb">image</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="n">A</span><span class="p">)</span><span class="c">%Se establece el origen como el punto incial para desplegar la imagen </span>
+<span class="c">% En los arreglos [x1 x2],[y1 y2]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/fa787d469e8b097d23fcdeebbc3a2b823aad6eacb1daa854470668ccbaad6547.png" src="_images/fa787d469e8b097d23fcdeebbc3a2b823aad6eacb1daa854470668ccbaad6547.png" />
+</div>
+</div>
+<p>La imagen se visualiza al combinar los tres colores primarios en cada pixel con las intesidades indicadas en cada
+uno de los elementos de la matriz A. Por ejemplo los componentes rojo, azul y verde en el pixel <span class="math notranslate nohighlight">\(200,200\)</span> de laimagen con la que se está trabajando son:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">pixel_200_200</span><span class="p">=[</span><span class="n">A</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">3</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><html><body><pre>pixel_200_200 = 1×3 uint8
+   32   79   38
+</pre></body></html></div></div>
+</div>
+<p>El valor máximo de la intensidad para cada color rojo verde o azul es de 255. Las siguientes líneas de código ilustran la extracción de los colores en tres pixeles específicos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">figure</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="s">&quot;MarkerFaceColor&quot;</span><span class="p">,[</span><span class="n">A</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">)])</span>
+<span class="n">txt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Pixel(100,100)&quot;</span><span class="p">;</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">txt</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="s">&quot;MarkerFaceColor&quot;</span><span class="p">,[</span><span class="n">A</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">3</span><span class="p">)])</span>
+<span class="n">txt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Pixel(300,300)&quot;</span><span class="p">;</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">320</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="n">txt</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">txt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Pixel(500,180)&quot;</span><span class="p">;</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">txt</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="s">&quot;MarkerFaceColor&quot;</span><span class="p">,[</span><span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">3</span><span class="p">)])</span>
+<span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">650</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">650</span><span class="p">])</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;Ydir&#39;</span><span class="p">,</span><span class="s">&#39;reverse&#39;</span><span class="p">)</span>
 
-<span class="n">figure</span>
-<span class="s">subplot(2,2,1)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">image</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">],</span><span class="n">A</span><span class="p">)</span><span class="c">%Se establece el origen como el punto incial para desplegar la imagen </span>
+<span class="c">% En los arreglos [x1 x2],[y1 y2]</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="s">&quot;MarkerFaceColor&quot;</span><span class="p">,[</span><span class="n">A</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">3</span><span class="p">)])</span>
+<span class="n">txt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Pixel(100,100)&quot;</span><span class="p">;</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">120</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">txt</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="s">&quot;MarkerFaceColor&quot;</span><span class="p">,[</span><span class="n">A</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="mi">3</span><span class="p">)])</span>
+<span class="n">txt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Pixel(300,300)&quot;</span><span class="p">;</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">,</span><span class="n">txt</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+<span class="nb">scatter</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="mi">75</span><span class="p">,</span><span class="s">&quot;MarkerFaceColor&quot;</span><span class="p">,[</span><span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">3</span><span class="p">)])</span>
+<span class="n">txt</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&quot;Pixel(500,180)&quot;</span><span class="p">;</span>
+<span class="nb">text</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">500</span><span class="p">,</span><span class="n">txt</span><span class="p">,</span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/76788f3947b9dfbb05246f2b15ac02f25428513b998e91e949dab795fd7c375e.png" src="_images/76788f3947b9dfbb05246f2b15ac02f25428513b998e91e949dab795fd7c375e.png" />
+</div>
+</div>
+<p>Con base en lo anterior, es posible asignar una tonalidad específica a un pixel o grupo de pixeles, por ejemplo, para manipular el pixel 500,180 y asignarle un color blanco es necesario asignarle el valor de 255 a cada uno de los componentes R,G y B de esa localidad en específico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">A</span><span class="p">(</span><span class="mi">450</span><span class="p">:</span><span class="mi">550</span><span class="p">,</span><span class="mi">120</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">A</span><span class="p">(</span><span class="mi">450</span><span class="p">:</span><span class="mi">550</span><span class="p">,</span><span class="mi">120</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">A</span><span class="p">(</span><span class="mi">450</span><span class="p">:</span><span class="mi">550</span><span class="p">,</span><span class="mi">120</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span><span class="c">% Ajuste para despliegue de la imagen</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
+<span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">1</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span>
+<span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">2</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span><span class="c">%Manipulación del pixel (500,180)</span>
+<span class="n">A</span><span class="p">(</span><span class="mi">500</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">3</span><span class="p">)=</span><span class="mi">255</span><span class="p">;</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">A</span><span class="p">(</span><span class="mi">450</span><span class="p">:</span><span class="mi">550</span><span class="p">,</span><span class="mi">120</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">A</span><span class="p">(</span><span class="mi">450</span><span class="p">:</span><span class="mi">550</span><span class="p">,</span><span class="mi">120</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">A</span><span class="p">(</span><span class="mi">450</span><span class="p">:</span><span class="mi">550</span><span class="p">,</span><span class="mi">120</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span><span class="c">% Ajuste para despliegue de la imagen</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen con un pixel manipulado&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0e09e13930eb4305fc8bc76c7816d5d13cb75ee0c6d37342d11f120f61eee03c.png" src="_images/0e09e13930eb4305fc8bc76c7816d5d13cb75ee0c6d37342d11f120f61eee03c.png" />
+</div>
+</div>
+<section id="operaciones-de-edicion-de-forma-de-imagenes">
+<h2>Operaciones de edición de forma de imágenes<a class="headerlink" href="#operaciones-de-edicion-de-forma-de-imagenes" title="Permalink to this heading">#</a></h2>
+<p>Las imágenes se pueden rotar, reflejar y presentar de forma invertida usando los comandos ´imrotate(I,grados)´, ´flipdim(I,2)´ y ´flipdim(I,1)´. Adicionalmente, las imágenes se pueden ampliar y reducir usando el comando ´imresize(I,factor)´. Por ejemplo, el resultado de aplicar operaciones tipo espejo y reflejo se ilustran con el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_espejo</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="c">%Se calcula el reflejo de la imagen y se almacena en un arreglo</span>
+<span class="n">imagen_reversa</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="c">%Se calcula la reversa de la imagen y se almacena en un arreglo</span>
+<span class="n">imagen_espejo_reversa</span><span class="p">=</span><span class="n">flipdim</span><span class="p">(</span><span class="n">imagen_reversa</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span><span class="c">%Se hace un reflejo de la imagen invertida</span>
+
+<span class="nb">figure</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
@@ -402,24 +510,39 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ada29e0adbd3a0a14b0d3fe480d3f642a8319c7eae4dd2a8590e77eb9a31d063.png" src="_images/ada29e0adbd3a0a14b0d3fe480d3f642a8319c7eae4dd2a8590e77eb9a31d063.png" />
+<img alt="_images/c247c911b56002c382b123a15df6985859547516120fbd50bc62dccb39cee30e.png" src="_images/c247c911b56002c382b123a15df6985859547516120fbd50bc62dccb39cee30e.png" />
 </div>
 </div>
+<p>Las componentes rojo, verde y azul se encuentran en las matrices individuales del arreglo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Rojo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
-<span class="n">Verde</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span>
+<span class="n">Verde</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c">%Descomposición de la intensidad de rojo, verde y azul de la imágen original</span>
 <span class="n">Azul</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">3</span><span class="p">);</span>
 
 <span class="n">figure</span>
-<span class="s">imshow(cat(3,</span><span class="w"> </span><span class="s">Rojo,</span><span class="w"> </span><span class="s">Verde,</span><span class="w"> </span><span class="s">Azul))</span>
+<span class="s">imshow(cat(3,</span><span class="w"> </span><span class="s">Rojo,</span><span class="w"> </span><span class="s">Verde,</span><span class="w"> </span><span class="s">Azul))%</span><span class="w"> </span><span class="s">Se</span><span class="w"> </span><span class="s">despliega</span><span class="w"> </span><span class="s">la</span><span class="w"> </span><span class="s">imagen</span><span class="w"> </span><span class="s">original</span><span class="w"> </span><span class="s">usando</span><span class="w"> </span><span class="s">sus</span><span class="w"> </span><span class="s">componentes</span><span class="w"> </span><span class="s">por</span><span class="w"> </span><span class="s">separado</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/35a2da9045fa378627a0cfe2531b1442c40d2b3a121f60c28b3d5e25c11c713a.png" src="_images/35a2da9045fa378627a0cfe2531b1442c40d2b3a121f60c28b3d5e25c11c713a.png" />
+<img alt="_images/0b3547b76f49bf7a8ac417ea38a2a0f95fefe77141ebbdf32cd0cb3512439447.png" src="_images/0b3547b76f49bf7a8ac417ea38a2a0f95fefe77141ebbdf32cd0cb3512439447.png" />
 </div>
 </div>
+<p>Para intensificar el azul en la figura original se puede sumar una constante a la matriz con los datos de la intensidad de ese tono primario:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">Rojo</span><span class="p">,</span><span class="w"> </span><span class="n">Verde</span><span class="p">,</span><span class="w"> </span><span class="n">Azul</span><span class="o">+</span><span class="mi">50</span><span class="p">))</span><span class="c">% Se despliega la imagen original usando sus componentes por separado</span>
+<span class="c">%con el color azul intensificado</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8855abf6b8e732ed673b787d39217715ca022d636a8aa3f0a98ff1f626654b3a.png" src="_images/8855abf6b8e732ed673b787d39217715ca022d636a8aa3f0a98ff1f626654b3a.png" />
+</div>
+</div>
+<p>La rotación de la imagen original con un ángulo de 60 grados se usa el comando ´imrotate()´ con la especificación bilineal:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_rotada</span><span class="p">=</span><span class="n">imrotate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s">&quot;Bilinear&quot;</span><span class="p">);</span>
@@ -429,18 +552,18 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/9ca2c5b75bc8df3495d69f629294dd18757cc9e4cfdc1ccf9be5b7dda4b32060.png" src="_images/9ca2c5b75bc8df3495d69f629294dd18757cc9e4cfdc1ccf9be5b7dda4b32060.png" />
+<img alt="_images/2198c20f731cbdf92b6c4539637bc02194eaa9ea46a02c8d5cecdc470a19d1e4.png" src="_images/2198c20f731cbdf92b6c4539637bc02194eaa9ea46a02c8d5cecdc470a19d1e4.png" />
 </div>
 </div>
+<p>Las operaciones de amplificación y reducción se muestran en las siguientes líneas</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_amplificada</span><span class="p">=</span><span class="nb">imresize</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s">&quot;nearest&quot;</span><span class="p">);</span>
 <span class="n">imagen_reducida</span><span class="p">=</span><span class="nb">imresize</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mf">0.25</span><span class="p">,</span><span class="s">&quot;nearest&quot;</span><span class="p">);</span>
 <span class="n">figure</span>
-<span class="s">subplot(1,2,1)</span>
-<span class="nb">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="s">imshow(A)</span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
-<span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">figure</span>
 <span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_amplificada</span><span class="p">)</span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen amplificada&quot;</span><span class="p">)</span>
 <span class="nb">figure</span>
@@ -450,59 +573,58 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/d12a5ded6c24ea89e980d46a3674c336cfb8c48307f0e644378781f68d4f6c1a.png" src="_images/d12a5ded6c24ea89e980d46a3674c336cfb8c48307f0e644378781f68d4f6c1a.png" />
-<img alt="_images/ccd4de5b9e8e0b03321ea70ae852ecb648140e09372bb5db7930bb0616514814.png" src="_images/ccd4de5b9e8e0b03321ea70ae852ecb648140e09372bb5db7930bb0616514814.png" />
+<img alt="_images/02fefa49158de74eee9b703164dcb63b9bd0112050c0d15fbb4070daca84a683.png" src="_images/02fefa49158de74eee9b703164dcb63b9bd0112050c0d15fbb4070daca84a683.png" />
+<img alt="_images/761e7d8dfd63f6f60588ea6d61598d8e4aeb3a0e08f036754d3a563d8e9c202b.png" src="_images/761e7d8dfd63f6f60588ea6d61598d8e4aeb3a0e08f036754d3a563d8e9c202b.png" />
+<img alt="_images/7d56869d157938495d22ae2125c266ea1e749603ae9c408a3259c6ae1902022a.png" src="_images/7d56869d157938495d22ae2125c266ea1e749603ae9c408a3259c6ae1902022a.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
-<span class="n">imagen_ajustada_manual</span><span class="p">=</span><span class="n">imadjust</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.2</span><span class="p">;</span><span class="w"> </span><span class="mf">0.7</span><span class="p">],[</span><span class="mf">0.5</span><span class="p">;</span><span class="w"> </span><span class="mf">0.7</span><span class="p">]);</span>
-<span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_ajustada_manual</span><span class="p">)</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Dimensiones de la imagen original:&quot;</span><span class="p">)</span>
+<span class="nb">whos</span><span class="w"> </span><span class="n">A</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Dimensiones de la imagen ampliada:&quot;</span><span class="p">)</span>
+<span class="nb">whos</span><span class="w"> </span><span class="n">imagen_amplificada</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&quot;Dimensiones de la reducida:&quot;</span><span class="p">)</span>
+<span class="nb">whos</span><span class="w"> </span><span class="n">imagen_reducida</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/aadbcc267e1aeed7c0e638b9a49b48d619334bd12e3a9c6482b73051194be093.png" src="_images/aadbcc267e1aeed7c0e638b9a49b48d619334bd12e3a9c6482b73051194be093.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dimensiones de la imagen original:
+  Name        Size                 Bytes  Class    Attributes
+
+  A         659x621x3            1227717  uint8              
+
+Dimensiones de la imagen ampliada:
+  Name                        Size                     Bytes  Class    Attributes
+
+  imagen_amplificada      13180x12420x3            491086800  uint8              
+
+Dimensiones de la reducida:
+  Name                   Size               Bytes  Class    Attributes
+
+  imagen_reducida      165x156x3            77220  uint8              
+</pre></div>
 </div>
 </div>
+</div>
+<p>Es posible modificar el contraste de las imájenes usando el comando ´imadjust(I,[minR minG minB;maxR maxG maxB],[])´</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_ajustada_RGB</span><span class="p">=</span><span class="n">imadjust</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.4</span><span class="p">;</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="mf">0.5</span><span class="p">],[</span><span class="mf">0.5</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"> </span><span class="mf">0.7</span><span class="w"> </span><span class="mf">0.3</span><span class="w"> </span><span class="mf">0.8</span><span class="p">]);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_ajustada_RGB</span><span class="p">=</span><span class="n">imadjust</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="mf">0.4</span><span class="p">],[]);</span>
 <span class="nb">imshow</span><span class="p">(</span><span class="n">imagen_ajustada_RGB</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/34606b75738363b8d0db767d3aeb93b91faf0030eda57547754994654286506a.png" src="_images/34606b75738363b8d0db767d3aeb93b91faf0030eda57547754994654286506a.png" />
+<img alt="_images/05116e5c9eb2cd88947b15cb132e6a5a8260b34a67d92a21fe3f788c3fcb26cc.png" src="_images/05116e5c9eb2cd88947b15cb132e6a5a8260b34a67d92a21fe3f788c3fcb26cc.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">Rojo</span><span class="p">=</span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">);</span>
-<span class="n">Azul</span><span class="p">=</span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">2</span><span class="p">);</span>
-<span class="n">Verde</span><span class="p">=</span><span class="n">A</span><span class="p">(:,:,</span><span class="mi">3</span><span class="p">);</span>
-
-<span class="n">figure</span>
-<span class="s">subplot(2,2,1)</span>
-<span class="nb">imshow</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
-<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">imshow</span><span class="p">(</span><span class="n">Rojo</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Rojo&quot;</span><span class="p">)</span>
-<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">imshow</span><span class="p">(</span><span class="n">Verde</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Verde&quot;</span><span class="p">)</span>
-<span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="nb">imshow</span><span class="p">(</span><span class="n">Azul</span><span class="p">)</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Azul&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/36256d7898fc09dcdd6d3b8d29f13e56446431a19ce3105848a63a461bee1b08.png" src="_images/36256d7898fc09dcdd6d3b8d29f13e56446431a19ce3105848a63a461bee1b08.png" />
-</div>
-</div>
+<section id="descomposicion-de-las-imagenes-en-componentes-hsv">
+<h3>Descomposicion de las imágenes en componentes HSV<a class="headerlink" href="#descomposicion-de-las-imagenes-en-componentes-hsv" title="Permalink to this heading">#</a></h3>
+<p>Una forma diferente de descomponer las imágenes es el formato HSV (Hue,Saturation,Value) que corresponden en español a los términos de matiz, saturación y brillo. El comando para la conversión de una imágen codificada en RGB a una codificada en formato HSV es ´rgb2hsv(I)´. Para mas información se puede consultar:</p>
+<p><a class="reference external" href="https://medium.com/&#64;DIYCoding/color-models-in-image-processing-understanding-rgb-and-hsv-for-computer-vision-a629641cdc40">https://medium.com/&#64;DIYCoding/color-models-in-image-processing-understanding-rgb-and-hsv-for-computer-vision-a629641cdc40</a></p>
+<p>La representación en formato HSV de la imagen de ejemplo se muestra con las siguientes líneas de código:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">HSI</span><span class="p">=</span><span class="nb">rgb2hsv</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
@@ -512,7 +634,7 @@ document.write(`
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Imagen original&quot;</span><span class="p">)</span>
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">imshow</span><span class="p">(</span><span class="n">HSI</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">))</span>
-<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Hue&quot;</span><span class="p">)</span>
+<span class="nb">title</span><span class="p">(</span><span class="s">&quot;Matiz&quot;</span><span class="p">)</span>
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="nb">imshow</span><span class="p">(</span><span class="n">HSI</span><span class="p">(:,:,</span><span class="mi">2</span><span class="p">))</span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Saturación&quot;</span><span class="p">)</span>
@@ -523,14 +645,45 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0a0ec9018ce61ef54f45a93239b92827a8ec291b35574333cbfd2917d033e042.png" src="_images/0a0ec9018ce61ef54f45a93239b92827a8ec291b35574333cbfd2917d033e042.png" />
+<img alt="_images/5de300d3a4dce3e4658dec0caa6344779fba91dc18b5ae9b464976d84205572d.png" src="_images/5de300d3a4dce3e4658dec0caa6344779fba91dc18b5ae9b464976d84205572d.png" />
 </div>
 </div>
+<p>Para cambiar el nivel de saturación de la imagen de ejemplo se manipula la matriz S del arreglo HSV creado:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">RGB_grises</span><span class="p">=</span><span class="nb">rgb2gray</span><span class="p">(</span><span class="n">A</span><span class="p">);</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
+<span class="p">[</span><span class="n">H</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">V</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">imsplit</span><span class="p">(</span><span class="n">HSI</span><span class="p">);</span><span class="c">%Se divide la matriz convertida </span>
+<span class="nb">factor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="n">S_saturada</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">S</span><span class="o">*</span><span class="nb">factor</span><span class="p">;</span><span class="w"> </span><span class="c">% Se afecta a la matriz de saturación</span>
+<span class="n">HSV_saturada</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">H</span><span class="p">,</span><span class="n">S_saturada</span><span class="p">,</span><span class="n">V</span><span class="p">);</span>
+<span class="n">RGB_saturada</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">hsv2rgb</span><span class="p">(</span><span class="n">HSV_saturada</span><span class="p">);</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">RGB_saturada</span><span class="p">)</span>
+
+<span class="nb">figure</span>
+<span class="p">[</span><span class="n">H</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">V</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">imsplit</span><span class="p">(</span><span class="n">HSI</span><span class="p">);</span><span class="c">%Se divide la matriz convertida </span>
+<span class="nb">factor</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mf">1.8</span><span class="p">;</span>
+<span class="n">H_saturada</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">H</span><span class="o">*</span><span class="nb">factor</span><span class="p">;</span><span class="w"> </span><span class="c">% Se afecta a la matriz de saturación</span>
+<span class="n">HSV_saturada</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">cat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="n">H_saturada</span><span class="p">,</span><span class="n">S</span><span class="p">,</span><span class="n">V</span><span class="p">);</span>
+<span class="n">RGB_saturada</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">hsv2rgb</span><span class="p">(</span><span class="n">HSV_saturada</span><span class="p">);</span>
+<span class="nb">imshow</span><span class="p">(</span><span class="n">RGB_saturada</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6d39fc088da41171111bef98e72d02768cb5d781299819557cbd1fb4efeec8f1.png" src="_images/6d39fc088da41171111bef98e72d02768cb5d781299819557cbd1fb4efeec8f1.png" />
+<img alt="_images/49981275268a63059d5077095bd6c9729b3b4706a1f64e8543d580bb93671e91.png" src="_images/49981275268a63059d5077095bd6c9729b3b4706a1f64e8543d580bb93671e91.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="conversion-a-escala-de-grises">
+<h2>Conversión a escala de grises<a class="headerlink" href="#conversion-a-escala-de-grises" title="Permalink to this heading">#</a></h2>
+<p>Una imagen a color se puede convertir a su equivalente en escala de grises usando el comando ´rgb2gray()´ y tambien aplicando algunas operaciones a las matrices de valores rojo, verde y azul como se muestra en las siguientes líneas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">RGB_grises</span><span class="p">=</span><span class="nb">rgb2gray</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span><span class="c">%Conversión de la imágen original a escala de grises</span>
 <span class="n">RGB_grises2</span><span class="p">=</span><span class="mf">0.299</span><span class="o">*</span><span class="n">Rojo</span><span class="o">+</span><span class="mf">0.587</span><span class="o">*</span><span class="n">Verde</span><span class="o">+</span><span class="mf">0.114</span><span class="o">*</span><span class="n">Azul</span><span class="p">;</span>
-<span class="n">RGB_grises3</span><span class="p">=</span><span class="mf">0.21</span><span class="o">*</span><span class="n">Rojo</span><span class="o">+</span><span class="mf">0.72</span><span class="o">*</span><span class="n">Verde</span><span class="o">+</span><span class="mf">0.07</span><span class="o">*</span><span class="n">Azul</span><span class="p">;</span>
+<span class="n">RGB_grises3</span><span class="p">=</span><span class="mf">0.21</span><span class="o">*</span><span class="n">Rojo</span><span class="o">+</span><span class="mf">0.72</span><span class="o">*</span><span class="n">Verde</span><span class="o">+</span><span class="mf">0.07</span><span class="o">*</span><span class="n">Azul</span><span class="p">;</span><span class="w"> </span><span class="c">%Tres técnicas diferentes de conversión a grises</span>
 <span class="n">RGB_grises4</span><span class="p">=(</span><span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">,[],</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="nb">min</span><span class="p">(</span><span class="n">A</span><span class="p">,[],</span><span class="mi">3</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
 <span class="n">figure</span>
 <span class="s">subplot(2,2,1)</span>
@@ -549,37 +702,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/7be5c91299dba0a9acb413fb4ae9b415f8599adb957445dd1cffe8eca94252c9.png" src="_images/7be5c91299dba0a9acb413fb4ae9b415f8599adb957445dd1cffe8eca94252c9.png" />
+<img alt="_images/bc1e9c6b4a5931537dd1061df72ed24cc1ccde7fd73264e160c660c58ee74923.png" src="_images/bc1e9c6b4a5931537dd1061df72ed24cc1ccde7fd73264e160c660c58ee74923.png" />
 </div>
 </div>
+<p>Una alternativa más es representar a las imágnes en el formato de intensidades de color en gráficas tridimencionales:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span>
-<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
-<span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">min</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
-<span class="w">   </span><span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">(:,</span><span class="mi">1</span><span class="p">,</span><span class="n">k</span><span class="p">))):</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span>
-<span class="w">       </span><span class="nb">plot3</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,:,</span><span class="n">k</span><span class="p">),[</span><span class="nb">max</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,:,</span><span class="n">k</span><span class="p">))):</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span><span class="nb">i</span><span class="o">*</span><span class="nb">ones</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">(</span><span class="nb">i</span><span class="p">,:,</span><span class="n">k</span><span class="p">))))</span>
-<span class="w">    </span><span class="k">end</span>
-<span class="k">end</span>
-<span class="nb">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;Xdir&#39;</span><span class="p">,</span><span class="s">&#39;reverse&#39;</span><span class="p">,</span><span class="s">&#39;Zdir&#39;</span><span class="p">,</span><span class="s">&#39;reverse&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/0ba2a1d5b8578d09439b7d3de68244bc6f3d6cff5887cfea5ee9997155bba921.png" src="_images/0ba2a1d5b8578d09439b7d3de68244bc6f3d6cff5887cfea5ee9997155bba921.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span>
-<span class="c">%surf(1:c,1:r,Rojo,&#39;EdgeColor&#39;,&#39;none&#39;); </span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="nb">j</span><span class="p">]=</span><span class="nb">size</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="c">% Se actualiza el tamaño de la imagen</span>
+<span class="w"> </span>
 <span class="nb">figure</span>
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="nb">surf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">c</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">,</span><span class="n">Rojo</span><span class="p">,</span><span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">);</span><span class="w"> </span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Rojo&quot;</span><span class="p">)</span>
 <span class="nb">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="c">% Se grafican en formato de intensidad los colores</span>
 <span class="nb">surf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">c</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">,</span><span class="n">Verde</span><span class="p">,</span><span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">);</span><span class="w"> </span>
 <span class="nb">zlabel</span><span class="p">(</span><span class="s">&#39;Intensidad del color&#39;</span><span class="p">)</span>
 <span class="nb">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -588,26 +724,24 @@ document.write(`
 <span class="nb">surf</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="n">c</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="n">r</span><span class="p">,</span><span class="n">Azul</span><span class="p">,</span><span class="s">&#39;EdgeColor&#39;</span><span class="p">,</span><span class="s">&#39;none&#39;</span><span class="p">);</span><span class="w"> </span>
 <span class="nb">title</span><span class="p">(</span><span class="s">&quot;Azul&quot;</span><span class="p">)</span>
 <span class="nb">view</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="c">%set(gca,&#39;Zdir&#39;,&#39;reverse&#39;,&#39;Ydir&#39;,&#39;reverse&#39;)</span>
-<span class="c">%surf(1:c,1:r,Verde,&#39;EdgeColor&#39;,&#39;none&#39;); </span>
-<span class="c">%set(gca,&#39;Zdir&#39;,&#39;reverse&#39;,&#39;Ydir&#39;,&#39;reverse&#39;)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/704731ba026dece5c618484a427ef68bedd510681300f4876f76c30b5c713445.png" src="_images/704731ba026dece5c618484a427ef68bedd510681300f4876f76c30b5c713445.png" />
+<img alt="_images/9eed15bd191ffa4014dd62c48c04ed51ae170542b1d25c9e31196d38ddf90e7a.png" src="_images/9eed15bd191ffa4014dd62c48c04ed51ae170542b1d25c9e31196d38ddf90e7a.png" />
 </div>
 </div>
-<div class="section" id="animacion-de-funciones">
+</section>
+<section id="animacion-de-funciones">
 <h2>Animación de funciones<a class="headerlink" href="#animacion-de-funciones" title="Permalink to this heading">#</a></h2>
 <p>Es posible realizar la animación de funciones en las gráficas generadas con MATLAB®, con el fin de integrar dinámica visual a los resultados numéricos que representan las gráficas de las funciones. Una de las formas de generar animaciones es generar una gráfica que se atualice cada cierto intervalo. Los siguientes ejemplos muestran la forma de generar animaciones de dos casos clásicos en física, el movimiento rectilíneo y el oscilador armónico.</p>
-<div class="section" id="movimiento-rectilineo">
+<section id="movimiento-rectilineo">
 <h3>Movimiento rectilíneo<a class="headerlink" href="#movimiento-rectilineo" title="Permalink to this heading">#</a></h3>
 <p>El movimiento rectilíneo es aquel que se puede representar en el plano usando una sola coordenada. Esta coordenada se modela como una función del tiempo y describe el movimiento de una partícula en términos de su posición respecto de un marco de referencia fíjo y su velocidad y aceleración definidas como:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(x(t)=\)</span> posición en metros.</p></li>
 <li><p><span class="math notranslate nohighlight">\(v(t)=\frac{dx(t)}{dt}=\)</span>velocidad en <span class="math notranslate nohighlight">\([m/s]\)</span>.</p></li>
-<li><p><span class="math notranslate nohighlight">\(a(t)=\frac{dx^2(t)}{dt^2}=\)</span> aceleración en <span class="math notranslate nohighlight">\(m/s^2\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a(t)=\frac{dx^2(t)}{dt^2}=\)</span> aceleración en <span class="math notranslate nohighlight">\([m/s^2]\)</span>.</p></li>
 </ul>
 <p>El siguiente ejemplo permite generar la animación de un movimiento rectilíneo que describe una trayectoria oscilatoria en el eje <span class="math notranslate nohighlight">\(x\)</span>, descrito por la expresión:</p>
 <div class="math notranslate nohighlight">
@@ -617,13 +751,13 @@ x(t)=4.5sen(2t)~~[m]
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
-<span class="w"> </span><span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
-<span class="w"> </span><span class="nb">clc</span>
+<span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
+<span class="nb">clc</span>
 
-
+<span class="c">% Creación del vector de tiempo</span>
 <span class="n">t</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">6</span><span class="p">;</span>
 
-
+<span class="c">%Se programa la expresión a animar</span>
 <span class="n">xt</span><span class="p">=</span><span class="mf">4.5</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">t</span><span class="p">);</span>
 
 <span class="n">uno</span><span class="p">=</span><span class="nb">figure</span><span class="p">;</span>
@@ -632,7 +766,7 @@ x(t)=4.5sen(2t)~~[m]
 
 <span class="s">axis([-5</span><span class="w"> </span><span class="s">5,-5</span><span class="w"> </span><span class="s">5])</span>
 
-
+<span class="c">%Se generan botones de control de animación especificndo su texto posición y color de fondo</span>
 <span class="w">  </span><span class="nb">handle</span><span class="p">=</span><span class="nb">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;pushbutton&#39;</span><span class="p">,</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="s">&#39;backgroundcolor&#39;</span><span class="p">,</span><span class="s">&#39;red&#39;</span><span class="p">,</span><span class="s">&#39;position&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
 <span class="w">            </span><span class="p">[</span><span class="mf">0.85</span><span class="w"> </span><span class="mf">.94</span><span class="w"> </span><span class="mf">.13</span><span class="w"> </span><span class="mf">.05</span><span class="p">],</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;Alto&#39;</span><span class="p">,</span><span class="s">&#39;callback&#39;</span><span class="p">,</span><span class="s">&#39;global stopstop;stopstop=1;&#39;</span><span class="p">);</span><span class="w"> </span>
 <span class="w">  </span><span class="n">handle2</span><span class="p">=</span><span class="nb">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;pushbutton&#39;</span><span class="p">,</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="s">&#39;backgroundcolor&#39;</span><span class="p">,</span><span class="s">&#39;yellow&#39;</span><span class="p">,</span><span class="s">&#39;position&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
@@ -640,7 +774,7 @@ x(t)=4.5sen(2t)~~[m]
 <span class="w">  </span><span class="n">handle3</span><span class="p">=</span><span class="nb">uicontrol</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span><span class="s">&#39;pushbutton&#39;</span><span class="p">,</span><span class="s">&#39;units&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="s">&#39;backgroundcolor&#39;</span><span class="p">,</span><span class="s">&#39;green&#39;</span><span class="p">,</span><span class="s">&#39;position&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">...</span>
 <span class="w">            </span><span class="p">[</span><span class="mf">0.85</span><span class="w"> </span><span class="mf">.8</span><span class="w"> </span><span class="mf">.13</span><span class="w"> </span><span class="mf">.05</span><span class="p">],</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;Reanudar&#39;</span><span class="p">,</span><span class="s">&#39;callback&#39;</span><span class="p">,</span><span class="s">&#39;global ppause;ppause=0;&#39;</span><span class="p">);</span>
 
-<span class="w">            </span>
+<span class="w"> </span><span class="c">% Se da formato al texto de los ejes de las gráficas           </span>
 <span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;defaulttextinterpreter&#39;</span><span class="p">,</span><span class="s">&#39;latex&#39;</span><span class="p">)</span>
 <span class="w">  </span>
 <span class="w">   </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x(t) [m]&#39;</span><span class="p">,</span><span class="k">...</span>
@@ -661,36 +795,36 @@ x(t)=4.5sen(2t)~~[m]
 <span class="n">ppause</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
 <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
 <span class="n">stopstop</span><span class="w"> </span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
-
+<span class="c">% La animación se repetirá para cada valor de la función x(t) en cada instante de tiempo </span>
 <span class="w">  </span><span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="nb">i</span><span class="o">&lt;</span><span class="mi">5000</span><span class="o">&amp;&amp;</span><span class="n">stopstop</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
 <span class="w">    </span>
 <span class="w">     </span><span class="nb">cla</span>
 <span class="w">     </span>
 <span class="w">     </span><span class="nb">title</span><span class="p">(</span><span class="nb">strcat</span><span class="p">(</span><span class="s">&#39;t= &#39;</span><span class="p">,</span><span class="nb">num2str</span><span class="p">((</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.001</span><span class="p">),</span><span class="s">&#39; [s]&#39;</span><span class="p">,</span><span class="s">&#39;    x(t)= &#39;</span><span class="p">,</span><span class="nb">num2str</span><span class="p">(</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)),</span><span class="s">&#39; [m]&#39;</span><span class="p">))</span>
 <span class="w">     </span><span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
-<span class="w">     </span><span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="w">     </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="n">xt</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">     </span><span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="c">%Se grafica la paríticula</span>
+<span class="w">     </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="n">xt</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c">%Actualización de la posición de la partícula</span>
 <span class="w">    </span><span class="nb">rectangle</span><span class="p">(</span><span class="s">&#39;Position&#39;</span><span class="p">,[</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.24</span><span class="w"> </span><span class="mf">0.24</span><span class="p">],</span><span class="s">&#39;FaceColor&#39;</span><span class="p">,[</span><span class="mi">0</span><span class="w"> </span><span class="mf">.5</span><span class="w"> </span><span class="mf">.5</span><span class="p">],</span><span class="s">&#39;Curvature&#39;</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="w">    </span><span class="nb">pause</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
 <span class="w">   </span>
 <span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="n">ppause</span><span class="o">==</span><span class="mi">1</span>
-<span class="w">                    </span><span class="nb">pause</span><span class="p">(</span><span class="mf">.001</span><span class="p">)</span>
+<span class="w">                    </span><span class="nb">pause</span><span class="p">(</span><span class="mf">.001</span><span class="p">)</span><span class="c">%Acción del botón de pausa</span>
 <span class="w">                  </span>
 <span class="w">                </span><span class="k">end</span>
 <span class="w">        </span><span class="nb">i</span><span class="p">=</span><span class="nb">i</span><span class="o">+</span><span class="mi">10</span><span class="p">;</span><span class="w">       </span>
-<span class="w">       </span><span class="n">cla</span>
+<span class="w">       </span><span class="n">cla</span><span class="w"> </span><span class="s">%pausa</span><span class="w"> </span><span class="s">para</span><span class="w"> </span><span class="s">animación</span>
 <span class="w">                  </span>
-<span class="w">    </span><span class="s">end</span>
+<span class="w">    </span><span class="k">end</span>
 <span class="w">    </span><span class="nb">close</span><span class="p">(</span><span class="n">uno</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6990db238f3fca7db20f5f42d4d886618dbea8bd88fe2085c720b98744806158.png" src="_images/6990db238f3fca7db20f5f42d4d886618dbea8bd88fe2085c720b98744806158.png" />
+<img alt="_images/7a80525184a8f87ab525e42ed82988b734197d1b753e8e0ab92804661b6fb9bc.png" src="_images/7a80525184a8f87ab525e42ed82988b734197d1b753e8e0ab92804661b6fb9bc.png" />
 </div>
 </div>
-</div>
-<div class="section" id="sistema-oscilador-armonico">
+</section>
+<section id="sistema-oscilador-armonico">
 <h3>Sistema oscilador armónico.<a class="headerlink" href="#sistema-oscilador-armonico" title="Permalink to this heading">#</a></h3>
 <p>Un sistema masa-resorte-amortiguador se considera como un oscilador armónico y se modela matemáticamente usando la ecuación diferencial:</p>
 <div class="math notranslate nohighlight" id="equation-modelo1">
@@ -701,7 +835,7 @@ x(t)=4.5sen(2t)~~[m]
 <p>La solución general para el caso de vibraciones libres, es decir, cuando <span class="math notranslate nohighlight">\(f(t)=0\)</span> y por lo menos alguna de las condiciones iniciales de posición <span class="math notranslate nohighlight">\(x(0)\)</span> en <span class="math notranslate nohighlight">\([m]\)</span> o velocidad <span class="math notranslate nohighlight">\(v(0)\)</span> en <span class="math notranslate nohighlight">\([m/s]\)</span> es</p>
 <div class="math notranslate nohighlight" id="equation-solgen">
 <span class="eqno">(13)<a class="headerlink" href="#equation-solgen" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-  y(t)=e^{-\frac{b}{2m}t}(x(0)cos(\omega_{d}t)+\betasen(\omega_{d}t))
+  y(t)=e^{-\frac{b}{2m}t}(x(0)cos(\omega_{d}t)+\beta sen(\omega_{d}t))
 	\end{equation}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(\omega_d\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> son la frecuencia natural mortiguada y <span class="math notranslate nohighlight">\(\beta\)</span> una constante dadas por:</p>
 <div class="math notranslate nohighlight">
@@ -713,32 +847,30 @@ x(t)=4.5sen(2t)~~[m]
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
-
+<span class="c">%Se lee la imagen del juguete a animar como oscilador armónico</span>
 <span class="n">A</span><span class="p">=</span><span class="nb">imread</span><span class="p">(</span><span class="s">&quot;https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/juguete.png&quot;</span><span class="p">);</span>
-
+<span class="c">% Parámetros del sistema masa-resorte-amortiguador</span>
 <span class="n">m</span><span class="p">=</span><span class="mf">0.43</span><span class="p">;</span>
 <span class="n">b</span><span class="p">=</span><span class="mf">0.15</span><span class="p">;</span>
-<span class="n">k</span><span class="p">=</span><span class="mf">4.5</span><span class="p">;</span>
+<span class="n">k</span><span class="p">=</span><span class="mf">4.5</span><span class="p">;</span><span class="w"> </span>
+<span class="c">%condiciones iniciales de posición y velocidad</span>
 <span class="n">x0</span><span class="p">=</span><span class="mf">0.025</span><span class="p">;</span>
 <span class="n">dx0</span><span class="p">=</span><span class="mf">0.0</span><span class="p">;</span>
-
+<span class="c">% Cálculo de la frecuencia natural amortiguada</span>
 <span class="n">wd</span><span class="p">=</span><span class="nb">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">/</span><span class="n">m</span><span class="o">-</span><span class="n">b</span>^<span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">m</span>^<span class="mi">2</span><span class="p">));</span>
-
+<span class="c">% Constante de la solución omogénea</span>
 <span class="n">a</span><span class="p">=(</span><span class="n">m</span><span class="o">*</span><span class="n">dx0</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">x0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">wd</span><span class="p">);</span>
 
-
+<span class="c">%vector de tiempo</span>
 <span class="n">t</span><span class="p">=</span><span class="mi">0</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">15</span><span class="p">;</span>
-
-<span class="n">F1</span><span class="p">=</span><span class="nb">exp</span><span class="p">((</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">))</span><span class="o">.*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="n">x0</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">wd</span><span class="o">.*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">a</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">wd</span><span class="o">.*</span><span class="n">t</span><span class="p">));</span>
-
-<span class="n">xt</span><span class="p">=</span><span class="n">F1</span><span class="p">;</span>
+<span class="c">% Función x(t)</span>
+<span class="n">xt</span><span class="p">=</span><span class="nb">exp</span><span class="p">((</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="p">))</span><span class="o">.*</span><span class="n">t</span><span class="p">)</span><span class="o">.*</span><span class="p">(</span><span class="n">x0</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">wd</span><span class="o">.*</span><span class="n">t</span><span class="p">)</span><span class="o">+</span><span class="n">a</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">wd</span><span class="o">.*</span><span class="n">t</span><span class="p">));</span>
 
 
 <span class="nb">dos</span><span class="p">=</span><span class="nb">figure</span><span class="p">;</span>
-<span class="k">global</span><span class="w"> </span><span class="n">stopstop</span><span class="w"> </span><span class="n">ppause</span><span class="p">;</span>
 
 <span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
-
+<span class="c">% La animación se repetirá para cada valor de la función x(t) en cada instante de tiempo </span>
 <span class="k">while</span><span class="p">((</span><span class="nb">i</span><span class="o">&lt;</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">))</span>
 <span class="w">    </span>
 <span class="w">     </span><span class="nb">cla</span>
@@ -749,7 +881,7 @@ x(t)=4.5sen(2t)~~[m]
 <span class="w">      </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="n">xt</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="w">      </span><span class="nb">axis</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="o">-</span><span class="mf">0.035</span><span class="w"> </span><span class="mf">0.035</span><span class="p">])</span>
 <span class="w">      </span>
-<span class="w">  </span>
+<span class="w">  </span><span class="c">% Se da formato al texto de los ejes de las gráficas    </span>
 <span class="w">      </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t [s]&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
@@ -764,14 +896,15 @@ x(t)=4.5sen(2t)~~[m]
 <span class="w">    </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">);</span><span class="w">  </span>
 <span class="w">    </span><span class="nb">title</span><span class="p">(</span><span class="nb">strcat</span><span class="p">(</span><span class="s">&#39;t= &#39;</span><span class="p">,</span><span class="nb">num2str</span><span class="p">((</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="mf">0.001</span><span class="p">),</span><span class="s">&#39; [s]&#39;</span><span class="p">,</span><span class="s">&#39;    x(t)= &#39;</span><span class="p">,</span><span class="nb">num2str</span><span class="p">(</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)),</span><span class="s">&#39; [m]&#39;</span><span class="p">))</span>
 <span class="w">    </span>
-<span class="w">   </span>
+<span class="w">   </span><span class="c">% Se da formato al texto de los ejes de las gráficas    </span>
 <span class="w">       </span>
 <span class="w">    </span><span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="w">     </span><span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
 <span class="w">     </span><span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="w">     </span><span class="nb">image</span><span class="p">([</span><span class="o">-</span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.02</span><span class="p">],[</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="mf">0.035</span><span class="w"> </span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="mf">0.035</span><span class="p">],</span><span class="n">A</span><span class="p">);</span><span class="w">   </span>
-<span class="w">     </span><span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="w"> </span><span class="mf">0.1</span><span class="p">])</span>
-<span class="w">     </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x(t) [m]&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="w">     </span><span class="nb">image</span><span class="p">([</span><span class="o">-</span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.02</span><span class="p">],[</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">+</span><span class="mf">0.035</span><span class="w"> </span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="o">-</span><span class="mf">0.035</span><span class="p">],</span><span class="n">A</span><span class="p">);</span><span class="w"> </span><span class="c">%Se inserta la imagen a animar en la gráfica</span>
+<span class="w">     </span><span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="w"> </span><span class="mf">0.1</span><span class="p">])</span><span class="w"> </span><span class="c">% Ajuste de coordenadas para visualización</span>
+<span class="w">   </span><span class="c">%Se da formato y tamaño de letra a la gráfica animada</span>
+<span class="w">     </span><span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t [s]&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
@@ -779,17 +912,16 @@ x(t)=4.5sen(2t)~~[m]
 <span class="w">     </span><span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;fontname&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="s">&#39;FontWeight&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">);</span><span class="w">  </span>
 <span class="w">                </span>
 <span class="w">   </span><span class="nb">i</span><span class="p">=</span><span class="nb">i</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span><span class="w">       </span>
-<span class="w">   </span><span class="nb">pause</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span>
-<span class="w">   </span><span class="nb">cla</span>
-<span class="w">                  </span>
+<span class="w">   </span><span class="nb">pause</span><span class="p">(</span><span class="mf">0.01</span><span class="p">)</span><span class="c">% pausa para animación</span>
+<span class="w">   </span><span class="nb">cla</span><span class="w">               </span>
 <span class="k">end</span><span class="w">     </span>
-
+<span class="c">% Se grafica la imágen en el punto de equilibrio original al terminar la animación</span>
 <span class="nb">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
 <span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">):</span><span class="mf">0.001</span><span class="p">:</span><span class="nb">max</span><span class="p">(</span><span class="n">t</span><span class="p">)],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">image</span><span class="p">([</span><span class="o">-</span><span class="mf">0.02</span><span class="w"> </span><span class="mf">0.02</span><span class="p">],[</span><span class="mf">0.035</span><span class="w"> </span><span class="o">-</span><span class="mf">0.035</span><span class="p">],</span><span class="n">A</span><span class="p">);</span><span class="w"> </span>
 <span class="w">     </span><span class="nb">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="o">-</span><span class="mf">0.1</span><span class="w"> </span><span class="mf">0.1</span><span class="p">])</span>
-<span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;x(t) [m]&#39;</span><span class="p">,</span><span class="k">...</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s">&#39;XLabel&#39;</span><span class="p">),</span><span class="s">&#39;String&#39;</span><span class="p">,</span><span class="s">&#39;t [s]&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">                    </span><span class="s">&#39;FontName&#39;</span><span class="p">,</span><span class="s">&#39;Arial&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">                    </span><span class="s">&#39;FontAngle&#39;</span><span class="p">,</span><span class="s">&#39;normal&#39;</span><span class="p">,</span><span class="k">...</span>
 <span class="w">                    </span><span class="s">&#39;FontSize&#39;</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
@@ -799,29 +931,29 @@ x(t)=4.5sen(2t)~~[m]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1ad6c1e125f11b23f54da0711774cd4130a8b93251ff3cd4976f33d3e7aa77d9.png" src="_images/1ad6c1e125f11b23f54da0711774cd4130a8b93251ff3cd4976f33d3e7aa77d9.png" />
+<img alt="_images/cf8353a624cfa14a21f39b0a74af99c63a16db3e1442eead6e73e6f5af2dc4fa.png" src="_images/cf8353a624cfa14a21f39b0a74af99c63a16db3e1442eead6e73e6f5af2dc4fa.png" />
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="ejercicio-de-la-pratica-14">
-<h2>Ejercicio de la prática 14<a class="headerlink" href="#ejercicio-de-la-pratica-14" title="Permalink to this heading">#</a></h2>
+</section>
+</section>
+<section id="ejercicio-de-la-practica-13">
+<h2>Ejercicio de la práctica 13<a class="headerlink" href="#ejercicio-de-la-practica-13" title="Permalink to this heading">#</a></h2>
 <p>1.- Descargue o lea desde la ruta las siguientes imágenes:</p>
 <p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/flores.JPG">https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/flores.JPG</a>
 <a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/cedral.jpg">https://raw.githubusercontent.com/LuisGerardo2204/Archivos_de_datos/refs/heads/main/cedral.jpg</a></p>
 <p>Realice las siguientes operaciones con las dos imágenes:</p>
 <p>a) En una figura muestre la imagen original, la imagen en escala de grises, la imagen invertida y la imagen escalada al 25% de su tamaño original.</p>
-<p>b) En otra figura muestre la imagen original y su versión con un filtro <code class="docutils literal notranslate"><span class="pre">imgaussfilt()</span></code>.</p>
-<p>c) En una tercer figura muestre la imagen original y la figura con las transformaciones:</p>
+<p>b) En otra figura muestre la imagen original y su versión en el formato HSV con el factor 0.8 aplicado a la matriz de color o matiz.</p>
+<p>c) En una tercer figura muestre la imagen original y la figura con las siguientes transformaciones:</p>
 <div class="math notranslate nohighlight">
 \[
-Y= 0.3R+0.6G+0.114*B,~~~~I=-0.5R-0,3G+0.4B,~~~~~Q=0.7R-0.52G-0.12B
+Y= 0.3R+0.6G+0.114B,~~~~I=-0.5R-0,3G+0.4B,~~~~~Q=0.7R-0.52G-0.12B
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(R\)</span> es la matriz componente rojo, <span class="math notranslate nohighlight">\(B\)</span> es la matriz componente azul y <span class="math notranslate nohighlight">\(G\)</span> es la matriz componente verde. Use el comando <code class="docutils literal notranslate"><span class="pre">imshow(cat(3,Y,I,Q))</span></code> para mostrar la imagen transformada.</p>
 <p>2.- Realice la animación de la gráfica <span class="math notranslate nohighlight">\(y(t)\)</span> para un sistema masa-resorte con condiciones iniciales <span class="math notranslate nohighlight">\(y(0)=0.015~[m]\)</span>, velocidad inicial <span class="math notranslate nohighlight">\(v(0)=0~[m/s]\)</span>, masa <span class="math notranslate nohighlight">\(m=0.5~[kg]\)</span> y constante de rigidez <span class="math notranslate nohighlight">\(k=300~[N/m]\)</span>. Considere que la ecuaciones <a class="reference internal" href="#equation-solgen">(13)</a> para construir la ecuación para simular el caso particular que se plantea.</p>
 <p>3.- Realice la animación de la gráfica de uno de los casos del tiro parabólico del ejercicio 2 de la Práctica 9.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -848,11 +980,10 @@ Y= 0.3R+0.6G+0.114*B,~~~~I=-0.5R-0,3G+0.4B,~~~~~Q=0.7R-0.52G-0.12B
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="Practica12.html"
@@ -872,10 +1003,7 @@ Y= 0.3R+0.6G+0.114*B,~~~~I=-0.5R-0,3G+0.4B,~~~~~Q=0.7R-0.52G-0.12B
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -890,12 +1018,17 @@ Y= 0.3R+0.6G+0.114*B,~~~~I=-0.5R-0,3G+0.4B,~~~~~Q=0.7R-0.52G-0.12B
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operaciones-de-edicion-de-forma-de-imagenes">Operaciones de edición de forma de imágenes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-de-las-imagenes-en-componentes-hsv">Descomposicion de las imágenes en componentes HSV</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-a-escala-de-grises">Conversión a escala de grises</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#animacion-de-funciones">Animación de funciones</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#movimiento-rectilineo">Movimiento rectilíneo</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sistema-oscilador-armonico">Sistema oscilador armónico.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-pratica-14">Ejercicio de la prática 14</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-13">Ejercicio de la práctica 13</a></li>
 </ul>
   </nav></div>
 
@@ -917,6 +1050,7 @@ Por Dr. Luis Gerardo Trujillo Franco
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022.
@@ -943,8 +1077,8 @@ Por Dr. Luis Gerardo Trujillo Franco
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
