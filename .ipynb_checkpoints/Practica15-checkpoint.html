@@ -584,19 +584,8 @@ M=\begin{bmatrix}m_1&amp;0\\0&amp;m_2\end{bmatrix},~~~~B=\begin{bmatrix}b_1+b_2&
 <p>Con condiciones iniciales nulas, es decir <span class="math notranslate nohighlight">\(x_1(0)=x_2(0)=0~[m]\)</span> y <span class="math notranslate nohighlight">\(\dot{x}_1(0)=\dot{x}_2(0)=0~[m/s]\)</span>. El modelo o sistema de ecuaciones del sistema resultante se describe como:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\begin{bmatrix}2.25&amp;0\\0&amp;2.75\end{bmatrix}\begin{bmatrix}\ddot{x}_1\\\ddot{x}_2\end{bmatrix}+\begin{bmatrix}9&amp;-5\\-5&amp;5\end{bmatrix}\begin{bmatrix}\dot{x}_1\\\dot{x}_2\end{bmatrix}+\begin{bmatrix}650&amp;-300\\-300&amp;300\end{bmatrix}\begin{bmatrix}{x}_1\\{x}_2\end{bmatrix}=\begin{bmatrix}4u(t)\\2u(t)\end{bmatrix}
+\begin{bmatrix}2.25&amp;0\\0&amp;2.75\end{bmatrix}\begin{bmatrix}\ddot{x}_1\\\dot{x}_2\end{bmatrix}+\begin{bmatrix}9&amp;-5\\-5&amp;5\end{bmatrix}\begin{bmatrix}\dot{x}_1\\\dot{x}_2\end{bmatrix}+\begin{bmatrix}650&amp;-300\\-300&amp;300\end{bmatrix}\begin{bmatrix}{x}_1\\{x}_2\end{bmatrix}=\begin{bmatrix}4u(t)\\2u(t)\end{bmatrix}
 \end{split}\]</div>
-<p>Despejando el vector <span class="math notranslate nohighlight">\(\ddot{x}=[\ddot{x}_1~~\ddot{x}_2]^T\)</span> se puede expresar un diagrama de bloques de manera similar al que se usó en la práctica anterior, con la diferencia fundamental de que se trabaja con vectores y matrices en vez de valores escalares. La expresión resultante es:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{bmatrix}\ddot{x}_1\\\ddot{x}_2\end{bmatrix}=\begin{bmatrix} \frac{1}{2.25}&amp;0\\0&amp; \frac{1}{2.75}\end{bmatrix}\left ( \begin{bmatrix}4u(t)\\2u(t)\end{bmatrix}- \begin{bmatrix}9&amp;-5\\-5&amp;5\end{bmatrix}\begin{bmatrix}\dot{x}_1\\\dot{x}_2\end{bmatrix}-\begin{bmatrix}650&amp;-300\\-300&amp;300\end{bmatrix}\begin{bmatrix}{x}_1\\{x}_2\end{bmatrix}\right )
-\end{split}\]</div>
-<p>En general se puede expresar:</p>
-<div class="math notranslate nohighlight" id="equation-despejex2">
-<span class="eqno">(24)<a class="headerlink" href="#equation-despejex2" title="Enlace permanente a esta ecuación">#</a></span>\[\ddot{x}=M^{-1}\left (f- B\dot{x}-Kx\right )\]</div>
-<p>De la misma manera que en el caso del sistema de un grado de libertad, se puede expresar el vector de posición como:</p>
-<div class="math notranslate nohighlight" id="equation-despejex2-integral">
-<span class="eqno">(25)<a class="headerlink" href="#equation-despejex2-integral" title="Enlace permanente a esta ecuación">#</a></span>\[x=M^{-1}\left ( \int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-B\int^{t}_0\frac{dx(\tau_1)}{d\tau_1}d\tau_1-K\int^{t}_0\int^{\tau_1}_0x(\tau_1)d\tau_1d\tau_2\right )\]</div>
 <p>La representación de las matrices <span class="math notranslate nohighlight">\(M\)</span>, <span class="math notranslate nohighlight">\(B\)</span> y <span class="math notranslate nohighlight">\(K\)</span> se lleva a cabo utilizando bloques del tipo función embebida o de usuarios, el cual se obtiene en el menú de funciones definidas por el usuario de la biblioteca de bloques:</p>
 <figure class="align-default" id="menu-funciones">
 <a class="reference internal image-reference" href="_images/user_defined.png"><img alt="_images/user_defined.png" src="_images/user_defined.png" style="height: 200px;" /></a>
@@ -647,63 +636,34 @@ M=\begin{bmatrix}m_1&amp;0\\0&amp;m_2\end{bmatrix},~~~~B=\begin{bmatrix}b_1+b_2&
 </section>
 <section id="circuito-rlc-de-dos-mallas">
 <h2>Circuito RLC de dos mallas<a class="headerlink" href="#circuito-rlc-de-dos-mallas" title="Permalink to this heading">#</a></h2>
-<p>Un sistema similar o análogo en estructura y comportamiento al sistema analizado con anterioridad es un circuito eléctrico de dos mallas, compuesto por elementos almacen de energía como lo son las inductancias y los capacitores. Una configuración de dos grados de libertad se muestra en la <a class="reference internal" href="#rlc-mallas-1"><span class="std std-numref">Figura 30</span></a>, ciertamente no es la única configuración posible para la interconexión de los componentes, sin embargo constituye un buen punto de partida para el análisis de las analogías entre sistemas mecánicos y sistemas eléctricos. En la configuración en cascada mostrada en la <a class="reference internal" href="#rlc-mallas-1"><span class="std std-numref">Figura 30</span></a> las incógnitas son las corrientes <span class="math notranslate nohighlight">\(i_1\)</span> e <span class="math notranslate nohighlight">\(i_2\)</span>.</p>
 <figure class="align-default" id="rlc-mallas-1">
-<a class="reference internal image-reference" href="_images/RLC_2mallas.png"><img alt="_images/RLC_2mallas.png" src="_images/RLC_2mallas.png" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="_images/RLC_2mallas.png"><img alt="_images/RLC_2mallas.png" src="_images/RLC_2mallas.png" style="height: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Figura 30 </span><span class="caption-text">Circuito eléctrico de 2 mallas.</span><a class="headerlink" href="#rlc-mallas-1" title="Enlace permanente a esta imagen">#</a></p>
 </figcaption>
 </figure>
-<p>Considerando las relaciones constitutivas de los componetes:</p>
-<div class="math notranslate nohighlight">
-\[
-v_c=\frac{1}{C_ 1}\int{i_cdt},~~~~i_c=C\frac{dv_c}{dt},~~~~v_L=L\frac{di_L}{dt},~~~~v_R=i_RR
-\]</div>
-<p>Se obtiene el sistema de ecuaciones diferenciales para las corrientes de malla <span class="math notranslate nohighlight">\(i_1\)</span> e <span class="math notranslate nohighlight">\(i_2\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-rlc-2gdl">
-<span class="eqno">(26)<a class="headerlink" href="#equation-rlc-2gdl" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
-v_1=R_1i_1+L_1\frac{di_1}{dt}+\frac{1}{C_1}\int{(i_1-i_2)dt}\\
-\frac{1}{C_1}\int{(i_1-i_2)dt}=R_2i_2+L_2\frac{di_2}{dt}+\frac{1}{C_2}\int{i_2dt}
+<span class="eqno">(24)<a class="headerlink" href="#equation-rlc-2gdl" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
+v_1=R_ 1i_ 1+L_ 1\frac{di_ 1}{dt}+\frac{1}{C_ 1}\int{(i_ 1-i_ 2)dt}\\
+\frac{1}{C_ 1}\int{(i_ 1-i_ 2)dt}=R_ 2i_ 2+L_ 2\frac{di_ \
+2}{dt}+\frac{1}{C_ 2}\int{i_ 2dt}
 \end{eqnarray}\end{split}\]</div>
-<p>Es posible agrupar el conjunto de ecuaciones <a class="reference internal" href="#equation-rlc-2gdl">(26)</a> para obtener:</p>
-<div class="math notranslate nohighlight" id="equation-rlc-2gdl-reagrup">
-<span class="eqno">(27)<a class="headerlink" href="#equation-rlc-2gdl-reagrup" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{split}\begin{eqnarray}
-L_1\frac{di_1}{dt}+R_1i_1+\frac{1}{C_1}\int{(i_1-i_2)dt}=v_1\\
-L_2\frac{di_2}{dt}+R_2i_2-\frac{1}{C_1}\int{(i_1-i_2)dt}+\frac{1}{C_2}\int{i_2dt}=0
-\end{eqnarray}\end{split}\]</div>
-<p>Derivando con respecto al tiempo las ecuaciones <a class="reference internal" href="#equation-rlc-2gdl-reagrup">(27)</a> se obtiene:</p>
-<div class="math notranslate nohighlight">
-\[
-L_ 1\frac{d^2i_ 1}{dt^2}+R_ 1\frac{di_ 1}{dt}+\frac{(i_ 1-i_ 2)}{C_ 1}\frac{dv_1}{dt}=v_1
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-L_ 2\frac{d^2i_2}{dt^2}+R_ 2\frac{di_ 2}{dt}+\frac{i_2}{C_ 2}-\frac{(i_ 1-i_ 2)}{C_1}=0
-\]</div>
 <p>En forma matricial:</p>
 <div class="math notranslate nohighlight" id="equation-rlc-2gdl-matriz">
-<span class="eqno">(28)<a class="headerlink" href="#equation-rlc-2gdl-matriz" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-L\ddot{i}+R\dot{i}+Ci=\dot{v}
+<span class="eqno">(25)<a class="headerlink" href="#equation-rlc-2gdl-matriz" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
+L\ddot{i}+R\dot{i}+ki=\dot{v}
 \end{equation}\]</div>
 <p>donde:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-L=\begin{bmatrix}L_1&amp;0\\0&amp;L_2\end{bmatrix},~~~~R=\begin{bmatrix}R_1&amp;0\\0&amp;R_2\end{bmatrix}~~~~C=\begin{bmatrix}\frac{1}{C_1}&amp;-\frac{1}{C_1}\\-\frac{1}{C_1}&amp;\frac{1}{C_1}+\frac{1}{C_2}\end{bmatrix},~~~~i=\begin{bmatrix}i_1\\i_2\end{bmatrix},~~~~v=\begin{bmatrix}v_1\\0\end{bmatrix}
+L=\begin{bmatrix}L_1&amp;0\\0&amp;L_2\end{bmatrix},~~~~R=\begin{bmatrix}R_1&amp;0\\0&amp;R_2\end{bmatrix}~~~~C=\begin{bmatrix}\frac{1}{C_1}&amp;-\frac{1}{C_1}\\-\frac{1}{C_1}&amp;\frac{1}{C_1}+\frac{1}{C_2}\end{bmatrix}
 \end{split}\]</div>
-<p>son las matrices de inductancia, resistencia y capacitancia respectivamente, <span class="math notranslate nohighlight">\(i\)</span> es el vector de corrientes de malla y <span class="math notranslate nohighlight">\(v\)</span> es el vector de voltajes de entrada.</p>
 <figure class="align-default" id="salida-rlc2">
 <a class="reference internal image-reference" href="_images/salida_simulink_RLC2.png"><img alt="_images/salida_simulink_RLC2.png" src="_images/salida_simulink_RLC2.png" style="height: 400px;" /></a>
 <figcaption>
 <p><span class="caption-number">Figura 31 </span><span class="caption-text">Salida de la simulación.</span><a class="headerlink" href="#salida-rlc2" title="Enlace permanente a esta imagen">#</a></p>
 </figcaption>
 </figure>
-<p>De la misma forma que en el caso del sistema mecánico, se puede expresar el vector <span class="math notranslate nohighlight">\([i_1~~i_2]^T\)</span> en términos de las matrices de inductancia, resistencia y capacitancia:</p>
-<div class="math notranslate nohighlight" id="equation-despejei2">
-<span class="eqno">(29)<a class="headerlink" href="#equation-despejei2" title="Enlace permanente a esta ecuación">#</a></span>\[\ddot{i}=L^{-1}\left (v- R\dot{i}-Ci\right )\]</div>
-<p>Expresando <span class="math notranslate nohighlight">\(\ddot{i}\)</span> en términos de las matrices <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(R\)</span> y <span class="math notranslate nohighlight">\(C\)</span> e integrando dos veces se obtiene:</p>
-<div class="math notranslate nohighlight" id="equation-despejei2-integral">
-<span class="eqno">(30)<a class="headerlink" href="#equation-despejei2-integral" title="Enlace permanente a esta ecuación">#</a></span>\[i=L^{-1}\left ( \int^{t}_0\int^{\tau_1}_0v(\tau_1)d\tau_1d\tau_2-R\int^{t}_0\frac{dx(\tau_1)}{d\tau_1}d\tau_1-C\int^{t}_0\int^{\tau_1}_0x(\tau_1)d\tau_1d\tau_2\right )\]</div>
-<p>De manera tal que se puede hacer un diagrama de bloques similar al del sistema mecánico de dos grados de libertad para hacer la simulación y encontrar la solución para las corrientes <span class="math notranslate nohighlight">\(i_1\)</span> e <span class="math notranslate nohighlight">\(i_2\)</span>.</p>
 </section>
 <section id="ejercicio-de-la-practica-15">
 <h2>Ejercicio de la práctica 15<a class="headerlink" href="#ejercicio-de-la-practica-15" title="Permalink to this heading">#</a></h2>
@@ -802,10 +762,10 @@ L=\begin{bmatrix}L_1&amp;0\\0&amp;L_2\end{bmatrix},~~~~R=\begin{bmatrix}R_1&amp;
 </table>
 <p>Genere la gráfica de la salidas <span class="math notranslate nohighlight">\(x_1\)</span> y <span class="math notranslate nohighlight">\(x_2\)</span> en una figura en el espacio de trabajo y guerde la imagen en formato .jpg para incluirla en el reporte.</p>
 <ol class="arabic simple" start="2">
-<li><p>Simule el circuito RLC de dos mallas que se muestra en la <a class="reference internal" href="#rlc-2mallas"><span class="std std-numref">Figura 33</span></a> y genere la gráfica de las salidas <span class="math notranslate nohighlight">\(i_1\)</span> e <span class="math notranslate nohighlight">\(i_2\)</span> en una figura, guarde la salida en un archivo de imagen jpg. Considere <span class="math notranslate nohighlight">\(V1=1.65u(t)~[V]\)</span>.</p></li>
+<li><p>Simule el circuito RLC de dos mallas que se muestra en la <a class="reference internal" href="#rlc-2mallas"><span class="std std-numref">Figura 33</span></a> y genere la gráfica de las salidas <span class="math notranslate nohighlight">\(i_1\)</span> e <span class="math notranslate nohighlight">\(i_2\)</span> en una figura, guarde la salida en un archivo de imagen jpg.</p></li>
 </ol>
 <figure class="align-default" id="rlc-2mallas">
-<a class="reference internal image-reference" href="_images/RLC_2GDL.png"><img alt="_images/RLC_2GDL.png" src="_images/RLC_2GDL.png" style="height: 200px;" /></a>
+<a class="reference internal image-reference" href="_images/RLC_2GDL.png"><img alt="_images/RLC_2GDL.png" src="_images/RLC_2GDL.png" style="height: 300px;" /></a>
 <figcaption>
 <p><span class="caption-number">Figura 33 </span><span class="caption-text">Circuito eléctrico de 2 mallas.</span><a class="headerlink" href="#rlc-2mallas" title="Enlace permanente a esta imagen">#</a></p>
 </figcaption>

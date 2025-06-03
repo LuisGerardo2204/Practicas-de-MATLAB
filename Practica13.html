@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Práctica 13: Imágenes y animaciones &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <title>Práctica 13: Imágenes y animaciones &#8212; Prácticas con el software MATLAB® UPIIH IPN</title>
   
   
   
@@ -159,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB® UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB® UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -191,7 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica12.html">Práctica 12: Diferenciación e integración numéricas con MATLAB®</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 13: Imágenes y animaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica14.html">Práctica 14: Simulación de sistemas dinámicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practica15.html">Práctica 15: Creación de interfaces gráficas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica15.html">Práctica 15: Simulacion de sistemas dinámicos parte 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -367,7 +367,7 @@ document.write(`
 <h1>Práctica 13: Imágenes y animaciones<a class="headerlink" href="#practica-13-imagenes-y-animaciones" title="Permalink to this heading">#</a></h1>
 <p>En esta práctica se revisaran algunas funciones de MATLAB® que permiten la manipulación de archivos que contienen imágenes, para su visualización y análisis como variables. Además de su despliegue en figuras nativas, es decir, como elementos gráficos, es posible almacenar los componentes básicos en espacios de memoria en un formato de arreglos o matrices, lo cual permite la descomposición de las imágenes en los componentes de colores básicos rojo, azul y verde, además de su manipulación usando muchas de las importantes herramientas del álgebra lineal. En esta práctica se tratará con los imágenes representadas usando los colores primario Rojo, Verde y Azul, que son la base del estandard o formato RGB para la representación de imágenes en dispositivos electrónicos como lo son las computadoras y las pantallas de los sistemas inteligentes.</p>
 <p>La unidad básica para la representación de las imágenes es el pixel, un pixel es entendido como una célula de una imágen. Una imágen se compone de miles o millones de estas unidades fundamnetales que a su vez se conforman de los tres colores primarios rojo, verde y azul, dado que la combinación de estos tres colores permite generar una amplia gama de colores y así representar imágenes. A cada pixel se le asignan tres variables que representan la intensidad de rojo, verde y azul en la imagen en ese punto en específico, en un rango de 0 a 255.</p>
-<p>El comando básico para leer una imagen y almacenar su información pixel por pixel es ´imread()´ las impagenes se pueden leer desde archivos que se encuentren en la carpeta de trabajo, indicando la ruta al archivo si se encuentra en el disco duro en algún directorio diferente e inlcluso desde internet indicado la dirección completa.</p>
+<p>El comando básico para leer una imagen y almacenar su información pixel por pixel es <code class="docutils literal notranslate"><span class="pre">imread()</span></code> las impagenes se pueden leer desde archivos que se encuentren en la carpeta de trabajo, indicando la ruta al archivo si se encuentra en el disco duro en algún directorio diferente e inlcluso desde internet indicado la dirección completa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
@@ -386,8 +386,8 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Como puede observarse, el arreglo A contiene 3 matrices de dimensiones 659x621. La primera matriz, es decir el elemento ´A(:,:,1)´ contiene la intensidad del color rojo de cada pixel, la matriz ´A(:,:,2)´ la intensidad del tono verde en cada pixel y finalmente la matriz ´A(:,:,3)´ la intensidad del color azul por pixel.</p>
-<p>Para mostrar la imagen descargada o almacenada en el arreglo A se usa el comando ´imshow()´</p>
+<p>Como puede observarse, el arreglo A contiene 3 matrices de dimensiones 659x621. La primera matriz, es decir el elemento <code class="docutils literal notranslate"><span class="pre">A(:,:,1)</span></code> contiene la intensidad del color rojo de cada pixel, la matriz  <code class="docutils literal notranslate"><span class="pre">A(:,:,2)</span></code> la intensidad del tono verde en cada pixel y finalmente la matriz <code class="docutils literal notranslate"><span class="pre">A(:,:,3)</span></code> la intensidad del color azul por pixel.</p>
+<p>Para mostrar la imagen descargada o almacenada en el arreglo A se usa el comando <code class="docutils literal notranslate"><span class="pre">imshow()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">figure</span><span class="w"> </span><span class="c">%Se inicializa una nueva figura</span>
@@ -396,7 +396,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/aa70098f2dffb6b5a50551bb5ae76c3dbdcb68bf41ddb534ee71e67c5e9b6488.png" src="_images/aa70098f2dffb6b5a50551bb5ae76c3dbdcb68bf41ddb534ee71e67c5e9b6488.png" />
+<img alt="_images/a905118af86a99f1ad96b1a20ae4a6409318b95b9b0d6aea3791c62c0eabdb7b.png" src="_images/a905118af86a99f1ad96b1a20ae4a6409318b95b9b0d6aea3791c62c0eabdb7b.png" />
 </div>
 </div>
 <p>Es posible visualizar la imagen en una figura con el formato de las gráficas con escala numérica, con la particularidad de que en los ejes se muestran las dimensiones en pixeles de la imagen:</p>
@@ -409,7 +409,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/fa787d469e8b097d23fcdeebbc3a2b823aad6eacb1daa854470668ccbaad6547.png" src="_images/fa787d469e8b097d23fcdeebbc3a2b823aad6eacb1daa854470668ccbaad6547.png" />
+<img alt="_images/046023e3d6b5bbf727d366225f751dd9a524b666fe81f419cb4beff8765e6c24.png" src="_images/046023e3d6b5bbf727d366225f751dd9a524b666fe81f419cb4beff8765e6c24.png" />
 </div>
 </div>
 <p>La imagen se visualiza al combinar los tres colores primarios en cada pixel con las intesidades indicadas en cada
@@ -461,7 +461,7 @@ uno de los elementos de la matriz A. Por ejemplo los componentes rojo, azul y ve
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/76788f3947b9dfbb05246f2b15ac02f25428513b998e91e949dab795fd7c375e.png" src="_images/76788f3947b9dfbb05246f2b15ac02f25428513b998e91e949dab795fd7c375e.png" />
+<img alt="_images/c644b2071865c721d9935117f97339ef49fc354290f294cc0dc9a8604c2ac51f.png" src="_images/c644b2071865c721d9935117f97339ef49fc354290f294cc0dc9a8604c2ac51f.png" />
 </div>
 </div>
 <p>Con base en lo anterior, es posible asignar una tonalidad específica a un pixel o grupo de pixeles, por ejemplo, para manipular el pixel 500,180 y asignarle un color blanco es necesario asignarle el valor de 255 a cada uno de los componentes R,G y B de esa localidad en específico.</p>
@@ -481,7 +481,7 @@ uno de los elementos de la matriz A. Por ejemplo los componentes rojo, azul y ve
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0e09e13930eb4305fc8bc76c7816d5d13cb75ee0c6d37342d11f120f61eee03c.png" src="_images/0e09e13930eb4305fc8bc76c7816d5d13cb75ee0c6d37342d11f120f61eee03c.png" />
+<img alt="_images/8c1ab9828390a6d8835366b3f5659f07894aa7c2163fb59769f117c21bd856bd.png" src="_images/8c1ab9828390a6d8835366b3f5659f07894aa7c2163fb59769f117c21bd856bd.png" />
 </div>
 </div>
 <section id="operaciones-de-edicion-de-forma-de-imagenes">
@@ -542,7 +542,7 @@ uno de los elementos de la matriz A. Por ejemplo los componentes rojo, azul y ve
 <img alt="_images/8855abf6b8e732ed673b787d39217715ca022d636a8aa3f0a98ff1f626654b3a.png" src="_images/8855abf6b8e732ed673b787d39217715ca022d636a8aa3f0a98ff1f626654b3a.png" />
 </div>
 </div>
-<p>La rotación de la imagen original con un ángulo de 60 grados se usa el comando ´imrotate()´ con la especificación bilineal:</p>
+<p>La rotación de la imagen original con un ángulo de 60 grados se usa el comando <code class="docutils literal notranslate"><span class="pre">imrotate()</span></code> con la especificación bilineal:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_rotada</span><span class="p">=</span><span class="n">imrotate</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="s">&quot;Bilinear&quot;</span><span class="p">);</span>
@@ -608,7 +608,7 @@ Dimensiones de la reducida:
 </div>
 </div>
 </div>
-<p>Es posible modificar el contraste de las imájenes usando el comando ´imadjust(I,[minR minG minB;maxR maxG maxB],[])´</p>
+<p>Es posible modificar el contraste de las imájenes usando el comando <code class="docutils literal notranslate"><span class="pre">imadjust(I,[minR</span> <span class="pre">minG</span> <span class="pre">minB;maxR</span> <span class="pre">maxG</span> <span class="pre">maxB],[])</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">imagen_ajustada_RGB</span><span class="p">=</span><span class="n">imadjust</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.2</span><span class="w"> </span><span class="mf">0.2</span><span class="p">;</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="mf">0.4</span><span class="w"> </span><span class="mf">0.4</span><span class="p">],[]);</span>
@@ -622,7 +622,7 @@ Dimensiones de la reducida:
 </div>
 <section id="descomposicion-de-las-imagenes-en-componentes-hsv">
 <h3>Descomposicion de las imágenes en componentes HSV<a class="headerlink" href="#descomposicion-de-las-imagenes-en-componentes-hsv" title="Permalink to this heading">#</a></h3>
-<p>Una forma diferente de descomponer las imágenes es el formato HSV (Hue,Saturation,Value) que corresponden en español a los términos de matiz, saturación y brillo. El comando para la conversión de una imágen codificada en RGB a una codificada en formato HSV es ´rgb2hsv(I)´. Para mas información se puede consultar:</p>
+<p>Una forma diferente de descomponer las imágenes es el formato HSV (Hue,Saturation,Value) que corresponden en español a los términos de matiz, saturación y brillo. El comando para la conversión de una imágen codificada en RGB a una codificada en formato HSV es <code class="docutils literal notranslate"><span class="pre">rgb2hsv(I)</span></code>. Para mas información se puede consultar:</p>
 <p><a class="reference external" href="https://medium.com/&#64;DIYCoding/color-models-in-image-processing-understanding-rgb-and-hsv-for-computer-vision-a629641cdc40">https://medium.com/&#64;DIYCoding/color-models-in-image-processing-understanding-rgb-and-hsv-for-computer-vision-a629641cdc40</a></p>
 <p>La representación en formato HSV de la imagen de ejemplo se muestra con las siguientes líneas de código:</p>
 <div class="cell docutils container">
@@ -678,7 +678,7 @@ Dimensiones de la reducida:
 </section>
 <section id="conversion-a-escala-de-grises">
 <h2>Conversión a escala de grises<a class="headerlink" href="#conversion-a-escala-de-grises" title="Permalink to this heading">#</a></h2>
-<p>Una imagen a color se puede convertir a su equivalente en escala de grises usando el comando ´rgb2gray()´ y tambien aplicando algunas operaciones a las matrices de valores rojo, verde y azul como se muestra en las siguientes líneas:</p>
+<p>Una imagen a color se puede convertir a su equivalente en escala de grises usando el comando <code class="docutils literal notranslate"><span class="pre">rgb2gray()</span></code> y tambien aplicando algunas operaciones a las matrices de valores rojo, verde y azul como se muestra en las siguientes líneas:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">RGB_grises</span><span class="p">=</span><span class="nb">rgb2gray</span><span class="p">(</span><span class="n">A</span><span class="p">);</span><span class="w"> </span><span class="c">%Conversión de la imágen original a escala de grises</span>
@@ -804,7 +804,7 @@ x(t)=4.5sen(2t)~~[m]
 <span class="w">     </span><span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
 <span class="w">     </span><span class="nb">plot</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="mi">0</span><span class="o">*</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.001</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="c">%Se grafica la paríticula</span>
 <span class="w">     </span><span class="nb">plot</span><span class="p">(</span><span class="n">t</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="n">xt</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c">%Actualización de la posición de la partícula</span>
-<span class="w">    </span><span class="nb">rectangle</span><span class="p">(</span><span class="s">&#39;Position&#39;</span><span class="p">,[</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.24</span><span class="w"> </span><span class="mf">0.24</span><span class="p">],</span><span class="s">&#39;FaceColor&#39;</span><span class="p">,[</span><span class="mi">0</span><span class="w"> </span><span class="mf">.5</span><span class="w"> </span><span class="mf">.5</span><span class="p">],</span><span class="s">&#39;Curvature&#39;</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="w">    </span><span class="nb">rectangle</span><span class="p">(</span><span class="s">&#39;Position&#39;</span><span class="p">,[</span><span class="n">xt</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span><span class="w"> </span><span class="mf">0.0</span><span class="w"> </span><span class="mf">0.24</span><span class="w"> </span><span class="mf">0.24</span><span class="p">],</span><span class="s">&#39;FaceColor&#39;</span><span class="p">,[</span><span class="mi">0</span><span class="w"> </span><span class="mf">.5</span><span class="w"> </span><span class="mf">.5</span><span class="p">],</span><span class="s">&#39;Curvature&#39;</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span><span class="c">% Se dibuja la partícula</span>
 <span class="w">    </span><span class="nb">pause</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
 <span class="w">   </span>
 <span class="w">                </span><span class="k">while</span><span class="w"> </span><span class="n">ppause</span><span class="o">==</span><span class="mi">1</span>

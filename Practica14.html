@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Práctica 14: Simulación de sistemas dinámicos &#8212; Prácticas con el software MATLAB UPIIH IPN</title>
+    <title>Práctica 14: Simulación de sistemas dinámicos &#8212; Prácticas con el software MATLAB® UPIIH IPN</title>
   
   
   
@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica14';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Práctica 15: Creación de interfaces gráficas" href="Practica15.html" />
+    <link rel="next" title="Práctica 15: Simulacion de sistemas dinámicos parte 2" href="Practica15.html" />
     <link rel="prev" title="Práctica 13: Imágenes y animaciones" href="Practica13.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -159,8 +159,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>
-    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB UPIIH IPN - Home"/>`);</script>
+    <img src="_static/logo_UPIIH.jpeg" class="logo__image only-light" alt="Prácticas con el software MATLAB® UPIIH IPN - Home"/>
+    <script>document.write(`<img src="_static/logo_UPIIH.jpeg" class="logo__image only-dark" alt="Prácticas con el software MATLAB® UPIIH IPN - Home"/>`);</script>
   
   
 </a></div>
@@ -191,7 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica12.html">Práctica 12: Diferenciación e integración numéricas con MATLAB®</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica13.html">Práctica 13: Imágenes y animaciones</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 14: Simulación de sistemas dinámicos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Practica15.html">Práctica 15: Creación de interfaces gráficas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica15.html">Práctica 15: Simulacion de sistemas dinámicos parte 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -342,7 +342,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-entorno-de-simulacion-grafica-simulink">El entorno de simulación gráfica Simulink®</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-13">Ejercicio de la práctica 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-14">Ejercicio de la práctica 14</a></li>
 </ul>
             </nav>
         </div>
@@ -362,7 +362,7 @@ document.write(`
 <span class="eqno">(14)<a class="headerlink" href="#equation-edo1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
   2\frac{d^2y(t)}{dt^2}+300y(t)=4.5x(t)+5\frac{dx(t)}{dt}
 	\end{equation}\]</div>
-<p>La solución a la ecuación diferencial es la salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span>, es decir, es aquella función que satisface la igualdad establecida en la transformación o estructura <a class="reference internal" href="#equation-edo1">(14)</a>. En el caso de los sistemas mecánicos <span class="math notranslate nohighlight">\(x(t)\)</span> representará la evolución en el tiempo de una fuerza de entrada, en forma de par o empuje. En sistemas en los que existan almacenes de energía cinética en forma de masas, es común usar también aceleración. En el caso de los sistemas eléctricos, los almacenes de energía son los inductores o bobinas y los capacitores y la entrada son variables como los voltajes o corrientes. Es posible encontrar análogos muy útiles entre los sistemas mecánicos y eléctricos debido a su comportamiento y las relaciones constitutivas que se usan para construir la estructura de la ecuación diferencial que los modelan. Ejemplos de relaciones constitutivas para los sistemas mecánicos, de acuerdo con la ley de Newton son:</p>
+<p>La solución a la ecuación diferencial es la salida del sistema <span class="math notranslate nohighlight">\(y(t)\)</span>, es decir, es aquella función que satisface la igualdad establecida en la transformación o estructura de la ecuación <a class="reference internal" href="#equation-edo1">(14)</a>. En el caso de los sistemas mecánicos <span class="math notranslate nohighlight">\(x(t)\)</span> representará la evolución en el tiempo de una fuerza de entrada, en forma de par o empuje. En sistemas en los que existan almacenes de energía cinética en forma de masas, es común usar también aceleración. En el caso de los sistemas eléctricos, los almacenes de energía son los inductores o bobinas y los capacitores y la entrada son variables como los voltajes o corrientes. Es posible encontrar análogos muy útiles entre los sistemas mecánicos y eléctricos debido a su comportamiento y las relaciones constitutivas que se usan para construir la estructura de la ecuación diferencial que los modelan. Ejemplos de relaciones constitutivas para los sistemas mecánicos, de acuerdo con la ley de Newton son:</p>
 <div class="math notranslate nohighlight" id="equation-relconst1">
 <span class="eqno">(15)<a class="headerlink" href="#equation-relconst1" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
      m\frac{d^2x(t)}{dt^2}=ma~~F_b=b\frac{dx(t)}{dt}~~F_r=kx(t)
@@ -533,8 +533,8 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
 </video>
 </div>
 </section>
-<section id="ejercicio-de-la-practica-13">
-<h2>Ejercicio de la práctica 13<a class="headerlink" href="#ejercicio-de-la-practica-13" title="Permalink to this heading">#</a></h2>
+<section id="ejercicio-de-la-practica-14">
+<h2>Ejercicio de la práctica 14<a class="headerlink" href="#ejercicio-de-la-practica-14" title="Permalink to this heading">#</a></h2>
 <p>1.-Simule el sistema masa resorte amortiguador mostrado en la <a class="reference internal" href="#mbk"><span class="std std-numref">Figura 10</span></a>, con los parámetros de la <a class="reference internal" href="#tabla-param-mbk"><span class="std std-numref">Tabla 15</span></a>, para los siguientes casos de <span class="math notranslate nohighlight">\(f(t)\)</span>:</p>
 <ol class="arabic simple">
 <li><p>Escalón con amplitud <span class="math notranslate nohighlight">\(10~[N]\)</span> y retardo de <span class="math notranslate nohighlight">\(0.5\)</span> segundos.</p></li>
@@ -666,7 +666,7 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Práctica 15: Creación de interfaces gráficas</p>
+        <p class="prev-next-title">Práctica 15: Simulacion de sistemas dinámicos parte 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -686,7 +686,7 @@ x(t)= \frac{1}{m}\int^{t}_0\int^{\tau_1}_0f(\tau_1)d\tau_1d\tau_2-\frac{b}{m}\in
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#el-entorno-de-simulacion-grafica-simulink">El entorno de simulación gráfica Simulink®</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-13">Ejercicio de la práctica 13</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-14">Ejercicio de la práctica 14</a></li>
 </ul>
   </nav></div>
 
