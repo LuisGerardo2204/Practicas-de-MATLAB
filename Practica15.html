@@ -71,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'Practica15';</script>
     <link rel="index" title="Índice" href="genindex.html" />
     <link rel="search" title="Búsqueda" href="search.html" />
-    <link rel="next" title="Bibliografía" href="Bibliograf%C3%ADa.html" />
+    <link rel="next" title="Práctica 16: Comunicación con periféricos" href="Practica16.html" />
     <link rel="prev" title="Práctica 14: Simulación de sistemas dinámicos" href="Practica14.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="es"/>
@@ -192,6 +192,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica13.html">Práctica 13: Imágenes y animaciones</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica14.html">Práctica 14: Simulación de sistemas dinámicos</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 15: Simulación de sistemas dinámicos parte 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Practica16.html">Práctica 16: Comunicación con periféricos</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -674,7 +676,7 @@ L_2\frac{di_2}{dt}+R_2i_2-\frac{1}{C_1}\int{(i_1-i_2)dt}+\frac{1}{C_2}\int{i_2dt
 <p>Derivando con respecto al tiempo las ecuaciones <a class="reference internal" href="#equation-rlc-2gdl-reagrup">(27)</a> se obtiene:</p>
 <div class="math notranslate nohighlight">
 \[
-L_ 1\frac{d^2i_ 1}{dt^2}+R_ 1\frac{di_ 1}{dt}+\frac{(i_ 1-i_ 2)}{C_ 1}\frac{dv_1}{dt}=v_1
+L_ 1\frac{d^2i_ 1}{dt^2}+R_ 1\frac{di_ 1}{dt}+\frac{(i_ 1-i_ 2)}{C_ 1}=\frac{dv_1}{dt}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -683,7 +685,7 @@ L_ 2\frac{d^2i_2}{dt^2}+R_ 2\frac{di_ 2}{dt}+\frac{i_2}{C_ 2}-\frac{(i_ 1-i_ 2)}
 <p>En forma matricial:</p>
 <div class="math notranslate nohighlight" id="equation-rlc-2gdl-matriz">
 <span class="eqno">(28)<a class="headerlink" href="#equation-rlc-2gdl-matriz" title="Enlace permanente a esta ecuación">#</a></span>\[\begin{equation}
-L\ddot{i}+R\dot{i}+Ci=\dot{v}
+L\ddot{i}+R\dot{i}+Ci=\dot{v}_1
 \end{equation}\]</div>
 <p>donde:</p>
 <div class="math notranslate nohighlight">
@@ -699,10 +701,10 @@ L=\begin{bmatrix}L_1&amp;0\\0&amp;L_2\end{bmatrix},~~~~R=\begin{bmatrix}R_1&amp;
 </figure>
 <p>De la misma forma que en el caso del sistema mecánico, se puede expresar el vector <span class="math notranslate nohighlight">\([i_1~~i_2]^T\)</span> en términos de las matrices de inductancia, resistencia y capacitancia:</p>
 <div class="math notranslate nohighlight" id="equation-despejei2">
-<span class="eqno">(29)<a class="headerlink" href="#equation-despejei2" title="Enlace permanente a esta ecuación">#</a></span>\[\ddot{i}=L^{-1}\left (v- R\dot{i}-Ci\right )\]</div>
+<span class="eqno">(29)<a class="headerlink" href="#equation-despejei2" title="Enlace permanente a esta ecuación">#</a></span>\[\ddot{i}=L^{-1}\left (\dot{v}- R\dot{i}-Ci\right )\]</div>
 <p>Expresando <span class="math notranslate nohighlight">\(\ddot{i}\)</span> en términos de las matrices <span class="math notranslate nohighlight">\(L\)</span>, <span class="math notranslate nohighlight">\(R\)</span> y <span class="math notranslate nohighlight">\(C\)</span> e integrando dos veces se obtiene:</p>
 <div class="math notranslate nohighlight" id="equation-despejei2-integral">
-<span class="eqno">(30)<a class="headerlink" href="#equation-despejei2-integral" title="Enlace permanente a esta ecuación">#</a></span>\[i=L^{-1}\left ( \int^{t}_0\int^{\tau_1}_0v(\tau_1)d\tau_1d\tau_2-R\int^{t}_0\frac{dx(\tau_1)}{d\tau_1}d\tau_1-C\int^{t}_0\int^{\tau_1}_0x(\tau_1)d\tau_1d\tau_2\right )\]</div>
+<span class="eqno">(30)<a class="headerlink" href="#equation-despejei2-integral" title="Enlace permanente a esta ecuación">#</a></span>\[i=L^{-1}\left ( \int^{t}_0\int^{\tau_1}_0\dot{v}_1(\tau_1)d\tau_1d\tau_2-R\int^{t}_0\frac{dx(\tau_1)}{d\tau_1}d\tau_1-C\int^{t}_0\int^{\tau_1}_0x(\tau_1)d\tau_1d\tau_2\right )\]</div>
 <p>De manera tal que se puede hacer un diagrama de bloques similar al del sistema mecánico de dos grados de libertad para hacer la simulación y encontrar la solución para las corrientes <span class="math notranslate nohighlight">\(i_1\)</span> e <span class="math notranslate nohighlight">\(i_2\)</span>.</p>
 </section>
 <section id="ejercicio-de-la-practica-15">
@@ -853,11 +855,11 @@ L=\begin{bmatrix}L_1&amp;0\\0&amp;L_2\end{bmatrix},~~~~R=\begin{bmatrix}R_1&amp;
       </div>
     </a>
     <a class="right-next"
-       href="Bibliograf%C3%ADa.html"
+       href="Practica16.html"
        title="siguiente página">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">siguiente</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Práctica 16: Comunicación con periféricos</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
