@@ -608,7 +608,7 @@ document.write(`
 <p><span class="caption-number">Figura 35 </span><span class="caption-text">Comunicación en modo serie.</span><a class="headerlink" href="#com-serie" title="Enlace permanente a esta imagen">#</a></p>
 </figcaption>
 </figure>
-<p>Actualmente, una gran parte de los equipos profesionales de adquisición de datos utilizan el puerto USB para transmitir granades cantidades de mediciones de señales provenientes de sensores usados en aplicaciones de experimentos para validar modelos y teorías, además de una amplia variedad de apliaciones al control de procesos. El protocolo de comunicación que utiliza el puerto USB es complicado por que permite una velocidad de transmisión considerable, actualmente de 40 Giga bits por segundo, esto quiere decir que se transmiten miles de millones de bits en un solo segundo.</p>
+<p>Actualmente, una gran parte de los equipos profesionales de adquisición de datos utilizan el puerto USB para transmitir granades cantidades de mediciones de señales provenientes de sensores usados en aplicaciones de experimentos para validar modelos y teorías, además de una amplia variedad de apliaciones al control de procesos. El protocolo de comunicación que utiliza el puerto USB es complicado por que permite una velocidad de transmisión considerable, actualmente de 40 Giga bits por segundo, esto quiere decir que se transmiten miles de millones de bits en un solo segundo. La descripción gráfica del protocolo serie asíncrono se presenta en la <a class="reference internal" href="#com-serie-protocolo"><span class="std std-numref">Figura 36</span></a></p>
 <p>Una alternativa mas sencilla para el intercambio de información entre una computadora y algún sistema digital como un microcontrolador o tarjeta Arduino, es el protocolo serie asíncrono. El protocolo serie asíncrono se especifica en los siguientes parámetros principales:</p>
 <ul class="simple">
 <li><p>Identificador de puerto: En el sistema operativo más comun se usa el formato «COMXX», donde COM alude a comunicación y XX es un entero que identifica el número de puerto, en sistemas operativos como linux el identificador es típicamente «dev/ttyXX».</p></li>
@@ -618,45 +618,50 @@ document.write(`
 <li><p>Tiempo de espera: Se identifica como timeout, es el tiempo máximo que esperará el sistema digital a recibir una respuesta sin considerar un error de comunicación.</p></li>
 <li><p>Bit de paridad: se usa para detectar errores en la transmisión, usualmente indica si se envía una cantidad par de unos o de ceros para corroborar que el dato llegó completo. Normalmente se puede establecer transmisiones exitosas sin el uso de este bit.</p></li>
 </ul>
-<p>Para ejemplificar el uso de la comunicación serie usaremos una tarjeta arduino conectada al puerto USB de la computadora, previa instalación de la interfaz de Arduino y los drivers necesarios para su uso y programación.</p>
-<p>El código fuente para la tarjeta Arduino se encuentra en el siguiente repositorio GitHub</p>
-<p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_simple_ADC.ino">https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_simple_ADC.ino</a></p>
-<figure class="align-default" id="esp32-adc">
-<a class="reference internal image-reference" href="_images/ESP32_1ADC.png"><img alt="_images/ESP32_1ADC.png" src="_images/ESP32_1ADC.png" style="height: 300px;" /></a>
+<figure class="align-default" id="com-serie-protocolo">
+<a class="reference internal image-reference" href="_images/protocolo_serie.png"><img alt="_images/protocolo_serie.png" src="_images/protocolo_serie.png" style="height: 400px;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 36 </span><span class="caption-text">Diagrama para lectura analógica con ESP32</span><a class="headerlink" href="#esp32-adc" title="Enlace permanente a esta imagen">#</a></p>
+<p><span class="caption-number">Figura 36 </span><span class="caption-text">Descripción gráfica del protocolo serie asíncrono.</span><a class="headerlink" href="#com-serie-protocolo" title="Enlace permanente a esta imagen">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="esp32-2adc">
-<a class="reference internal image-reference" href="_images/ESP32_2ADC.png"><img alt="_images/ESP32_2ADC.png" src="_images/ESP32_2ADC.png" style="height: 320px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 37 </span><span class="caption-text">Diagrama para lectura analógica con ESP32.</span><a class="headerlink" href="#esp32-2adc" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
-<p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_dos_ADC.ino">https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_dos_ADC.ino</a></p>
+<p>Para ejemplificar el uso de la comunicación serie usaremos una tarjeta arduino, modulo ESP32 (existe compatibilidad con otras tarjetas como UNO, Mega, Leonardo, etc con pocas o nulas modificaciones) conectada al puerto USB de la computadora, previa instalación de la interfaz de Arduino y los drivers necesarios para su uso y programación.Para mayor información sobre la instalación de la tarjeta arduino en el software de Arduino se puede visitar:</p>
+<p><a class="reference external" href="https://docs.sunfounder.com/projects/esp32-starter-kit/es/latest/arduino/arduino_start/install_esp32.html">https://docs.sunfounder.com/projects/esp32-starter-kit/es/latest/arduino/arduino_start/install_esp32.html</a></p>
 </section>
 <section id="adquisicion-y-graficacion-de-datos">
 <h2>Adquisición y graficación de datos<a class="headerlink" href="#adquisicion-y-graficacion-de-datos" title="Permalink to this heading">#</a></h2>
+<p>Uno de los objetivos principales de la comunicación serie usando MATLAB® es el adquirir datos del mundo real. Esto se logra usando tarjetas de adquisición de datos que pueden llegar a ser costosas debido a su elevada calidad y precisión. Para apliaciones sencillas es suficiente con un microcontrolador como el ESP32 para validar algún modelo o monitorear un proceso. El siguiente programa permite adquir un número de muestras a una taza aproximada de 100 muestras por segundo, del voltaje conectado al puerto A0 de la tarjeta ESP32</p>
+<p>Como primera prueba, haremos la conversión digital-analógica de una señal de voltaje conectada al canal A0 de la tarjeta ESP32. El voltaje variable será proporcionado por medio de un potenciómetro que se conecta como se muestra en la <a class="reference internal" href="#esp32-adc"><span class="std std-numref">Figura 37</span></a>. El código fuente para cargarse en la tarjeta ESP32 se encuentra en el siguiente repositorio GitHub:</p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_simple_ADC.ino">https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_simple_ADC.ino</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>Es importante considerar que la tarjeta ESP32 trabaja con voltajes máximos de 3.3V, a diferencia de las tarjetas Arduino basadas en microcontroladores de 8 bits, se debe tomar en cuenta esto para no dañar permanentemente los puertos de la tarjeta de desarrollo.</p>
+</div>
+<figure class="align-default" id="esp32-adc">
+<a class="reference internal image-reference" href="_images/ESP32_1ADC.png"><img alt="_images/ESP32_1ADC.png" src="_images/ESP32_1ADC.png" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 37 </span><span class="caption-text">Diagrama para lectura analógica con ESP32</span><a class="headerlink" href="#esp32-adc" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
-<span class="nb">delete</span><span class="p">(</span><span class="n">serialportfind</span><span class="p">);</span>
-<span class="nb">serialportlist</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">)</span>
-<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">serialport</span><span class="p">(</span><span class="s">&quot;COM9&quot;</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s">&quot;Timeout&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
-<span class="nb">configureTerminator</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;LF&quot;</span><span class="p">)</span>
-<span class="nb">flush</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="nb">clc</span>
+
+<span class="nb">delete</span><span class="p">(</span><span class="n">serialportfind</span><span class="p">);</span><span class="w"> </span><span class="c">%Se eliminan conexiones via puerto serie previas</span>
+<span class="nb">serialportlist</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">)</span><span class="w"> </span><span class="c">% Se enlistan los puertos serie disponibles para seleccionar el que identifique a la tarjeta</span>
+<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">serialport</span><span class="p">(</span><span class="s">&quot;COM9&quot;</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s">&quot;Timeout&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="c">% Se inicializa la comunicación serie a una taza de 115200 bauds </span>
+<span class="nb">configureTerminator</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;LF&quot;</span><span class="p">)</span><span class="c">% Se indica el fin de trama con el cambio de línea</span>
+<span class="nb">flush</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="c">% Se limpian los datos del buffer de recepción</span>
 <span class="n">datos</span><span class="p">=[];</span>
 <span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">10000</span>
 <span class="w">    </span><span class="c">%pause(0.01)</span>
-<span class="w">  </span><span class="n">datos</span><span class="p">=[</span><span class="n">datos</span><span class="w"> </span><span class="nb">str2double</span><span class="p">(</span><span class="nb">readline</span><span class="p">(</span><span class="n">s</span><span class="p">))];</span>
-<span class="w">  </span>
+<span class="w">  </span><span class="n">datos</span><span class="p">=[</span><span class="n">datos</span><span class="w"> </span><span class="nb">str2double</span><span class="p">(</span><span class="nb">readline</span><span class="p">(</span><span class="n">s</span><span class="p">))];</span><span class="w"> </span><span class="c">% Se adquieren los datos </span>
 <span class="k">end</span><span class="w"> </span>
 
+<span class="nb">clear</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="c">% Se cierra la conexión</span>
 
-<span class="nb">clear</span><span class="w"> </span><span class="n">s</span>
-
-<span class="nb">plot</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">datos</span><span class="p">)</span><span class="c">%Se grafican los datos adquiridos en forma de voltaje contra el tiempo</span>
 </pre></div>
 </div>
 </div>
@@ -664,15 +669,23 @@ document.write(`
 <div class="output text_html"><html><body><pre>ans = "COM9"</pre></body></html></div><img alt="_images/76760e7d1e7406effefd82bfaeefbc1dab497cddf4fa8dc81b3e832ddbe8dcf7.png" src="_images/76760e7d1e7406effefd82bfaeefbc1dab497cddf4fa8dc81b3e832ddbe8dcf7.png" />
 </div>
 </div>
-<p>comunicacion con dos canales</p>
+<p>Una extensión del código anterior para leer dos canales analógicos se consique al enviar al puerto serie de la computadora la inforación de la lectura de muestras de ambos canales analógicos en un formato separado por comas. El código para la adquisición de los canales A0 y A3 de manera simultánea se presenta en el repositorio siguiete:</p>
+<p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_dos_ADC.ino">https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_dos_ADC.ino</a></p>
+<p>El diagrama de conexiones para los canales analógicos de la tarjeta de desarrollo ESP32 se muestra en la <a class="reference internal" href="#esp32-2adc"><span class="std std-numref">Figura 38</span></a>. Los potenciometros simulan el voltaje de algún sensor con salida analógica en el rango de 0 a 3.3V.</p>
+<figure class="align-default" id="esp32-2adc">
+<a class="reference internal image-reference" href="_images/ESP32_2ADC.png"><img alt="_images/ESP32_2ADC.png" src="_images/ESP32_2ADC.png" style="height: 320px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 38 </span><span class="caption-text">Diagrama para lectura analógica con ESP32, de dos canales.</span><a class="headerlink" href="#esp32-2adc" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">delete</span><span class="p">(</span><span class="n">serialportfind</span><span class="p">);</span>
 <span class="nb">serialportlist</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">)</span>
-<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">serialport</span><span class="p">(</span><span class="s">&quot;COM9&quot;</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s">&quot;Timeout&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
-<span class="nb">configureTerminator</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;LF&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">serialport</span><span class="p">(</span><span class="s">&quot;COM9&quot;</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s">&quot;Timeout&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="c">% Se inicializa la comunicación serie a una taza de 115200 bauds </span>
+<span class="nb">configureTerminator</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;LF&quot;</span><span class="p">)</span><span class="c">% Se indica el fin de trama con el cambio de línea</span>
 <span class="nb">flush</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
 <span class="n">datos</span><span class="p">=[];</span>
 <span class="k">for</span><span class="w"> </span><span class="nb">i</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="mi">1000</span>
@@ -680,13 +693,13 @@ document.write(`
 <span class="w">  </span><span class="c">%datos=[datos str2double(readline(s))];</span>
 <span class="w">  </span><span class="n">datos</span><span class="p">=[</span><span class="n">datos</span><span class="w"> </span><span class="nb">readline</span><span class="p">(</span><span class="n">s</span><span class="p">)];</span>
 <span class="k">end</span><span class="w"> </span>
-<span class="n">canales</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="nb">split</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="p">);</span>
-<span class="n">canal_a</span><span class="p">=</span><span class="nb">str2double</span><span class="p">(</span><span class="n">canales</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">));</span>
+<span class="n">canales</span><span class="w"> </span><span class="p">=</span><span class="w">  </span><span class="nb">split</span><span class="p">(</span><span class="n">datos</span><span class="p">,</span><span class="s">&quot;,&quot;</span><span class="p">);</span><span class="c">% Se separan los dos canales independientes</span>
+<span class="n">canal_a</span><span class="p">=</span><span class="nb">str2double</span><span class="p">(</span><span class="n">canales</span><span class="p">(:,:,</span><span class="mi">1</span><span class="p">));</span><span class="c">% Se convierte la cadena de caracteres recibida a un número real</span>
 <span class="n">canal_b</span><span class="p">=</span><span class="nb">str2double</span><span class="p">(</span><span class="n">canales</span><span class="p">(:,:,</span><span class="mi">2</span><span class="p">));</span>
 <span class="n">clear</span><span class="w"> </span><span class="s">s</span>
 
 <span class="nb">plot</span><span class="p">(</span><span class="n">canal_a</span><span class="p">)</span>
-<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="c">% Se grafican ambos canales en un mismo par de ejes.</span>
 <span class="nb">plot</span><span class="p">(</span><span class="n">canal_b</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -698,6 +711,8 @@ document.write(`
 </section>
 <section id="gracicacion-en-tiempo-real-no-estricto">
 <h2>Gracicación en tiempo real no estricto<a class="headerlink" href="#gracicacion-en-tiempo-real-no-estricto" title="Permalink to this heading">#</a></h2>
+<p>Los ejemplos anteriores permiten la graficación de los datos en un contexto o formato conocido como post-procesamiento, esto quiere decir que primero se toma un número deseado de muestras y después se presentan en una gráfica. Este formato se usa especialmente cuando las tasas de muestreo, es decir cuando el número de muestras que se toman en un segundo es muy elevado y resultaría muy demandante actualizar una gráfica de manera que se puediera apreciar el cambio en las variables que están siendo monitoreadas de manera eficiente. Cuando el fenómeno lo permite, es posible mostar las gráficas de manera simultánea con su captura. Este esquema equivale a lo que sucede con la captura de video, si la resolución de la cámara es muy alta, es necesario tener tarjetas de video dedicadas que permitan hacer el despliegue de las imágenes, volviendo al contexto de la captura de voltajes,  si la resolución no es un tema crucial, se puede sacrificar precisión y velocidad de toma de muestras en aras de observar cambios en el fenómeno bajo análisis de manera más inmediata, sin esperar al postprocesamiento, esto puede entenderse como un análogo a lo que sucde en un osciloscopio, donde las señales se grafican en pantalla en tiempo real.</p>
+<p>El siguiente código permite la visualización en tiempo real «suave», es decir, a baja velocidad de las lecturas de los voltajes en los canales A0 y A3 de la tarjeta ESP32.</p>
 <div class="cell tag_remove-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span><span class="w"> </span>
@@ -706,12 +721,12 @@ document.write(`
 
 <span class="nb">delete</span><span class="p">(</span><span class="n">serialportfind</span><span class="p">);</span>
 <span class="c">%serialportlist(&quot;all&quot;)</span>
-<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">serialport</span><span class="p">(</span><span class="s">&quot;COM9&quot;</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s">&quot;Timeout&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
-<span class="nb">configureTerminator</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;LF&quot;</span><span class="p">)</span>
+<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">serialport</span><span class="p">(</span><span class="s">&quot;COM9&quot;</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s">&quot;Timeout&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">);;</span><span class="c">% Se inicializa la comunicación serie a una taza de 115200 bauds </span>
+<span class="nb">configureTerminator</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;LF&quot;</span><span class="p">)</span><span class="c">% Se indica el fin de trama con el cambio de línea</span>
 
 <span class="n">datos</span><span class="p">=[];</span>
 <span class="n">canales</span><span class="p">=[];</span>
-<span class="n">canal_a</span><span class="p">=[];</span>
+<span class="n">canal_a</span><span class="p">=[];</span><span class="c">% Se inicializan las variables tipo arreglo para almacenar las muestras </span>
 <span class="n">canal_b</span><span class="p">=[];</span>
 <span class="n">muestra</span><span class="p">=[];</span>
 
@@ -747,20 +762,20 @@ document.write(`
 <span class="nb">flush</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span>
 <span class="k">while</span><span class="p">(</span><span class="w"> </span><span class="nb">i</span><span class="o">&lt;</span><span class="mi">1000</span><span class="o">&amp;&amp;</span><span class="n">stopstop</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="w">  </span><span class="nb">cla</span>
+<span class="w">  </span><span class="nb">cla</span><span class="c">% Se actualiza la gráfica</span>
 
-<span class="w">   </span><span class="n">datos</span><span class="p">=[</span><span class="n">datos</span><span class="w"> </span><span class="nb">readline</span><span class="p">(</span><span class="n">s</span><span class="p">)];</span>
+<span class="w">   </span><span class="n">datos</span><span class="p">=[</span><span class="n">datos</span><span class="w"> </span><span class="nb">readline</span><span class="p">(</span><span class="n">s</span><span class="p">)];</span><span class="w"> </span><span class="c">% La lectura de los datos del puerto serie se hace de manera concatenada</span>
 <span class="w">   </span><span class="n">muestra</span><span class="p">=[</span><span class="n">muestra</span><span class="w"> </span><span class="nb">i</span><span class="p">];</span>
 
-<span class="w">   </span><span class="n">canales</span><span class="p">=</span><span class="nb">split</span><span class="p">(</span><span class="n">datos</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="s">&quot;,&quot;</span><span class="p">);</span>
-<span class="w">   </span><span class="n">canal_a</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">str2double</span><span class="p">(</span><span class="n">canales</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+<span class="w">   </span><span class="n">canales</span><span class="p">=</span><span class="nb">split</span><span class="p">(</span><span class="n">datos</span><span class="p">(</span><span class="nb">i</span><span class="p">),</span><span class="s">&quot;,&quot;</span><span class="p">);</span><span class="w"> </span><span class="c">% Se separan las dos muestras instantáneas</span>
+<span class="w">   </span><span class="n">canal_a</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">str2double</span><span class="p">(</span><span class="n">canales</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span><span class="c">% Se extrae el número real contenido en la cadena de datos recibida</span>
 <span class="w">   </span><span class="n">canal_b</span><span class="p">(</span><span class="nb">i</span><span class="p">)=</span><span class="nb">str2double</span><span class="p">(</span><span class="n">canales</span><span class="p">(</span><span class="mi">2</span><span class="p">));</span>
 <span class="w">  </span>
 <span class="w">     </span>
 <span class="w">     </span><span class="n">cla</span>
-<span class="w">     </span><span class="s">title(strcat(&#39;t= &#39;,num2str((i-1)*0.01),&#39; [s]&#39;))</span>
+<span class="w">     </span><span class="s">title(strcat(&#39;t= &#39;,num2str((i-1)*0.01),&#39; [s]&#39;))</span><span class="w"> </span><span class="s">%</span><span class="w"> </span><span class="s">Se</span><span class="w"> </span><span class="s">coloca</span><span class="w"> </span><span class="s">el</span><span class="w"> </span><span class="s">instante</span><span class="w"> </span><span class="s">de</span><span class="w"> </span><span class="s">tiempo</span><span class="w"> </span><span class="s">en</span><span class="w"> </span><span class="s">el</span><span class="w"> </span><span class="s">título</span><span class="w"> </span><span class="s">de</span><span class="w"> </span><span class="s">la</span><span class="w"> </span><span class="s">gráfica</span>
 <span class="w">     </span><span class="nb">plot</span><span class="p">(</span><span class="n">muestra</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span><span class="p">,</span><span class="n">canal_a</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="w">     </span><span class="nb">plot</span><span class="p">(</span><span class="n">muestra</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span><span class="p">,</span><span class="n">canal_b</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="w">     </span><span class="nb">plot</span><span class="p">(</span><span class="n">muestra</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">)</span><span class="o">*</span><span class="mf">0.01</span><span class="p">,</span><span class="n">canal_b</span><span class="p">(</span><span class="mi">1</span><span class="p">:</span><span class="nb">i</span><span class="p">),</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c">%Se grafican las muestras de ambos canales</span>
 <span class="w">     </span><span class="nb">pause</span><span class="p">(</span><span class="mf">0.0001</span><span class="p">)</span>
 <span class="w">     </span>
 <span class="w">           </span><span class="k">while</span><span class="w"> </span><span class="n">ppause</span><span class="o">==</span><span class="mi">1</span>
@@ -772,10 +787,10 @@ document.write(`
 <span class="w">                    </span>
 <span class="k">end</span>
 <span class="w">    </span>
-<span class="nb">clear</span><span class="w"> </span><span class="n">s</span>
+<span class="nb">clear</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="c">%Se cierra el puerto de comunicaciones </span>
 
-<span class="nb">plot</span><span class="p">(</span><span class="n">muestra</span><span class="o">*</span><span class="mf">0.01</span><span class="p">,</span><span class="n">canal_a</span><span class="p">,</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">hold</span><span class="w"> </span><span class="n">on</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">muestra</span><span class="o">*</span><span class="mf">0.01</span><span class="p">,</span><span class="n">canal_a</span><span class="p">,</span><span class="s">&#39;b -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c">%Se conserva la última gráfica</span>
+<span class="nb">hold</span><span class="w"> </span><span class="n">on</span><span class="w"> </span>
 <span class="nb">plot</span><span class="p">(</span><span class="n">muestra</span><span class="o">*</span><span class="mf">0.01</span><span class="p">,</span><span class="n">canal_b</span><span class="p">,</span><span class="s">&#39;k -&#39;</span><span class="p">,</span><span class="s">&#39;LineWidth&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -789,10 +804,20 @@ document.write(`
 </section>
 <section id="encendido-de-relevadores-via-puerto-serie">
 <h2>Encendido de relevadores via puerto serie<a class="headerlink" href="#encendido-de-relevadores-via-puerto-serie" title="Permalink to this heading">#</a></h2>
+<p>Una aplicación diferente de la comunicación con el puerto serie es la transmisión-recepción de comandos o instrucciones. Este esquema consiste en transmitir por el puerto serie un caracter o cadena de caracteres que se relacionan con instrucciones que se desea ejecute el sistema digital receptor, por otra parte, también se puede hacer uso de un esquema de respuesta que permita la recepción de un acuse de recibo de la información o comando. En la <a class="reference internal" href="#esp32-udp"><span class="std std-numref">Figura 39</span></a> se muestra el diagrama de conexiones para poner a prueba la comunicación serie en el contexto del control de procesos. Es muy común el uso del código ASCII para el envío de caracteres de un sistema digital a otro, comunmente, la comunicación se realiza entre una computadora y un microcontrolador, aunque también es frecuente la comunicación entre dos microcontroladores. EL código ASCII se puede consultar en el siguiente enlace:</p>
+<p><a class="reference external" href="https://www.ascii-code.com">https://www.ascii-code.com</a></p>
+<figure class="align-default" id="esp32-udp">
+<a class="reference internal image-reference" href="_images/ESP32_bb.png"><img alt="_images/ESP32_bb.png" src="_images/ESP32_bb.png" style="height: 320px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 39 </span><span class="caption-text">Diagrama para conmutación de leds con protocolo UDP.</span><a class="headerlink" href="#esp32-udp" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>El código para la tarjeta arduino se encuentra en el siguiente repositorio:</p>
 <p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_relays_serie.ino">https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32_relays_serie.ino</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Programa de ejemplo de aplicación de la función menú</span>
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Programa de ejemplo de aplicación de la función menú para el control de 4 relevadores usando una </span>
+<span class="c">% tarjeta ESP32 o una tarjeta Arduino de 8 bits</span>
 
 <span class="nb">clear</span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
@@ -800,41 +825,40 @@ document.write(`
 
 <span class="nb">delete</span><span class="p">(</span><span class="n">serialportfind</span><span class="p">);</span>
 <span class="nb">serialportlist</span><span class="p">(</span><span class="s">&quot;all&quot;</span><span class="p">)</span>
-<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">serialport</span><span class="p">(</span><span class="s">&quot;COM9&quot;</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s">&quot;Timeout&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+<span class="n">s</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">serialport</span><span class="p">(</span><span class="s">&quot;COM9&quot;</span><span class="p">,</span><span class="mi">115200</span><span class="p">,</span><span class="s">&quot;Timeout&quot;</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span><span class="c">% Se inicializa la comunicación serie a una taza de 115200 bauds </span>
 <span class="nb">configureTerminator</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;LF&quot;</span><span class="p">)</span>
 <span class="nb">flush</span><span class="p">(</span><span class="n">s</span><span class="p">);</span><span class="w"> </span>
 <span class="n">salir</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
 <span class="k">while</span><span class="w"> </span><span class="n">salir</span><span class="o">==</span><span class="mi">0</span>
 <span class="n">relay</span><span class="p">=</span><span class="n">menu</span><span class="p">(</span><span class="s">&quot;Control remoto&quot;</span><span class="p">,</span><span class="s">&quot;Encender relay 1&quot;</span><span class="p">,</span><span class="s">&quot;Apagar relay 1&quot;</span><span class="p">,</span><span class="s">&quot;Encender relay 2&quot;</span><span class="k">...</span>
 <span class="w">    </span><span class="p">,</span><span class="s">&quot;Apagar relay 2&quot;</span><span class="p">,</span><span class="s">&quot;Encender relay 3&quot;</span><span class="p">,</span><span class="s">&quot;Apagar relay 3&quot;</span><span class="p">,</span><span class="s">&quot;Encender relay 4&quot;</span><span class="p">,</span><span class="s">&quot;Apagar relay 4&quot;</span><span class="p">,</span><span class="k">...</span>
-<span class="w">    </span><span class="s">&quot;Encender todos&quot;</span><span class="p">,</span><span class="s">&quot;Apagar todos&quot;</span><span class="p">,</span><span class="s">&quot;Salir&quot;</span><span class="p">);</span>
-
+<span class="w">    </span><span class="s">&quot;Encender todos&quot;</span><span class="p">,</span><span class="s">&quot;Apagar todos&quot;</span><span class="p">,</span><span class="s">&quot;Salir&quot;</span><span class="p">);</span><span class="w"> </span><span class="c">% Se desarrolla el menú con los botones necesarios para el control de los relevadores </span>
+<span class="c">% Se usa un esquema de caracteres simples para la activación de los relevadores, dependiendo de la tecla del menú que se haya presionado</span>
 <span class="k">switch</span><span class="w"> </span><span class="n">relay</span>
-
+<span class="c">% Conjunto de instrucciones del control remoto:</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;A&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w">  </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="c">% El caracter A enciende el relevador 1</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;B&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w">   </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="c">% El caracter B apaga el relevador 1</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;C&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w">  </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="c">% El caracter C enciende el relevador 2</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;D&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w">   </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span><span class="c">% El caracter C apaga el relevador 2</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;E&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w">  </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span><span class="c">% El caracter D enciende el relevador 3</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;F&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w">  </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">7</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">7</span><span class="c">% El caracter E apaga el relevador 3</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;G&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">8</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">8</span><span class="c">% El caracter F enciende el relevador 3</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;H&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w">    </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">9</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">9</span><span class="c">% El caracter G apaga el relevador 3</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;I&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w">  </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">10</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">10</span><span class="c">% El caracter I enciende todos los relevadores</span>
 <span class="w">       </span><span class="nb">write</span><span class="p">(</span><span class="n">s</span><span class="p">,</span><span class="s">&quot;J&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span><span class="w"> </span>
-<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">11</span>
+<span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="c">% El caracter J apaga todos </span>
 <span class="w">       </span><span class="n">salir</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
 <span class="k">end</span>
-
 
 <span class="k">end</span>
 
@@ -848,42 +872,68 @@ document.write(`
 </section>
 <section id="comunicacion-mediante-el-protocolo-udp">
 <h2>Comunicación mediante el protocolo UDP<a class="headerlink" href="#comunicacion-mediante-el-protocolo-udp" title="Permalink to this heading">#</a></h2>
-<p>Una alternativa para la comiunicación, que aprovecha la infraestructura de la red de area local es el protocolo UDP. El protocolo UDP utiliza una dirección ip, un pueto de escucha y un puerto de escritura. Es un protocolo menos robusto que el protocolo TCP-IP, pero es muy utilizado debido a su sencillez y portabilidad.</p>
+<p>Una alternativa para la comunicación serie, que aprovecha la infraestructura de la red de area local es el protocolo UDP. El protocolo UDP utiliza una dirección ip, un pueto de escucha y un puerto de escritura. Es un protocolo menos robusto que el protocolo TCP-IP, pero es muy utilizado debido a su sencillez y portabilidad. El funcionamiento del protocolo UDP se forma de manera esquemática en la <a class="reference internal" href="#com-udp"><span class="std std-numref">Figura 40</span></a>, donde se muestra la infraestructura utilizada para su realización práctica, los dispositivos que se comunican con este protocolo deben estar conectados mediante el mismo router que les asigna una dirección ip, de manera que es posible el intercambio de información entre un máximo de 252 dispositivos en un mismo dominio. Es importante mencionar que no es indispensable que el router tenga accseso a internet para que se pueda dar la comunicación bajo el protocolo UDP, dado que la comunicación es estrictamente local. De la misma manera, cabe destacar que la conexión puede ser cableada o inalámbrica.</p>
 <figure class="align-default" id="com-udp">
-<a class="reference internal image-reference" href="_images/UDP.png"><img alt="_images/UDP.png" src="_images/UDP.png" style="height: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/UDP.png"><img alt="_images/UDP.png" src="_images/UDP.png" style="height: 250px;" /></a>
 <figcaption>
-<p><span class="caption-number">Figura 38 </span><span class="caption-text">Protocolo de comunicación UDP.</span><a class="headerlink" href="#com-udp" title="Enlace permanente a esta imagen">#</a></p>
+<p><span class="caption-number">Figura 40 </span><span class="caption-text">Protocolo de comunicación UDP.</span><a class="headerlink" href="#com-udp" title="Enlace permanente a esta imagen">#</a></p>
 </figcaption>
 </figure>
-<figure class="align-default" id="esp32-udp">
-<a class="reference internal image-reference" href="_images/ESP32_bb.png"><img alt="_images/ESP32_bb.png" src="_images/ESP32_bb.png" style="height: 320px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figura 39 </span><span class="caption-text">Diagrama para conmutación de leds con protocolo UDP.</span><a class="headerlink" href="#esp32-udp" title="Enlace permanente a esta imagen">#</a></p>
-</figcaption>
-</figure>
+<p>La velocidad de transmisión-recepción de información depende de las capacidades del router y de los dispositivos, velocidades típicas son de un máximo de 100Mbs es decir, 100 millones de bits por segundo, haciendo una diferencia sustancial con el protocolo serie, sin embargo, tambien es cierto que no es determinística la tasa de transmisión debido a la dependencia del canal de WiFi y del tráfico que se presente en la red de área local.</p>
+</section>
+<section id="encendido-de-relevadores-via-protocolo-udp">
+<h2>Encendido de relevadores via protocolo UDP<a class="headerlink" href="#encendido-de-relevadores-via-protocolo-udp" title="Permalink to this heading">#</a></h2>
+<p>De la misma manera que se hace en el protocolo serie, se puede hacer uso del protocolo UDP para enviar y recibir comandos a través de la red de área local. El código que permite la comunicación usando el protocolo UDP para el control de 4 salidas digitales se encuentra en el siguiente repositorio:</p>
 <p><a class="reference external" href="https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32UDP.ino">https://raw.githubusercontent.com/LuisGerardo2204/C-digo-Arduino/refs/heads/main/ESP32UDP.ino</a></p>
+<p>El diagrama de conexiones para la tarjeta ESP32 es el mismo que se usó en el caso de la comunicación serie, es decir el mostrado en la  <a class="reference internal" href="#esp32-udp"><span class="std std-numref">Figura 39</span></a>. Es importante mencionar que este programa solo funciona con la tarjeta ESP32. Para poder implementar este programa en una tarjeta de 8 bits como la Arduno Uno o la Arduino mega es necesario usar un módulo o shield con conexión Ethernet o WiFi, debido a que la tarjeta ESP32 cuenta con estas prestaciones de manera nativa.</p>
+<p>Usando el monitor serie del IDE de Arduino se obtiene tanto la dirección ip como el puerto de escucha para establecer la conexión UDP. Una vez cargado el código en la tarjeta ESP32, al correr el programa hace la conexión al router wifi y mostrará la dirección ip que le fue asignada, como se muestra en la <a class="reference internal" href="#ip-serial"><span class="std std-numref">Figura 41</span></a>. El puerto de escucha es el 2020 dado que así está establecido en el código fuente.</p>
+<figure class="align-default" id="ip-serial">
+<a class="reference internal image-reference" href="_images/UDP_ESP.png"><img alt="_images/UDP_ESP.png" src="_images/UDP_ESP.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Figura 41 </span><span class="caption-text">Determinación de la ip asignada usando el monitor serial del IDE Arduino.</span><a class="headerlink" href="#ip-serial" title="Enlace permanente a esta imagen">#</a></p>
+</figcaption>
+</figure>
+<p>Una vez establecida la conexión entre la tarjeta ESP32 y el router wifi se puede probar su funcionamiento usando el siguiente programa de MATLAB®:</p>
+<p>El siguiente programa hace el encendido y apagado secuencial de 4 relevadores en la tarjeta ESP32:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">clear</span>
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
-<span class="n">u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">udpport</span><span class="p">(</span><span class="s">&quot;IPV4&quot;</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E1&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E2&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E3&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E4&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
+<span class="c">%Las siguientes líneas de código permiten la creación de una conexión UDP entre la computadora que</span>
+<span class="c">% lo ejecuta y una tarjeta ESP32</span>
+<span class="n">u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">udpport</span><span class="p">(</span><span class="s">&quot;IPV4&quot;</span><span class="p">)</span><span class="w"> </span>
+<span class="n">ip_remota</span><span class="p">=</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">;</span><span class="c">%Se inicializa la conexión usando protocolo UDP</span>
+<span class="n">puerto_remoto</span><span class="p">=</span><span class="mi">2020</span><span class="p">;</span><span class="w"> </span><span class="c">% Es necesario indicar la iderección ip y el puerto de escucha del destino</span>
+<span class="c">% A diferencia del protocolo serie, con el protocolo UDP es posible transmitir cadenas de caracteres completas</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E1&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c">%El par de caracteres E1 encienden el relevador 1</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E2&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="c">%El par de caracteres E2 encienden el relevador 2</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E3&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="c">%El par de caracteres E3 encienden el relevador 3</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E4&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="c">%El par de caracteres E4 encienden el relevador 4</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A1&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="c">%El par de caracteres A1 apagan el relevador 1</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A2&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="c">%El par de caracteres A2 apagan el relevador 2</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A3&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="c">%El par de caracteres A3 apagan el relevador 3</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A4&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="c">%El par de caracteres A4 apagan el relevador 4</span>
+
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;Et&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="c">%El par de caracteres Et encienden todos los relevadores</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;At&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="c">%El par de caracteres At apagan todos los relevadores</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;Et&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
 <span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A1&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A2&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A3&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A4&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;At&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
+<span class="nb">disp</span><span class="p">(</span><span class="s">&#39;Cadena de caracteres recibidos como respuesta:&#39;</span><span class="p">)</span>
+<span class="n">datos</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">read</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">);</span>
+<span class="n">respuesta</span><span class="p">=</span><span class="nb">num2str</span><span class="p">(</span><span class="nb">char</span><span class="p">(</span><span class="n">datos</span><span class="p">))</span>
+<span class="nb">clear</span><span class="w"> </span><span class="n">u</span>
 </pre></div>
 </div>
 </div>
@@ -893,36 +943,17 @@ document.write(`
 
      IPAddressVersion: "IPV4"
             LocalHost: "0.0.0.0"
-            LocalPort: 50548
+            LocalPort: 49664
                   Tag: ""
     NumBytesAvailable: 0
 
   Show all properties, functions
-</pre></body></html></div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;Et&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;At&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;Et&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-<span class="nb">pause</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;At&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
-
-<span class="n">data</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">read</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">)</span>
-<span class="nb">clear</span><span class="w"> </span><span class="n">u</span>
+</pre></body></html></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cadena de caracteres recibidos como respuesta:
 </pre></div>
 </div>
+<div class="output text_html"><html><body><pre>respuesta = 'llegaron 2 bytes'</pre></body></html></div></div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><html><body><pre>data = 1×15 double
-   108   108   101   103    97   114   111   110    32    50    32    98   121   116   101
-</pre></body></html></div></div>
-</div>
-</section>
-<section id="encendido-de-relevadores-via-protocolo-udp">
-<h2>Encendido de relevadores via protocolo UDP<a class="headerlink" href="#encendido-de-relevadores-via-protocolo-udp" title="Permalink to this heading">#</a></h2>
+<p>Un programa parecido al que se realizó para el encendido de relevadores usando protocolo serie, en el formato de un menú, se puede desarrollar para el encendido y apagado de relevadores pero aprovechando las prestaciones del protocolo UDP, es decir, aprovechando las ventajas de un protocolo que uitiliza la infrestructura de la red de de area local y puede incluso ser inalámbrica. El siguiente código permite generar un control remoto para cuatro relevadores usando el protocolo UDP.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">% Programa de ejemplo de aplicación de la función menú y el protocolo UDP</span>
@@ -935,6 +966,8 @@ document.write(`
 <span class="nb">close</span><span class="w"> </span><span class="nb">all</span>
 <span class="nb">clc</span>
 <span class="n">u</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">udpport</span><span class="p">(</span><span class="s">&quot;IPV4&quot;</span><span class="p">)</span>
+<span class="n">ip_remota</span><span class="p">=</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">;</span>
+<span class="n">puerto_remoto</span><span class="p">=</span><span class="mi">2020</span><span class="p">;</span>
 
 <span class="n">salir</span><span class="p">=</span><span class="mi">0</span><span class="p">;</span>
 <span class="k">while</span><span class="w"> </span><span class="n">salir</span><span class="o">==</span><span class="mi">0</span>
@@ -945,25 +978,25 @@ document.write(`
 <span class="k">switch</span><span class="w"> </span><span class="n">relay</span>
 
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E1&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E1&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">2</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A1&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span><span class="w"> </span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A1&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span><span class="w"> </span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">3</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E2&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E2&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">4</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A2&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span><span class="w">   </span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A2&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span><span class="w">   </span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">5</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E3&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E3&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">6</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A3&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span><span class="w"> </span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A3&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span><span class="w"> </span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">7</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E4&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;E4&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">8</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A4&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span><span class="w">   </span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;A4&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span><span class="w">   </span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">9</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;Et&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;Et&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">10</span>
-<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;At&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="s">&quot;192.168.0.25&quot;</span><span class="p">,</span><span class="mi">2020</span><span class="p">);</span>
+<span class="w">         </span><span class="nb">write</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="s">&quot;At&quot;</span><span class="p">,</span><span class="s">&quot;uint8&quot;</span><span class="p">,</span><span class="n">ip_remota</span><span class="p">,</span><span class="n">puerto_remoto</span><span class="p">);</span>
 <span class="w">       </span><span class="k">case</span><span class="w"> </span><span class="mi">11</span>
 <span class="w">       </span><span class="n">salir</span><span class="p">=</span><span class="mi">1</span><span class="p">;</span>
 <span class="k">end</span>
@@ -979,13 +1012,14 @@ document.write(`
 
      IPAddressVersion: "IPV4"
             LocalHost: "0.0.0.0"
-            LocalPort: 60252
+            LocalPort: 65353
                   Tag: ""
     NumBytesAvailable: 0
 
   Show all properties, functions
 </pre></body></html></div></div>
 </div>
+<p>Es importante señalar que el protocolo UDP de comunicación en área local se utiliza para envío-recepción de tramas de datos de importancia no muy crítica, en equipos de adquisición de datos de altas prestaciones se usa el protocolo TCP-ip, dado que ofrece un método de acuse de recepción de la información de manera intrínseca.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ejercicio-de-la-practica-16">
@@ -1008,7 +1042,7 @@ Y= 0.5R+0.2G+0.75B,~~~~I=-0.8R-0.4,3.5G-0.4B,~~~~~Q=0.707R+0.52G-0.62B
 <p>c) Encuentre el máximo y el mínimo de los datos.</p>
 <p>d) En una figura independiente, grafique los datos originales contra el tiempo y los datos a los que se les ha restado el promedio contra el tiempo.</p>
 </li>
-<li><p>Escriba un programa que despliegue un menú tal que funcione como un control remoto que permita encender 4 relevadores o diodos LED. Puede usar el protocolo serie si utiliza una tarjeta Arduino basada en atmega o, de manera opcional, el protocolo UDP si tiene disponible una tarjeta ESP32.</p></li>
+<li><p>Escriba un programa que permita el encendido secuencial de 4 salidas digitales. Utilice un comando para encender las salidas en orden ascendente, uno para apagarlos en orden descendente, con un retardo de un segundo entre cada activación o desactivación e incluya un botón de apagado de todas las salidas al mismo tiempo.  Puede usar el protocolo serie si utiliza una tarjeta Arduino basada en ATmega o, de manera opcional, el protocolo UDP si tiene disponible una tarjeta ESP32.</p></li>
 </ol>
 </section>
 
