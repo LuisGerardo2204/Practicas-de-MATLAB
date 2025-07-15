@@ -193,7 +193,6 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="Practica14.html">Práctica 14: Simulación de sistemas dinámicos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Practica15.html">Práctica 15: Simulación de sistemas dinámicos parte 2</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Práctica 16: Comunicación con periféricos</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Bibliograf%C3%ADa.html">Bibliografía</a></li>
 </ul>
 
@@ -343,7 +342,6 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Práctica 16: Comunicación con periféricos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-y-captura-de-imagenes-desde-camaras">Visualización y captura de imágenes desde cámaras</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comunicacion-por-puerto-serie">Comunicación por puerto serie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adquisicion-y-graficacion-de-datos">Adquisición y graficación de datos</a></li>
@@ -351,11 +349,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encendido-de-relevadores-via-puerto-serie">Encendido de relevadores via puerto serie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comunicacion-mediante-el-protocolo-udp">Comunicación mediante el protocolo UDP</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encendido-de-relevadores-via-protocolo-udp">Encendido de relevadores via protocolo UDP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-16">Ejercicio de la práctica 16</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-16">Ejercicio de la práctica 16</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -1021,9 +1016,8 @@ document.write(`
 </div>
 <p>Es importante señalar que el protocolo UDP de comunicación en área local se utiliza para envío-recepción de tramas de datos de importancia no muy crítica, en equipos de adquisición de datos de altas prestaciones se usa el protocolo TCP-ip, dado que ofrece un método de acuse de recepción de la información de manera intrínseca.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="ejercicio-de-la-practica-16">
-<h1>Ejercicio de la práctica 16<a class="headerlink" href="#ejercicio-de-la-practica-16" title="Permalink to this heading">#</a></h1>
+<section id="ejercicio-de-la-practica-16">
+<h2>Ejercicio de la práctica 16<a class="headerlink" href="#ejercicio-de-la-practica-16" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Escriba un programa que permita el acceso a una cámara ip de libre visualización, muestre la vista previa de la cámara, realice una captura y haga las siguientes operaciones con la imagen captura:</p></li>
 </ol>
@@ -1044,6 +1038,7 @@ Y= 0.5R+0.2G+0.75B,~~~~I=-0.8R-0.4,3.5G-0.4B,~~~~~Q=0.707R+0.52G-0.62B
 </li>
 <li><p>Escriba un programa que permita el encendido secuencial de 4 salidas digitales. Utilice un comando para encender las salidas en orden ascendente, uno para apagarlos en orden descendente, con un retardo de un segundo entre cada activación o desactivación e incluya un botón de apagado de todas las salidas al mismo tiempo.  Puede usar el protocolo serie si utiliza una tarjeta Arduino basada en ATmega o, de manera opcional, el protocolo UDP si tiene disponible una tarjeta ESP32.</p></li>
 </ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1109,7 +1104,6 @@ Y= 0.5R+0.2G+0.75B,~~~~I=-0.8R-0.4,3.5G-0.4B,~~~~~Q=0.707R+0.52G-0.62B
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Práctica 16: Comunicación con periféricos</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizacion-y-captura-de-imagenes-desde-camaras">Visualización y captura de imágenes desde cámaras</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comunicacion-por-puerto-serie">Comunicación por puerto serie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adquisicion-y-graficacion-de-datos">Adquisición y graficación de datos</a></li>
@@ -1117,11 +1111,8 @@ Y= 0.5R+0.2G+0.75B,~~~~I=-0.8R-0.4,3.5G-0.4B,~~~~~Q=0.707R+0.52G-0.62B
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encendido-de-relevadores-via-puerto-serie">Encendido de relevadores via puerto serie</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comunicacion-mediante-el-protocolo-udp">Comunicación mediante el protocolo UDP</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encendido-de-relevadores-via-protocolo-udp">Encendido de relevadores via protocolo UDP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-16">Ejercicio de la práctica 16</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ejercicio-de-la-practica-16">Ejercicio de la práctica 16</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
